@@ -1,0 +1,16 @@
+r4h2o_01_introduction.md
+r4h2o_02_principles.md
+r4h2o_03_basics.md
+r4h2o_04_tidyverse.md
+r4h2o_05_statistics.md
+r4h2o_06_visualise.md
+r4h2o_07_data_products.md
+r4h2o_08_cleaning.md
+r4h2o_09_customers.md
+r4h2o_10_surveys.md
+r4h2o_11_reporting.md
+r4h2o_12_time_series.md
+r4h2o_13_functions.md
+r4h2o_14_learning.md
+r4h2o_15_dashboards.md
+r4h2o_16_close.md

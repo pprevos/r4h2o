@@ -1,0 +1,2880 @@
+Sample_No,Date,Sample_Point,Town,Measure,Result,Units
+662866,2018-08-16,WA_12904,Wakefield,Turbidity,0.3,NTU
+612571,2018-08-16,SN_14788,Snake's Canyon,Turbidity,0.1,NTU
+693558,2018-08-16,SW_10554,Swadlincote,Turbidity,0.2,NTU
+639297,2018-08-16,PA_17864,Paethsmouth,Turbidity,0.1,NTU
+627538,2018-08-16,ST_10485,Strathmore,Turbidity,0.1,NTU
+622001,2018-08-15,ME_13895,Merton,THM,0.015,mg/L
+671350,2018-09-06,SW_10554,Swadlincote,THM,0.011,mg/L
+675407,2018-08-15,ME_13895,Merton,Turbidity,0.1,NTU
+682207,2018-08-16,PO_11431,Pontybridge,Turbidity,0.1,NTU
+698783,2018-08-16,SO_17872,Southwold,Turbidity,0.2,NTU
+641201,2018-08-16,BL_16870,Blancathey,Turbidity,0.3,NTU
+622387,2018-08-16,PA_17864,Paethsmouth,THM,0.028,mg/L
+674789,2018-08-16,BL_17892,Blancathey,E. coli,0,Orgs/100mL
+692855,2018-10-04,SO_15547,Southwold,Turbidity,0.2,NTU
+674202,2018-10-08,TA_15690,Tarnstead,E. coli,0,Orgs/100mL
+693725,2018-06-28,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+603933,2018-06-28,PO_14145,Pontybridge,E. coli,0,Orgs/100mL
+676030,2018-06-28,BL_10936,Blancathey,E. coli,0,Orgs/100mL
+624766,2018-06-28,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+601682,2018-06-28,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+625702,2018-06-28,BL_11116,Blancathey,E. coli,0,Orgs/100mL
+659894,2018-07-12,BL_11580,Blancathey,Turbidity,0.1,NTU
+639741,2018-07-12,SO_11069,Southwold,E. coli,0,Orgs/100mL
+600137,2018-07-12,SO_11069,Southwold,Turbidity,0.2,NTU
+661821,2018-07-12,SW_11822,Swadlincote,Turbidity,0.2,NTU
+646717,2018-07-12,PA_17864,Paethsmouth,Turbidity,0.2,NTU
+625050,2018-07-12,WA_12904,Wakefield,Turbidity,0.1,NTU
+665558,2018-11-15,BL_13422,Blancathey,Turbidity,0.2,NTU
+673727,2018-11-15,BE_11469,Bellmoral,Turbidity,0.2,NTU
+627487,2018-07-19,BL_15101,Blancathey,E. coli,0,Orgs/100mL
+635851,2018-07-19,SN_18754,Snake's Canyon,E. coli,0,Orgs/100mL
+656892,2018-07-19,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+646391,2018-07-19,PA_11946,Paethsmouth,THM,0.038,mg/L
+628596,2018-06-28,PO_16509,Pontybridge,E. coli,0,Orgs/100mL
+694984,2018-07-16,TA_11737,Tarnstead,E. coli,0,Orgs/100mL
+689200,2018-06-28,WA_13006,Wakefield,Turbidity,0.05,NTU
+674288,2018-06-28,PA_15640,Paethsmouth,Turbidity,0.2,NTU
+611348,2018-06-28,SN_18453,Snake's Canyon,E. coli,0,Orgs/100mL
+642406,2018-06-28,BE_19426,Bellmoral,E. coli,0,Orgs/100mL
+625228,2018-06-28,PO_14145,Pontybridge,THM,0.008,mg/L
+646660,2018-06-28,SO_14918,Southwold,THM,0.35546,mg/L
+663770,2018-12-31,TA_10333,Tarnstead,Turbidity,0.2,NTU
+601747,2018-03-22,PA_17864,Paethsmouth,THM,0.12,mg/L
+663815,2018-03-22,WA_15310,Wakefield,Turbidity,0.05,NTU
+602608,2018-03-22,SW_10554,Swadlincote,Turbidity,0.05,NTU
+611948,2018-03-22,PA_17864,Paethsmouth,Turbidity,0.05,NTU
+693677,2018-03-22,BE_19973,Bellmoral,THM,0.097,mg/L
+653638,2018-03-26,TA_10279,Tarnstead,Turbidity,0.05,NTU
+610333,2018-03-29,BL_11580,Blancathey,E. coli,0,Orgs/100mL
+610744,2018-03-29,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+680007,2017-11-09,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+694165,2017-11-09,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+678370,2017-11-09,PO_14943,Pontybridge,E. coli,0,Orgs/100mL
+689865,2018-03-22,SO_16944,Southwold,Turbidity,0.05,NTU
+668858,2018-03-22,BL_19934,Blancathey,THM,0.083,mg/L
+626739,2017-11-09,SO_12021,Southwold,Turbidity,0.2,NTU
+678223,2018-03-29,PO_15319,Pontybridge,E. coli,0,Orgs/100mL
+647268,2017-11-09,SW_17736,Swadlincote,Turbidity,0.3,NTU
+626188,2017-11-09,PO_15649,Pontybridge,Turbidity,0.1,NTU
+650145,2017-11-03,WA_13563,Wakefield,THM,0.007,mg/L
+651203,2017-11-09,SN_12742,Snake's Canyon,E. coli,0,Orgs/100mL
+670417,2017-11-09,PO_15319,Pontybridge,E. coli,0,Orgs/100mL
+681199,2017-11-09,BL_10936,Blancathey,E. coli,0,Orgs/100mL
+624046,2017-11-09,BE_16549,Bellmoral,E. coli,0,Orgs/100mL
+650055,2017-11-09,SN_12934,Snake's Canyon,E. coli,0,Orgs/100mL
+606061,2017-11-09,SO_12021,Southwold,E. coli,0,Orgs/100mL
+663136,2017-11-09,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+673677,2017-11-03,SW_16507,Swadlincote,THM,0.006,mg/L
+685826,2017-11-09,PO_15649,Pontybridge,E. coli,0,Orgs/100mL
+633569,2017-11-09,BL_10936,Blancathey,Turbidity,0.1,NTU
+692870,2018-04-05,BL_14280,Blancathey,E. coli,0,Orgs/100mL
+613165,2018-03-28,ME_12799,Merton,Turbidity,0.05,NTU
+605995,2018-03-29,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+691537,2018-04-03,TA_12675,Tarnstead,E. coli,0,Orgs/100mL
+643795,2018-03-28,ME_12799,Merton,THM,0.011,mg/L
+615388,2017-01-09,TA_12675,Tarnstead,E. coli,0,Orgs/100mL
+673141,2018-12-13,SO_17891,Southwold,Turbidity,0.2,NTU
+662380,2018-12-17,TA_11737,Tarnstead,E. coli,0,Orgs/100mL
+648007,2018-12-13,ST_13507,Strathmore,Turbidity,0.1,NTU
+615621,2018-09-06,ST_14594,Strathmore,Turbidity,0.2,NTU
+615534,2018-09-06,PA_15640,Paethsmouth,Turbidity,0.2,NTU
+659019,2018-09-06,BE_15184,Bellmoral,Turbidity,0.2,NTU
+668685,2018-12-13,WA_13006,Wakefield,Turbidity,0.1,NTU
+629440,2018-12-13,SN_19289,Snake's Canyon,Turbidity,0.4,NTU
+689030,2018-12-13,BL_11580,Blancathey,Turbidity,0.3,NTU
+633579,2018-12-13,SW_17736,Swadlincote,Turbidity,0.2,NTU
+644467,2018-12-13,BE_17412,Bellmoral,Turbidity,0.2,NTU
+665368,2018-08-23,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+698822,2018-10-25,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+662911,2018-10-25,SO_11438,Southwold,E. coli,0,Orgs/100mL
+620335,2018-11-15,PO_16635,Pontybridge,Turbidity,0.1,NTU
+645440,2018-10-29,TA_14330,Tarnstead,E. coli,0,Orgs/100mL
+652613,2018-10-25,PO_17652,Pontybridge,Turbidity,0.1,NTU
+629760,2018-08-13,TA_14330,Tarnstead,Turbidity,0.2,NTU
+622581,2018-08-16,BE_14753,Bellmoral,Turbidity,0.2,NTU
+683974,2018-08-20,TA_10128,Tarnstead,E. coli,0,Orgs/100mL
+615569,2018-07-19,SN_18754,Snake's Canyon,Turbidity,0.2,NTU
+653801,2018-07-19,BL_11992,Blancathey,THM,0.011,mg/L
+618394,2018-10-25,BL_16215,Blancathey,Turbidity,0.1,NTU
+615619,2018-10-25,SN_14788,Snake's Canyon,E. coli,0,Orgs/100mL
+663664,2018-07-19,PO_14952,Pontybridge,E. coli,0,Orgs/100mL
+661433,2018-07-19,ST_10188,Strathmore,THM,0.065,mg/L
+660546,2018-07-19,SW_10554,Swadlincote,THM,0.008,mg/L
+634123,2018-07-19,SO_12021,Southwold,THM,0.008,mg/L
+670883,2018-07-19,ST_10188,Strathmore,Turbidity,0.1,NTU
+612185,2018-07-23,TA_15690,Tarnstead,Turbidity,0.2,NTU
+686710,2018-08-20,TA_10128,Tarnstead,Turbidity,0.2,NTU
+632954,2018-07-23,TA_15690,Tarnstead,E. coli,0,Orgs/100mL
+684851,2018-07-12,ST_10485,Strathmore,Turbidity,0.1,NTU
+666219,2018-06-28,SO_14918,Southwold,E. coli,0,Orgs/100mL
+624924,2018-06-28,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+639303,2018-07-12,BE_11469,Bellmoral,Turbidity,0.2,NTU
+620053,2018-06-27,ME_10925,Merton,Turbidity,0.1,NTU
+648227,2018-06-28,SW_11822,Swadlincote,Turbidity,0.6,NTU
+647407,2018-06-28,BE_19426,Bellmoral,Turbidity,0.2,NTU
+654718,2018-07-04,ME_19684,Merton,E. coli,0,Orgs/100mL
+609426,2018-07-02,TA_16139,Tarnstead,Turbidity,0.2,NTU
+618057,2018-06-14,ME_13895,Merton,Turbidity,0.2,NTU
+645301,2018-12-24,WA_15310,Wakefield,Turbidity,0.2,NTU
+647099,2017-12-22,PO_15632,Pontybridge,E. coli,0,Orgs/100mL
+699738,2017-12-22,PO_18499,Pontybridge,Turbidity,0.2,NTU
+642933,2017-12-21,WA_14953,Wakefield,Turbidity,0.1,NTU
+641271,2017-12-21,SO_14918,Southwold,Turbidity,0.1,NTU
+699069,2017-12-22,PO_18499,Pontybridge,E. coli,0,Orgs/100mL
+620266,2017-12-22,ST_14594,Strathmore,Turbidity,0.2,NTU
+665567,2017-12-22,SN_18754,Snake's Canyon,Turbidity,0.2,NTU
+644739,2017-12-22,BL_14356,Blancathey,E. coli,0,Orgs/100mL
+600950,2017-12-22,BL_14356,Blancathey,Turbidity,0.2,NTU
+666847,2017-12-27,TA_14330,Tarnstead,E. coli,0,Orgs/100mL
+635200,2018-03-29,PO_14943,Pontybridge,E. coli,0,Orgs/100mL
+688047,2018-03-29,SO_15547,Southwold,E. coli,0,Orgs/100mL
+645159,2018-03-29,SN_18008,Snake's Canyon,E. coli,0,Orgs/100mL
+613108,2018-03-29,PO_15649,Pontybridge,E. coli,0,Orgs/100mL
+661403,2017-12-27,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+691187,2017-11-09,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+660515,2017-11-09,BL_11116,Blancathey,E. coli,0,Orgs/100mL
+629323,2017-12-22,BL_13051,Blancathey,E. coli,0,Orgs/100mL
+683855,2017-12-22,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+676855,2017-12-22,SW_17736,Swadlincote,Turbidity,0.3,NTU
+668527,2017-06-29,SN_12934,Snake's Canyon,Turbidity,0.05,NTU
+657616,2017-06-08,ME_16875,Merton,Turbidity,0.1,NTU
+673965,2017-06-09,ST_14594,Strathmore,Turbidity,0.1,NTU
+608858,2017-06-09,SO_11438,Southwold,Turbidity,0.2,NTU
+667230,2017-06-09,PA_15640,Paethsmouth,Turbidity,0.1,NTU
+659750,2017-01-06,BL_17892,Blancathey,Turbidity,0.2,NTU
+638408,2017-01-06,PO_17841,Pontybridge,Turbidity,0.2,NTU
+676114,2017-01-06,BE_19973,Bellmoral,Turbidity,0.2,NTU
+625825,2017-01-09,TA_12675,Tarnstead,Turbidity,0.2,NTU
+636882,2017-01-06,WA_13006,Wakefield,Turbidity,0.1,NTU
+629290,2017-01-12,SW_17736,Swadlincote,Turbidity,0.2,NTU
+667273,2017-01-12,PA_11134,Paethsmouth,Turbidity,0.2,NTU
+695032,2017-01-12,PO_14145,Pontybridge,Turbidity,0.2,NTU
+669715,2018-12-27,ME_16875,Merton,E. coli,0,Orgs/100mL
+604491,2018-12-13,PO_15649,Pontybridge,Turbidity,0.3,NTU
+616898,2018-11-22,SO_12021,Southwold,Turbidity,0.2,NTU
+658982,2018-11-22,SW_10554,Swadlincote,Turbidity,0.1,NTU
+643207,2018-08-16,BL_16215,Blancathey,E. coli,0,Orgs/100mL
+641705,2018-11-22,BE_16549,Bellmoral,Turbidity,0.1,NTU
+628956,2018-10-15,TA_10333,Tarnstead,THM,0.011,mg/L
+657457,2018-10-22,TA_17893,Tarnstead,E. coli,0,Orgs/100mL
+679906,2018-10-04,BE_12407,Bellmoral,THM,0.011,mg/L
+617188,2018-10-04,SW_17736,Swadlincote,Turbidity,0.2,NTU
+697920,2018-10-04,PO_15094,Pontybridge,Turbidity,0.3,NTU
+670736,2018-10-03,ME_12799,Merton,Turbidity,0.3,NTU
+607428,2018-10-04,WA_14953,Wakefield,Turbidity,0.2,NTU
+698465,2018-10-04,ST_13507,Strathmore,Turbidity,0.2,NTU
+626105,2018-10-04,BE_12407,Bellmoral,Turbidity,0.3,NTU
+619562,2018-10-04,SN_18754,Snake's Canyon,Turbidity,0.2,NTU
+622360,2018-12-27,PO_12557,Pontybridge,E. coli,0,Orgs/100mL
+645965,2018-06-07,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+663289,2017-12-27,PO_15094,Pontybridge,E. coli,0,Orgs/100mL
+699467,2017-12-22,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+667787,2017-06-29,BL_13422,Blancathey,Turbidity,0.1,NTU
+690210,2017-07-05,ME_17925,Merton,E. coli,0,Orgs/100mL
+649061,2017-06-30,SO_11069,Southwold,Turbidity,0.3,NTU
+697496,2017-06-30,BE_11469,Bellmoral,Turbidity,0.2,NTU
+698138,2017-12-22,PO_18768,Pontybridge,E. coli,0,Orgs/100mL
+630753,2017-06-28,ME_17886,Merton,Turbidity,0.05,NTU
+627830,2017-12-27,SN_19853,Snake's Canyon,E. coli,0,Orgs/100mL
+670658,2017-12-27,BL_15033,Blancathey,E. coli,0,Orgs/100mL
+667915,2017-12-27,BL_17970,Blancathey,E. coli,0,Orgs/100mL
+633267,2017-12-28,SO_11423,Southwold,E. coli,0,Orgs/100mL
+650013,2017-12-27,ME_10925,Merton,E. coli,0,Orgs/100mL
+631523,2017-06-29,PA_11134,Paethsmouth,Turbidity,0.05,NTU
+635402,2017-06-29,ST_14594,Strathmore,Turbidity,0.05,NTU
+620391,2017-07-06,BL_11992,Blancathey,E. coli,0,Orgs/100mL
+628408,2017-12-22,SN_18754,Snake's Canyon,E. coli,0,Orgs/100mL
+624858,2017-12-21,BE_19426,Bellmoral,Turbidity,0.2,NTU
+616676,2017-11-03,SO_11069,Southwold,Turbidity,0.1,NTU
+634720,2017-07-06,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+688764,2017-06-30,WA_15310,Wakefield,Turbidity,0.05,NTU
+696056,2017-07-06,BL_16767,Blancathey,E. coli,0,Orgs/100mL
+686153,2017-07-06,PO_15319,Pontybridge,E. coli,0,Orgs/100mL
+688201,2017-12-27,SW_10554,Swadlincote,Turbidity,0.1,NTU
+625217,2017-03-30,SN_10025,Snake's Canyon,E. coli,0,Orgs/100mL
+678681,2017-03-30,WA_15310,Wakefield,Turbidity,0.2,NTU
+681182,2017-03-30,PO_18768,Pontybridge,E. coli,0,Orgs/100mL
+697330,2017-03-30,BL_11116,Blancathey,E. coli,0,Orgs/100mL
+616358,2017-02-09,PA_15640,Paethsmouth,THM,0.034,mg/L
+639865,2017-03-30,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+676711,2017-03-30,PA_11946,Paethsmouth,Turbidity,0.1,NTU
+612114,2017-03-30,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+633899,2017-02-09,PO_13517,Pontybridge,THM,0.008,mg/L
+662262,2017-03-30,SN_10025,Snake's Canyon,Turbidity,0.2,NTU
+657396,2017-03-30,PO_15632,Pontybridge,Turbidity,0.2,NTU
+651553,2017-03-30,PO_15632,Pontybridge,E. coli,0,Orgs/100mL
+635954,2017-03-30,BE_14753,Bellmoral,E. coli,0,Orgs/100mL
+654882,2017-03-30,SO_17872,Southwold,E. coli,0,Orgs/100mL
+625472,2017-03-30,BL_11116,Blancathey,Turbidity,0.2,NTU
+674017,2017-03-30,SW_11822,Swadlincote,Turbidity,0.2,NTU
+652724,2017-03-30,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+637553,2017-03-30,SO_17872,Southwold,Turbidity,0.2,NTU
+693206,2017-03-30,BL_10936,Blancathey,E. coli,0,Orgs/100mL
+680231,2017-06-09,SW_11822,Swadlincote,Turbidity,0.1,NTU
+642699,2017-06-09,WA_13563,Wakefield,Turbidity,0.2,NTU
+608943,2017-01-19,BE_17412,Bellmoral,E. coli,0,Orgs/100mL
+681922,2017-01-19,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+680973,2017-01-19,PO_16635,Pontybridge,Turbidity,0.2,NTU
+670810,2017-01-19,SN_14788,Snake's Canyon,E. coli,0,Orgs/100mL
+696403,2017-02-02,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+643185,2017-02-02,BE_19426,Bellmoral,E. coli,0,Orgs/100mL
+614556,2017-02-02,PA_11134,Paethsmouth,Turbidity,0.2,NTU
+642811,2017-02-02,WA_12904,Wakefield,E. coli,0,Orgs/100mL
+662915,2017-02-02,BL_13422,Blancathey,Turbidity,0.2,NTU
+607450,2017-02-02,BL_13530,Blancathey,E. coli,0,Orgs/100mL
+689329,2017-02-02,PO_15094,Pontybridge,Turbidity,0.3,NTU
+675504,2017-02-02,SN_16148,Snake's Canyon,E. coli,0,Orgs/100mL
+692146,2018-12-31,TA_10333,Tarnstead,E. coli,0,Orgs/100mL
+633120,2018-12-24,BE_18354,Bellmoral,Turbidity,0.2,NTU
+637361,2018-12-27,TA_15690,Tarnstead,E. coli,0,Orgs/100mL
+677325,2018-12-27,ME_16875,Merton,Turbidity,0.2,NTU
+653213,2018-12-27,TA_15690,Tarnstead,Turbidity,0.1,NTU
+617712,2017-11-08,ME_17925,Merton,Turbidity,0.2,NTU
+641143,2017-11-09,BE_16549,Bellmoral,Turbidity,0.1,NTU
+611636,2018-11-15,SN_16148,Snake's Canyon,Turbidity,0.1,NTU
+606358,2018-11-14,ME_17886,Merton,Turbidity,0.2,NTU
+681518,2018-11-15,SO_11069,Southwold,Turbidity,0.2,NTU
+688648,2018-11-12,TA_10279,Tarnstead,THM,0.008,mg/L
+690790,2018-08-23,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+627761,2018-11-14,ME_17886,Merton,THM,0.7145,mg/L
+694654,2018-08-16,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+611109,2018-08-16,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+651746,2018-08-22,ME_16875,Merton,E. coli,0,Orgs/100mL
+613275,2018-08-23,PO_12557,Pontybridge,E. coli,0,Orgs/100mL
+664205,2018-08-16,WA_12904,Wakefield,E. coli,0,Orgs/100mL
+668999,2018-06-15,PO_17652,Pontybridge,E. coli,0,Orgs/100mL
+615303,2018-06-07,PO_15319,Pontybridge,E. coli,0,Orgs/100mL
+671051,2018-06-07,SN_18008,Snake's Canyon,E. coli,0,Orgs/100mL
+647195,2018-06-07,SW_17736,Swadlincote,THM,0.006,mg/L
+647539,2018-06-07,BE_17412,Bellmoral,E. coli,0,Orgs/100mL
+631341,2018-06-07,BL_11580,Blancathey,E. coli,0,Orgs/100mL
+631002,2018-06-07,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+690439,2018-10-18,BE_14753,Bellmoral,Turbidity,0.2,NTU
+634332,2018-10-24,ME_16875,Merton,E. coli,0,Orgs/100mL
+647504,2017-11-09,ST_10485,Strathmore,Turbidity,0.2,NTU
+677180,2017-11-03,BL_14280,Blancathey,Turbidity,0.2,NTU
+624959,2017-11-03,BL_14280,Blancathey,E. coli,0,Orgs/100mL
+679036,2017-11-03,PA_11134,Paethsmouth,Turbidity,0.1,NTU
+606805,2017-11-02,ME_17886,Merton,Turbidity,0.1,NTU
+679356,2017-11-03,SO_11069,Southwold,E. coli,0,Orgs/100mL
+608824,2017-11-03,PO_13324,Pontybridge,E. coli,0,Orgs/100mL
+633777,2017-11-02,ME_17886,Merton,E. coli,0,Orgs/100mL
+627068,2017-11-03,PO_13517,Pontybridge,Turbidity,0.1,NTU
+682077,2018-06-07,SN_14788,Snake's Canyon,Turbidity,0.1,NTU
+694138,2018-03-22,BE_19973,Bellmoral,Turbidity,0.05,NTU
+692177,2018-03-22,SN_10025,Snake's Canyon,THM,0.1,mg/L
+689091,2018-03-22,ST_13507,Strathmore,Turbidity,0.05,NTU
+640509,2018-03-26,TA_10279,Tarnstead,E. coli,0,Orgs/100mL
+633864,2018-03-22,SN_10025,Snake's Canyon,Turbidity,0.05,NTU
+654341,2017-11-03,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+691717,2017-11-03,SN_18008,Snake's Canyon,Turbidity,0.2,NTU
+653615,2017-11-03,SN_18008,Snake's Canyon,E. coli,0,Orgs/100mL
+664210,2017-11-03,BE_11469,Bellmoral,Turbidity,0.1,NTU
+688015,2017-11-03,ST_14594,Strathmore,Turbidity,0.1,NTU
+666405,2017-11-03,SW_16507,Swadlincote,Turbidity,0.1,NTU
+670579,2017-11-03,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+605681,2017-11-03,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+670357,2017-11-03,PO_13517,Pontybridge,E. coli,0,Orgs/100mL
+648406,2018-01-15,TA_12675,Tarnstead,Turbidity,0.1,NTU
+612290,2018-01-17,ME_16639,Merton,E. coli,0,Orgs/100mL
+660786,2018-01-15,TA_12675,Tarnstead,THM,0.007,mg/L
+682938,2018-12-24,SN_10025,Snake's Canyon,E. coli,0,Orgs/100mL
+627623,2018-01-17,ME_16639,Merton,Turbidity,0.1,NTU
+620193,2017-01-05,SW_11822,Swadlincote,Turbidity,0.2,NTU
+658790,2017-06-09,SN_18008,Snake's Canyon,Turbidity,0.2,NTU
+645696,2017-01-19,SN_10025,Snake's Canyon,E. coli,0,Orgs/100mL
+663257,2017-01-19,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+682616,2017-01-18,ME_16639,Merton,Turbidity,0.2,NTU
+686944,2017-01-19,SO_15547,Southwold,E. coli,0,Orgs/100mL
+673857,2017-01-19,WA_15310,Wakefield,Turbidity,0.2,NTU
+685944,2017-01-19,BL_10936,Blancathey,Turbidity,0.2,NTU
+683852,2017-01-19,ST_14594,Strathmore,Turbidity,0.2,NTU
+690215,2017-01-19,BL_10936,Blancathey,THM,0.01,mg/L
+620752,2017-01-19,ST_14594,Strathmore,THM,0.057,mg/L
+637490,2017-01-23,TA_16139,Tarnstead,E. coli,0,Orgs/100mL
+692679,2017-01-19,SO_15547,Southwold,Turbidity,0.2,NTU
+616983,2017-01-19,PO_16635,Pontybridge,E. coli,0,Orgs/100mL
+625376,2018-01-05,PO_18009,Pontybridge,E. coli,0,Orgs/100mL
+621533,2017-05-22,TA_10279,Tarnstead,Turbidity,0.2,NTU
+687318,2017-01-19,BL_17003,Blancathey,E. coli,0,Orgs/100mL
+672070,2017-01-19,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+648428,2017-01-19,PO_19919,Pontybridge,E. coli,0,Orgs/100mL
+650940,2018-12-13,BL_11580,Blancathey,THM,0.008,mg/L
+638064,2018-09-06,BL_10936,Blancathey,Turbidity,0.2,NTU
+688571,2018-11-22,ST_14962,Strathmore,Turbidity,0.05,NTU
+655907,2018-10-25,SW_11822,Swadlincote,Turbidity,0.2,NTU
+632470,2018-10-18,ST_14962,Strathmore,Turbidity,7.34,NTU
+622651,2018-10-25,SW_11822,Swadlincote,THM,0.007,mg/L
+692126,2018-10-18,BL_17892,Blancathey,Turbidity,0.3,NTU
+671489,2018-10-18,PA_14989,Paethsmouth,Turbidity,0.2,NTU
+632624,2018-10-18,PO_11431,Pontybridge,Turbidity,0.1,NTU
+613778,2018-10-17,ME_13895,Merton,Turbidity,0.2,NTU
+644782,2018-10-18,SO_17872,Southwold,Turbidity,0.2,NTU
+652981,2018-10-18,SN_10025,Snake's Canyon,Turbidity,0.3,NTU
+654422,2018-11-22,SN_11519,Snake's Canyon,Turbidity,0.1,NTU
+620104,2018-08-23,PO_17043,Pontybridge,E. coli,0,Orgs/100mL
+636746,2018-10-18,SW_16507,Swadlincote,Turbidity,0.2,NTU
+662889,2018-10-18,WA_13006,Wakefield,Turbidity,0.2,NTU
+608865,2018-10-18,ST_14962,Strathmore,THM,0.09,mg/L
+620586,2018-10-04,WA_14953,Wakefield,THM,0.061,mg/L
+617742,2018-10-04,PA_11134,Paethsmouth,Turbidity,0.2,NTU
+688722,2018-10-04,BL_14356,Blancathey,Turbidity,0.2,NTU
+647498,2018-06-04,TA_10128,Tarnstead,Turbidity,0.2,NTU
+699810,2018-06-06,ME_17256,Merton,E. coli,0,Orgs/100mL
+617071,2018-06-07,PO_14943,Pontybridge,E. coli,0,Orgs/100mL
+639030,2018-06-07,BE_17412,Bellmoral,Turbidity,0.1,NTU
+638555,2018-06-07,BL_16870,Blancathey,Turbidity,0.1,NTU
+678998,2018-06-07,SO_17891,Southwold,Turbidity,0.3,NTU
+639851,2018-06-07,ST_10188,Strathmore,Turbidity,0.2,NTU
+609176,2018-06-12,TA_10279,Tarnstead,E. coli,0,Orgs/100mL
+673453,2018-03-21,ME_16639,Merton,Turbidity,0.05,NTU
+646241,2018-03-22,BL_19934,Blancathey,Turbidity,0.05,NTU
+600644,2018-06-07,BL_16870,Blancathey,E. coli,0,Orgs/100mL
+680371,2018-06-07,BL_16215,Blancathey,E. coli,0,Orgs/100mL
+614506,2018-06-08,ME_17256,Merton,Turbidity,0.5,NTU
+626985,2018-06-07,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+621139,2018-06-07,SO_17891,Southwold,E. coli,0,Orgs/100mL
+615346,2018-06-07,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+609908,2018-06-07,SN_14788,Snake's Canyon,E. coli,0,Orgs/100mL
+691760,2018-06-07,SW_17736,Swadlincote,Turbidity,0.3,NTU
+659586,2018-06-07,WA_13006,Wakefield,Turbidity,0.2,NTU
+609667,2018-06-07,PO_14943,Pontybridge,Turbidity,0.2,NTU
+652403,2018-06-07,PA_17864,Paethsmouth,Turbidity,0.1,NTU
+647397,2018-03-22,ST_13507,Strathmore,THM,0.15,mg/L
+628016,2017-07-06,PO_18483,Pontybridge,E. coli,0,Orgs/100mL
+628865,2017-01-03,TA_10279,Tarnstead,Turbidity,0.2,NTU
+693784,2017-01-06,BE_19973,Bellmoral,E. coli,0,Orgs/100mL
+682381,2017-01-05,ME_10925,Merton,Turbidity,0.2,NTU
+639884,2017-01-04,PA_11946,Paethsmouth,Turbidity,0.1,NTU
+633296,2017-07-06,SN_18453,Snake's Canyon,E. coli,0,Orgs/100mL
+693472,2017-01-06,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+630786,2017-11-03,WA_13563,Wakefield,Turbidity,0.1,NTU
+657488,2017-11-03,BL_14206,Blancathey,E. coli,0,Orgs/100mL
+656804,2017-11-03,BL_17003,Blancathey,E. coli,0,Orgs/100mL
+698236,2018-12-24,BL_16215,Blancathey,E. coli,0,Orgs/100mL
+661873,2017-01-06,PO_17841,Pontybridge,E. coli,0,Orgs/100mL
+698912,2018-12-20,SO_17872,Southwold,THM,0.006,mg/L
+639748,2017-02-15,ME_13895,Merton,E. coli,0,Orgs/100mL
+672240,2017-12-28,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+692833,2017-12-27,PO_15094,Pontybridge,Turbidity,0.3,NTU
+696792,2017-12-28,BE_15184,Bellmoral,E. coli,0,Orgs/100mL
+691883,2017-02-09,ST_10188,Strathmore,THM,0.07,mg/L
+601657,2017-01-11,ME_17256,Merton,Turbidity,0.2,NTU
+637215,2017-01-12,PO_14145,Pontybridge,E. coli,0,Orgs/100mL
+691363,2017-02-16,SN_11855,Snake's Canyon,E. coli,0,Orgs/100mL
+659705,2017-02-16,BL_13422,Blancathey,Turbidity,0.1,NTU
+674401,2017-02-16,BL_13422,Blancathey,E. coli,0,Orgs/100mL
+656862,2017-02-16,PO_15649,Pontybridge,Turbidity,0.2,NTU
+621648,2017-02-16,WA_14953,Wakefield,Turbidity,0.1,NTU
+609879,2017-01-12,BE_12407,Bellmoral,Turbidity,0.2,NTU
+631401,2017-01-12,SO_17891,Southwold,Turbidity,0.2,NTU
+622877,2017-04-13,PO_15094,Pontybridge,THM,0.005,mg/L
+667824,2017-04-21,SN_11519,Snake's Canyon,E. coli,0,Orgs/100mL
+619930,2017-06-22,BE_15184,Bellmoral,E. coli,0,Orgs/100mL
+676804,2017-02-09,SN_12934,Snake's Canyon,THM,0.006,mg/L
+663764,2017-02-09,SO_14918,Southwold,THM,0.006,mg/L
+635286,2017-02-08,ME_17925,Merton,E. coli,0,Orgs/100mL
+672385,2018-08-16,SN_18008,Snake's Canyon,E. coli,0,Orgs/100mL
+609702,2018-08-16,PO_11431,Pontybridge,E. coli,0,Orgs/100mL
+652458,2018-08-23,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+695172,2018-12-13,PA_11134,Paethsmouth,Turbidity,0.3,NTU
+622445,2018-09-06,SW_10554,Swadlincote,Turbidity,0.2,NTU
+653969,2018-09-06,WA_15310,Wakefield,THM,0.054,mg/L
+614771,2017-11-09,WA_14953,Wakefield,Turbidity,0.1,NTU
+634039,2018-12-13,BE_17412,Bellmoral,THM,0.009,mg/L
+602595,2018-12-13,ST_13507,Strathmore,THM,0.058,mg/L
+689719,2018-07-02,TA_16139,Tarnstead,E. coli,0,Orgs/100mL
+611817,2018-06-15,BE_14753,Bellmoral,E. coli,0,Orgs/100mL
+665711,2018-06-15,PO_11431,Pontybridge,E. coli,0,Orgs/100mL
+601257,2018-06-28,BL_10936,Blancathey,Turbidity,0.3,NTU
+665740,2018-06-28,PO_14145,Pontybridge,Turbidity,0.1,NTU
+637562,2018-06-15,BL_14280,Blancathey,E. coli,0,Orgs/100mL
+657134,2018-06-15,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+678650,2018-06-15,SO_17872,Southwold,E. coli,0,Orgs/100mL
+628931,2018-06-15,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+678845,2018-07-12,BE_11469,Bellmoral,THM,0.013,mg/L
+618503,2018-07-12,SN_19866,Snake's Canyon,Turbidity,0.1,NTU
+693110,2018-06-15,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+619071,2018-06-15,SN_12742,Snake's Canyon,E. coli,0,Orgs/100mL
+696501,2018-06-18,TA_12675,Tarnstead,E. coli,0,Orgs/100mL
+684478,2017-11-03,BE_11469,Bellmoral,E. coli,0,Orgs/100mL
+642493,2017-11-03,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+653286,2017-11-06,TA_10696,Tarnstead,E. coli,0,Orgs/100mL
+628574,2017-11-03,PO_18680,Pontybridge,E. coli,0,Orgs/100mL
+660482,2017-11-03,SN_14788,Snake's Canyon,E. coli,0,Orgs/100mL
+688760,2018-12-24,PO_17652,Pontybridge,E. coli,0,Orgs/100mL
+676199,2018-12-24,PA_14989,Paethsmouth,E. coli,0,Orgs/100mL
+640083,2018-12-24,BE_18354,Bellmoral,E. coli,0,Orgs/100mL
+611222,2018-12-24,PA_14989,Paethsmouth,Turbidity,0.2,NTU
+607779,2018-12-24,SN_10025,Snake's Canyon,Turbidity,0.2,NTU
+698592,2018-12-24,PO_17652,Pontybridge,Turbidity,0.3,NTU
+623464,2017-06-29,BL_13530,Blancathey,Turbidity,0.05,NTU
+602967,2017-07-03,TA_15690,Tarnstead,Turbidity,0.05,NTU
+663168,2017-07-06,BL_19479,Blancathey,E. coli,0,Orgs/100mL
+658554,2018-01-05,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+651120,2018-01-05,SO_11069,Southwold,Turbidity,0.2,NTU
+601223,2018-01-05,BE_11469,Bellmoral,Turbidity,0.2,NTU
+664555,2017-12-27,ME_10925,Merton,Turbidity,0.2,NTU
+648452,2018-01-05,BL_19934,Blancathey,E. coli,0,Orgs/100mL
+668773,2018-01-05,SO_11069,Southwold,E. coli,0,Orgs/100mL
+624972,2018-01-04,ME_17886,Merton,E. coli,0,Orgs/100mL
+677453,2017-12-27,TA_14330,Tarnstead,Turbidity,0.2,NTU
+697580,2017-12-27,BL_17970,Blancathey,Turbidity,0.2,NTU
+641161,2017-01-06,SO_16944,Southwold,E. coli,0,Orgs/100mL
+615735,2017-01-05,SN_19853,Snake's Canyon,Turbidity,0.2,NTU
+610836,2017-01-11,ME_17256,Merton,E. coli,0,Orgs/100mL
+687588,2017-01-06,SO_16944,Southwold,Turbidity,0.2,NTU
+600697,2017-06-22,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+686049,2017-06-22,SO_11423,Southwold,E. coli,0,Orgs/100mL
+677235,2017-05-24,ME_17256,Merton,E. coli,0,Orgs/100mL
+639591,2017-05-22,TA_10279,Tarnstead,THM,0.005,mg/L
+618931,2017-03-30,BE_14753,Bellmoral,Turbidity,0.2,NTU
+622442,2017-03-30,ST_10188,Strathmore,Turbidity,0.1,NTU
+642329,2017-03-30,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+645192,2017-02-16,PO_15319,Pontybridge,E. coli,0,Orgs/100mL
+618353,2017-02-16,SN_18453,Snake's Canyon,E. coli,0,Orgs/100mL
+691229,2017-02-16,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+645358,2017-02-16,BL_15101,Blancathey,E. coli,0,Orgs/100mL
+633702,2017-02-16,BE_11469,Bellmoral,E. coli,0,Orgs/100mL
+644107,2017-02-16,BE_11469,Bellmoral,Turbidity,0.1,NTU
+671117,2017-02-09,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+648856,2017-02-09,SN_12934,Snake's Canyon,E. coli,0,Orgs/100mL
+661558,2017-02-09,SN_11519,Snake's Canyon,E. coli,0,Orgs/100mL
+649174,2017-02-09,PO_13324,Pontybridge,E. coli,0,Orgs/100mL
+683591,2017-02-09,BL_19479,Blancathey,E. coli,0,Orgs/100mL
+685713,2017-02-09,BE_18354,Bellmoral,E. coli,0,Orgs/100mL
+656475,2017-02-09,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+642427,2017-02-09,PO_18680,Pontybridge,E. coli,0,Orgs/100mL
+636030,2017-07-14,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+652599,2017-01-27,BE_14753,Bellmoral,Turbidity,0.2,NTU
+674205,2018-12-28,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+676643,2018-12-28,SW_16507,Swadlincote,Turbidity,0.1,NTU
+613803,2017-06-09,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+600407,2017-06-09,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+641005,2017-06-09,BL_14280,Blancathey,Turbidity,0.2,NTU
+643457,2017-06-09,BE_19426,Bellmoral,Turbidity,0.1,NTU
+653304,2017-06-09,PO_18768,Pontybridge,Turbidity,5.72,NTU
+645465,2017-06-13,TA_16139,Tarnstead,E. coli,0,Orgs/100mL
+654425,2017-12-22,PA_11134,Paethsmouth,Turbidity,0.1,NTU
+640112,2017-12-22,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+623577,2018-01-02,TA_10128,Tarnstead,Turbidity,0.1,NTU
+618519,2017-07-03,TA_15690,Tarnstead,E. coli,0,Orgs/100mL
+610579,2017-06-29,PO_15649,Pontybridge,Turbidity,0.05,NTU
+669029,2018-01-05,PA_11946,Paethsmouth,Turbidity,0.1,NTU
+658098,2017-06-19,TA_11113,Tarnstead,Turbidity,0.2,NTU
+619427,2017-06-23,BL_15845,Blancathey,E. coli,0,Orgs/100mL
+639924,2017-06-23,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+612961,2017-06-23,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+621688,2017-06-23,BL_13051,Blancathey,E. coli,0,Orgs/100mL
+635368,2017-06-23,SN_16148,Snake's Canyon,E. coli,0,Orgs/100mL
+634687,2017-06-23,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+667194,2017-06-23,PO_18680,Pontybridge,E. coli,0,Orgs/100mL
+621601,2017-06-22,BE_15184,Bellmoral,THM,0.003,mg/L
+644897,2017-06-23,PO_13324,Pontybridge,E. coli,0,Orgs/100mL
+654387,2017-02-13,TA_15690,Tarnstead,Turbidity,0.2,NTU
+632851,2017-02-16,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+639478,2017-02-16,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+649185,2017-02-15,ME_13895,Merton,Turbidity,0.2,NTU
+620077,2017-02-16,SO_11423,Southwold,E. coli,0,Orgs/100mL
+677432,2017-02-16,PO_14943,Pontybridge,E. coli,0,Orgs/100mL
+662840,2017-02-16,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+617955,2017-01-19,BL_10936,Blancathey,E. coli,0,Orgs/100mL
+652992,2017-01-19,BE_17412,Bellmoral,Turbidity,0.3,NTU
+646079,2017-02-16,PO_15649,Pontybridge,E. coli,0,Orgs/100mL
+621947,2017-01-12,WA_14953,Wakefield,Turbidity,0.2,NTU
+678592,2017-01-12,SN_11496,Snake's Canyon,Turbidity,0.2,NTU
+666526,2017-01-12,SN_11496,Snake's Canyon,E. coli,0,Orgs/100mL
+680273,2017-01-12,SN_18008,Snake's Canyon,E. coli,0,Orgs/100mL
+624538,2017-01-12,BL_11116,Blancathey,E. coli,0,Orgs/100mL
+616144,2017-01-18,ME_16639,Merton,E. coli,0,Orgs/100mL
+633857,2017-01-12,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+675155,2017-01-12,PO_16509,Pontybridge,E. coli,0,Orgs/100mL
+669226,2017-01-12,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+691931,2017-01-12,BE_12407,Bellmoral,E. coli,0,Orgs/100mL
+607592,2017-01-19,SN_10025,Snake's Canyon,Turbidity,0.3,NTU
+647940,2017-01-12,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+606867,2017-01-12,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+659963,2017-02-02,WA_12904,Wakefield,Turbidity,0.2,NTU
+630517,2017-02-02,BL_13422,Blancathey,E. coli,0,Orgs/100mL
+609715,2017-01-19,SW_16507,Swadlincote,Turbidity,0.2,NTU
+682082,2017-02-09,WA_13006,Wakefield,THM,0.047,mg/L
+656115,2017-02-09,SW_10554,Swadlincote,THM,0.006,mg/L
+652414,2017-01-27,SW_11822,Swadlincote,THM,0.005,mg/L
+659231,2017-02-02,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+605326,2017-07-14,SN_11855,Snake's Canyon,E. coli,0,Orgs/100mL
+620947,2017-02-02,SO_11438,Southwold,E. coli,0,Orgs/100mL
+665529,2017-02-02,SO_11438,Southwold,Turbidity,0.2,NTU
+663428,2017-07-14,BE_19973,Bellmoral,E. coli,0,Orgs/100mL
+687711,2017-02-01,ME_17886,Merton,Turbidity,0.2,NTU
+675030,2017-07-14,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+654893,2017-07-14,PO_17652,Pontybridge,E. coli,0,Orgs/100mL
+610931,2017-07-14,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+666200,2017-01-27,WA_13563,Wakefield,THM,0.057,mg/L
+676797,2017-01-30,TA_11113,Tarnstead,Turbidity,0.2,NTU
+632303,2017-01-27,BE_14753,Bellmoral,THM,0.008,mg/L
+661852,2017-02-02,SW_11822,Swadlincote,Turbidity,0.2,NTU
+652282,2017-07-14,BL_15101,Blancathey,E. coli,0,Orgs/100mL
+624845,2017-07-14,PO_12557,Pontybridge,E. coli,0,Orgs/100mL
+656768,2017-05-11,ST_13507,Strathmore,Turbidity,8.25,NTU
+692268,2017-05-11,SO_16944,Southwold,THM,0.006,mg/L
+658717,2017-05-11,SN_19548,Snake's Canyon,Turbidity,0.2,NTU
+698623,2017-05-11,BL_15552,Blancathey,Turbidity,0.2,NTU
+644519,2017-05-11,PO_17652,Pontybridge,Turbidity,0.1,NTU
+625937,2017-04-07,PA_11134,Paethsmouth,Turbidity,0.3,NTU
+637615,2017-04-10,TA_11113,Tarnstead,E. coli,0,Orgs/100mL
+685545,2017-04-07,ST_13507,Strathmore,Turbidity,0.1,NTU
+667523,2017-04-11,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+635746,2018-04-09,TA_10696,Tarnstead,E. coli,0,Orgs/100mL
+602649,2017-04-21,SN_12934,Snake's Canyon,E. coli,0,Orgs/100mL
+612641,2017-04-21,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+687201,2017-04-21,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+688995,2017-04-21,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+691971,2017-03-20,TA_12675,Tarnstead,E. coli,0,Orgs/100mL
+603459,2017-03-17,PO_16509,Pontybridge,E. coli,0,Orgs/100mL
+694874,2017-03-17,PO_14145,Pontybridge,E. coli,0,Orgs/100mL
+679720,2017-03-17,BE_12407,Bellmoral,E. coli,0,Orgs/100mL
+659665,2017-03-17,BE_12407,Bellmoral,Turbidity,0.2,NTU
+676500,2017-03-17,BL_17892,Blancathey,E. coli,0,Orgs/100mL
+625899,2017-03-16,ME_17256,Merton,Turbidity,0.2,NTU
+681173,2017-03-17,SW_17736,Swadlincote,Turbidity,0.3,NTU
+680642,2017-03-17,PO_18499,Pontybridge,Turbidity,0.2,NTU
+644611,2017-03-17,SN_19853,Snake's Canyon,Turbidity,0.3,NTU
+633213,2017-03-17,PA_17864,Paethsmouth,Turbidity,0.2,NTU
+691639,2017-03-17,WA_12904,Wakefield,Turbidity,0.1,NTU
+632125,2017-06-19,TA_11113,Tarnstead,E. coli,0,Orgs/100mL
+633368,2017-06-16,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+639981,2017-06-16,SN_12742,Snake's Canyon,E. coli,0,Orgs/100mL
+673304,2017-06-16,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+678412,2017-06-16,SN_14788,Snake's Canyon,E. coli,0,Orgs/100mL
+639105,2017-06-16,SN_14788,Snake's Canyon,Turbidity,0.2,NTU
+664686,2017-06-16,PA_11134,Paethsmouth,Turbidity,0.1,NTU
+630024,2017-06-09,SN_18008,Snake's Canyon,THM,0.005,mg/L
+663466,2017-03-17,BL_11580,Blancathey,Turbidity,0.3,NTU
+657267,2017-02-23,ST_10188,Strathmore,Turbidity,0.2,NTU
+689694,2017-02-23,WA_15310,Wakefield,Turbidity,0.1,NTU
+650504,2017-02-23,PO_11431,Pontybridge,Turbidity,0.2,NTU
+662810,2017-02-23,SN_19548,Snake's Canyon,Turbidity,0.2,NTU
+640177,2017-06-21,ME_10925,Merton,E. coli,0,Orgs/100mL
+639763,2017-06-16,BL_11116,Blancathey,E. coli,0,Orgs/100mL
+603206,2017-06-16,BL_11116,Blancathey,Turbidity,0.1,NTU
+697542,2017-06-09,PO_18768,Pontybridge,THM,0.006,mg/L
+692485,2017-03-06,TA_14330,Tarnstead,Turbidity,0.2,NTU
+613377,2017-03-17,ST_10188,Strathmore,Turbidity,0.1,NTU
+636638,2017-03-17,SO_17891,Southwold,Turbidity,0.3,NTU
+675018,2017-02-23,BE_15184,Bellmoral,Turbidity,0.1,NTU
+671026,2017-01-04,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+651852,2017-01-05,ME_10925,Merton,E. coli,0,Orgs/100mL
+695850,2017-01-03,TA_10279,Tarnstead,E. coli,0,Orgs/100mL
+672905,2017-01-06,BL_17892,Blancathey,E. coli,0,Orgs/100mL
+618100,2017-01-04,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+627852,2017-01-04,ST_13507,Strathmore,Turbidity,0.1,NTU
+667934,2017-01-05,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+643731,2017-02-23,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+637666,2017-02-23,BL_14356,Blancathey,E. coli,0,Orgs/100mL
+664062,2017-02-23,PO_11431,Pontybridge,E. coli,0,Orgs/100mL
+672665,2017-02-22,ME_12799,Merton,Turbidity,0.2,NTU
+698988,2017-02-23,SO_11069,Southwold,E. coli,0,Orgs/100mL
+656887,2017-02-23,SN_19548,Snake's Canyon,E. coli,0,Orgs/100mL
+609396,2017-03-02,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+632249,2017-02-27,TA_17893,Tarnstead,Turbidity,0.2,NTU
+605489,2017-03-02,PO_12557,Pontybridge,E. coli,2,Orgs/100mL
+653442,2017-03-03,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+611280,2017-03-03,SO_12021,Southwold,E. coli,0,Orgs/100mL
+683812,2017-03-03,SO_12021,Southwold,Turbidity,0.2,NTU
+699035,2017-03-02,BL_15033,Blancathey,E. coli,0,Orgs/100mL
+641089,2017-03-09,BE_19973,Bellmoral,E. coli,0,Orgs/100mL
+661000,2017-03-09,BL_17970,Blancathey,Turbidity,0.2,NTU
+696576,2017-03-09,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+603166,2017-03-09,PO_19646,Pontybridge,E. coli,0,Orgs/100mL
+606672,2017-03-09,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+672403,2017-03-09,SN_19866,Snake's Canyon,E. coli,0,Orgs/100mL
+623659,2017-03-17,SN_11496,Snake's Canyon,E. coli,0,Orgs/100mL
+673218,2017-03-09,BL_19934,Blancathey,E. coli,0,Orgs/100mL
+682214,2017-03-09,SW_16507,Swadlincote,Turbidity,0.2,NTU
+692725,2017-03-09,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+694121,2017-03-09,PO_17841,Pontybridge,E. coli,0,Orgs/100mL
+607369,2017-03-09,SN_19866,Snake's Canyon,Turbidity,0.2,NTU
+618670,2017-03-17,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+659085,2017-03-17,WA_12904,Wakefield,E. coli,0,Orgs/100mL
+607250,2017-03-17,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+608495,2017-03-17,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+679342,2017-01-16,TA_10696,Tarnstead,E. coli,0,Orgs/100mL
+688207,2017-01-18,ME_16639,Merton,THM,0.009,mg/L
+693599,2017-01-12,BL_11116,Blancathey,Turbidity,0.2,NTU
+697606,2017-01-12,PA_11134,Paethsmouth,THM,0.04,mg/L
+633232,2017-01-12,SO_17891,Southwold,THM,0.007,mg/L
+603635,2017-01-12,ST_10485,Strathmore,Turbidity,0.1,NTU
+649365,2017-05-18,SO_15547,Southwold,Turbidity,0.1,NTU
+689401,2017-05-18,SN_19866,Snake's Canyon,Turbidity,0.1,NTU
+646234,2017-05-18,BL_15033,Blancathey,THM,0.005,mg/L
+627343,2017-05-18,ST_14594,Strathmore,THM,0.044,mg/L
+638974,2017-05-16,TA_14330,Tarnstead,Turbidity,0.2,NTU
+619302,2017-05-18,PO_19646,Pontybridge,Turbidity,0.1,NTU
+651656,2017-05-18,BE_12407,Bellmoral,Turbidity,0.1,NTU
+663250,2017-05-18,WA_13006,Wakefield,Turbidity,0.1,NTU
+695719,2017-05-18,PA_15640,Paethsmouth,Turbidity,0.1,NTU
+641188,2017-02-02,BE_19426,Bellmoral,Turbidity,0.3,NTU
+651514,2017-02-01,ME_17886,Merton,E. coli,0,Orgs/100mL
+668819,2017-05-22,TA_10279,Tarnstead,E. coli,0,Orgs/100mL
+687832,2017-02-02,PO_15094,Pontybridge,E. coli,0,Orgs/100mL
+677944,2017-06-22,WA_13006,Wakefield,THM,0.05,mg/L
+688902,2017-06-26,TA_11737,Tarnstead,E. coli,0,Orgs/100mL
+653981,2017-01-12,SO_17891,Southwold,E. coli,0,Orgs/100mL
+687235,2017-02-09,ST_10188,Strathmore,Turbidity,0.2,NTU
+685463,2017-04-21,PO_15649,Pontybridge,E. coli,0,Orgs/100mL
+608256,2017-02-06,TA_11737,Tarnstead,E. coli,0,Orgs/100mL
+605781,2017-02-09,PO_13517,Pontybridge,Turbidity,0.2,NTU
+682343,2017-02-09,BE_18354,Bellmoral,Turbidity,0.2,NTU
+639546,2017-02-08,ME_17925,Merton,Turbidity,0.2,NTU
+625422,2017-02-09,PA_15640,Paethsmouth,Turbidity,0.2,NTU
+614975,2017-02-09,SW_10554,Swadlincote,Turbidity,0.3,NTU
+641881,2017-02-09,SO_14918,Southwold,E. coli,0,Orgs/100mL
+693266,2017-02-09,BL_16767,Blancathey,E. coli,0,Orgs/100mL
+621098,2017-02-09,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+663328,2017-02-13,TA_15690,Tarnstead,E. coli,0,Orgs/100mL
+685320,2017-02-09,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+615535,2017-05-10,ME_10925,Merton,Turbidity,0.2,NTU
+666464,2017-05-11,WA_14953,Wakefield,Turbidity,0.1,NTU
+655212,2017-05-11,PA_11946,Paethsmouth,Turbidity,0.1,NTU
+642812,2017-05-11,SO_16944,Southwold,Turbidity,0.1,NTU
+628639,2017-05-11,SN_19548,Snake's Canyon,THM,0.005,mg/L
+613036,2017-05-11,SW_16507,Swadlincote,Turbidity,0.2,NTU
+667054,2017-05-11,PO_17652,Pontybridge,THM,0.006,mg/L
+637854,2017-05-11,BE_19973,Bellmoral,Turbidity,0.2,NTU
+673457,2017-01-30,TA_11113,Tarnstead,E. coli,0,Orgs/100mL
+640709,2017-06-19,TA_11113,Tarnstead,THM,0.005,mg/L
+643997,2017-06-16,ST_10485,Strathmore,THM,0.041,mg/L
+610891,2017-02-20,TA_10333,Tarnstead,Turbidity,0.2,NTU
+662925,2017-08-31,BE_11469,Bellmoral,E. coli,0,Orgs/100mL
+672573,2017-04-18,TA_11737,Tarnstead,Turbidity,0.1,NTU
+603897,2017-07-20,PA_11134,Paethsmouth,THM,0.034,mg/L
+613892,2017-08-03,ST_10485,Strathmore,Turbidity,7.11,NTU
+658501,2017-08-03,SW_11822,Swadlincote,Turbidity,0.05,NTU
+675887,2017-07-26,ME_17256,Merton,E. coli,0,Orgs/100mL
+654394,2017-07-20,SN_19289,Snake's Canyon,THM,0.006,mg/L
+697017,2017-02-16,SW_16507,Swadlincote,Turbidity,0.1,NTU
+628996,2017-02-20,TA_10333,Tarnstead,E. coli,0,Orgs/100mL
+605171,2017-08-03,PA_17864,Paethsmouth,Turbidity,0.05,NTU
+690991,2017-08-07,TA_10279,Tarnstead,E. coli,0,Orgs/100mL
+645990,2017-03-09,PO_17043,Pontybridge,E. coli,0,Orgs/100mL
+608271,2017-03-09,ST_13507,Strathmore,Turbidity,0.1,NTU
+658974,2017-03-09,BL_16870,Blancathey,E. coli,0,Orgs/100mL
+659153,2017-02-23,BL_15552,Blancathey,E. coli,0,Orgs/100mL
+623033,2017-02-23,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+681440,2017-12-22,BL_14356,Blancathey,THM,0.007,mg/L
+623791,2017-12-28,SO_11423,Southwold,Turbidity,0.2,NTU
+602741,2017-12-28,SO_11423,Southwold,THM,0.76344,mg/L
+653651,2017-12-29,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+615395,2017-12-22,ST_14594,Strathmore,THM,0.043,mg/L
+609323,2017-12-22,PA_11134,Paethsmouth,THM,0.038,mg/L
+660246,2017-12-27,SN_19853,Snake's Canyon,THM,0.006,mg/L
+624957,2017-12-29,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+650617,2017-12-29,PA_15640,Paethsmouth,Turbidity,0.2,NTU
+656870,2017-12-27,PO_15094,Pontybridge,THM,0.006,mg/L
+680041,2017-04-06,SO_11438,Southwold,Turbidity,0.2,NTU
+638153,2017-04-07,SN_14788,Snake's Canyon,E. coli,0,Orgs/100mL
+646055,2017-04-07,PO_14952,Pontybridge,E. coli,0,Orgs/100mL
+621422,2017-01-19,PO_15632,Pontybridge,E. coli,0,Orgs/100mL
+604798,2017-04-13,SN_12742,Snake's Canyon,THM,0.004,mg/L
+671693,2017-01-12,SN_11496,Snake's Canyon,THM,0.006,mg/L
+612191,2017-01-12,BL_14280,Blancathey,E. coli,0,Orgs/100mL
+626690,2017-02-06,TA_11737,Tarnstead,Turbidity,0.2,NTU
+665743,2017-02-09,BL_16767,Blancathey,Turbidity,0.2,NTU
+687795,2017-02-09,SN_12934,Snake's Canyon,Turbidity,0.2,NTU
+653606,2017-02-09,SO_14918,Southwold,Turbidity,0.4,NTU
+623279,2017-02-09,WA_13006,Wakefield,Turbidity,0.2,NTU
+609024,2017-01-27,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+668381,2017-01-27,BE_14753,Bellmoral,E. coli,0,Orgs/100mL
+660758,2017-01-23,TA_16139,Tarnstead,Turbidity,0.2,NTU
+624545,2017-07-14,SN_19548,Snake's Canyon,E. coli,0,Orgs/100mL
+695607,2017-02-16,BL_13422,Blancathey,THM,0.009,mg/L
+628770,2017-02-16,SO_11423,Southwold,Turbidity,0.2,NTU
+626121,2017-02-16,ST_14594,Strathmore,Turbidity,0.1,NTU
+669032,2017-04-21,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+659807,2017-04-20,ME_12799,Merton,E. coli,0,Orgs/100mL
+604810,2017-08-11,SW_16507,Swadlincote,Turbidity,0.1,NTU
+673920,2017-08-11,PA_15640,Paethsmouth,Turbidity,0.1,NTU
+638372,2017-08-03,BE_14753,Bellmoral,Turbidity,0.05,NTU
+644488,2017-08-03,SO_17872,Southwold,Turbidity,0.05,NTU
+629286,2017-08-03,WA_15310,Wakefield,Turbidity,0.05,NTU
+651253,2017-08-03,SN_18754,Snake's Canyon,Turbidity,0.05,NTU
+691251,2017-08-02,ME_13895,Merton,Turbidity,0.05,NTU
+636249,2017-08-03,SW_11822,Swadlincote,THM,0.006,mg/L
+659481,2017-08-03,BL_17970,Blancathey,Turbidity,0.05,NTU
+637801,2017-08-03,PO_18499,Pontybridge,Turbidity,0.05,NTU
+636825,2017-02-15,ME_13895,Merton,THM,0.009,mg/L
+637867,2017-02-16,PA_11946,Paethsmouth,Turbidity,0.1,NTU
+686936,2017-08-03,WA_15310,Wakefield,THM,0.042,mg/L
+622535,2017-02-16,SN_18453,Snake's Canyon,Turbidity,0.1,NTU
+647418,2017-02-20,TA_10333,Tarnstead,THM,0.008,mg/L
+650842,2017-02-23,BE_15184,Bellmoral,E. coli,0,Orgs/100mL
+663724,2017-02-23,PO_18483,Pontybridge,E. coli,0,Orgs/100mL
+658359,2017-02-23,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+607501,2017-02-23,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+658479,2017-02-22,ME_12799,Merton,E. coli,0,Orgs/100mL
+629145,2017-03-01,ME_19684,Merton,E. coli,0,Orgs/100mL
+673086,2017-03-01,ME_19684,Merton,Turbidity,0.2,NTU
+650866,2017-03-02,SN_19289,Snake's Canyon,E. coli,0,Orgs/100mL
+637155,2017-05-01,TA_10333,Tarnstead,E. coli,0,Orgs/100mL
+676636,2017-04-21,SW_10554,Swadlincote,Turbidity,0.1,NTU
+637379,2017-03-02,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+640267,2017-03-16,ME_17256,Merton,E. coli,0,Orgs/100mL
+643050,2017-03-09,PA_11134,Paethsmouth,Turbidity,0.2,NTU
+664412,2017-03-08,ME_10925,Merton,Turbidity,0.2,NTU
+610721,2017-03-09,BE_19973,Bellmoral,Turbidity,0.2,NTU
+654212,2017-03-09,SN_18754,Snake's Canyon,E. coli,0,Orgs/100mL
+646789,2017-03-09,WA_14953,Wakefield,Turbidity,0.1,NTU
+611531,2017-03-09,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+615076,2017-04-20,ME_12799,Merton,Turbidity,0.1,NTU
+617265,2017-04-28,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+661097,2017-04-28,SO_11069,Southwold,E. coli,0,Orgs/100mL
+691973,2017-04-28,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+659444,2017-04-21,BL_13530,Blancathey,Turbidity,0.05,NTU
+665944,2017-04-24,TA_15690,Tarnstead,Turbidity,0.1,NTU
+669190,2017-04-21,WA_14953,Wakefield,Turbidity,0.1,NTU
+662519,2017-04-21,PA_17864,Paethsmouth,Turbidity,0.1,NTU
+602549,2017-04-28,BL_11992,Blancathey,E. coli,0,Orgs/100mL
+645888,2017-04-21,SO_11423,Southwold,Turbidity,0.1,NTU
+601175,2017-04-28,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+622808,2017-04-21,ST_10188,Strathmore,Turbidity,0.1,NTU
+604739,2017-05-04,BL_18874,Blancathey,E. coli,0,Orgs/100mL
+653551,2017-04-28,PO_14943,Pontybridge,E. coli,0,Orgs/100mL
+617154,2017-04-28,WA_12904,Wakefield,E. coli,0,Orgs/100mL
+698165,2017-05-04,SN_11855,Snake's Canyon,E. coli,0,Orgs/100mL
+626319,2017-05-04,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+653520,2017-04-28,BE_11469,Bellmoral,E. coli,0,Orgs/100mL
+673731,2017-05-04,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+600464,2017-05-04,SO_12021,Southwold,E. coli,0,Orgs/100mL
+640813,2017-01-23,TA_16139,Tarnstead,THM,0.009,mg/L
+653804,2017-04-21,PO_18680,Pontybridge,Turbidity,0.1,NTU
+650690,2017-04-28,SN_18453,Snake's Canyon,E. coli,0,Orgs/100mL
+622553,2017-04-24,TA_15690,Tarnstead,THM,0.005,mg/L
+611992,2017-07-13,ME_16639,Merton,Turbidity,0.05,NTU
+649602,2017-07-17,TA_17893,Tarnstead,E. coli,0,Orgs/100mL
+635891,2017-08-03,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+609568,2017-06-16,BL_11116,Blancathey,THM,0.005,mg/L
+653290,2017-04-21,PO_18680,Pontybridge,E. coli,0,Orgs/100mL
+677362,2017-04-21,BL_13530,Blancathey,E. coli,0,Orgs/100mL
+611991,2017-04-21,SO_11423,Southwold,E. coli,0,Orgs/100mL
+664085,2017-04-11,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+657445,2017-04-21,BE_15184,Bellmoral,E. coli,0,Orgs/100mL
+612437,2017-04-24,TA_15690,Tarnstead,E. coli,0,Orgs/100mL
+675284,2017-03-17,SO_17891,Southwold,E. coli,0,Orgs/100mL
+615075,2017-03-16,ME_17256,Merton,THM,0.007,mg/L
+672543,2017-07-20,ST_14594,Strathmore,THM,0.054,mg/L
+629944,2017-06-16,PO_18009,Pontybridge,E. coli,0,Orgs/100mL
+618873,2017-06-16,BL_17003,Blancathey,E. coli,0,Orgs/100mL
+671526,2017-07-20,BL_15552,Blancathey,Turbidity,0.05,NTU
+683859,2017-01-27,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+643005,2017-01-27,WA_13563,Wakefield,Turbidity,0.1,NTU
+619808,2017-01-27,SN_12742,Snake's Canyon,E. coli,0,Orgs/100mL
+605771,2017-01-27,SN_12742,Snake's Canyon,Turbidity,0.2,NTU
+655056,2017-01-25,ME_16875,Merton,Turbidity,0.1,NTU
+638692,2017-01-27,PO_18768,Pontybridge,Turbidity,0.2,NTU
+648188,2017-01-27,SO_17872,Southwold,E. coli,0,Orgs/100mL
+690277,2017-01-27,SO_17872,Southwold,Turbidity,0.2,NTU
+694904,2017-01-27,PA_11946,Paethsmouth,Turbidity,0.1,NTU
+626538,2017-02-23,BL_15552,Blancathey,Turbidity,0.2,NTU
+640095,2017-01-05,SN_19853,Snake's Canyon,E. coli,0,Orgs/100mL
+631955,2017-07-24,TA_14330,Tarnstead,E. coli,0,Orgs/100mL
+614128,2017-01-25,ME_16875,Merton,E. coli,0,Orgs/100mL
+630201,2017-01-27,SW_11822,Swadlincote,Turbidity,0.2,NTU
+646421,2017-01-27,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+686642,2017-01-27,PO_18768,Pontybridge,E. coli,0,Orgs/100mL
+636325,2017-01-27,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+666540,2017-03-02,BL_13051,Blancathey,E. coli,0,Orgs/100mL
+692882,2017-03-02,ST_10485,Strathmore,Turbidity,0.2,NTU
+687233,2017-03-02,PA_11946,Paethsmouth,Turbidity,0.2,NTU
+626506,2017-03-06,TA_14330,Tarnstead,E. coli,0,Orgs/100mL
+626818,2017-03-02,SW_11822,Swadlincote,Turbidity,0.2,NTU
+673913,2017-03-03,BE_16549,Bellmoral,Turbidity,0.2,NTU
+632390,2017-03-03,BE_16549,Bellmoral,E. coli,0,Orgs/100mL
+686860,2017-03-02,SN_19289,Snake's Canyon,Turbidity,0.2,NTU
+664312,2017-03-02,BL_15033,Blancathey,Turbidity,0.2,NTU
+650669,2017-03-02,PO_17652,Pontybridge,E. coli,0,Orgs/100mL
+637306,2017-03-02,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+696907,2017-02-23,BE_15184,Bellmoral,THM,0.009,mg/L
+684721,2017-03-03,WA_13563,Wakefield,Turbidity,0.1,NTU
+612511,2017-03-02,PO_12557,Pontybridge,Turbidity,0.2,NTU
+644072,2017-02-27,TA_17893,Tarnstead,E. coli,0,Orgs/100mL
+640764,2017-05-04,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+653654,2017-05-04,BL_15101,Blancathey,E. coli,0,Orgs/100mL
+647355,2017-03-09,SO_16944,Southwold,Turbidity,0.2,NTU
+655722,2017-05-01,TA_10333,Tarnstead,Turbidity,0.1,NTU
+663037,2017-05-04,SW_11822,Swadlincote,THM,0.016,mg/L
+695182,2017-03-29,ME_16875,Merton,Turbidity,0.2,NTU
+669808,2017-03-29,ME_16875,Merton,E. coli,0,Orgs/100mL
+639026,2017-03-23,BL_14280,Blancathey,Turbidity,0.2,NTU
+603817,2017-03-23,BL_14280,Blancathey,E. coli,0,Orgs/100mL
+672945,2017-04-13,SN_12742,Snake's Canyon,E. coli,0,Orgs/100mL
+610033,2017-04-06,WA_13563,Wakefield,E. coli,3,Orgs/100mL
+689980,2017-04-28,SW_16507,Swadlincote,Turbidity,0.1,NTU
+615694,2017-04-05,ME_17886,Merton,E. coli,0,Orgs/100mL
+650056,2017-04-20,ME_12799,Merton,THM,0.008,mg/L
+697927,2017-03-09,PO_17043,Pontybridge,THM,0.008,mg/L
+605777,2017-03-09,WA_14953,Wakefield,THM,0.052,mg/L
+643082,2017-08-03,BL_16870,Blancathey,E. coli,0,Orgs/100mL
+672372,2017-04-07,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+693087,2017-04-06,BE_19426,Bellmoral,E. coli,0,Orgs/100mL
+697926,2017-04-05,ME_17886,Merton,Turbidity,0.2,NTU
+692915,2017-04-06,TA_16139,Tarnstead,E. coli,0,Orgs/100mL
+646361,2017-08-02,ME_13895,Merton,E. coli,0,Orgs/100mL
+682356,2017-08-17,PA_11946,Paethsmouth,THM,0.027,mg/L
+622488,2017-08-17,BL_14280,Blancathey,THM,0.006,mg/L
+635995,2017-08-11,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+675180,2017-08-11,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+614284,2017-08-14,TA_12675,Tarnstead,Turbidity,0.2,NTU
+650629,2017-04-07,PO_14952,Pontybridge,Turbidity,0.2,NTU
+631428,2017-04-07,SN_14788,Snake's Canyon,Turbidity,0.2,NTU
+671664,2017-04-10,TA_11113,Tarnstead,Turbidity,0.2,NTU
+677445,2017-04-12,ME_17925,Merton,E. coli,0,Orgs/100mL
+663259,2017-04-21,PO_13324,Pontybridge,E. coli,0,Orgs/100mL
+613111,2017-02-23,SW_17736,Swadlincote,Turbidity,0.2,NTU
+697854,2017-02-23,SO_11069,Southwold,Turbidity,0.2,NTU
+666071,2017-02-23,PA_11134,Paethsmouth,Turbidity,0.2,NTU
+635866,2017-05-11,PA_11946,Paethsmouth,THM,0.031,mg/L
+612954,2017-08-24,SN_14788,Snake's Canyon,Turbidity,0.1,NTU
+650650,2017-08-24,SW_11822,Swadlincote,Turbidity,0.2,NTU
+604543,2017-08-24,BE_15184,Bellmoral,Turbidity,0.1,NTU
+608654,2017-08-24,PO_13324,Pontybridge,Turbidity,0.1,NTU
+676148,2017-08-23,ME_10925,Merton,Turbidity,0.1,NTU
+665497,2017-08-24,SO_11423,Southwold,Turbidity,0.2,NTU
+622168,2017-08-30,ME_17886,Merton,Turbidity,0.1,NTU
+609610,2017-08-24,PA_15640,Paethsmouth,Turbidity,0.2,NTU
+669272,2017-08-24,BL_10936,Blancathey,Turbidity,0.2,NTU
+630409,2017-08-24,ST_13507,Strathmore,Turbidity,0.1,NTU
+608721,2017-08-24,WA_14953,Wakefield,Turbidity,0.2,NTU
+684865,2017-08-31,PO_18680,Pontybridge,E. coli,0,Orgs/100mL
+611176,2017-08-31,BL_11116,Blancathey,E. coli,0,Orgs/100mL
+655067,2017-08-31,BE_11469,Bellmoral,Turbidity,0.2,NTU
+633610,2017-08-31,SO_11069,Southwold,E. coli,0,Orgs/100mL
+689661,2017-08-31,SO_11069,Southwold,Turbidity,0.1,NTU
+687180,2017-08-09,ME_16875,Merton,Turbidity,0.05,NTU
+671403,2017-08-11,PO_15632,Pontybridge,E. coli,0,Orgs/100mL
+647024,2017-08-11,PO_15632,Pontybridge,Turbidity,0.3,NTU
+698070,2017-08-31,BL_11116,Blancathey,Turbidity,0.1,NTU
+632368,2017-08-11,SN_10025,Snake's Canyon,E. coli,0,Orgs/100mL
+692364,2017-08-11,PO_18768,Pontybridge,E. coli,0,Orgs/100mL
+619690,2017-06-16,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+673060,2017-06-15,ME_19684,Merton,THM,0.006,mg/L
+645579,2017-06-16,SW_17736,Swadlincote,Turbidity,0.2,NTU
+682689,2017-06-09,PA_15640,Paethsmouth,THM,0.032,mg/L
+669352,2017-08-11,BL_11580,Blancathey,Turbidity,0.1,NTU
+691819,2017-08-11,SN_11496,Snake's Canyon,Turbidity,0.1,NTU
+657599,2017-08-10,SO_11438,Southwold,Turbidity,0.05,NTU
+691700,2017-08-11,ST_13507,Strathmore,Turbidity,0.1,NTU
+672211,2017-08-14,TA_12675,Tarnstead,E. coli,0,Orgs/100mL
+600659,2017-01-27,BL_13051,Blancathey,E. coli,0,Orgs/100mL
+668896,2017-01-27,ST_13507,Strathmore,Turbidity,0.1,NTU
+676735,2017-01-27,BL_13051,Blancathey,Turbidity,0.2,NTU
+656136,2017-01-27,PO_14952,Pontybridge,E. coli,0,Orgs/100mL
+669968,2017-01-27,BL_15845,Blancathey,E. coli,0,Orgs/100mL
+636185,2017-03-23,BE_17412,Bellmoral,THM,0.006,mg/L
+645243,2017-03-09,PO_17043,Pontybridge,Turbidity,0.2,NTU
+671066,2017-03-08,ME_10925,Merton,E. coli,0,Orgs/100mL
+692801,2017-05-11,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+663337,2017-05-11,PO_12557,Pontybridge,E. coli,0,Orgs/100mL
+619012,2017-04-28,SO_11069,Southwold,Turbidity,0.1,NTU
+697629,2017-05-11,BL_13051,Blancathey,E. coli,0,Orgs/100mL
+638653,2017-04-28,ST_14594,Strathmore,Turbidity,0.1,NTU
+621701,2017-12-29,ST_13507,Strathmore,Turbidity,0.1,NTU
+659673,2017-12-28,WA_13006,Wakefield,Turbidity,0.2,NTU
+662907,2017-12-28,BE_15184,Bellmoral,Turbidity,0.2,NTU
+641537,2017-05-29,TA_12675,Tarnstead,Turbidity,0.1,NTU
+695223,2017-05-08,TA_17893,Tarnstead,E. coli,0,Orgs/100mL
+635858,2017-05-03,ME_19684,Merton,Turbidity,0.2,NTU
+631944,2017-07-10,TA_10333,Tarnstead,Turbidity,0.1,NTU
+654740,2017-07-10,TA_10333,Tarnstead,THM,0.007,mg/L
+627461,2017-07-20,BL_15552,Blancathey,THM,0.007,mg/L
+636919,2017-05-04,WA_13563,Wakefield,Turbidity,0.1,NTU
+668978,2017-05-04,BL_18874,Blancathey,Turbidity,0.1,NTU
+663932,2017-05-04,ST_10485,Strathmore,Turbidity,0.1,NTU
+641969,2017-04-28,BL_11992,Blancathey,Turbidity,0.1,NTU
+650894,2017-08-03,BE_14753,Bellmoral,E. coli,0,Orgs/100mL
+627199,2017-08-03,SN_18754,Snake's Canyon,E. coli,0,Orgs/100mL
+677688,2017-08-03,PO_18499,Pontybridge,E. coli,0,Orgs/100mL
+656764,2017-04-28,SN_18453,Snake's Canyon,Turbidity,0.1,NTU
+662420,2017-08-03,PO_16635,Pontybridge,E. coli,0,Orgs/100mL
+683414,2017-08-03,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+651142,2017-08-03,BL_19934,Blancathey,E. coli,0,Orgs/100mL
+695905,2017-08-03,SN_19853,Snake's Canyon,E. coli,0,Orgs/100mL
+656625,2017-08-10,WA_12904,Wakefield,E. coli,0,Orgs/100mL
+672198,2017-02-02,ST_10485,Strathmore,Turbidity,0.2,NTU
+639968,2017-02-02,SN_16148,Snake's Canyon,Turbidity,0.2,NTU
+630710,2017-02-02,PO_18009,Pontybridge,E. coli,0,Orgs/100mL
+674611,2017-04-21,BL_16767,Blancathey,E. coli,0,Orgs/100mL
+627271,2017-02-02,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+668369,2017-04-13,WA_15310,Wakefield,THM,0.049,mg/L
+664010,2017-04-13,SO_14918,Southwold,THM,0.26814,mg/L
+603910,2017-01-16,TA_10696,Tarnstead,Turbidity,0.2,NTU
+660549,2017-01-12,PO_14145,Pontybridge,THM,0.009,mg/L
+635087,2017-01-12,BL_14206,Blancathey,E. coli,0,Orgs/100mL
+621758,2017-01-12,PO_18499,Pontybridge,E. coli,0,Orgs/100mL
+648350,2017-01-19,PA_17864,Paethsmouth,Turbidity,0.2,NTU
+635328,2017-01-19,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+635492,2017-02-09,BL_11992,Blancathey,E. coli,0,Orgs/100mL
+662500,2017-02-09,PO_13517,Pontybridge,E. coli,0,Orgs/100mL
+656796,2017-04-13,SN_16148,Snake's Canyon,E. coli,0,Orgs/100mL
+698874,2017-03-14,TA_10279,Tarnstead,E. coli,0,Orgs/100mL
+645029,2017-03-09,ST_13507,Strathmore,THM,0.077,mg/L
+670900,2017-03-09,SO_16944,Southwold,THM,0.008,mg/L
+608939,2017-03-09,BL_17970,Blancathey,E. coli,0,Orgs/100mL
+676024,2017-03-14,TA_10279,Tarnstead,Turbidity,0.3,NTU
+606026,2017-05-25,SW_10554,Swadlincote,Turbidity,0.2,NTU
+672145,2017-03-09,SW_16507,Swadlincote,THM,0.008,mg/L
+644217,2017-03-09,PA_11134,Paethsmouth,THM,0.043,mg/L
+602130,2017-03-23,BL_14206,Blancathey,E. coli,0,Orgs/100mL
+686484,2017-03-23,BE_17412,Bellmoral,Turbidity,0.2,NTU
+675541,2017-03-23,SO_15547,Southwold,E. coli,0,Orgs/100mL
+645659,2017-03-23,SN_18008,Snake's Canyon,Turbidity,0.3,NTU
+665077,2017-03-23,PO_19919,Pontybridge,E. coli,0,Orgs/100mL
+627841,2017-03-17,BL_11580,Blancathey,THM,0.008,mg/L
+656467,2017-03-23,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+615073,2017-03-23,ST_14594,Strathmore,Turbidity,0.2,NTU
+686297,2017-03-22,ME_16639,Merton,Turbidity,0.2,NTU
+621598,2017-03-23,BE_17412,Bellmoral,E. coli,0,Orgs/100mL
+636930,2017-03-23,SW_10554,Swadlincote,Turbidity,0.2,NTU
+625079,2017-03-23,PO_16635,Pontybridge,E. coli,0,Orgs/100mL
+680989,2017-03-23,WA_13006,Wakefield,Turbidity,0.1,NTU
+618299,2017-03-23,PA_15640,Paethsmouth,Turbidity,0.2,NTU
+643750,2017-03-23,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+632334,2017-03-23,SN_18008,Snake's Canyon,E. coli,0,Orgs/100mL
+600046,2017-03-23,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+626198,2017-03-20,TA_12675,Tarnstead,THM,0.008,mg/L
+690278,2017-03-23,PO_19919,Pontybridge,Turbidity,0.2,NTU
+660859,2017-03-27,TA_10696,Tarnstead,Turbidity,0.2,NTU
+685568,2017-03-27,TA_10696,Tarnstead,E. coli,0,Orgs/100mL
+657773,2017-06-01,SO_17872,Southwold,E. coli,0,Orgs/100mL
+674877,2017-06-01,SO_17872,Southwold,Turbidity,0.1,NTU
+601270,2017-06-02,BL_11580,Blancathey,E. coli,0,Orgs/100mL
+606617,2017-05-31,ME_13895,Merton,E. coli,0,Orgs/100mL
+606726,2017-06-02,BL_17892,Blancathey,E. coli,0,Orgs/100mL
+606518,2017-04-13,BE_18354,Bellmoral,Turbidity,0.1,NTU
+669814,2017-06-02,PO_19919,Pontybridge,Turbidity,0.2,NTU
+616217,2017-06-02,BL_11580,Blancathey,Turbidity,0.1,NTU
+683887,2017-06-02,SN_11496,Snake's Canyon,Turbidity,0.1,NTU
+603354,2017-05-10,ME_10925,Merton,E. coli,0,Orgs/100mL
+683763,2017-06-01,BE_14753,Bellmoral,E. coli,0,Orgs/100mL
+605699,2017-04-21,ST_10188,Strathmore,THM,0.066,mg/L
+608001,2017-04-28,WA_12904,Wakefield,Turbidity,0.05,NTU
+677361,2017-04-28,PO_14943,Pontybridge,Turbidity,0.1,NTU
+674394,2017-07-14,SO_16944,Southwold,Turbidity,0.05,NTU
+677303,2017-07-20,BE_12407,Bellmoral,E. coli,0,Orgs/100mL
+678235,2017-08-17,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+660170,2017-08-17,PO_15094,Pontybridge,E. coli,0,Orgs/100mL
+681040,2017-08-17,SN_18008,Snake's Canyon,E. coli,0,Orgs/100mL
+606708,2017-08-21,TA_10696,Tarnstead,Turbidity,0.1,NTU
+699010,2017-08-17,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+649249,2017-08-21,TA_10696,Tarnstead,E. coli,0,Orgs/100mL
+623165,2017-05-18,SO_15547,Southwold,E. coli,0,Orgs/100mL
+663585,2017-05-25,BL_19934,Blancathey,E. coli,0,Orgs/100mL
+639950,2017-05-25,SO_17891,Southwold,E. coli,0,Orgs/100mL
+684349,2017-07-14,WA_13563,Wakefield,Turbidity,0.05,NTU
+644828,2017-08-23,ME_10925,Merton,E. coli,0,Orgs/100mL
+675163,2017-08-11,BL_11580,Blancathey,E. coli,0,Orgs/100mL
+613685,2017-08-11,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+673044,2017-09-07,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+628051,2017-03-17,PO_18499,Pontybridge,E. coli,0,Orgs/100mL
+683644,2017-03-17,SN_19853,Snake's Canyon,E. coli,0,Orgs/100mL
+636799,2017-03-20,TA_12675,Tarnstead,Turbidity,0.2,NTU
+684869,2017-03-22,ME_16639,Merton,E. coli,0,Orgs/100mL
+622071,2017-04-11,PA_15640,Paethsmouth,Turbidity,0.1,NTU
+633719,2018-01-02,TA_10128,Tarnstead,E. coli,0,Orgs/100mL
+639167,2017-04-13,SO_14918,Southwold,E. coli,0,Orgs/100mL
+612918,2017-04-13,BL_15033,Blancathey,E. coli,0,Orgs/100mL
+682406,2017-03-09,SN_19866,Snake's Canyon,THM,0.007,mg/L
+636938,2017-05-25,SO_17891,Southwold,Turbidity,0.1,NTU
+650367,2017-05-25,ST_13507,Strathmore,Turbidity,0.1,NTU
+646818,2017-05-25,SN_19853,Snake's Canyon,E. coli,0,Orgs/100mL
+653358,2017-05-25,BE_17412,Bellmoral,E. coli,0,Orgs/100mL
+611749,2017-04-13,WA_15310,Wakefield,Turbidity,0.1,NTU
+604672,2017-04-12,SW_17736,Swadlincote,Turbidity,0.2,NTU
+658874,2017-04-12,ME_17925,Merton,Turbidity,0.2,NTU
+677518,2017-05-11,BL_14356,Blancathey,E. coli,0,Orgs/100mL
+643492,2017-07-14,SW_16507,Swadlincote,Turbidity,0.1,NTU
+686347,2017-07-19,ME_12799,Merton,E. coli,0,Orgs/100mL
+655915,2017-07-20,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+617035,2017-07-14,BE_19973,Bellmoral,THM,0.007,mg/L
+611241,2017-07-20,PO_17841,Pontybridge,E. coli,0,Orgs/100mL
+634793,2017-07-20,PO_19646,Pontybridge,THM,0.006,mg/L
+656212,2017-05-24,ME_17256,Merton,Turbidity,0.1,NTU
+658236,2017-05-25,BL_16870,Blancathey,E. coli,0,Orgs/100mL
+611321,2017-05-25,PO_16509,Pontybridge,E. coli,0,Orgs/100mL
+655623,2017-05-25,PO_18499,Pontybridge,E. coli,0,Orgs/100mL
+605228,2017-05-25,BE_17412,Bellmoral,THM,0.006,mg/L
+657153,2017-07-20,PO_14145,Pontybridge,E. coli,0,Orgs/100mL
+645517,2017-07-14,PA_11946,Paethsmouth,Turbidity,0.05,NTU
+654929,2017-07-17,TA_17893,Tarnstead,Turbidity,0.2,NTU
+680565,2017-07-20,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+677389,2017-07-20,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+688359,2017-07-20,BL_15552,Blancathey,E. coli,0,Orgs/100mL
+699713,2017-07-14,ST_10188,Strathmore,Turbidity,0.05,NTU
+697024,2017-05-04,PO_11431,Pontybridge,E. coli,0,Orgs/100mL
+680039,2017-07-14,SW_16507,Swadlincote,THM,0.005,mg/L
+674397,2017-07-14,BE_19973,Bellmoral,Turbidity,0.05,NTU
+622378,2017-07-14,BL_15845,Blancathey,Turbidity,0.05,NTU
+636811,2017-07-20,PO_19646,Pontybridge,E. coli,0,Orgs/100mL
+656235,2017-04-27,ME_13895,Merton,Turbidity,0.1,NTU
+699449,2017-05-04,SO_12021,Southwold,Turbidity,0.3,NTU
+664469,2017-05-04,WA_13563,Wakefield,THM,0.049,mg/L
+686961,2017-08-17,PO_13517,Pontybridge,Turbidity,0.05,NTU
+640044,2017-08-17,BL_14280,Blancathey,Turbidity,0.1,NTU
+675684,2017-08-17,SN_18008,Snake's Canyon,Turbidity,0.1,NTU
+626296,2017-05-03,ME_19684,Merton,E. coli,0,Orgs/100mL
+654244,2017-04-28,BE_11469,Bellmoral,Turbidity,0.1,NTU
+634442,2017-05-04,PO_11431,Pontybridge,Turbidity,0.2,NTU
+618429,2017-04-28,PA_11946,Paethsmouth,Turbidity,0.1,NTU
+664521,2017-05-04,PA_11134,Paethsmouth,Turbidity,0.2,NTU
+670150,2017-05-11,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+601335,2017-05-04,SN_11855,Snake's Canyon,Turbidity,0.1,NTU
+661469,2017-05-04,SW_11822,Swadlincote,Turbidity,0.1,NTU
+622791,2017-05-08,TA_17893,Tarnstead,Turbidity,0.1,NTU
+658485,2017-04-21,BL_13530,Blancathey,THM,0.008,mg/L
+647139,2017-05-11,BL_15552,Blancathey,E. coli,0,Orgs/100mL
+685508,2017-05-11,PO_17652,Pontybridge,E. coli,0,Orgs/100mL
+638428,2017-05-18,PO_17841,Pontybridge,E. coli,0,Orgs/100mL
+635255,2017-05-11,SN_19289,Snake's Canyon,E. coli,0,Orgs/100mL
+662878,2017-06-09,SO_11438,Southwold,E. coli,0,Orgs/100mL
+682598,2017-06-09,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+616685,2017-06-09,PO_15632,Pontybridge,E. coli,0,Orgs/100mL
+624561,2017-10-04,ME_13895,Merton,Turbidity,0.2,NTU
+665205,2017-10-05,PO_17841,Pontybridge,E. coli,0,Orgs/100mL
+607326,2017-09-07,SO_12021,Southwold,E. coli,0,Orgs/100mL
+648816,2017-09-07,PO_15649,Pontybridge,E. coli,0,Orgs/100mL
+623245,2017-10-05,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+690737,2017-10-05,PO_19919,Pontybridge,E. coli,0,Orgs/100mL
+692190,2017-09-07,PO_15649,Pontybridge,Turbidity,0.1,NTU
+670601,2017-09-06,ME_17925,Merton,Turbidity,0.05,NTU
+619515,2017-05-11,SO_16944,Southwold,E. coli,0,Orgs/100mL
+629352,2017-05-11,SN_19548,Snake's Canyon,E. coli,0,Orgs/100mL
+640082,2017-05-11,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+621105,2017-10-05,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+630100,2017-04-07,SW_16507,Swadlincote,Turbidity,0.2,NTU
+677912,2017-04-12,PO_13517,Pontybridge,E. coli,0,Orgs/100mL
+672985,2017-04-12,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+605222,2017-04-07,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+666838,2017-04-06,TA_16139,Tarnstead,Turbidity,0.2,NTU
+648771,2017-04-07,BL_17003,Blancathey,E. coli,0,Orgs/100mL
+622561,2017-04-06,WA_13563,Wakefield,Turbidity,0.2,NTU
+698092,2017-03-23,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+660806,2017-03-23,SO_15547,Southwold,Turbidity,0.2,NTU
+642127,2017-04-13,PO_18009,Pontybridge,E. coli,0,Orgs/100mL
+637225,2017-07-20,BL_14356,Blancathey,E. coli,0,Orgs/100mL
+665973,2017-07-13,ME_16639,Merton,E. coli,0,Orgs/100mL
+616574,2017-07-14,SO_16944,Southwold,E. coli,0,Orgs/100mL
+692955,2017-07-14,BL_15845,Blancathey,E. coli,0,Orgs/100mL
+649627,2017-07-14,SN_11855,Snake's Canyon,Turbidity,0.05,NTU
+669230,2017-07-20,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+643313,2017-04-13,PO_15094,Pontybridge,Turbidity,0.1,NTU
+623604,2017-07-20,SN_19289,Snake's Canyon,E. coli,0,Orgs/100mL
+626507,2017-07-14,PO_17652,Pontybridge,Turbidity,5.64,NTU
+689772,2017-07-20,SO_15547,Southwold,E. coli,0,Orgs/100mL
+617468,2017-04-13,BE_18354,Bellmoral,E. coli,0,Orgs/100mL
+691165,2017-04-13,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+662548,2017-04-13,BL_15845,Blancathey,E. coli,0,Orgs/100mL
+694947,2017-04-13,PO_15094,Pontybridge,E. coli,0,Orgs/100mL
+696400,2017-04-11,ST_10485,Strathmore,Turbidity,0.2,NTU
+681777,2017-04-13,BL_13422,Blancathey,E. coli,0,Orgs/100mL
+647015,2017-04-13,BL_15033,Blancathey,Turbidity,0.1,NTU
+661061,2017-04-13,SO_14918,Southwold,Turbidity,0.1,NTU
+651880,2017-04-13,SN_12742,Snake's Canyon,Turbidity,0.1,NTU
+620461,2017-04-18,TA_11737,Tarnstead,E. coli,0,Orgs/100mL
+693252,2017-04-12,SW_17736,Swadlincote,THM,0.006,mg/L
+609957,2017-05-18,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+678781,2017-05-18,PO_14145,Pontybridge,E. coli,0,Orgs/100mL
+665559,2017-05-25,SN_19853,Snake's Canyon,Turbidity,0.2,NTU
+619576,2017-05-25,BL_19934,Blancathey,Turbidity,0.2,NTU
+623278,2017-05-25,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+641794,2017-05-25,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+667604,2017-05-25,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+681849,2017-05-25,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+620697,2017-05-25,WA_15310,Wakefield,Turbidity,0.1,NTU
+672809,2017-05-29,TA_12675,Tarnstead,E. coli,0,Orgs/100mL
+647989,2017-06-09,BL_14206,Blancathey,E. coli,0,Orgs/100mL
+614882,2017-06-09,SN_10025,Snake's Canyon,E. coli,0,Orgs/100mL
+636612,2017-06-09,PO_14952,Pontybridge,E. coli,0,Orgs/100mL
+693369,2017-06-06,TA_10696,Tarnstead,Turbidity,0.1,NTU
+695037,2017-08-10,WA_12904,Wakefield,Turbidity,0.1,NTU
+684201,2017-08-11,PO_14952,Pontybridge,E. coli,0,Orgs/100mL
+633015,2017-08-24,SN_14788,Snake's Canyon,E. coli,0,Orgs/100mL
+688553,2017-08-24,BE_15184,Bellmoral,E. coli,0,Orgs/100mL
+644901,2017-08-17,BL_14206,Blancathey,E. coli,0,Orgs/100mL
+643423,2017-08-17,PO_13517,Pontybridge,E. coli,0,Orgs/100mL
+622966,2017-08-17,BL_14280,Blancathey,E. coli,0,Orgs/100mL
+605470,2017-08-24,PO_13324,Pontybridge,E. coli,0,Orgs/100mL
+652906,2017-08-28,TA_16139,Tarnstead,E. coli,0,Orgs/100mL
+641239,2017-08-24,SO_11423,Southwold,E. coli,0,Orgs/100mL
+688164,2017-08-24,SN_14788,Snake's Canyon,THM,0.006,mg/L
+619092,2017-08-24,BL_17003,Blancathey,E. coli,0,Orgs/100mL
+600238,2017-08-24,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+648268,2017-08-24,SO_11423,Southwold,THM,0.006,mg/L
+667862,2017-08-31,WA_12904,Wakefield,Turbidity,0.2,NTU
+662944,2017-08-24,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+660249,2017-08-24,BL_10936,Blancathey,E. coli,0,Orgs/100mL
+664267,2017-08-28,TA_16139,Tarnstead,Turbidity,0.1,NTU
+673573,2017-08-31,SW_16507,Swadlincote,Turbidity,0.1,NTU
+624242,2017-08-31,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+611757,2017-08-31,WA_12904,Wakefield,E. coli,0,Orgs/100mL
+659588,2017-06-16,PO_15094,Pontybridge,E. coli,0,Orgs/100mL
+646287,2017-06-09,SO_11438,Southwold,THM,0.005,mg/L
+603906,2017-06-16,PO_13517,Pontybridge,E. coli,0,Orgs/100mL
+604167,2017-06-13,TA_16139,Tarnstead,Turbidity,0.1,NTU
+699755,2017-06-16,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+621944,2017-05-31,ME_13895,Merton,Turbidity,0.1,NTU
+642231,2017-06-01,WA_12904,Wakefield,E. coli,0,Orgs/100mL
+674069,2017-10-05,ST_14594,Strathmore,Turbidity,0.1,NTU
+666045,2017-10-05,WA_14953,Wakefield,Turbidity,0.1,NTU
+669942,2017-04-28,PO_15319,Pontybridge,E. coli,0,Orgs/100mL
+640889,2017-04-27,ME_13895,Merton,E. coli,0,Orgs/100mL
+624432,2017-03-17,BL_11580,Blancathey,E. coli,0,Orgs/100mL
+613232,2017-03-09,SO_16944,Southwold,E. coli,0,Orgs/100mL
+676983,2017-07-14,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+691135,2017-04-21,SN_11519,Snake's Canyon,Turbidity,0.1,NTU
+621615,2017-04-21,BE_15184,Bellmoral,Turbidity,0.1,NTU
+612732,2017-04-28,BL_19479,Blancathey,E. coli,0,Orgs/100mL
+638781,2017-05-04,PO_18483,Pontybridge,E. coli,0,Orgs/100mL
+680773,2017-04-28,BE_11469,Bellmoral,THM,0.006,mg/L
+663035,2017-05-04,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+657896,2017-07-14,PO_17043,Pontybridge,E. coli,0,Orgs/100mL
+682269,2017-05-04,BE_16549,Bellmoral,E. coli,0,Orgs/100mL
+659075,2017-08-11,BL_17892,Blancathey,E. coli,0,Orgs/100mL
+693512,2017-08-11,SN_11496,Snake's Canyon,E. coli,0,Orgs/100mL
+621774,2017-08-10,BE_19426,Bellmoral,Turbidity,0.1,NTU
+684581,2017-04-06,SO_11438,Southwold,E. coli,0,Orgs/100mL
+672866,2017-04-07,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+631317,2017-04-06,BE_19426,Bellmoral,Turbidity,0.2,NTU
+680806,2017-08-10,BE_19426,Bellmoral,E. coli,0,Orgs/100mL
+650801,2017-08-17,BE_18354,Bellmoral,E. coli,0,Orgs/100mL
+680186,2017-08-16,ME_19684,Merton,THM,0.008,mg/L
+601761,2017-05-18,BL_15033,Blancathey,E. coli,0,Orgs/100mL
+691628,2017-05-18,BE_12407,Bellmoral,E. coli,0,Orgs/100mL
+669947,2017-05-18,SN_18754,Snake's Canyon,E. coli,0,Orgs/100mL
+623337,2017-05-11,PO_17043,Pontybridge,E. coli,0,Orgs/100mL
+668582,2017-05-18,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+681335,2017-08-17,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+635320,2017-08-17,PO_18009,Pontybridge,E. coli,0,Orgs/100mL
+689962,2017-04-07,BL_17003,Blancathey,Turbidity,0.2,NTU
+628366,2017-08-17,BE_18354,Bellmoral,THM,0.007,mg/L
+688083,2017-08-17,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+670317,2017-08-03,BL_17970,Blancathey,E. coli,0,Orgs/100mL
+623119,2017-04-11,PA_15640,Paethsmouth,THM,0.026,mg/L
+653913,2017-07-06,SN_11519,Snake's Canyon,Turbidity,0.05,NTU
+600868,2017-07-06,BL_16767,Blancathey,Turbidity,0.1,NTU
+670957,2017-07-06,WA_12904,Wakefield,Turbidity,0.1,NTU
+617503,2017-07-06,PO_11431,Pontybridge,E. coli,0,Orgs/100mL
+676403,2017-07-05,ME_17925,Merton,THM,0.007,mg/L
+673808,2017-07-06,ST_10485,Strathmore,Turbidity,0.1,NTU
+635367,2017-07-06,BE_16549,Bellmoral,E. coli,0,Orgs/100mL
+674525,2017-07-05,ME_17925,Merton,Turbidity,0.05,NTU
+659548,2017-07-06,SW_11822,Swadlincote,Turbidity,0.1,NTU
+695063,2017-07-06,PA_17864,Paethsmouth,Turbidity,0.1,NTU
+600004,2017-05-11,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+694133,2017-05-11,BE_19973,Bellmoral,E. coli,0,Orgs/100mL
+628324,2017-05-18,BL_15033,Blancathey,Turbidity,0.1,NTU
+631561,2017-07-06,PO_15319,Pontybridge,Turbidity,0.05,NTU
+681022,2017-05-17,ME_16639,Merton,E. coli,0,Orgs/100mL
+695701,2017-05-18,SW_17736,Swadlincote,Turbidity,0.2,NTU
+622584,2017-05-17,ME_16639,Merton,THM,0.005,mg/L
+652845,2017-05-17,ME_16639,Merton,Turbidity,0.1,NTU
+646194,2017-08-14,TA_12675,Tarnstead,THM,0.006,mg/L
+682776,2017-07-06,WA_12904,Wakefield,THM,0.032,mg/L
+646877,2017-05-16,TA_14330,Tarnstead,E. coli,0,Orgs/100mL
+696915,2017-08-31,SN_12742,Snake's Canyon,Turbidity,0.3,NTU
+677565,2017-08-31,SN_12742,Snake's Canyon,E. coli,0,Orgs/100mL
+691186,2017-08-30,ME_17886,Merton,E. coli,0,Orgs/100mL
+660093,2017-08-24,PO_13324,Pontybridge,THM,0.006,mg/L
+649487,2017-08-31,PO_18680,Pontybridge,Turbidity,0.2,NTU
+603707,2017-08-31,ST_10485,Strathmore,Turbidity,0.1,NTU
+616616,2017-08-31,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+687011,2017-08-31,PA_17864,Paethsmouth,Turbidity,0.1,NTU
+653644,2017-05-18,ST_14594,Strathmore,Turbidity,0.2,NTU
+682868,2017-06-09,SN_18008,Snake's Canyon,E. coli,0,Orgs/100mL
+680337,2017-06-09,BL_14280,Blancathey,E. coli,0,Orgs/100mL
+620007,2017-11-06,TA_10696,Tarnstead,Turbidity,0.2,NTU
+674978,2017-10-16,TA_10128,Tarnstead,E. coli,0,Orgs/100mL
+695145,2017-10-12,SW_11822,Swadlincote,Turbidity,0.2,NTU
+693522,2017-10-12,ST_13507,Strathmore,Turbidity,0.1,NTU
+665910,2017-10-12,BE_19426,Bellmoral,Turbidity,0.2,NTU
+603132,2017-09-28,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+661874,2017-09-28,BL_14206,Blancathey,E. coli,0,Orgs/100mL
+667409,2017-09-28,SO_17891,Southwold,E. coli,0,Orgs/100mL
+657430,2017-09-28,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+611590,2017-10-12,SN_18754,Snake's Canyon,Turbidity,0.1,NTU
+640325,2017-08-17,SO_14918,Southwold,Turbidity,0.2,NTU
+633674,2017-08-16,ME_19684,Merton,E. coli,0,Orgs/100mL
+608212,2017-08-11,ST_13507,Strathmore,THM,0.047,mg/L
+662091,2017-08-17,SW_17736,Swadlincote,Turbidity,0.2,NTU
+609252,2017-06-02,ST_10188,Strathmore,Turbidity,0.2,NTU
+619739,2017-06-02,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+695677,2017-08-17,BE_18354,Bellmoral,Turbidity,0.1,NTU
+609063,2017-06-06,TA_10696,Tarnstead,E. coli,0,Orgs/100mL
+639900,2017-08-16,ME_19684,Merton,Turbidity,0.2,NTU
+641185,2017-06-02,PO_19919,Pontybridge,E. coli,0,Orgs/100mL
+663680,2017-06-02,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+626167,2017-06-02,SW_16507,Swadlincote,Turbidity,0.1,NTU
+676237,2017-06-01,BE_14753,Bellmoral,Turbidity,0.1,NTU
+696131,2017-08-17,PA_11946,Paethsmouth,Turbidity,0.1,NTU
+689455,2017-06-09,BL_10936,Blancathey,E. coli,0,Orgs/100mL
+679623,2017-06-02,PO_16635,Pontybridge,E. coli,0,Orgs/100mL
+678089,2017-06-09,BE_19426,Bellmoral,E. coli,0,Orgs/100mL
+671080,2017-06-09,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+688558,2017-06-08,ME_16875,Merton,E. coli,0,Orgs/100mL
+654116,2017-06-09,PO_18768,Pontybridge,E. coli,0,Orgs/100mL
+698654,2017-08-17,SO_14918,Southwold,E. coli,0,Orgs/100mL
+619789,2017-08-17,WA_13563,Wakefield,Turbidity,0.1,NTU
+615089,2017-08-17,ST_10188,Strathmore,Turbidity,0.2,NTU
+694924,2017-06-23,SW_10554,Swadlincote,THM,0.005,mg/L
+631397,2017-06-22,SO_11423,Southwold,Turbidity,0.05,NTU
+615970,2017-06-26,TA_11737,Tarnstead,Turbidity,0.1,NTU
+675546,2017-10-09,TA_14330,Tarnstead,Turbidity,0.1,NTU
+676813,2017-06-29,BL_13530,Blancathey,E. coli,0,Orgs/100mL
+676649,2017-06-22,WA_13006,Wakefield,Turbidity,0.05,NTU
+685140,2017-06-30,BE_11469,Bellmoral,E. coli,0,Orgs/100mL
+645793,2017-07-06,WA_12904,Wakefield,E. coli,0,Orgs/100mL
+640100,2017-07-06,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+619468,2017-07-06,SO_12021,Southwold,Turbidity,0.3,NTU
+603307,2017-07-20,SN_19289,Snake's Canyon,Turbidity,0.05,NTU
+649747,2017-07-20,PA_11134,Paethsmouth,Turbidity,0.1,NTU
+667451,2017-07-20,SW_17736,Swadlincote,Turbidity,0.05,NTU
+630942,2017-07-27,BE_17412,Bellmoral,E. coli,0,Orgs/100mL
+615920,2017-07-27,BL_15033,Blancathey,E. coli,0,Orgs/100mL
+682172,2017-07-27,BL_13051,Blancathey,E. coli,0,Orgs/100mL
+674123,2017-07-20,WA_14953,Wakefield,Turbidity,0.05,NTU
+692443,2017-07-24,TA_14330,Tarnstead,Turbidity,0.05,NTU
+636735,2017-07-20,ST_14594,Strathmore,Turbidity,0.05,NTU
+645066,2017-07-20,BE_12407,Bellmoral,Turbidity,0.05,NTU
+668752,2017-07-27,PO_16509,Pontybridge,E. coli,0,Orgs/100mL
+640259,2017-07-27,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+676671,2017-07-31,TA_10128,Tarnstead,E. coli,0,Orgs/100mL
+622705,2017-07-27,WA_13006,Wakefield,Turbidity,0.05,NTU
+667941,2017-07-27,SO_17891,Southwold,E. coli,0,Orgs/100mL
+640461,2017-07-27,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+658087,2017-07-27,PA_11946,Paethsmouth,Turbidity,0.05,NTU
+625338,2017-07-27,BL_13051,Blancathey,Turbidity,0.05,NTU
+634113,2017-07-27,SO_17891,Southwold,Turbidity,0.05,NTU
+611617,2017-07-19,ME_12799,Merton,Turbidity,0.2,NTU
+682804,2017-07-06,BE_16549,Bellmoral,Turbidity,0.1,NTU
+602170,2017-10-12,BL_17970,Blancathey,E. coli,0,Orgs/100mL
+677297,2017-09-28,WA_13563,Wakefield,Turbidity,0.1,NTU
+601642,2017-09-28,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+627389,2017-09-28,BL_14206,Blancathey,Turbidity,0.1,NTU
+635724,2017-09-28,BE_17412,Bellmoral,E. coli,0,Orgs/100mL
+660010,2017-09-28,BE_17412,Bellmoral,Turbidity,0.1,NTU
+628229,2017-09-27,ME_17256,Merton,E. coli,0,Orgs/100mL
+627139,2017-09-27,ME_17256,Merton,Turbidity,0.1,NTU
+681320,2017-09-28,SW_17736,Swadlincote,Turbidity,0.2,NTU
+685917,2017-09-28,PA_11946,Paethsmouth,Turbidity,0.1,NTU
+628276,2017-09-28,ST_10188,Strathmore,Turbidity,0.1,NTU
+656065,2017-09-28,SO_17891,Southwold,Turbidity,0.1,NTU
+669050,2017-09-28,PO_14145,Pontybridge,Turbidity,0.1,NTU
+623643,2017-09-28,SN_19548,Snake's Canyon,Turbidity,0.1,NTU
+650018,2017-10-05,BL_13051,Blancathey,E. coli,0,Orgs/100mL
+664015,2017-07-10,TA_10333,Tarnstead,E. coli,0,Orgs/100mL
+625598,2017-09-21,PO_12557,Pontybridge,Turbidity,0.2,NTU
+642541,2017-09-21,PO_19646,Pontybridge,E. coli,0,Orgs/100mL
+632609,2017-09-18,TA_15690,Tarnstead,Turbidity,0.1,NTU
+648241,2017-09-20,ME_12799,Merton,E. coli,0,Orgs/100mL
+663628,2017-09-20,ME_12799,Merton,Turbidity,0.1,NTU
+666369,2017-09-21,BE_19973,Bellmoral,E. coli,0,Orgs/100mL
+683204,2017-08-10,SO_11438,Southwold,E. coli,0,Orgs/100mL
+691424,2017-08-09,ME_16875,Merton,E. coli,0,Orgs/100mL
+616290,2017-08-07,TA_10279,Tarnstead,Turbidity,0.1,NTU
+628690,2017-08-03,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+693082,2017-08-03,PO_19919,Pontybridge,E. coli,0,Orgs/100mL
+683375,2017-06-15,ME_19684,Merton,Turbidity,0.2,NTU
+611223,2017-06-16,BE_18354,Bellmoral,Turbidity,0.05,NTU
+685473,2017-06-16,PO_13517,Pontybridge,Turbidity,0.1,NTU
+679737,2017-06-16,ST_10485,Strathmore,Turbidity,0.1,NTU
+637933,2017-06-02,SN_11496,Snake's Canyon,E. coli,0,Orgs/100mL
+656121,2017-06-01,WA_12904,Wakefield,Turbidity,0.1,NTU
+648573,2017-06-02,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+647097,2017-06-02,PA_17864,Paethsmouth,Turbidity,0.1,NTU
+624931,2017-06-16,WA_14953,Wakefield,Turbidity,0.05,NTU
+632234,2017-06-16,SO_14918,Southwold,E. coli,0,Orgs/100mL
+628731,2017-06-16,SO_14918,Southwold,Turbidity,0.2,NTU
+649486,2017-06-22,BE_15184,Bellmoral,Turbidity,0.05,NTU
+679256,2017-06-23,SW_10554,Swadlincote,Turbidity,0.05,NTU
+650052,2017-06-30,SO_11069,Southwold,E. coli,0,Orgs/100mL
+625511,2017-06-28,ME_17886,Merton,E. coli,0,Orgs/100mL
+693384,2017-05-04,BE_16549,Bellmoral,Turbidity,0.1,NTU
+695174,2017-06-23,ST_13507,Strathmore,Turbidity,0.05,NTU
+612733,2017-06-23,PO_13324,Pontybridge,Turbidity,0.05,NTU
+654159,2017-06-29,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+669486,2017-06-23,BL_13051,Blancathey,Turbidity,0.05,NTU
+696395,2017-06-23,SN_16148,Snake's Canyon,Turbidity,0.05,NTU
+668787,2017-06-29,BL_13422,Blancathey,E. coli,0,Orgs/100mL
+647952,2017-06-29,SN_12934,Snake's Canyon,E. coli,0,Orgs/100mL
+695572,2017-06-21,ME_10925,Merton,Turbidity,0.05,NTU
+645014,2017-06-29,PO_15649,Pontybridge,E. coli,0,Orgs/100mL
+621621,2017-06-29,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+685117,2017-07-20,PO_19646,Pontybridge,Turbidity,0.3,NTU
+679259,2017-07-20,SO_15547,Southwold,Turbidity,0.05,NTU
+600184,2017-06-29,PO_14943,Pontybridge,E. coli,0,Orgs/100mL
+627531,2017-06-29,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+617623,2017-06-23,PA_15640,Paethsmouth,Turbidity,0.05,NTU
+670445,2017-06-29,SW_16507,Swadlincote,Turbidity,0.05,NTU
+625883,2017-07-06,SN_11519,Snake's Canyon,E. coli,0,Orgs/100mL
+665067,2017-06-30,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+635130,2017-07-06,SO_12021,Southwold,E. coli,0,Orgs/100mL
+624460,2017-07-06,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+600232,2017-09-28,BL_15101,Blancathey,E. coli,0,Orgs/100mL
+685453,2017-10-05,PO_16509,Pontybridge,E. coli,0,Orgs/100mL
+662759,2017-09-28,PO_14145,Pontybridge,THM,0.005,mg/L
+614422,2017-09-28,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+605018,2017-09-14,SO_16944,Southwold,E. coli,0,Orgs/100mL
+685774,2017-09-14,SN_18453,Snake's Canyon,E. coli,0,Orgs/100mL
+655117,2017-09-13,ME_16639,Merton,Turbidity,0.05,NTU
+643353,2017-09-14,PA_11946,Paethsmouth,Turbidity,0.1,NTU
+684811,2017-09-14,PO_17652,Pontybridge,E. coli,0,Orgs/100mL
+633227,2017-09-14,PO_11431,Pontybridge,E. coli,0,Orgs/100mL
+643096,2017-05-25,BE_17412,Bellmoral,Turbidity,0.1,NTU
+687147,2017-10-05,BL_14356,Blancathey,E. coli,0,Orgs/100mL
+654954,2017-09-14,BE_12407,Bellmoral,E. coli,0,Orgs/100mL
+639633,2017-09-28,SN_19548,Snake's Canyon,E. coli,0,Orgs/100mL
+650148,2017-10-04,ME_13895,Merton,E. coli,0,Orgs/100mL
+693790,2017-09-28,SO_17891,Southwold,THM,0.006,mg/L
+609191,2017-11-28,ME_17256,Merton,E. coli,0,Orgs/100mL
+674180,2017-11-23,PO_12557,Pontybridge,THM,0.006,mg/L
+678619,2017-09-14,WA_15310,Wakefield,Turbidity,0.1,NTU
+631126,2017-09-14,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+677191,2017-09-14,PO_18483,Pontybridge,E. coli,0,Orgs/100mL
+658650,2017-09-07,SO_12021,Southwold,Turbidity,0.1,NTU
+668029,2017-09-07,WA_13006,Wakefield,Turbidity,0.05,NTU
+630702,2017-09-13,ME_16639,Merton,E. coli,0,Orgs/100mL
+649932,2017-09-14,BE_12407,Bellmoral,Turbidity,0.1,NTU
+645106,2017-09-14,BL_19479,Blancathey,E. coli,0,Orgs/100mL
+673237,2017-08-03,SO_17872,Southwold,E. coli,0,Orgs/100mL
+690678,2017-10-12,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+617382,2017-09-21,WA_12904,Wakefield,E. coli,0,Orgs/100mL
+609219,2017-10-19,PA_11946,Paethsmouth,Turbidity,0.1,NTU
+645595,2017-10-19,BL_19934,Blancathey,Turbidity,0.1,NTU
+690984,2017-10-12,SW_11822,Swadlincote,THM,0.02,mg/L
+618270,2017-11-30,WA_14953,Wakefield,Turbidity,0.1,NTU
+685071,2017-12-01,BL_19479,Blancathey,E. coli,0,Orgs/100mL
+627160,2017-09-07,PO_15319,Pontybridge,E. coli,0,Orgs/100mL
+604734,2017-09-07,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+615186,2017-09-07,BE_16549,Bellmoral,E. coli,0,Orgs/100mL
+660874,2017-09-06,ME_17925,Merton,E. coli,0,Orgs/100mL
+625813,2017-09-07,BL_15033,Blancathey,E. coli,0,Orgs/100mL
+689598,2017-08-31,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+661174,2017-06-15,ME_19684,Merton,E. coli,0,Orgs/100mL
+642761,2017-09-07,PO_14943,Pontybridge,E. coli,0,Orgs/100mL
+634867,2017-06-16,BE_18354,Bellmoral,E. coli,0,Orgs/100mL
+605541,2017-09-07,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+681767,2017-10-05,SN_19289,Snake's Canyon,Turbidity,0.1,NTU
+638778,2017-10-05,PA_11134,Paethsmouth,Turbidity,0.1,NTU
+642623,2017-10-05,SO_17872,Southwold,Turbidity,0.1,NTU
+631665,2017-10-05,SO_17872,Southwold,E. coli,0,Orgs/100mL
+684455,2017-07-31,TA_10128,Tarnstead,Turbidity,0.05,NTU
+666767,2017-10-12,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+677612,2017-10-11,ME_16875,Merton,E. coli,0,Orgs/100mL
+612546,2017-10-19,BL_16870,Blancathey,E. coli,0,Orgs/100mL
+605574,2017-10-19,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+657272,2017-10-19,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+602764,2017-10-19,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+642871,2017-10-18,ME_19684,Merton,Turbidity,0.3,NTU
+647841,2017-10-19,PO_14952,Pontybridge,E. coli,0,Orgs/100mL
+695287,2017-10-19,BE_18354,Bellmoral,E. coli,0,Orgs/100mL
+634480,2017-09-28,PO_14145,Pontybridge,E. coli,0,Orgs/100mL
+697337,2017-10-19,SN_11496,Snake's Canyon,THM,0.006,mg/L
+617287,2017-10-19,SO_14918,Southwold,Turbidity,0.1,NTU
+669266,2017-10-18,ME_19684,Merton,THM,0.009,mg/L
+683578,2017-10-19,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+656721,2017-10-19,PO_14952,Pontybridge,Turbidity,0.2,NTU
+631569,2017-12-06,ME_13895,Merton,E. coli,0,Orgs/100mL
+618819,2017-10-05,BL_15552,Blancathey,E. coli,0,Orgs/100mL
+618893,2017-09-28,SN_19548,Snake's Canyon,THM,0.006,mg/L
+679217,2017-12-07,BL_11992,Blancathey,E. coli,0,Orgs/100mL
+642049,2017-12-07,PO_16509,Pontybridge,E. coli,0,Orgs/100mL
+666053,2017-12-07,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+660622,2017-12-07,SN_11855,Snake's Canyon,E. coli,0,Orgs/100mL
+655914,2017-12-07,WA_12904,Wakefield,THM,0.045,mg/L
+699030,2017-12-07,SN_11855,Snake's Canyon,Turbidity,0.2,NTU
+635780,2017-12-07,SW_10554,Swadlincote,THM,0.006,mg/L
+623442,2017-12-07,BL_16767,Blancathey,E. coli,0,Orgs/100mL
+627217,2017-12-07,SN_19548,Snake's Canyon,E. coli,0,Orgs/100mL
+641746,2017-12-07,BL_19934,Blancathey,E. coli,0,Orgs/100mL
+681346,2017-12-07,SO_17872,Southwold,E. coli,0,Orgs/100mL
+636528,2017-11-09,ST_10485,Strathmore,THM,0.053,mg/L
+696658,2018-02-22,BE_19426,Bellmoral,Turbidity,0.1,NTU
+615848,2018-02-22,ST_10188,Strathmore,Turbidity,0.2,NTU
+626331,2018-02-22,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+682117,2018-02-22,BL_14280,Blancathey,E. coli,0,Orgs/100mL
+658295,2018-02-22,SO_14918,Southwold,E. coli,0,Orgs/100mL
+679287,2018-02-21,ME_10925,Merton,Turbidity,0.05,NTU
+608473,2018-02-22,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+611954,2018-02-22,SN_19866,Snake's Canyon,E. coli,0,Orgs/100mL
+677172,2018-02-22,BL_11992,Blancathey,E. coli,0,Orgs/100mL
+666664,2017-09-21,ST_10485,Strathmore,THM,0.04,mg/L
+627849,2018-02-22,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+687061,2018-02-19,TA_15690,Tarnstead,THM,0.14,mg/L
+673136,2017-12-20,ME_19684,Merton,Turbidity,0.1,NTU
+669863,2017-12-21,BE_19426,Bellmoral,E. coli,0,Orgs/100mL
+617618,2018-01-05,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+698653,2018-01-05,WA_15310,Wakefield,Turbidity,0.1,NTU
+688143,2017-12-21,SO_14918,Southwold,E. coli,0,Orgs/100mL
+660972,2018-01-05,PO_14952,Pontybridge,Turbidity,6.05,NTU
+645332,2018-01-05,BE_11469,Bellmoral,E. coli,0,Orgs/100mL
+614981,2018-01-05,ST_10188,Strathmore,Turbidity,0.1,NTU
+674993,2018-01-05,BL_19934,Blancathey,Turbidity,0.2,NTU
+652302,2018-01-05,PO_14952,Pontybridge,E. coli,0,Orgs/100mL
+691448,2018-01-05,BL_16870,Blancathey,E. coli,0,Orgs/100mL
+686166,2018-01-05,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+645534,2018-01-05,SN_11496,Snake's Canyon,Turbidity,0.2,NTU
+689889,2018-01-05,SN_11496,Snake's Canyon,E. coli,0,Orgs/100mL
+668763,2018-01-04,ME_17886,Merton,Turbidity,0.2,NTU
+633353,2018-01-08,TA_10279,Tarnstead,E. coli,0,Orgs/100mL
+672290,2018-01-24,ME_12799,Merton,E. coli,0,Orgs/100mL
+662297,2017-09-14,ST_10188,Strathmore,Turbidity,0.1,NTU
+641322,2017-10-05,BE_14753,Bellmoral,Turbidity,0.1,NTU
+681897,2017-10-09,TA_14330,Tarnstead,E. coli,0,Orgs/100mL
+683994,2017-09-14,BL_13422,Blancathey,E. coli,0,Orgs/100mL
+687666,2017-09-14,SN_11519,Snake's Canyon,Turbidity,0.1,NTU
+648821,2017-09-14,SN_11519,Snake's Canyon,E. coli,0,Orgs/100mL
+630619,2017-09-14,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+617277,2017-09-14,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+669416,2017-09-14,SW_11822,Swadlincote,Turbidity,0.1,NTU
+615043,2017-11-29,TA_11737,Tarnstead,E. coli,0,Orgs/100mL
+644636,2017-10-06,WA_14953,Wakefield,THM,0.046,mg/L
+634180,2017-10-12,BL_15033,Blancathey,E. coli,0,Orgs/100mL
+626403,2017-10-12,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+694498,2017-10-12,SN_19853,Snake's Canyon,E. coli,0,Orgs/100mL
+653087,2017-10-12,PO_18499,Pontybridge,E. coli,0,Orgs/100mL
+612451,2017-10-11,ME_16875,Merton,Turbidity,0.1,NTU
+667845,2017-10-12,PO_16635,Pontybridge,E. coli,0,Orgs/100mL
+635217,2017-10-12,SN_18754,Snake's Canyon,E. coli,0,Orgs/100mL
+641058,2017-10-09,TA_14330,Tarnstead,THM,0.007,mg/L
+662902,2017-09-04,TA_11113,Tarnstead,Turbidity,0.1,NTU
+672475,2017-10-12,PO_18768,Pontybridge,E. coli,0,Orgs/100mL
+677197,2017-10-12,BE_19426,Bellmoral,THM,0.008,mg/L
+680152,2017-11-29,TA_11737,Tarnstead,Turbidity,0.1,NTU
+626091,2017-10-12,SO_11438,Southwold,E. coli,0,Orgs/100mL
+616119,2017-11-30,BE_17412,Bellmoral,E. coli,0,Orgs/100mL
+610857,2017-12-01,SN_11519,Snake's Canyon,E. coli,0,Orgs/100mL
+692533,2017-12-01,PO_17043,Pontybridge,Turbidity,0.1,NTU
+645860,2017-11-23,SN_18453,Snake's Canyon,THM,0.005,mg/L
+696286,2017-09-07,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+627020,2017-09-07,BL_13530,Blancathey,E. coli,0,Orgs/100mL
+623191,2017-12-01,SW_11822,Swadlincote,Turbidity,0.1,NTU
+622927,2017-11-30,SO_17891,Southwold,E. coli,0,Orgs/100mL
+635353,2017-12-01,SN_11519,Snake's Canyon,Turbidity,0.1,NTU
+646883,2017-12-01,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+631563,2017-12-01,ST_14594,Strathmore,Turbidity,7.38,NTU
+624107,2017-11-30,SO_17891,Southwold,Turbidity,0.1,NTU
+645437,2017-12-01,BL_19479,Blancathey,Turbidity,0.1,NTU
+699034,2017-12-01,PA_11134,Paethsmouth,Turbidity,0.1,NTU
+614583,2017-10-12,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+645893,2017-10-12,BE_19426,Bellmoral,E. coli,0,Orgs/100mL
+689922,2018-01-18,BE_12407,Bellmoral,Turbidity,0.3,NTU
+603507,2017-12-14,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+672234,2017-12-14,SO_11438,Southwold,Turbidity,0.2,NTU
+636956,2017-12-14,PO_16635,Pontybridge,E. coli,0,Orgs/100mL
+609725,2017-12-14,BL_15101,Blancathey,E. coli,0,Orgs/100mL
+671848,2017-12-14,SN_19866,Snake's Canyon,E. coli,0,Orgs/100mL
+627507,2017-12-14,PA_15640,Paethsmouth,Turbidity,0.1,NTU
+699165,2017-12-14,ST_13507,Strathmore,Turbidity,0.05,NTU
+607967,2017-12-13,ME_16875,Merton,Turbidity,0.2,NTU
+647066,2017-12-14,PO_19919,Pontybridge,E. coli,0,Orgs/100mL
+672124,2017-12-14,BL_15552,Blancathey,E. coli,0,Orgs/100mL
+651755,2017-12-14,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+615330,2017-12-14,BE_18354,Bellmoral,Turbidity,0.2,NTU
+623295,2017-12-14,BE_18354,Bellmoral,E. coli,0,Orgs/100mL
+626346,2017-12-14,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+640284,2017-09-21,PA_17864,Paethsmouth,THM,0.017,mg/L
+673388,2017-09-21,ST_10485,Strathmore,Turbidity,0.1,NTU
+631095,2017-10-19,SN_11496,Snake's Canyon,E. coli,0,Orgs/100mL
+646798,2017-10-19,PO_15094,Pontybridge,E. coli,0,Orgs/100mL
+629384,2017-12-14,SW_16507,Swadlincote,Turbidity,0.1,NTU
+644638,2017-12-14,BL_15101,Blancathey,Turbidity,0.2,NTU
+610506,2017-12-14,PO_17841,Pontybridge,E. coli,0,Orgs/100mL
+682140,2017-12-14,SN_19289,Snake's Canyon,Turbidity,0.1,NTU
+608263,2017-12-14,SN_19289,Snake's Canyon,E. coli,0,Orgs/100mL
+624793,2018-01-19,ST_13507,Strathmore,Turbidity,0.1,NTU
+694783,2018-01-19,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+638276,2018-01-19,BL_14206,Blancathey,E. coli,0,Orgs/100mL
+609515,2018-01-19,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+623255,2018-01-19,PA_11946,Paethsmouth,Turbidity,0.1,NTU
+603602,2018-01-19,PO_15649,Pontybridge,Turbidity,0.1,NTU
+659484,2018-01-19,PO_15649,Pontybridge,E. coli,0,Orgs/100mL
+650105,2018-01-22,TA_10696,Tarnstead,E. coli,0,Orgs/100mL
+647149,2017-09-25,TA_10333,Tarnstead,E. coli,0,Orgs/100mL
+609431,2017-10-19,SO_14918,Southwold,E. coli,0,Orgs/100mL
+624840,2017-12-14,WA_13563,Wakefield,Turbidity,0.1,NTU
+636031,2017-10-05,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+600157,2017-09-07,SN_16148,Snake's Canyon,E. coli,0,Orgs/100mL
+655671,2017-05-18,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+647701,2017-05-18,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+655643,2017-05-18,BL_17970,Blancathey,E. coli,0,Orgs/100mL
+620708,2017-05-18,PO_19646,Pontybridge,E. coli,0,Orgs/100mL
+697175,2017-09-07,BL_15033,Blancathey,Turbidity,0.1,NTU
+692858,2017-05-18,SN_19866,Snake's Canyon,E. coli,0,Orgs/100mL
+620564,2017-09-07,SN_16148,Snake's Canyon,Turbidity,0.05,NTU
+666258,2017-10-05,SW_16507,Swadlincote,Turbidity,0.1,NTU
+603883,2017-10-05,SN_19866,Snake's Canyon,E. coli,0,Orgs/100mL
+686342,2017-09-07,SN_12934,Snake's Canyon,E. coli,0,Orgs/100mL
+638308,2017-09-07,BL_15845,Blancathey,E. coli,0,Orgs/100mL
+623708,2017-05-25,PA_11134,Paethsmouth,Turbidity,0.3,NTU
+636270,2017-10-05,PO_17841,Pontybridge,Turbidity,0.1,NTU
+638459,2017-05-25,PO_16509,Pontybridge,Turbidity,0.2,NTU
+667376,2017-10-05,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+672562,2017-10-05,BL_15552,Blancathey,Turbidity,0.1,NTU
+696304,2017-10-05,BE_14753,Bellmoral,E. coli,0,Orgs/100mL
+644197,2017-11-08,ME_17925,Merton,E. coli,0,Orgs/100mL
+605013,2017-09-07,PA_11134,Paethsmouth,Turbidity,0.1,NTU
+643496,2017-08-24,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+637478,2017-08-24,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+693246,2017-09-07,BE_16549,Bellmoral,Turbidity,0.1,NTU
+651174,2017-09-07,SW_17736,Swadlincote,Turbidity,0.1,NTU
+690331,2017-09-04,TA_11113,Tarnstead,E. coli,0,Orgs/100mL
+611551,2017-09-07,ST_14594,Strathmore,Turbidity,0.1,NTU
+687363,2017-12-07,BE_14753,Bellmoral,E. coli,0,Orgs/100mL
+675689,2017-12-07,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+689682,2017-12-07,PO_19646,Pontybridge,Turbidity,0.1,NTU
+603361,2017-12-07,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+630624,2017-12-07,WA_12904,Wakefield,Turbidity,0.1,NTU
+602604,2017-12-07,SO_17872,Southwold,Turbidity,0.1,NTU
+670801,2017-12-07,PA_11946,Paethsmouth,Turbidity,0.1,NTU
+677251,2017-12-07,PO_19646,Pontybridge,E. coli,0,Orgs/100mL
+644609,2017-09-14,SO_16944,Southwold,Turbidity,0.1,NTU
+674486,2017-09-14,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+614072,2017-09-14,BL_13422,Blancathey,Turbidity,0.1,NTU
+683489,2017-09-14,PO_11431,Pontybridge,Turbidity,0.1,NTU
+628830,2017-12-07,SW_10554,Swadlincote,Turbidity,0.2,NTU
+630195,2017-12-11,TA_10333,Tarnstead,Turbidity,0.1,NTU
+692640,2017-12-06,ME_13895,Merton,Turbidity,0.1,NTU
+696349,2017-07-27,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+602036,2017-07-26,ME_17256,Merton,Turbidity,0.05,NTU
+687379,2017-11-23,SO_15547,Southwold,THM,0.005,mg/L
+627167,2017-11-28,ME_17256,Merton,Turbidity,0.1,NTU
+615679,2017-11-30,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+617201,2017-07-27,SW_10554,Swadlincote,Turbidity,0.05,NTU
+648986,2017-07-27,SO_17891,Southwold,THM,0.006,mg/L
+629868,2017-10-26,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+659480,2017-07-27,SN_19866,Snake's Canyon,Turbidity,0.05,NTU
+692104,2017-07-27,ST_10188,Strathmore,Turbidity,0.05,NTU
+644698,2017-07-27,BE_17412,Bellmoral,Turbidity,0.05,NTU
+663031,2017-08-03,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+651123,2017-12-07,BE_14753,Bellmoral,Turbidity,0.2,NTU
+651274,2017-12-07,ST_10188,Strathmore,Turbidity,0.05,NTU
+634996,2017-09-11,TA_11737,Tarnstead,THM,0.007,mg/L
+679205,2017-10-25,ME_10925,Merton,Turbidity,0.1,NTU
+604266,2017-09-14,BE_12407,Bellmoral,THM,0.007,mg/L
+633693,2017-09-18,TA_15690,Tarnstead,E. coli,0,Orgs/100mL
+655586,2017-09-21,SW_10554,Swadlincote,Turbidity,0.1,NTU
+642032,2017-09-21,BL_16767,Blancathey,Turbidity,0.1,NTU
+667755,2017-10-19,BE_18354,Bellmoral,Turbidity,0.1,NTU
+668988,2018-02-19,TA_15690,Tarnstead,Turbidity,0.05,NTU
+679792,2018-02-21,ME_10925,Merton,E. coli,0,Orgs/100mL
+694798,2017-10-25,ME_10925,Merton,E. coli,0,Orgs/100mL
+610327,2018-02-01,PO_12557,Pontybridge,E. coli,0,Orgs/100mL
+621484,2018-01-25,SN_12742,Snake's Canyon,THM,0.005,mg/L
+644585,2018-02-01,BL_13530,Blancathey,E. coli,0,Orgs/100mL
+661190,2018-02-01,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+698380,2018-02-01,SN_16148,Snake's Canyon,E. coli,0,Orgs/100mL
+686070,2018-01-11,BL_11580,Blancathey,E. coli,0,Orgs/100mL
+635192,2018-02-22,BE_19426,Bellmoral,E. coli,0,Orgs/100mL
+635991,2018-02-01,SO_17891,Southwold,E. coli,0,Orgs/100mL
+601480,2018-02-01,PA_11134,Paethsmouth,Turbidity,0.05,NTU
+637213,2017-10-19,PA_11946,Paethsmouth,THM,0.053,mg/L
+618143,2017-10-19,WA_15310,Wakefield,Turbidity,0.05,NTU
+666193,2017-10-19,SN_11496,Snake's Canyon,Turbidity,0.1,NTU
+610816,2017-10-23,TA_10279,Tarnstead,Turbidity,0.2,NTU
+603976,2017-10-19,BL_19934,Blancathey,THM,0.008,mg/L
+684958,2017-10-26,SO_11423,Southwold,THM,0.007,mg/L
+600798,2017-10-26,WA_12904,Wakefield,E. coli,0,Orgs/100mL
+674852,2017-10-26,BL_17892,Blancathey,E. coli,0,Orgs/100mL
+631200,2017-10-26,BL_11580,Blancathey,E. coli,0,Orgs/100mL
+620153,2017-10-26,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+676820,2017-10-26,BE_15184,Bellmoral,E. coli,0,Orgs/100mL
+602995,2017-10-30,TA_12675,Tarnstead,E. coli,0,Orgs/100mL
+633033,2017-10-26,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+685402,2017-10-26,SO_11423,Southwold,E. coli,0,Orgs/100mL
+660597,2017-12-20,ME_19684,Merton,E. coli,0,Orgs/100mL
+610359,2017-10-19,ST_10188,Strathmore,Turbidity,0.1,NTU
+697324,2017-10-19,PO_14952,Pontybridge,THM,0.008,mg/L
+662997,2017-10-19,ST_10188,Strathmore,THM,0.051,mg/L
+692038,2017-10-23,TA_10279,Tarnstead,E. coli,0,Orgs/100mL
+676822,2017-10-12,PO_16635,Pontybridge,Turbidity,0.1,NTU
+668826,2017-10-12,SO_11438,Southwold,Turbidity,0.1,NTU
+659865,2017-10-26,SN_10025,Snake's Canyon,E. coli,0,Orgs/100mL
+676698,2017-12-27,SN_19853,Snake's Canyon,Turbidity,0.2,NTU
+643030,2017-12-21,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+661273,2017-12-20,ME_19684,Merton,THM,0.008,mg/L
+626888,2017-09-21,PO_12557,Pontybridge,E. coli,0,Orgs/100mL
+618104,2017-10-12,WA_13006,Wakefield,Turbidity,0.05,NTU
+635794,2017-09-21,SO_15547,Southwold,E. coli,0,Orgs/100mL
+618577,2017-10-02,TA_17893,Tarnstead,Turbidity,0.1,NTU
+648859,2017-10-02,TA_17893,Tarnstead,E. coli,0,Orgs/100mL
+615413,2018-01-25,PO_11431,Pontybridge,Turbidity,0.05,NTU
+636457,2018-01-25,PA_14989,Paethsmouth,Turbidity,0.1,NTU
+631920,2018-02-22,PO_15632,Pontybridge,E. coli,0,Orgs/100mL
+639891,2018-02-22,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+696758,2018-01-25,SO_15547,Southwold,Turbidity,0.05,NTU
+666389,2017-12-14,PO_19919,Pontybridge,Turbidity,0.2,NTU
+686937,2018-01-25,PO_11431,Pontybridge,E. coli,0,Orgs/100mL
+677573,2018-01-25,WA_14953,Wakefield,Turbidity,0.05,NTU
+636819,2018-02-22,BL_11992,Blancathey,Turbidity,0.05,NTU
+663909,2018-02-22,PO_17841,Pontybridge,E. coli,0,Orgs/100mL
+631012,2018-02-21,ME_10925,Merton,THM,0.12,mg/L
+631061,2018-02-15,BL_19479,Blancathey,E. coli,0,Orgs/100mL
+675757,2018-02-22,SN_19866,Snake's Canyon,Turbidity,0.3,NTU
+631419,2018-02-22,SW_17736,Swadlincote,Turbidity,0.2,NTU
+652895,2018-01-10,ME_17925,Merton,E. coli,0,Orgs/100mL
+602520,2017-11-16,BE_12407,Bellmoral,E. coli,0,Orgs/100mL
+696717,2017-11-16,BL_13530,Blancathey,E. coli,0,Orgs/100mL
+641753,2017-11-16,SN_16148,Snake's Canyon,E. coli,0,Orgs/100mL
+619350,2017-11-16,SO_16944,Southwold,Turbidity,0.1,NTU
+665363,2017-11-16,PO_11431,Pontybridge,E. coli,0,Orgs/100mL
+600732,2017-11-16,BL_17970,Blancathey,E. coli,0,Orgs/100mL
+658981,2017-11-16,PO_17652,Pontybridge,E. coli,0,Orgs/100mL
+685346,2017-11-16,PO_18483,Pontybridge,E. coli,0,Orgs/100mL
+630385,2017-11-16,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+673715,2017-11-16,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+699832,2017-11-16,ST_13507,Strathmore,Turbidity,0.1,NTU
+620480,2017-11-16,SW_10554,Swadlincote,Turbidity,0.1,NTU
+609363,2017-11-16,SN_16148,Snake's Canyon,Turbidity,0.1,NTU
+636299,2017-11-16,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+614283,2018-02-15,BE_18354,Bellmoral,Turbidity,0.1,NTU
+694843,2017-11-16,BL_13530,Blancathey,Turbidity,0.5,NTU
+635709,2018-03-16,BE_16549,Bellmoral,E. coli,0,Orgs/100mL
+626303,2017-11-13,TA_16139,Tarnstead,THM,0.009,mg/L
+628928,2017-11-16,WA_13006,Wakefield,Turbidity,0.2,NTU
+642167,2017-11-16,BE_12407,Bellmoral,Turbidity,0.2,NTU
+627714,2017-11-20,TA_11113,Tarnstead,E. coli,0,Orgs/100mL
+604110,2017-11-15,ME_16639,Merton,THM,0.009,mg/L
+687542,2018-03-16,BL_13051,Blancathey,E. coli,0,Orgs/100mL
+612791,2018-03-16,BL_15033,Blancathey,E. coli,0,Orgs/100mL
+667732,2018-03-19,TA_10128,Tarnstead,E. coli,0,Orgs/100mL
+621095,2017-11-20,TA_11113,Tarnstead,Turbidity,0.2,NTU
+694128,2017-11-16,BE_12407,Bellmoral,THM,0.009,mg/L
+681130,2018-02-22,BL_11992,Blancathey,THM,0.14,mg/L
+652511,2018-02-28,ME_19684,Merton,Turbidity,0.05,NTU
+621651,2018-03-01,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+633196,2017-09-21,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+686523,2017-09-21,PO_17043,Pontybridge,E. coli,0,Orgs/100mL
+679910,2017-09-20,ME_12799,Merton,THM,0.006,mg/L
+620700,2017-09-21,SN_11855,Snake's Canyon,E. coli,0,Orgs/100mL
+648325,2017-09-21,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+683352,2017-09-21,BL_16767,Blancathey,E. coli,0,Orgs/100mL
+620722,2017-09-21,WA_12904,Wakefield,Turbidity,0.1,NTU
+678516,2017-09-21,BL_11992,Blancathey,E. coli,0,Orgs/100mL
+624203,2017-09-21,PA_17864,Paethsmouth,Turbidity,0.1,NTU
+665736,2017-09-21,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+634297,2017-09-21,BE_19973,Bellmoral,Turbidity,0.1,NTU
+643898,2017-10-26,BE_15184,Bellmoral,Turbidity,0.1,NTU
+680962,2017-10-26,PO_18009,Pontybridge,Turbidity,0.1,NTU
+639423,2017-10-26,PA_15640,Paethsmouth,Turbidity,0.1,NTU
+674210,2017-10-26,ST_13507,Strathmore,Turbidity,0.1,NTU
+609676,2017-10-26,BL_11580,Blancathey,Turbidity,0.1,NTU
+625121,2017-10-26,SO_11423,Southwold,Turbidity,0.3,NTU
+642018,2017-10-26,WA_12904,Wakefield,Turbidity,0.1,NTU
+640189,2017-10-26,SN_10025,Snake's Canyon,Turbidity,0.1,NTU
+685971,2017-12-04,TA_15690,Tarnstead,Turbidity,0.1,NTU
+696327,2017-12-04,TA_15690,Tarnstead,E. coli,0,Orgs/100mL
+627804,2017-09-21,BL_16767,Blancathey,THM,0.004,mg/L
+687734,2017-09-21,SO_15547,Southwold,Turbidity,0.1,NTU
+634704,2017-09-21,SN_11855,Snake's Canyon,Turbidity,0.1,NTU
+656151,2017-11-09,SN_12742,Snake's Canyon,Turbidity,0.1,NTU
+631196,2017-10-30,TA_12675,Tarnstead,Turbidity,0.1,NTU
+612412,2017-11-13,TA_16139,Tarnstead,E. coli,0,Orgs/100mL
+622766,2017-10-19,BL_19934,Blancathey,E. coli,0,Orgs/100mL
+694276,2017-10-19,PO_15632,Pontybridge,E. coli,0,Orgs/100mL
+675080,2017-09-25,TA_10333,Tarnstead,Turbidity,0.1,NTU
+628573,2017-11-16,PA_15640,Paethsmouth,Turbidity,0.2,NTU
+670497,2017-11-15,ME_16639,Merton,Turbidity,0.1,NTU
+693350,2017-11-16,PO_11431,Pontybridge,Turbidity,0.1,NTU
+680847,2018-02-26,TA_10333,Tarnstead,E. coli,0,Orgs/100mL
+636568,2018-01-25,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+627093,2018-02-28,ME_19684,Merton,E. coli,0,Orgs/100mL
+632232,2018-02-26,TA_10333,Tarnstead,Turbidity,0.1,NTU
+641101,2018-01-25,SN_12742,Snake's Canyon,Turbidity,0.05,NTU
+618410,2018-01-25,BL_10936,Blancathey,E. coli,0,Orgs/100mL
+614805,2018-01-25,PA_14989,Paethsmouth,E. coli,0,Orgs/100mL
+633552,2018-01-29,TA_16139,Tarnstead,Turbidity,0.1,NTU
+653695,2018-01-24,ME_12799,Merton,Turbidity,0.05,NTU
+617822,2018-01-25,BL_17003,Blancathey,Turbidity,0.1,NTU
+626135,2018-01-25,SW_16507,Swadlincote,Turbidity,0.1,NTU
+661645,2018-01-25,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+662933,2018-01-25,BE_19973,Bellmoral,Turbidity,0.1,NTU
+642583,2018-01-25,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+635246,2018-01-25,ST_10188,Strathmore,Turbidity,0.1,NTU
+626631,2018-01-05,SW_11822,Swadlincote,Turbidity,0.2,NTU
+615052,2018-01-05,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+612884,2018-01-11,PO_13517,Pontybridge,E. coli,0,Orgs/100mL
+620520,2018-01-11,PA_14989,Paethsmouth,E. coli,0,Orgs/100mL
+656630,2018-01-11,WA_12904,Wakefield,Turbidity,0.1,NTU
+678504,2018-01-11,WA_12904,Wakefield,E. coli,0,Orgs/100mL
+603207,2018-01-11,SN_14788,Snake's Canyon,E. coli,0,Orgs/100mL
+686682,2018-01-31,ME_17256,Merton,E. coli,0,Orgs/100mL
+647110,2018-01-11,SN_10025,Snake's Canyon,E. coli,0,Orgs/100mL
+699579,2018-01-19,BL_14280,Blancathey,Turbidity,0.2,NTU
+627806,2018-01-19,BL_14280,Blancathey,E. coli,0,Orgs/100mL
+624144,2018-02-01,BL_11116,Blancathey,E. coli,0,Orgs/100mL
+677637,2018-02-01,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+685945,2017-11-23,BL_15845,Blancathey,E. coli,0,Orgs/100mL
+623843,2017-11-23,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+640425,2017-11-23,SW_16507,Swadlincote,Turbidity,0.2,NTU
+691111,2017-11-23,WA_15310,Wakefield,Turbidity,0.1,NTU
+679125,2017-11-23,PA_17864,Paethsmouth,Turbidity,0.1,NTU
+666373,2017-11-23,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+691668,2017-11-23,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+664311,2017-11-22,ME_12799,Merton,Turbidity,0.1,NTU
+673071,2017-11-23,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+655588,2017-11-23,SN_18453,Snake's Canyon,Turbidity,0.2,NTU
+625686,2017-11-23,SO_15547,Southwold,E. coli,0,Orgs/100mL
+611789,2018-04-17,TA_16139,Tarnstead,Turbidity,0.1,NTU
+656829,2017-11-23,BL_13422,Blancathey,E. coli,0,Orgs/100mL
+650639,2017-11-23,BE_19973,Bellmoral,E. coli,0,Orgs/100mL
+668413,2017-12-01,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+663777,2017-12-01,PO_17043,Pontybridge,E. coli,0,Orgs/100mL
+633624,2017-10-12,BL_15033,Blancathey,Turbidity,0.2,NTU
+697178,2017-12-01,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+630707,2017-11-30,BE_17412,Bellmoral,Turbidity,0.2,NTU
+695916,2017-09-11,TA_11737,Tarnstead,E. coli,0,Orgs/100mL
+639383,2017-09-07,SW_17736,Swadlincote,THM,0.006,mg/L
+643248,2017-09-07,WA_13006,Wakefield,THM,0.051,mg/L
+665006,2017-09-11,TA_11737,Tarnstead,Turbidity,0.05,NTU
+664116,2017-10-12,PA_15640,Paethsmouth,Turbidity,0.1,NTU
+657042,2017-10-19,SW_10554,Swadlincote,Turbidity,0.1,NTU
+658512,2017-10-16,TA_10128,Tarnstead,Turbidity,0.2,NTU
+636633,2017-10-18,ME_19684,Merton,E. coli,0,Orgs/100mL
+615518,2017-07-27,SN_19866,Snake's Canyon,E. coli,0,Orgs/100mL
+677447,2017-07-27,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+638858,2017-07-27,PO_16509,Pontybridge,Turbidity,0.05,NTU
+686541,2018-02-16,PO_16509,Pontybridge,E. coli,0,Orgs/100mL
+656674,2017-11-13,TA_16139,Tarnstead,Turbidity,0.2,NTU
+662976,2017-11-16,SO_16944,Southwold,E. coli,0,Orgs/100mL
+606547,2018-01-18,SO_16944,Southwold,Turbidity,0.3,NTU
+656125,2018-01-18,SO_16944,Southwold,THM,0.006,mg/L
+681932,2017-12-11,TA_10333,Tarnstead,E. coli,0,Orgs/100mL
+664780,2018-01-18,WA_13563,Wakefield,THM,0.049,mg/L
+680272,2017-12-13,ME_16875,Merton,E. coli,0,Orgs/100mL
+625581,2017-11-16,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+627641,2017-12-14,SO_11438,Southwold,E. coli,0,Orgs/100mL
+613424,2017-12-18,TA_17893,Tarnstead,Turbidity,0.1,NTU
+604114,2017-10-26,PO_18009,Pontybridge,E. coli,0,Orgs/100mL
+637529,2017-10-26,SW_17736,Swadlincote,Turbidity,0.2,NTU
+625886,2018-02-16,SW_16507,Swadlincote,Turbidity,0.1,NTU
+611381,2018-02-15,SO_11438,Southwold,Turbidity,0.05,NTU
+677309,2018-02-16,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+625947,2018-02-15,BL_19479,Blancathey,Turbidity,0.05,NTU
+629321,2018-02-19,TA_15690,Tarnstead,E. coli,0,Orgs/100mL
+610854,2018-02-15,SO_11438,Southwold,THM,0.11,mg/L
+607150,2018-03-08,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+634564,2018-03-08,SN_18754,Snake's Canyon,E. coli,0,Orgs/100mL
+654591,2018-03-08,BL_14356,Blancathey,Turbidity,0.05,NTU
+618919,2018-03-08,BE_11469,Bellmoral,Turbidity,0.1,NTU
+673533,2018-03-08,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+654224,2018-03-08,SN_18754,Snake's Canyon,Turbidity,0.05,NTU
+682998,2018-03-01,SN_19289,Snake's Canyon,Turbidity,0.1,NTU
+605538,2018-03-09,ME_17886,Merton,E. coli,0,Orgs/100mL
+684781,2018-03-13,TA_14330,Tarnstead,E. coli,0,Orgs/100mL
+624724,2018-01-25,PO_18483,Pontybridge,E. coli,0,Orgs/100mL
+642783,2018-01-25,BL_17003,Blancathey,E. coli,0,Orgs/100mL
+628520,2018-03-08,WA_13006,Wakefield,Turbidity,0.05,NTU
+657133,2018-03-08,PO_18768,Pontybridge,Turbidity,7.16,NTU
+691397,2018-01-25,SO_15547,Southwold,E. coli,0,Orgs/100mL
+698714,2018-02-22,PA_11946,Paethsmouth,Turbidity,0.2,NTU
+662695,2018-03-08,SO_11069,Southwold,Turbidity,0.05,NTU
+648735,2018-03-13,TA_14330,Tarnstead,Turbidity,0.05,NTU
+605643,2018-03-08,SW_17736,Swadlincote,Turbidity,0.2,NTU
+603718,2018-03-15,ME_17925,Merton,E. coli,0,Orgs/100mL
+608359,2018-03-09,ME_17886,Merton,Turbidity,0.05,NTU
+600517,2018-03-16,PO_15094,Pontybridge,E. coli,0,Orgs/100mL
+641078,2018-03-16,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+697192,2018-03-15,ME_17925,Merton,Turbidity,0.05,NTU
+693056,2018-03-16,PO_18009,Pontybridge,E. coli,0,Orgs/100mL
+619585,2018-03-16,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+638883,2018-03-16,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+606181,2018-03-16,SN_11496,Snake's Canyon,E. coli,0,Orgs/100mL
+695166,2018-03-08,PO_18768,Pontybridge,E. coli,0,Orgs/100mL
+680684,2018-03-08,ST_14594,Strathmore,Turbidity,0.05,NTU
+645546,2018-01-08,TA_10279,Tarnstead,Turbidity,0.05,NTU
+685649,2018-03-16,BL_17970,Blancathey,E. coli,0,Orgs/100mL
+642318,2018-03-16,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+632512,2018-03-16,SO_12021,Southwold,E. coli,0,Orgs/100mL
+690327,2018-03-16,SN_19853,Snake's Canyon,E. coli,0,Orgs/100mL
+661178,2018-03-16,PO_14952,Pontybridge,E. coli,0,Orgs/100mL
+609338,2018-03-19,TA_10128,Tarnstead,THM,0.13,mg/L
+620349,2018-01-11,BL_17892,Blancathey,E. coli,0,Orgs/100mL
+617680,2018-03-08,PA_11134,Paethsmouth,Turbidity,0.4,NTU
+679920,2018-04-19,SW_16507,Swadlincote,Turbidity,0.05,NTU
+656926,2018-04-19,PA_15640,Paethsmouth,Turbidity,0.1,NTU
+670793,2018-01-22,TA_10696,Tarnstead,Turbidity,0.05,NTU
+610071,2018-02-22,WA_13563,Wakefield,Turbidity,0.1,NTU
+669873,2018-02-22,ST_10188,Strathmore,THM,0.18,mg/L
+602989,2018-02-22,PO_17841,Pontybridge,THM,0.13,mg/L
+612476,2018-02-22,PA_11946,Paethsmouth,THM,0.2,mg/L
+689737,2018-01-11,SO_12021,Southwold,Turbidity,0.1,NTU
+601762,2018-03-01,BL_15552,Blancathey,E. coli,0,Orgs/100mL
+656737,2018-02-22,SN_19866,Snake's Canyon,THM,0.081,mg/L
+624058,2018-03-01,BE_15184,Bellmoral,E. coli,0,Orgs/100mL
+692249,2018-03-01,SO_11423,Southwold,E. coli,0,Orgs/100mL
+658208,2018-03-01,PA_14989,Paethsmouth,E. coli,0,Orgs/100mL
+693866,2018-03-01,BL_15101,Blancathey,Turbidity,0.05,NTU
+679165,2018-03-05,TA_17893,Tarnstead,E. coli,0,Orgs/100mL
+651115,2018-02-22,BE_19426,Bellmoral,THM,0.15,mg/L
+619338,2018-03-01,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+660444,2018-03-01,SN_19289,Snake's Canyon,E. coli,0,Orgs/100mL
+676623,2018-03-01,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+619392,2018-01-11,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+668178,2018-01-11,SO_12021,Southwold,E. coli,0,Orgs/100mL
+600020,2018-01-11,PO_13324,Pontybridge,E. coli,0,Orgs/100mL
+677701,2018-01-25,SN_12742,Snake's Canyon,E. coli,0,Orgs/100mL
+670943,2018-01-25,BE_19973,Bellmoral,E. coli,0,Orgs/100mL
+621141,2017-11-15,ME_16639,Merton,E. coli,0,Orgs/100mL
+675758,2018-01-15,TA_12675,Tarnstead,E. coli,0,Orgs/100mL
+651706,2018-01-11,BE_16549,Bellmoral,E. coli,0,Orgs/100mL
+686590,2018-01-11,BE_16549,Bellmoral,Turbidity,0.1,NTU
+664429,2018-01-25,PO_11431,Pontybridge,THM,0.006,mg/L
+600823,2018-02-01,PO_17652,Pontybridge,E. coli,0,Orgs/100mL
+614379,2017-11-16,PA_15640,Paethsmouth,THM,0.063,mg/L
+621493,2017-12-18,TA_17893,Tarnstead,E. coli,0,Orgs/100mL
+609421,2018-02-07,ME_13895,Merton,E. coli,0,Orgs/100mL
+645497,2017-12-11,TA_10333,Tarnstead,THM,0.007,mg/L
+623934,2018-01-11,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+616564,2018-01-11,PO_18680,Pontybridge,E. coli,0,Orgs/100mL
+685150,2017-11-22,ME_12799,Merton,E. coli,0,Orgs/100mL
+662114,2018-01-18,BE_12407,Bellmoral,E. coli,0,Orgs/100mL
+604954,2018-01-18,SO_16944,Southwold,E. coli,0,Orgs/100mL
+683809,2017-12-14,BE_18354,Bellmoral,THM,0.007,mg/L
+612602,2018-01-18,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+623107,2018-03-01,PA_14989,Paethsmouth,Turbidity,0.05,NTU
+625820,2018-03-01,WA_14953,Wakefield,Turbidity,0.05,NTU
+614892,2017-11-23,PO_12557,Pontybridge,E. coli,0,Orgs/100mL
+624917,2018-01-10,ME_17925,Merton,Turbidity,0.05,NTU
+626191,2018-01-11,SN_10025,Snake's Canyon,Turbidity,0.1,NTU
+602369,2018-01-11,ST_10485,Strathmore,Turbidity,0.1,NTU
+698137,2018-02-08,BL_15033,Blancathey,Turbidity,0.1,NTU
+693889,2018-02-08,ST_14594,Strathmore,Turbidity,0.1,NTU
+691372,2018-02-07,ME_13895,Merton,Turbidity,0.05,NTU
+670776,2018-02-08,WA_15310,Wakefield,Turbidity,0.05,NTU
+616889,2018-02-08,SN_18453,Snake's Canyon,Turbidity,0.1,NTU
+677962,2018-02-08,PO_17043,Pontybridge,Turbidity,0.2,NTU
+684020,2018-02-08,PA_15640,Paethsmouth,Turbidity,0.05,NTU
+698437,2018-02-12,TA_11737,Tarnstead,Turbidity,0.05,NTU
+698479,2018-03-22,SN_10025,Snake's Canyon,E. coli,0,Orgs/100mL
+614219,2018-03-22,PO_13517,Pontybridge,E. coli,0,Orgs/100mL
+678184,2018-02-12,TA_11737,Tarnstead,E. coli,0,Orgs/100mL
+624358,2017-11-16,BL_13530,Blancathey,THM,0.009,mg/L
+620536,2018-02-08,SW_17736,Swadlincote,THM,0.11,mg/L
+614476,2018-03-22,PO_13324,Pontybridge,E. coli,0,Orgs/100mL
+688456,2018-03-22,PO_13517,Pontybridge,Turbidity,0.05,NTU
+692709,2018-02-15,SO_11438,Southwold,E. coli,0,Orgs/100mL
+643012,2018-02-08,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+697312,2018-04-19,PO_17043,Pontybridge,E. coli,0,Orgs/100mL
+684882,2018-04-17,TA_16139,Tarnstead,THM,0.008,mg/L
+670863,2018-04-19,SO_11438,Southwold,Turbidity,0.05,NTU
+685750,2018-04-19,PO_17043,Pontybridge,Turbidity,0.05,NTU
+669896,2018-06-15,BE_14753,Bellmoral,THM,0.007,mg/L
+652383,2018-04-27,PO_19919,Pontybridge,E. coli,0,Orgs/100mL
+650615,2018-04-27,PA_14989,Paethsmouth,E. coli,0,Orgs/100mL
+659645,2018-06-15,BL_17892,Blancathey,THM,0.007,mg/L
+690226,2018-06-18,TA_12675,Tarnstead,Turbidity,0.1,NTU
+681833,2018-06-21,SO_11438,Southwold,E. coli,0,Orgs/100mL
+671093,2018-06-21,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+602725,2018-06-21,BL_14206,Blancathey,E. coli,0,Orgs/100mL
+659034,2018-06-21,PO_12557,Pontybridge,E. coli,0,Orgs/100mL
+616207,2018-02-01,SO_17891,Southwold,Turbidity,0.1,NTU
+626925,2018-02-05,TA_11113,Tarnstead,E. coli,0,Orgs/100mL
+692969,2018-01-11,BL_11580,Blancathey,Turbidity,0.1,NTU
+624955,2018-01-11,SW_16507,Swadlincote,THM,0.005,mg/L
+617682,2018-01-25,PA_14989,Paethsmouth,THM,0.006,mg/L
+639016,2018-02-01,BE_17412,Bellmoral,E. coli,0,Orgs/100mL
+696987,2018-01-11,SW_16507,Swadlincote,Turbidity,0.3,NTU
+691807,2018-01-24,ME_12799,Merton,THM,0.007,mg/L
+692807,2018-01-29,TA_16139,Tarnstead,E. coli,0,Orgs/100mL
+636789,2018-01-11,PO_13517,Pontybridge,Turbidity,0.1,NTU
+604124,2018-01-11,PA_14989,Paethsmouth,Turbidity,0.1,NTU
+617319,2018-02-01,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+639876,2018-02-22,SO_14918,Southwold,Turbidity,0.1,NTU
+662791,2018-02-22,PO_17841,Pontybridge,Turbidity,5.79,NTU
+659642,2018-01-19,ST_13507,Strathmore,THM,0.055,mg/L
+659889,2018-03-08,SO_11069,Southwold,E. coli,0,Orgs/100mL
+683022,2018-03-08,BL_14356,Blancathey,E. coli,0,Orgs/100mL
+661215,2018-03-01,PO_18499,Pontybridge,Turbidity,0.05,NTU
+601798,2018-03-01,ST_13507,Strathmore,Turbidity,0.05,NTU
+646403,2018-03-01,BE_15184,Bellmoral,Turbidity,0.1,NTU
+682211,2018-03-01,SO_11423,Southwold,Turbidity,0.1,NTU
+600672,2018-03-01,SW_10554,Swadlincote,Turbidity,0.2,NTU
+654314,2018-03-05,TA_17893,Tarnstead,Turbidity,0.05,NTU
+691526,2018-02-01,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+696681,2018-02-01,PO_17652,Pontybridge,Turbidity,0.1,NTU
+636830,2018-02-01,WA_13006,Wakefield,Turbidity,0.05,NTU
+626040,2018-02-15,PO_19919,Pontybridge,E. coli,0,Orgs/100mL
+614448,2017-11-23,BL_15845,Blancathey,Turbidity,0.1,NTU
+666402,2018-06-15,WA_13563,Wakefield,THM,0.049,mg/L
+638473,2018-06-15,SO_17872,Southwold,Turbidity,0.1,NTU
+618259,2018-06-15,BL_17892,Blancathey,Turbidity,0.1,NTU
+636531,2018-06-15,PA_11946,Paethsmouth,Turbidity,0.2,NTU
+674041,2018-06-15,ST_10485,Strathmore,Turbidity,0.1,NTU
+649501,2018-01-19,PO_15319,Pontybridge,E. coli,0,Orgs/100mL
+666493,2018-01-19,SN_12934,Snake's Canyon,E. coli,0,Orgs/100mL
+623864,2018-06-20,ME_16875,Merton,E. coli,0,Orgs/100mL
+610198,2018-06-15,SN_12934,Snake's Canyon,Turbidity,0.1,NTU
+688049,2018-04-27,SN_19548,Snake's Canyon,Turbidity,0.1,NTU
+669830,2018-04-27,PO_16509,Pontybridge,E. coli,0,Orgs/100mL
+685288,2018-04-27,PO_16635,Pontybridge,E. coli,0,Orgs/100mL
+660410,2018-04-27,BE_19426,Bellmoral,Turbidity,0.1,NTU
+606327,2018-04-27,WA_15310,Wakefield,Turbidity,0.1,NTU
+620152,2018-04-27,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+679203,2018-05-02,ME_16639,Merton,E. coli,0,Orgs/100mL
+649753,2018-04-26,ME_10925,Merton,E. coli,0,Orgs/100mL
+681079,2018-04-23,TA_11113,Tarnstead,Turbidity,0.05,NTU
+647037,2018-04-27,SN_19548,Snake's Canyon,E. coli,0,Orgs/100mL
+683066,2018-06-21,PO_12557,Pontybridge,Turbidity,0.3,NTU
+635114,2018-07-05,PO_19919,Pontybridge,E. coli,0,Orgs/100mL
+629563,2018-07-05,PA_14989,Paethsmouth,E. coli,0,Orgs/100mL
+682167,2018-07-05,BL_15845,Blancathey,E. coli,0,Orgs/100mL
+696499,2018-07-06,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+667939,2018-07-05,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+653553,2018-02-08,PO_14145,Pontybridge,E. coli,0,Orgs/100mL
+681842,2018-06-21,BE_18354,Bellmoral,Turbidity,0.3,NTU
+676702,2018-06-21,ST_13507,Strathmore,Turbidity,0.3,NTU
+698470,2018-06-21,ST_13507,Strathmore,THM,0.049,mg/L
+650142,2018-06-28,SO_14918,Southwold,Turbidity,0.1,NTU
+639160,2018-06-28,ST_14594,Strathmore,Turbidity,0.2,NTU
+663006,2018-06-28,SN_18453,Snake's Canyon,Turbidity,0.2,NTU
+604120,2018-07-05,PO_16635,Pontybridge,E. coli,0,Orgs/100mL
+618525,2018-07-05,SW_17736,Swadlincote,Turbidity,0.6,NTU
+680449,2018-07-06,WA_15310,Wakefield,Turbidity,0.1,NTU
+638484,2018-07-09,TA_11113,Tarnstead,E. coli,0,Orgs/100mL
+676714,2018-02-08,BE_14753,Bellmoral,Turbidity,0.1,NTU
+653828,2018-02-08,SW_17736,Swadlincote,Turbidity,0.1,NTU
+665339,2018-03-22,BL_16870,Blancathey,E. coli,0,Orgs/100mL
+609294,2018-07-05,ST_14962,Strathmore,Turbidity,0.2,NTU
+648211,2018-04-27,BL_15552,Blancathey,Turbidity,0.1,NTU
+648563,2018-04-27,PA_14989,Paethsmouth,Turbidity,0.05,NTU
+680145,2018-04-27,SO_14918,Southwold,E. coli,0,Orgs/100mL
+688782,2018-04-27,SW_11822,Swadlincote,Turbidity,0.1,NTU
+614321,2018-04-27,BE_19426,Bellmoral,E. coli,0,Orgs/100mL
+688958,2018-04-27,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+638422,2018-04-27,BL_15552,Blancathey,E. coli,0,Orgs/100mL
+654538,2018-04-26,ME_10925,Merton,Turbidity,0.1,NTU
+612781,2017-12-14,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+651826,2018-01-18,BE_12407,Bellmoral,THM,0.006,mg/L
+676315,2018-02-16,SN_19548,Snake's Canyon,Turbidity,0.1,NTU
+685938,2018-02-16,SN_19548,Snake's Canyon,E. coli,0,Orgs/100mL
+607816,2018-02-16,SN_11855,Snake's Canyon,E. coli,0,Orgs/100mL
+608614,2018-02-15,ST_13507,Strathmore,Turbidity,0.05,NTU
+666191,2017-10-05,SN_19289,Snake's Canyon,E. coli,0,Orgs/100mL
+694726,2018-02-16,PO_16635,Pontybridge,E. coli,0,Orgs/100mL
+617713,2018-02-15,WA_12904,Wakefield,Turbidity,0.1,NTU
+619708,2018-02-15,PA_17864,Paethsmouth,Turbidity,0.05,NTU
+640172,2017-11-09,PA_17864,Paethsmouth,Turbidity,0.1,NTU
+630821,2017-12-07,PO_14145,Pontybridge,E. coli,0,Orgs/100mL
+677061,2017-12-07,WA_12904,Wakefield,E. coli,0,Orgs/100mL
+637793,2017-12-07,BL_16767,Blancathey,Turbidity,0.1,NTU
+620048,2018-02-16,PO_16509,Pontybridge,Turbidity,0.05,NTU
+684579,2018-07-06,SO_11423,Southwold,Turbidity,0.2,NTU
+669196,2018-05-16,ME_17925,Merton,Turbidity,0.1,NTU
+642923,2018-05-16,ME_17925,Merton,THM,0.007,mg/L
+663951,2018-05-17,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+643024,2018-05-10,BL_11992,Blancathey,E. coli,0,Orgs/100mL
+635965,2018-02-14,ME_16875,Merton,E. coli,0,Orgs/100mL
+666230,2018-07-06,BE_15184,Bellmoral,Turbidity,0.2,NTU
+691723,2018-07-05,PA_14989,Paethsmouth,Turbidity,0.1,NTU
+624628,2018-07-05,SN_11519,Snake's Canyon,Turbidity,0.2,NTU
+662457,2018-02-15,BE_18354,Bellmoral,E. coli,0,Orgs/100mL
+630371,2018-05-18,PO_18009,Pontybridge,E. coli,0,Orgs/100mL
+619148,2018-07-05,PO_19919,Pontybridge,Turbidity,0.1,NTU
+679904,2018-05-18,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+644578,2018-05-16,ME_17925,Merton,E. coli,0,Orgs/100mL
+619676,2018-04-30,TA_11737,Tarnstead,Turbidity,0.1,NTU
+621551,2018-05-10,BE_11469,Bellmoral,Turbidity,0.2,NTU
+644970,2018-05-10,WA_14953,Wakefield,Turbidity,0.2,NTU
+635053,2018-03-29,SO_15547,Southwold,Turbidity,0.05,NTU
+689352,2018-04-11,ME_13895,Merton,E. coli,0,Orgs/100mL
+616840,2018-05-14,TA_10333,Tarnstead,THM,0.006,mg/L
+679223,2018-05-17,BE_16549,Bellmoral,E. coli,0,Orgs/100mL
+683153,2018-04-06,PO_18483,Pontybridge,E. coli,0,Orgs/100mL
+617903,2018-04-03,TA_12675,Tarnstead,Turbidity,0.05,NTU
+611199,2018-05-18,SN_19853,Snake's Canyon,E. coli,0,Orgs/100mL
+609268,2018-05-18,PO_15094,Pontybridge,E. coli,0,Orgs/100mL
+683943,2018-03-29,PA_11946,Paethsmouth,Turbidity,0.2,NTU
+638377,2018-04-06,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+665618,2018-04-06,BE_17412,Bellmoral,E. coli,0,Orgs/100mL
+662886,2018-07-05,BL_13530,Blancathey,E. coli,0,Orgs/100mL
+672210,2018-07-05,PO_15632,Pontybridge,E. coli,0,Orgs/100mL
+681329,2018-07-04,ME_19684,Merton,Turbidity,0.2,NTU
+621195,2018-05-02,ME_16639,Merton,Turbidity,0.1,NTU
+655172,2018-05-10,ST_13507,Strathmore,Turbidity,0.1,NTU
+692009,2018-05-03,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+601632,2018-05-10,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+694045,2018-05-10,SW_10554,Swadlincote,Turbidity,0.2,NTU
+624814,2018-05-03,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+667012,2018-05-03,PO_15632,Pontybridge,E. coli,0,Orgs/100mL
+664407,2018-05-03,SN_19866,Snake's Canyon,E. coli,0,Orgs/100mL
+632146,2018-05-03,BL_19479,Blancathey,E. coli,0,Orgs/100mL
+699896,2018-05-03,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+662909,2018-05-03,SW_17736,Swadlincote,Turbidity,0.1,NTU
+699132,2018-05-07,TA_15690,Tarnstead,E. coli,0,Orgs/100mL
+608581,2018-05-03,BE_15184,Bellmoral,Turbidity,0.1,NTU
+606270,2018-07-06,WA_15310,Wakefield,THM,0.047,mg/L
+667338,2018-05-03,BL_16767,Blancathey,E. coli,0,Orgs/100mL
+684638,2018-05-03,SN_11855,Snake's Canyon,E. coli,0,Orgs/100mL
+641090,2018-04-27,SO_14918,Southwold,THM,0.006,mg/L
+663675,2018-07-12,SN_19866,Snake's Canyon,E. coli,0,Orgs/100mL
+612694,2018-07-12,BE_11469,Bellmoral,E. coli,0,Orgs/100mL
+629270,2018-07-12,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+662376,2018-07-12,PO_18499,Pontybridge,E. coli,0,Orgs/100mL
+639664,2018-07-12,WA_12904,Wakefield,E. coli,0,Orgs/100mL
+604406,2018-07-12,SN_11855,Snake's Canyon,E. coli,0,Orgs/100mL
+619538,2018-07-12,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+681631,2018-05-03,SO_11423,Southwold,E. coli,0,Orgs/100mL
+683998,2018-07-09,TA_11113,Tarnstead,THM,0.012,mg/L
+602547,2018-07-12,PO_17841,Pontybridge,Turbidity,0.1,NTU
+666404,2018-07-12,PO_17841,Pontybridge,E. coli,0,Orgs/100mL
+643735,2018-07-12,BL_19479,Blancathey,E. coli,0,Orgs/100mL
+624162,2018-06-21,SN_16148,Snake's Canyon,E. coli,0,Orgs/100mL
+656370,2018-06-21,BL_17003,Blancathey,E. coli,0,Orgs/100mL
+631455,2018-03-16,PA_15640,Paethsmouth,Turbidity,0.05,NTU
+607401,2018-03-16,WA_13563,Wakefield,THM,0.13,mg/L
+611888,2018-03-16,BE_16549,Bellmoral,Turbidity,0.05,NTU
+602720,2018-02-14,ME_16875,Merton,Turbidity,0.3,NTU
+622739,2018-02-15,WA_12904,Wakefield,E. coli,0,Orgs/100mL
+612237,2018-02-08,WA_15310,Wakefield,THM,0.049,mg/L
+687661,2018-02-15,BL_16767,Blancathey,E. coli,0,Orgs/100mL
+637578,2018-03-21,ME_16639,Merton,E. coli,0,Orgs/100mL
+662807,2018-03-22,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+683439,2018-03-22,PO_18680,Pontybridge,E. coli,0,Orgs/100mL
+652565,2018-06-21,BE_18354,Bellmoral,E. coli,0,Orgs/100mL
+692497,2018-06-21,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+609095,2018-05-17,SO_12021,Southwold,E. coli,0,Orgs/100mL
+697318,2018-02-15,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+644650,2018-06-20,ME_16875,Merton,Turbidity,0.2,NTU
+621632,2018-06-21,BL_14206,Blancathey,Turbidity,0.2,NTU
+621649,2018-02-15,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+622538,2018-06-21,SW_10554,Swadlincote,Turbidity,0.3,NTU
+670744,2018-06-21,SN_16148,Snake's Canyon,Turbidity,0.2,NTU
+643548,2018-06-21,PA_11134,Paethsmouth,THM,0.04,mg/L
+686488,2018-06-20,ME_16875,Merton,THM,0.009,mg/L
+632147,2018-06-21,PA_11134,Paethsmouth,Turbidity,0.2,NTU
+682452,2018-06-25,TA_10696,Tarnstead,E. coli,0,Orgs/100mL
+684330,2018-04-19,SN_11519,Snake's Canyon,THM,0.006,mg/L
+609274,2018-04-27,SO_14918,Southwold,Turbidity,0.2,NTU
+683741,2018-06-21,SO_11438,Southwold,Turbidity,0.2,NTU
+643063,2018-06-21,WA_14953,Wakefield,Turbidity,0.1,NTU
+681426,2018-04-04,PA_14989,Paethsmouth,E. coli,0,Orgs/100mL
+629436,2018-03-29,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+681225,2018-03-29,WA_12904,Wakefield,E. coli,0,Orgs/100mL
+611148,2018-03-28,ME_12799,Merton,E. coli,0,Orgs/100mL
+673523,2018-04-04,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+666901,2018-04-06,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+649651,2018-03-29,SO_15547,Southwold,THM,0.007,mg/L
+670809,2018-04-04,ST_14594,Strathmore,Turbidity,0.05,NTU
+655281,2018-03-29,BL_11580,Blancathey,Turbidity,0.05,NTU
+619165,2018-03-29,SW_17736,Swadlincote,Turbidity,0.1,NTU
+601348,2018-04-06,SO_17891,Southwold,E. coli,0,Orgs/100mL
+685336,2018-04-05,ME_17256,Merton,E. coli,0,Orgs/100mL
+601982,2018-04-05,SN_12934,Snake's Canyon,E. coli,0,Orgs/100mL
+629405,2018-03-29,PO_15649,Pontybridge,Turbidity,0.05,NTU
+670712,2018-06-15,SN_12934,Snake's Canyon,THM,0.006,mg/L
+659451,2018-04-05,ME_17256,Merton,Turbidity,0.05,NTU
+626748,2018-04-27,BL_15845,Blancathey,E. coli,0,Orgs/100mL
+609662,2018-03-29,PO_15649,Pontybridge,THM,0.008,mg/L
+624660,2018-03-29,ST_10485,Strathmore,Turbidity,0.05,NTU
+666126,2018-03-29,SN_18008,Snake's Canyon,Turbidity,0.05,NTU
+625162,2018-04-05,BL_14206,Blancathey,E. coli,0,Orgs/100mL
+628232,2018-07-09,TA_11113,Tarnstead,Turbidity,0.2,NTU
+696832,2018-04-27,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+661088,2018-05-10,BL_11992,Blancathey,Turbidity,0.1,NTU
+620549,2018-05-10,BE_11469,Bellmoral,E. coli,0,Orgs/100mL
+678485,2018-05-21,TA_17893,Tarnstead,E. coli,0,Orgs/100mL
+684725,2018-06-21,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+640405,2018-06-21,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+613571,2018-05-17,BE_16549,Bellmoral,THM,0.007,mg/L
+678841,2018-07-11,ME_17886,Merton,E. coli,0,Orgs/100mL
+600202,2018-05-18,BL_15552,Blancathey,E. coli,0,Orgs/100mL
+688754,2018-05-18,PO_14952,Pontybridge,E. coli,0,Orgs/100mL
+601023,2018-05-17,BE_16549,Bellmoral,Turbidity,0.05,NTU
+676965,2018-05-18,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+683524,2018-05-18,BL_14356,Blancathey,E. coli,0,Orgs/100mL
+641571,2018-03-29,BL_17892,Blancathey,E. coli,0,Orgs/100mL
+678068,2018-03-29,BE_12407,Bellmoral,E. coli,0,Orgs/100mL
+659920,2018-04-06,PO_11431,Pontybridge,E. coli,0,Orgs/100mL
+678694,2018-03-29,WA_12904,Wakefield,Turbidity,0.05,NTU
+677123,2018-03-29,BE_12407,Bellmoral,Turbidity,0.05,NTU
+606329,2018-05-09,PO_18499,Pontybridge,E. coli,0,Orgs/100mL
+689516,2018-05-09,ME_17886,Merton,E. coli,0,Orgs/100mL
+634979,2018-05-09,SN_18754,Snake's Canyon,E. coli,0,Orgs/100mL
+696018,2018-05-10,BL_16215,Blancathey,E. coli,0,Orgs/100mL
+649790,2018-05-09,PO_18499,Pontybridge,Turbidity,0.1,NTU
+675435,2018-05-03,PA_17864,Paethsmouth,Turbidity,0.1,NTU
+698721,2018-04-30,TA_11737,Tarnstead,E. coli,0,Orgs/100mL
+638323,2018-04-27,PO_16509,Pontybridge,Turbidity,0.1,NTU
+614802,2018-04-27,ST_10188,Strathmore,Turbidity,0.1,NTU
+617155,2018-07-05,BL_13422,Blancathey,E. coli,0,Orgs/100mL
+666471,2018-07-05,SN_19548,Snake's Canyon,E. coli,0,Orgs/100mL
+642310,2018-07-06,SO_11423,Southwold,E. coli,0,Orgs/100mL
+623061,2018-07-05,BL_13422,Blancathey,Turbidity,0.1,NTU
+669056,2018-07-05,SN_11519,Snake's Canyon,E. coli,0,Orgs/100mL
+614003,2018-07-05,ST_14962,Strathmore,E. coli,0,Orgs/100mL
+609076,2018-07-06,BE_15184,Bellmoral,E. coli,0,Orgs/100mL
+686403,2018-05-10,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+642532,2018-05-10,BL_15101,Blancathey,E. coli,0,Orgs/100mL
+666079,2018-04-12,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+663469,2018-04-12,SN_16148,Snake's Canyon,E. coli,0,Orgs/100mL
+630520,2018-05-10,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+609692,2018-05-10,SO_11069,Southwold,Turbidity,0.2,NTU
+659006,2018-05-10,SO_11069,Southwold,E. coli,0,Orgs/100mL
+695362,2018-05-03,BE_15184,Bellmoral,E. coli,0,Orgs/100mL
+685745,2018-04-27,PA_14989,Paethsmouth,THM,0.007,mg/L
+650937,2018-05-03,PO_17841,Pontybridge,E. coli,0,Orgs/100mL
+630081,2018-04-19,SN_11519,Snake's Canyon,E. coli,0,Orgs/100mL
+659791,2018-04-12,PA_11134,Paethsmouth,Turbidity,0.1,NTU
+685350,2018-07-19,BE_16549,Bellmoral,Turbidity,0.2,NTU
+611651,2018-04-12,WA_13006,Wakefield,Turbidity,0.05,NTU
+610640,2018-04-12,WA_13006,Wakefield,THM,0.058,mg/L
+666454,2018-04-12,SO_17872,Southwold,Turbidity,0.2,NTU
+647184,2018-07-19,BE_16549,Bellmoral,E. coli,0,Orgs/100mL
+633771,2018-07-19,SW_10554,Swadlincote,Turbidity,0.2,NTU
+614234,2018-07-19,BL_11992,Blancathey,E. coli,0,Orgs/100mL
+627614,2018-07-19,SO_12021,Southwold,Turbidity,0.3,NTU
+683833,2018-07-19,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+622084,2018-07-19,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+650950,2018-07-25,ME_16639,Merton,Turbidity,0.2,NTU
+661968,2018-07-19,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+642345,2018-07-19,WA_13563,Wakefield,Turbidity,0.2,NTU
+678064,2018-07-19,PA_11946,Paethsmouth,Turbidity,0.2,NTU
+617934,2018-07-25,ME_16639,Merton,E. coli,0,Orgs/100mL
+643794,2018-04-05,SN_12742,Snake's Canyon,E. coli,0,Orgs/100mL
+611463,2018-04-05,SN_12934,Snake's Canyon,Turbidity,0.05,NTU
+653869,2018-04-04,ST_14594,Strathmore,THM,0.064,mg/L
+630126,2018-07-26,BE_19973,Bellmoral,E. coli,0,Orgs/100mL
+616271,2018-05-18,BL_15552,Blancathey,THM,0.007,mg/L
+621391,2018-07-26,SO_16944,Southwold,E. coli,0,Orgs/100mL
+694985,2018-07-26,BE_19973,Bellmoral,Turbidity,0.2,NTU
+666729,2018-05-24,SO_16944,Southwold,E. coli,0,Orgs/100mL
+654228,2018-05-17,SO_12021,Southwold,Turbidity,0.05,NTU
+635384,2018-05-17,WA_13006,Wakefield,Turbidity,0.05,NTU
+610188,2018-05-24,BL_17970,Blancathey,E. coli,0,Orgs/100mL
+697931,2018-05-24,PO_13517,Pontybridge,E. coli,0,Orgs/100mL
+611096,2018-05-24,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+613310,2018-05-18,PO_14952,Pontybridge,Turbidity,0.05,NTU
+671919,2018-05-24,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+641780,2018-07-12,PO_18768,Pontybridge,E. coli,0,Orgs/100mL
+645292,2018-05-18,PA_11134,Paethsmouth,Turbidity,0.05,NTU
+681669,2018-05-10,WA_14953,Wakefield,THM,0.043,mg/L
+692487,2018-05-10,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+680840,2018-05-09,SN_19289,Snake's Canyon,Turbidity,0.2,NTU
+661675,2018-05-14,TA_10333,Tarnstead,Turbidity,0.1,NTU
+683500,2018-07-26,BL_15552,Blancathey,Turbidity,0.2,NTU
+612535,2018-07-26,PO_15094,Pontybridge,E. coli,0,Orgs/100mL
+681546,2018-07-26,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+641304,2018-07-19,BL_11992,Blancathey,Turbidity,0.2,NTU
+607052,2018-07-26,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+689856,2018-07-26,ST_13507,Strathmore,Turbidity,0.2,NTU
+655971,2018-07-26,PA_11134,Paethsmouth,Turbidity,0.2,NTU
+666195,2018-07-26,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+648016,2018-07-26,BL_14356,Blancathey,E. coli,0,Orgs/100mL
+682790,2018-07-26,WA_14953,Wakefield,Turbidity,0.1,NTU
+616149,2018-07-30,TA_10333,Tarnstead,E. coli,0,Orgs/100mL
+693015,2018-07-26,PO_15094,Pontybridge,THM,0.011,mg/L
+608038,2018-07-26,SN_19289,Snake's Canyon,THM,0.011,mg/L
+672112,2018-08-01,ME_12799,Merton,E. coli,0,Orgs/100mL
+674912,2018-05-23,ME_16639,Merton,E. coli,0,Orgs/100mL
+661727,2018-05-03,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+609690,2018-07-26,PO_13324,Pontybridge,E. coli,0,Orgs/100mL
+606724,2017-11-23,BE_19973,Bellmoral,Turbidity,0.1,NTU
+690800,2018-03-16,PO_15094,Pontybridge,Turbidity,0.05,NTU
+608582,2018-04-19,SN_11519,Snake's Canyon,Turbidity,0.1,NTU
+637064,2018-04-19,PO_19646,Pontybridge,E. coli,0,Orgs/100mL
+633316,2018-04-19,BL_13530,Blancathey,Turbidity,0.1,NTU
+695222,2018-04-19,WA_13563,Wakefield,Turbidity,0.2,NTU
+628749,2018-03-16,SW_11822,Swadlincote,THM,0.11,mg/L
+601323,2018-03-16,SO_12021,Southwold,Turbidity,0.2,NTU
+658005,2018-03-22,SN_14788,Snake's Canyon,E. coli,0,Orgs/100mL
+626460,2018-03-16,SW_11822,Swadlincote,Turbidity,0.2,NTU
+621204,2018-03-16,SN_19853,Snake's Canyon,Turbidity,0.05,NTU
+618510,2017-11-23,SN_18453,Snake's Canyon,E. coli,0,Orgs/100mL
+649142,2017-11-23,PO_12557,Pontybridge,Turbidity,0.3,NTU
+636790,2017-11-23,ST_10485,Strathmore,Turbidity,0.1,NTU
+607319,2017-11-23,SO_15547,Southwold,Turbidity,0.1,NTU
+692601,2018-03-08,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+624465,2018-03-08,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+680741,2018-03-08,BE_11469,Bellmoral,E. coli,0,Orgs/100mL
+653389,2018-03-16,WA_13563,Wakefield,Turbidity,0.1,NTU
+619975,2018-03-16,ST_10485,Strathmore,Turbidity,0.05,NTU
+688951,2018-03-16,BL_13051,Blancathey,Turbidity,0.05,NTU
+607752,2018-03-22,BL_19934,Blancathey,E. coli,0,Orgs/100mL
+611699,2018-03-22,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+676830,2018-04-19,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+620181,2018-01-19,SW_10554,Swadlincote,Turbidity,0.1,NTU
+623364,2018-01-19,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+655736,2018-01-19,SN_18008,Snake's Canyon,Turbidity,0.1,NTU
+667319,2018-01-19,SN_18008,Snake's Canyon,E. coli,0,Orgs/100mL
+665237,2018-01-18,WA_13563,Wakefield,Turbidity,0.1,NTU
+604645,2018-01-19,PO_14943,Pontybridge,E. coli,0,Orgs/100mL
+643941,2018-04-17,TA_16139,Tarnstead,E. coli,0,Orgs/100mL
+669559,2018-04-12,SW_17736,Swadlincote,THM,0.006,mg/L
+647948,2018-05-09,ME_17886,Merton,Turbidity,0.05,NTU
+696674,2018-05-14,TA_10333,Tarnstead,E. coli,0,Orgs/100mL
+660013,2018-08-02,SO_15547,Southwold,Turbidity,0.2,NTU
+675085,2018-08-02,PO_13517,Pontybridge,E. coli,0,Orgs/100mL
+642983,2018-04-11,ME_13895,Merton,Turbidity,0.05,NTU
+641965,2018-04-12,PO_17652,Pontybridge,Turbidity,0.1,NTU
+678939,2018-07-18,ME_17925,Merton,Turbidity,0.2,NTU
+623296,2018-08-02,BE_12407,Bellmoral,Turbidity,0.2,NTU
+679139,2018-08-08,ME_17256,Merton,E. coli,0,Orgs/100mL
+671951,2018-08-09,BL_19934,Blancathey,E. coli,0,Orgs/100mL
+628975,2018-08-09,PO_15649,Pontybridge,E. coli,0,Orgs/100mL
+612952,2018-08-06,TA_17893,Tarnstead,Turbidity,0.3,NTU
+644290,2018-04-12,ST_10188,Strathmore,Turbidity,0.05,NTU
+658162,2018-08-16,BE_14753,Bellmoral,E. coli,0,Orgs/100mL
+653776,2018-08-16,SN_14788,Snake's Canyon,E. coli,0,Orgs/100mL
+602008,2018-08-02,WA_13006,Wakefield,THM,0.062,mg/L
+627312,2018-08-02,WA_13006,Wakefield,Turbidity,0.1,NTU
+671873,2018-07-19,SO_12021,Southwold,E. coli,0,Orgs/100mL
+676838,2018-05-24,BL_13051,Blancathey,E. coli,0,Orgs/100mL
+684704,2018-05-24,PO_14145,Pontybridge,E. coli,0,Orgs/100mL
+675176,2018-05-24,PO_18680,Pontybridge,E. coli,0,Orgs/100mL
+605749,2018-05-24,SN_11496,Snake's Canyon,E. coli,0,Orgs/100mL
+652397,2018-05-24,BE_19973,Bellmoral,E. coli,0,Orgs/100mL
+659368,2018-08-23,SN_12934,Snake's Canyon,E. coli,0,Orgs/100mL
+624177,2018-04-12,SO_17872,Southwold,E. coli,0,Orgs/100mL
+621176,2018-08-23,BL_14280,Blancathey,E. coli,0,Orgs/100mL
+654978,2018-06-14,ME_13895,Merton,E. coli,0,Orgs/100mL
+691748,2018-06-15,SN_12934,Snake's Canyon,E. coli,0,Orgs/100mL
+603218,2018-06-12,TA_10279,Tarnstead,THM,0.007,mg/L
+674635,2018-06-15,WA_13563,Wakefield,Turbidity,0.7,NTU
+646556,2018-06-15,SW_17736,Swadlincote,Turbidity,0.7,NTU
+650888,2018-06-15,BE_14753,Bellmoral,Turbidity,0.2,NTU
+628322,2018-06-15,PO_18483,Pontybridge,E. coli,0,Orgs/100mL
+615407,2018-06-21,PO_17043,Pontybridge,E. coli,0,Orgs/100mL
+615353,2018-06-21,PO_19646,Pontybridge,E. coli,0,Orgs/100mL
+657927,2018-06-15,BL_17892,Blancathey,E. coli,0,Orgs/100mL
+681559,2018-08-09,BE_17412,Bellmoral,THM,0.016,mg/L
+612232,2018-08-09,ST_14962,Strathmore,THM,0.073,mg/L
+618859,2018-08-09,WA_15310,Wakefield,Turbidity,0.2,NTU
+691764,2018-08-09,SW_17736,Swadlincote,Turbidity,0.2,NTU
+615926,2018-08-13,TA_14330,Tarnstead,E. coli,0,Orgs/100mL
+644416,2018-08-09,SO_17891,Southwold,Turbidity,0.2,NTU
+655142,2018-06-27,ME_10925,Merton,E. coli,0,Orgs/100mL
+620939,2018-07-12,BL_11580,Blancathey,E. coli,0,Orgs/100mL
+614698,2018-07-12,BL_16767,Blancathey,E. coli,0,Orgs/100mL
+615825,2018-04-06,SW_11822,Swadlincote,Turbidity,0.05,NTU
+688851,2018-07-11,ME_17886,Merton,Turbidity,0.3,NTU
+648840,2018-04-06,BE_17412,Bellmoral,Turbidity,0.05,NTU
+650426,2018-04-09,TA_10696,Tarnstead,Turbidity,0.05,NTU
+698746,2018-04-06,SO_17891,Southwold,Turbidity,0.05,NTU
+616711,2018-04-04,PA_14989,Paethsmouth,Turbidity,0.05,NTU
+619641,2018-04-06,WA_14953,Wakefield,Turbidity,0.05,NTU
+644103,2018-04-12,SN_18453,Snake's Canyon,E. coli,0,Orgs/100mL
+608752,2018-05-03,PO_15632,Pontybridge,Turbidity,0.3,NTU
+604800,2018-05-03,ST_14594,Strathmore,Turbidity,0.1,NTU
+623573,2018-05-09,SN_19289,Snake's Canyon,E. coli,0,Orgs/100mL
+620744,2018-05-09,PO_18768,Pontybridge,E. coli,0,Orgs/100mL
+682445,2018-05-10,PA_11946,Paethsmouth,Turbidity,0.1,NTU
+682540,2018-07-25,ME_16639,Merton,THM,0.012,mg/L
+658279,2018-07-30,TA_10333,Tarnstead,Turbidity,0.2,NTU
+681812,2018-05-03,WA_13563,Wakefield,Turbidity,0.1,NTU
+634741,2018-05-07,TA_15690,Tarnstead,Turbidity,0.1,NTU
+682717,2018-07-12,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+615305,2018-05-24,BE_19973,Bellmoral,Turbidity,0.05,NTU
+687179,2018-05-24,SN_11496,Snake's Canyon,Turbidity,0.5,NTU
+642860,2018-05-23,ME_16639,Merton,Turbidity,0.2,NTU
+646470,2018-05-24,ST_10485,Strathmore,Turbidity,0.2,NTU
+616218,2018-05-28,TA_14330,Tarnstead,E. coli,0,Orgs/100mL
+615736,2018-05-24,PO_13517,Pontybridge,THM,0.007,mg/L
+619629,2018-05-24,PO_13517,Pontybridge,Turbidity,0.05,NTU
+645104,2018-05-24,PA_15640,Paethsmouth,Turbidity,0.05,NTU
+652378,2018-05-31,BE_12407,Bellmoral,E. coli,0,Orgs/100mL
+606859,2018-05-31,SN_10025,Snake's Canyon,E. coli,0,Orgs/100mL
+667929,2018-05-31,BL_19934,Blancathey,E. coli,0,Orgs/100mL
+608822,2018-05-31,SO_15547,Southwold,E. coli,0,Orgs/100mL
+607764,2018-08-16,BL_16870,Blancathey,E. coli,0,Orgs/100mL
+619971,2018-05-31,BL_15033,Blancathey,E. coli,0,Orgs/100mL
+619623,2018-05-31,PO_15649,Pontybridge,E. coli,0,Orgs/100mL
+625775,2018-05-31,ST_13507,Strathmore,Turbidity,0.1,NTU
+695247,2018-05-24,SO_16944,Southwold,THM,0.47533,mg/L
+628301,2018-05-24,SO_16944,Southwold,Turbidity,0.05,NTU
+654930,2018-05-31,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+616172,2018-08-06,TA_17893,Tarnstead,E. coli,0,Orgs/100mL
+637210,2018-08-02,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+679868,2018-08-02,PO_18680,Pontybridge,E. coli,0,Orgs/100mL
+617553,2018-08-02,BL_17970,Blancathey,E. coli,0,Orgs/100mL
+626223,2018-08-02,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+628359,2018-08-02,BE_12407,Bellmoral,E. coli,0,Orgs/100mL
+673738,2018-08-02,BL_13051,Blancathey,E. coli,0,Orgs/100mL
+614026,2018-08-02,SW_11822,Swadlincote,Turbidity,0.2,NTU
+692594,2018-08-02,ST_14594,Strathmore,Turbidity,0.2,NTU
+601166,2018-08-01,ME_12799,Merton,Turbidity,0.2,NTU
+627300,2018-08-02,SO_15547,Southwold,E. coli,0,Orgs/100mL
+639705,2018-08-02,PO_18680,Pontybridge,Turbidity,0.2,NTU
+665488,2018-08-02,PA_15640,Paethsmouth,Turbidity,0.2,NTU
+646801,2018-08-02,SN_19853,Snake's Canyon,Turbidity,0.2,NTU
+665499,2018-08-02,SN_19853,Snake's Canyon,E. coli,0,Orgs/100mL
+673924,2018-08-02,SW_11822,Swadlincote,THM,0.011,mg/L
+654486,2018-08-02,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+668513,2018-08-02,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+657465,2018-04-12,PO_17652,Pontybridge,E. coli,0,Orgs/100mL
+662797,2018-05-24,SW_16507,Swadlincote,Turbidity,0.1,NTU
+654566,2018-05-24,WA_13563,Wakefield,Turbidity,0.2,NTU
+684030,2018-04-12,BL_17003,Blancathey,E. coli,0,Orgs/100mL
+653353,2018-05-10,SW_10554,Swadlincote,THM,0.005,mg/L
+681927,2018-08-16,SO_17872,Southwold,E. coli,0,Orgs/100mL
+669304,2018-05-31,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+631470,2018-05-31,PA_14989,Paethsmouth,E. coli,0,Orgs/100mL
+635146,2018-08-16,PO_17652,Pontybridge,E. coli,0,Orgs/100mL
+659432,2018-04-19,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+651069,2018-10-18,PA_14989,Paethsmouth,E. coli,0,Orgs/100mL
+627067,2018-08-23,SN_12934,Snake's Canyon,THM,0.01,mg/L
+665962,2018-06-15,PO_11431,Pontybridge,Turbidity,0.1,NTU
+622491,2018-05-31,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+675845,2018-04-19,BL_13530,Blancathey,E. coli,0,Orgs/100mL
+651222,2018-09-19,ME_17925,Merton,E. coli,0,Orgs/100mL
+650108,2018-09-17,TA_16139,Tarnstead,Turbidity,0.2,NTU
+691477,2018-09-20,SO_12021,Southwold,E. coli,0,Orgs/100mL
+663774,2018-03-01,PO_18499,Pontybridge,E. coli,0,Orgs/100mL
+691611,2018-03-01,BL_15101,Blancathey,E. coli,0,Orgs/100mL
+698943,2018-01-25,BL_17003,Blancathey,THM,0.007,mg/L
+659388,2018-02-01,SW_11822,Swadlincote,Turbidity,0.1,NTU
+626297,2018-02-01,BL_11116,Blancathey,Turbidity,0.1,NTU
+647976,2018-02-01,BE_17412,Bellmoral,Turbidity,0.1,NTU
+674523,2018-02-01,SN_16148,Snake's Canyon,Turbidity,0.1,NTU
+647552,2018-01-31,ME_17256,Merton,Turbidity,0.1,NTU
+601124,2018-02-01,ST_10485,Strathmore,Turbidity,0.05,NTU
+687220,2018-02-05,TA_11113,Tarnstead,Turbidity,0.2,NTU
+615737,2018-08-23,BL_14206,Blancathey,E. coli,0,Orgs/100mL
+655711,2018-08-09,BE_17412,Bellmoral,E. coli,0,Orgs/100mL
+681704,2018-08-09,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+698690,2018-08-09,PA_14989,Paethsmouth,E. coli,0,Orgs/100mL
+616828,2018-08-09,PO_14943,Pontybridge,E. coli,0,Orgs/100mL
+677858,2018-08-09,BL_15033,Blancathey,E. coli,0,Orgs/100mL
+626405,2018-08-06,TA_17893,Tarnstead,THM,0.016,mg/L
+674131,2018-04-12,BL_17003,Blancathey,Turbidity,0.2,NTU
+697328,2018-08-09,ST_14962,Strathmore,E. coli,0,Orgs/100mL
+606311,2018-08-09,BL_11580,Blancathey,E. coli,0,Orgs/100mL
+661320,2018-08-09,SN_11496,Snake's Canyon,E. coli,0,Orgs/100mL
+673354,2018-04-19,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+609522,2018-07-19,PO_18009,Pontybridge,E. coli,0,Orgs/100mL
+620553,2018-08-09,PO_15649,Pontybridge,Turbidity,0.3,NTU
+699746,2018-08-09,SO_17891,Southwold,E. coli,0,Orgs/100mL
+632767,2018-04-18,ME_16875,Merton,E. coli,0,Orgs/100mL
+613237,2018-04-19,PO_14145,Pontybridge,E. coli,0,Orgs/100mL
+654744,2018-04-19,SO_11438,Southwold,E. coli,0,Orgs/100mL
+668622,2018-09-14,BE_11469,Bellmoral,THM,0.011,mg/L
+603963,2018-04-19,BE_18354,Bellmoral,E. coli,0,Orgs/100mL
+662858,2018-04-19,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+616015,2018-07-26,SO_16944,Southwold,Turbidity,0.2,NTU
+629776,2018-07-26,SN_19289,Snake's Canyon,E. coli,0,Orgs/100mL
+607727,2018-05-31,BE_12407,Bellmoral,Turbidity,0.1,NTU
+606275,2018-05-31,SN_10025,Snake's Canyon,Turbidity,0.1,NTU
+651031,2018-05-28,TA_14330,Tarnstead,Turbidity,0.2,NTU
+678889,2018-05-31,SW_10554,Swadlincote,Turbidity,0.05,NTU
+655550,2018-05-31,PA_14989,Paethsmouth,Turbidity,0.3,NTU
+678809,2018-05-30,ME_12799,Merton,Turbidity,0.05,NTU
+646353,2018-05-31,WA_15310,Wakefield,Turbidity,0.05,NTU
+634503,2018-05-31,PO_15649,Pontybridge,Turbidity,0.1,NTU
+604347,2018-05-30,ME_12799,Merton,E. coli,0,Orgs/100mL
+668328,2018-05-31,BL_15033,Blancathey,Turbidity,0.05,NTU
+622848,2018-06-04,TA_10128,Tarnstead,E. coli,0,Orgs/100mL
+637386,2018-05-24,ST_10485,Strathmore,THM,0.05,mg/L
+676020,2018-05-24,BL_13051,Blancathey,Turbidity,0.1,NTU
+695098,2018-05-24,PA_15640,Paethsmouth,THM,0.05,mg/L
+659445,2018-10-18,SN_10025,Snake's Canyon,THM,0.008,mg/L
+673402,2018-10-18,PO_11431,Pontybridge,THM,0.009,mg/L
+618111,2018-08-24,SO_11438,Southwold,Turbidity,0.2,NTU
+636472,2018-10-25,ST_10485,Strathmore,Turbidity,0.2,NTU
+649127,2018-10-22,TA_17893,Tarnstead,Turbidity,0.1,NTU
+653107,2018-10-17,ME_13895,Merton,THM,0.009,mg/L
+634416,2018-10-25,SN_14788,Snake's Canyon,Turbidity,0.2,NTU
+665865,2018-10-25,BL_16215,Blancathey,E. coli,0,Orgs/100mL
+614651,2018-08-09,SN_11496,Snake's Canyon,Turbidity,0.3,NTU
+606006,2018-08-09,PA_14989,Paethsmouth,Turbidity,0.2,NTU
+653637,2018-10-25,BE_18354,Bellmoral,E. coli,0,Orgs/100mL
+609851,2018-10-25,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+653595,2018-08-15,ME_13895,Merton,E. coli,0,Orgs/100mL
+652049,2018-08-09,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+625483,2018-09-21,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+632821,2018-09-21,SN_11855,Snake's Canyon,E. coli,0,Orgs/100mL
+607396,2018-09-20,WA_12904,Wakefield,E. coli,0,Orgs/100mL
+697736,2018-09-21,SN_19548,Snake's Canyon,E. coli,0,Orgs/100mL
+642211,2018-09-20,BE_16549,Bellmoral,E. coli,0,Orgs/100mL
+674537,2018-09-21,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+635057,2018-09-21,PO_18009,Pontybridge,E. coli,0,Orgs/100mL
+636933,2018-09-21,ST_10485,Strathmore,Turbidity,0.2,NTU
+697007,2018-09-24,TA_11113,Tarnstead,E. coli,0,Orgs/100mL
+648075,2018-09-20,SO_12021,Southwold,Turbidity,0.2,NTU
+682940,2018-09-21,PA_17864,Paethsmouth,Turbidity,0.3,NTU
+627467,2018-09-21,SW_11822,Swadlincote,Turbidity,0.2,NTU
+631721,2018-09-21,PO_17841,Pontybridge,E. coli,0,Orgs/100mL
+661959,2018-09-21,PO_18768,Pontybridge,E. coli,0,Orgs/100mL
+684023,2018-05-31,SO_15547,Southwold,Turbidity,0.3,NTU
+664232,2018-08-24,SO_11438,Southwold,E. coli,0,Orgs/100mL
+643501,2018-08-23,SN_12934,Snake's Canyon,Turbidity,0.3,NTU
+626044,2018-08-24,WA_13563,Wakefield,Turbidity,0.2,NTU
+627382,2018-08-23,ME_16875,Merton,Turbidity,0.2,NTU
+642518,2018-08-23,PO_12557,Pontybridge,Turbidity,6.93,NTU
+658723,2018-08-23,PA_11946,Paethsmouth,Turbidity,0.1,NTU
+600488,2018-08-24,BE_18354,Bellmoral,Turbidity,0.2,NTU
+691338,2018-08-23,ST_10188,Strathmore,Turbidity,0.2,NTU
+621296,2018-08-23,SW_11822,Swadlincote,Turbidity,0.1,NTU
+696155,2018-08-29,ME_10925,Merton,E. coli,0,Orgs/100mL
+640312,2018-08-30,SW_17736,Swadlincote,Turbidity,1.4,NTU
+657069,2018-09-03,TA_12675,Tarnstead,E. coli,0,Orgs/100mL
+649809,2018-08-30,SN_12742,Snake's Canyon,E. coli,0,Orgs/100mL
+651465,2018-08-30,SO_14918,Southwold,Turbidity,0.2,NTU
+673343,2018-08-02,BL_17970,Blancathey,Turbidity,0.3,NTU
+677140,2018-08-16,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+602504,2018-08-16,PO_18483,Pontybridge,E. coli,0,Orgs/100mL
+602876,2018-08-30,BE_19426,Bellmoral,E. coli,0,Orgs/100mL
+638099,2018-08-30,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+650576,2018-08-30,BL_17003,Blancathey,E. coli,0,Orgs/100mL
+663920,2018-08-30,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+641817,2018-08-30,PO_14145,Pontybridge,E. coli,0,Orgs/100mL
+614199,2018-08-30,ST_13507,Strathmore,Turbidity,0.2,NTU
+635959,2018-08-29,ME_10925,Merton,Turbidity,0.2,NTU
+663812,2018-08-30,SO_14918,Southwold,E. coli,0,Orgs/100mL
+682663,2018-08-30,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+614893,2018-10-18,BL_17892,Blancathey,THM,0.009,mg/L
+645916,2018-10-11,PA_15640,Paethsmouth,Turbidity,0.2,NTU
+645941,2018-11-19,TA_12675,Tarnstead,Turbidity,0.1,NTU
+689964,2018-11-22,SO_12021,Southwold,E. coli,0,Orgs/100mL
+624361,2018-10-24,ME_16875,Merton,Turbidity,0.1,NTU
+645233,2018-10-25,BE_18354,Bellmoral,Turbidity,0.3,NTU
+672897,2018-10-25,PO_17652,Pontybridge,E. coli,0,Orgs/100mL
+671401,2018-10-25,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+641979,2018-10-25,BL_14206,Blancathey,E. coli,0,Orgs/100mL
+645568,2018-10-11,BL_19934,Blancathey,Turbidity,0.2,NTU
+605595,2018-10-11,SN_19853,Snake's Canyon,Turbidity,0.2,NTU
+620295,2018-11-22,PO_18009,Pontybridge,E. coli,0,Orgs/100mL
+692089,2018-11-22,PO_18768,Pontybridge,E. coli,0,Orgs/100mL
+690231,2018-11-22,BL_14356,Blancathey,E. coli,0,Orgs/100mL
+693965,2018-11-22,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+618156,2018-11-22,BL_11992,Blancathey,E. coli,0,Orgs/100mL
+699547,2018-11-22,PA_14989,Paethsmouth,E. coli,0,Orgs/100mL
+662744,2018-11-22,ST_14962,Strathmore,E. coli,0,Orgs/100mL
+644809,2018-10-11,PO_15649,Pontybridge,Turbidity,0.2,NTU
+692357,2018-10-17,ME_13895,Merton,E. coli,0,Orgs/100mL
+648912,2018-10-15,TA_10333,Tarnstead,E. coli,0,Orgs/100mL
+660268,2018-10-11,ST_14594,Strathmore,Turbidity,0.2,NTU
+647723,2018-10-10,ME_17256,Merton,Turbidity,0.2,NTU
+630339,2018-09-21,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+659952,2018-10-15,TA_10333,Tarnstead,Turbidity,0.2,NTU
+638674,2018-11-02,SO_14918,Southwold,Turbidity,0.2,NTU
+648887,2018-11-02,SN_18008,Snake's Canyon,Turbidity,0.2,NTU
+662965,2018-10-18,BL_17892,Blancathey,E. coli,0,Orgs/100mL
+660844,2018-11-02,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+640858,2018-11-02,PO_19646,Pontybridge,E. coli,0,Orgs/100mL
+680074,2018-11-02,BL_17003,Blancathey,E. coli,0,Orgs/100mL
+622602,2018-11-02,SW_16507,Swadlincote,Turbidity,0.1,NTU
+609898,2018-11-02,WA_13563,Wakefield,Turbidity,0.2,NTU
+673638,2018-11-02,BE_19426,Bellmoral,Turbidity,0.2,NTU
+659173,2018-11-02,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+634492,2018-11-01,ME_10925,Merton,Turbidity,0.3,NTU
+659816,2018-11-02,PO_17043,Pontybridge,Turbidity,0.1,NTU
+628061,2018-11-05,TA_10128,Tarnstead,E. coli,0,Orgs/100mL
+608947,2018-11-02,BL_14280,Blancathey,Turbidity,0.3,NTU
+633220,2018-11-07,ME_19684,Merton,E. coli,0,Orgs/100mL
+615273,2018-11-05,TA_10128,Tarnstead,Turbidity,0.1,NTU
+636018,2018-11-22,BL_19479,Blancathey,E. coli,0,Orgs/100mL
+694505,2018-09-26,ME_16639,Merton,E. coli,0,Orgs/100mL
+667826,2018-10-11,BE_17412,Bellmoral,Turbidity,0.2,NTU
+604291,2018-10-11,SO_17891,Southwold,Turbidity,0.2,NTU
+659053,2018-09-14,SO_11069,Southwold,Turbidity,0.3,NTU
+617060,2018-12-05,ME_12799,Merton,E. coli,0,Orgs/100mL
+670246,2018-10-18,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+692562,2018-05-03,SO_11423,Southwold,Turbidity,0.1,NTU
+668532,2018-05-03,BL_19479,Blancathey,Turbidity,0.1,NTU
+639913,2018-05-03,SN_11855,Snake's Canyon,Turbidity,0.1,NTU
+688700,2018-05-18,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+695573,2018-07-16,TA_11737,Tarnstead,Turbidity,0.3,NTU
+638292,2018-05-18,BL_15552,Blancathey,Turbidity,0.1,NTU
+675463,2018-07-18,ME_17925,Merton,E. coli,0,Orgs/100mL
+609549,2018-05-24,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+694694,2018-05-21,TA_17893,Tarnstead,Turbidity,0.1,NTU
+677830,2018-05-24,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+620260,2018-05-18,SN_19853,Snake's Canyon,Turbidity,0.1,NTU
+644398,2018-05-18,SN_19853,Snake's Canyon,THM,0.006,mg/L
+638404,2018-04-06,PO_11431,Pontybridge,Turbidity,0.05,NTU
+652626,2018-05-18,ST_14594,Strathmore,Turbidity,0.05,NTU
+624565,2018-05-18,SW_11822,Swadlincote,Turbidity,0.05,NTU
+664144,2018-04-12,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+693548,2018-04-12,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+634458,2018-04-12,BL_10936,Blancathey,E. coli,0,Orgs/100mL
+600255,2018-04-12,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+651460,2018-04-12,SW_17736,Swadlincote,Turbidity,0.2,NTU
+680205,2018-04-12,SN_16148,Snake's Canyon,Turbidity,0.2,NTU
+652308,2018-04-12,BE_14753,Bellmoral,E. coli,0,Orgs/100mL
+674727,2018-04-12,PO_12557,Pontybridge,E. coli,0,Orgs/100mL
+683890,2018-04-12,BL_11116,Blancathey,E. coli,0,Orgs/100mL
+645485,2018-04-12,BE_14753,Bellmoral,Turbidity,0.05,NTU
+653243,2018-09-19,ME_17925,Merton,Turbidity,0.3,NTU
+631977,2018-10-25,PA_17864,Paethsmouth,Turbidity,0.2,NTU
+680754,2018-10-25,WA_14953,Wakefield,Turbidity,0.2,NTU
+684482,2018-10-25,PO_12557,Pontybridge,E. coli,0,Orgs/100mL
+644241,2018-10-25,SO_11438,Southwold,Turbidity,0.1,NTU
+624476,2018-10-29,TA_14330,Tarnstead,Turbidity,0.2,NTU
+622305,2018-09-19,ME_17925,Merton,THM,0.009,mg/L
+676301,2018-09-21,PO_18768,Pontybridge,Turbidity,0.3,NTU
+638122,2018-11-01,ME_10925,Merton,E. coli,0,Orgs/100mL
+622706,2018-10-25,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+683447,2018-08-09,PO_15319,Pontybridge,E. coli,0,Orgs/100mL
+691099,2018-08-09,BL_19934,Blancathey,Turbidity,0.3,NTU
+639861,2018-11-02,SO_14918,Southwold,E. coli,0,Orgs/100mL
+650879,2018-10-25,SO_11438,Southwold,THM,0.009,mg/L
+644541,2018-09-21,BL_11992,Blancathey,E. coli,0,Orgs/100mL
+680750,2018-09-21,ST_10485,Strathmore,THM,0.056,mg/L
+606508,2018-04-19,BL_13422,Blancathey,E. coli,0,Orgs/100mL
+648886,2018-08-30,BL_11116,Blancathey,E. coli,0,Orgs/100mL
+638879,2018-08-30,PO_19646,Pontybridge,E. coli,0,Orgs/100mL
+641892,2018-09-03,TA_12675,Tarnstead,Turbidity,0.2,NTU
+606772,2018-08-30,SN_12742,Snake's Canyon,Turbidity,0.2,NTU
+618225,2018-08-30,PA_11134,Paethsmouth,Turbidity,0.2,NTU
+619920,2018-08-30,PO_19646,Pontybridge,Turbidity,0.2,NTU
+667031,2018-06-12,TA_10279,Tarnstead,Turbidity,0.2,NTU
+617407,2018-06-15,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+649126,2018-11-02,SN_18008,Snake's Canyon,E. coli,0,Orgs/100mL
+641056,2018-11-02,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+697670,2018-09-06,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+645614,2018-09-06,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+666138,2018-09-21,BL_19479,Blancathey,THM,0.012,mg/L
+677922,2018-11-22,SO_12021,Southwold,THM,0.007,mg/L
+660321,2018-09-27,SN_19866,Snake's Canyon,E. coli,0,Orgs/100mL
+633902,2018-09-27,BL_15101,Blancathey,Turbidity,0.2,NTU
+627977,2018-11-12,TA_10279,Tarnstead,E. coli,0,Orgs/100mL
+642835,2018-11-14,ME_17886,Merton,E. coli,0,Orgs/100mL
+683917,2018-11-08,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+607119,2018-11-08,PO_19919,Pontybridge,E. coli,0,Orgs/100mL
+672800,2018-11-07,ME_19684,Merton,Turbidity,0.1,NTU
+634790,2018-10-04,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+611229,2018-10-04,BE_12407,Bellmoral,E. coli,0,Orgs/100mL
+601606,2018-10-04,BL_14356,Blancathey,E. coli,0,Orgs/100mL
+673408,2018-11-21,ME_17925,Merton,E. coli,0,Orgs/100mL
+680169,2018-11-22,PA_14989,Paethsmouth,THM,0.009,mg/L
+615739,2018-11-26,TA_10696,Tarnstead,E. coli,0,Orgs/100mL
+611853,2018-11-22,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+614960,2018-11-22,SN_19548,Snake's Canyon,E. coli,0,Orgs/100mL
+600773,2018-11-08,PO_16509,Pontybridge,E. coli,0,Orgs/100mL
+656058,2018-11-08,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+683691,2018-11-08,SW_11822,Swadlincote,Turbidity,0.1,NTU
+671272,2018-11-08,BE_15184,Bellmoral,Turbidity,0.1,NTU
+615909,2018-09-21,BL_19479,Blancathey,E. coli,0,Orgs/100mL
+631143,2018-09-21,SN_19548,Snake's Canyon,Turbidity,0.3,NTU
+622090,2018-09-21,BL_14356,Blancathey,E. coli,0,Orgs/100mL
+675409,2018-09-21,BL_19479,Blancathey,Turbidity,0.3,NTU
+659780,2018-09-20,WA_12904,Wakefield,Turbidity,0.3,NTU
+653765,2018-06-25,TA_10696,Tarnstead,Turbidity,0.1,NTU
+670544,2018-09-06,BL_15845,Blancathey,E. coli,0,Orgs/100mL
+688349,2018-09-06,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+661103,2018-08-23,PO_12557,Pontybridge,THM,0.008,mg/L
+651876,2018-08-09,SN_10025,Snake's Canyon,E. coli,0,Orgs/100mL
+698770,2018-11-22,SN_11519,Snake's Canyon,E. coli,0,Orgs/100mL
+627519,2018-11-22,PO_17841,Pontybridge,E. coli,0,Orgs/100mL
+668875,2018-11-22,BE_16549,Bellmoral,E. coli,0,Orgs/100mL
+613074,2018-11-22,PO_18768,Pontybridge,Turbidity,0.1,NTU
+676136,2018-11-02,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+688871,2018-11-02,PO_17043,Pontybridge,E. coli,0,Orgs/100mL
+688026,2018-11-02,BE_19426,Bellmoral,E. coli,0,Orgs/100mL
+690021,2018-11-02,BL_14280,Blancathey,E. coli,0,Orgs/100mL
+637958,2018-11-22,PA_14989,Paethsmouth,Turbidity,0.2,NTU
+680665,2018-11-22,WA_13563,Wakefield,Turbidity,0.1,NTU
+693251,2018-11-02,PA_11946,Paethsmouth,Turbidity,0.2,NTU
+625773,2018-11-15,ST_14594,Strathmore,THM,0.074,mg/L
+668591,2018-11-22,BL_11992,Blancathey,Turbidity,0.1,NTU
+672787,2018-11-02,ST_10188,Strathmore,Turbidity,0.3,NTU
+623284,2018-09-06,SO_11423,Southwold,E. coli,0,Orgs/100mL
+686640,2018-09-06,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+642519,2018-11-08,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+638514,2018-11-02,WA_13563,Wakefield,THM,0.063,mg/L
+644959,2018-11-08,BE_15184,Bellmoral,E. coli,0,Orgs/100mL
+666551,2018-11-08,PO_14145,Pontybridge,Turbidity,0.2,NTU
+648937,2018-11-08,BL_11116,Blancathey,E. coli,0,Orgs/100mL
+625468,2018-11-08,BL_10936,Blancathey,E. coli,0,Orgs/100mL
+663104,2018-11-08,BL_15845,Blancathey,E. coli,0,Orgs/100mL
+640675,2018-11-08,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+698023,2018-09-27,WA_13563,Wakefield,Turbidity,1.1,NTU
+618024,2018-11-08,SN_12934,Snake's Canyon,E. coli,0,Orgs/100mL
+613550,2018-11-08,PO_14145,Pontybridge,E. coli,0,Orgs/100mL
+627024,2018-11-08,BL_11116,Blancathey,Turbidity,0.2,NTU
+639982,2018-11-08,SO_11423,Southwold,Turbidity,0.1,NTU
+602578,2018-11-29,BL_15552,Blancathey,E. coli,0,Orgs/100mL
+646396,2018-11-29,PO_17043,Pontybridge,E. coli,0,Orgs/100mL
+635594,2018-11-29,PO_14952,Pontybridge,Turbidity,0.2,NTU
+683456,2018-11-29,ST_10485,Strathmore,Turbidity,0.1,NTU
+627015,2018-09-13,SW_16507,Swadlincote,Turbidity,0.2,NTU
+670648,2018-09-13,BL_13422,Blancathey,Turbidity,0.3,NTU
+656736,2018-11-15,PO_15632,Pontybridge,E. coli,0,Orgs/100mL
+621287,2018-11-15,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+610000,2018-11-15,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+660448,2018-11-08,SO_11423,Southwold,E. coli,0,Orgs/100mL
+683134,2018-11-08,WA_15310,Wakefield,Turbidity,0.1,NTU
+631362,2018-11-08,PA_11134,Paethsmouth,Turbidity,0.2,NTU
+673600,2018-11-15,BL_16767,Blancathey,E. coli,0,Orgs/100mL
+612676,2018-11-15,PO_16635,Pontybridge,E. coli,0,Orgs/100mL
+645483,2018-11-15,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+614520,2018-11-15,ST_14594,Strathmore,Turbidity,0.1,NTU
+672713,2018-11-19,TA_12675,Tarnstead,E. coli,0,Orgs/100mL
+604633,2018-11-15,PA_15640,Paethsmouth,Turbidity,0.1,NTU
+633614,2018-12-06,PO_15094,Pontybridge,E. coli,0,Orgs/100mL
+678060,2018-12-06,PO_18680,Pontybridge,E. coli,0,Orgs/100mL
+661542,2018-12-03,TA_16139,Tarnstead,Turbidity,0.05,NTU
+600921,2018-12-06,PO_13517,Pontybridge,E. coli,0,Orgs/100mL
+647103,2018-12-06,PO_18680,Pontybridge,Turbidity,0.2,NTU
+635909,2018-12-13,BE_17412,Bellmoral,E. coli,0,Orgs/100mL
+629999,2018-12-13,PO_14943,Pontybridge,E. coli,0,Orgs/100mL
+666022,2018-12-13,BL_19934,Blancathey,E. coli,0,Orgs/100mL
+651772,2018-12-13,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+636036,2018-12-13,PO_15319,Pontybridge,E. coli,0,Orgs/100mL
+628184,2018-12-12,ME_17256,Merton,Turbidity,0.2,NTU
+606186,2018-12-13,SN_19853,Snake's Canyon,E. coli,0,Orgs/100mL
+602015,2018-12-13,PA_11134,Paethsmouth,E. coli,0,Orgs/100mL
+631881,2018-12-13,BL_11580,Blancathey,E. coli,0,Orgs/100mL
+619872,2018-12-06,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+656403,2018-12-06,SN_18754,Snake's Canyon,E. coli,0,Orgs/100mL
+651797,2018-12-06,SW_16507,Swadlincote,Turbidity,0.1,NTU
+626617,2018-08-09,BE_17412,Bellmoral,Turbidity,0.2,NTU
+647532,2018-09-06,PO_19919,Pontybridge,E. coli,0,Orgs/100mL
+664781,2018-08-23,BL_14280,Blancathey,Turbidity,0.2,NTU
+688485,2018-08-27,TA_10279,Tarnstead,Turbidity,0.2,NTU
+690776,2018-08-24,BE_18354,Bellmoral,E. coli,0,Orgs/100mL
+667423,2018-08-09,ST_14962,Strathmore,Turbidity,0.2,NTU
+615589,2018-08-08,ME_17256,Merton,Turbidity,0.2,NTU
+657026,2018-09-06,BE_15184,Bellmoral,E. coli,0,Orgs/100mL
+684523,2018-09-06,SN_16148,Snake's Canyon,E. coli,0,Orgs/100mL
+637090,2018-09-06,PO_16509,Pontybridge,E. coli,0,Orgs/100mL
+620405,2018-08-24,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+632717,2018-09-27,PO_14952,Pontybridge,THM,0.01,mg/L
+611441,2018-10-04,SN_19289,Snake's Canyon,E. coli,0,Orgs/100mL
+669707,2018-10-04,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+685242,2018-10-04,SO_15547,Southwold,E. coli,0,Orgs/100mL
+669332,2018-10-04,SN_18754,Snake's Canyon,E. coli,0,Orgs/100mL
+615803,2018-10-04,BL_17970,Blancathey,E. coli,0,Orgs/100mL
+639392,2018-10-04,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+696965,2018-09-06,WA_15310,Wakefield,Turbidity,0.1,NTU
+665952,2018-09-06,BL_10936,Blancathey,E. coli,0,Orgs/100mL
+647774,2018-09-05,ME_19684,Merton,Turbidity,0.2,NTU
+606175,2018-09-06,SO_11423,Southwold,Turbidity,0.2,NTU
+658399,2018-09-12,ME_17886,Merton,E. coli,0,Orgs/100mL
+646127,2018-09-13,BL_16767,Blancathey,E. coli,0,Orgs/100mL
+660854,2018-10-11,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+641195,2018-10-11,BL_19934,Blancathey,E. coli,0,Orgs/100mL
+640567,2018-10-11,PO_14943,Pontybridge,E. coli,0,Orgs/100mL
+654895,2018-10-11,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+611618,2018-10-11,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+667375,2018-10-10,ME_17256,Merton,E. coli,0,Orgs/100mL
+649357,2018-10-08,TA_15690,Tarnstead,Turbidity,0.2,NTU
+688921,2018-10-11,PO_15649,Pontybridge,E. coli,0,Orgs/100mL
+643400,2018-10-11,BE_17412,Bellmoral,E. coli,0,Orgs/100mL
+607826,2018-10-11,SO_17891,Southwold,E. coli,0,Orgs/100mL
+675837,2018-08-30,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+646137,2018-08-30,WA_14953,Wakefield,Turbidity,0.1,NTU
+653481,2018-08-30,BL_17003,Blancathey,Turbidity,0.2,NTU
+634567,2018-08-30,BE_19426,Bellmoral,Turbidity,0.2,NTU
+652898,2018-09-05,ME_19684,Merton,E. coli,0,Orgs/100mL
+674260,2018-10-11,SN_19853,Snake's Canyon,E. coli,0,Orgs/100mL
+664006,2018-10-11,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+652650,2018-10-18,PO_18483,Pontybridge,E. coli,0,Orgs/100mL
+666227,2018-11-27,TA_10696,Tarnstead,Turbidity,0.2,NTU
+618437,2018-09-06,SN_16148,Snake's Canyon,Turbidity,0.3,NTU
+698546,2018-09-13,SN_11519,Snake's Canyon,E. coli,0,Orgs/100mL
+632295,2018-09-10,TA_10696,Tarnstead,E. coli,0,Orgs/100mL
+668479,2018-09-13,BL_13422,Blancathey,E. coli,0,Orgs/100mL
+661166,2018-09-13,SN_18453,Snake's Canyon,E. coli,0,Orgs/100mL
+636230,2018-09-10,TA_10696,Tarnstead,THM,0.012,mg/L
+668624,2018-10-18,BE_14753,Bellmoral,E. coli,0,Orgs/100mL
+602861,2018-10-18,PO_11431,Pontybridge,E. coli,0,Orgs/100mL
+614772,2018-09-13,PO_16635,Pontybridge,E. coli,0,Orgs/100mL
+673316,2018-09-13,PO_15632,Pontybridge,E. coli,0,Orgs/100mL
+696301,2018-09-13,BL_13530,Blancathey,E. coli,0,Orgs/100mL
+606782,2018-11-08,SN_12742,Snake's Canyon,E. coli,0,Orgs/100mL
+606565,2018-09-13,ST_14962,Strathmore,E. coli,0,Orgs/100mL
+627385,2018-09-13,PA_14989,Paethsmouth,E. coli,0,Orgs/100mL
+672947,2018-09-14,WA_13006,Wakefield,Turbidity,0.2,NTU
+643674,2018-09-14,BE_11469,Bellmoral,E. coli,0,Orgs/100mL
+672634,2018-09-12,ME_17886,Merton,Turbidity,0.2,NTU
+672083,2018-09-13,SN_18453,Snake's Canyon,Turbidity,0.2,NTU
+681791,2018-09-14,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+677531,2018-09-17,TA_16139,Tarnstead,E. coli,0,Orgs/100mL
+692106,2018-09-14,BE_11469,Bellmoral,Turbidity,0.2,NTU
+695567,2018-11-21,ME_17925,Merton,Turbidity,0.1,NTU
+617368,2018-12-20,SW_11822,Swadlincote,E. coli,0,Orgs/100mL
+687137,2018-12-20,PO_11431,Pontybridge,E. coli,0,Orgs/100mL
+636997,2018-12-20,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+683448,2018-12-20,SN_11496,Snake's Canyon,E. coli,0,Orgs/100mL
+657662,2018-12-24,SO_11438,Southwold,Turbidity,0.2,NTU
+634690,2018-12-20,ST_14594,Strathmore,Turbidity,0.1,NTU
+622123,2018-12-20,BE_14753,Bellmoral,Turbidity,0.2,NTU
+659550,2018-12-24,SO_11438,Southwold,E. coli,0,Orgs/100mL
+634831,2018-12-20,PA_15640,Paethsmouth,Turbidity,0.1,NTU
+636694,2018-11-08,SN_12934,Snake's Canyon,Turbidity,0.1,NTU
+627846,2018-12-06,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+687715,2018-11-29,SW_17736,Swadlincote,Turbidity,0.2,NTU
+639684,2018-09-13,ST_14962,Strathmore,Turbidity,0.2,NTU
+667348,2018-09-13,PA_14989,Paethsmouth,Turbidity,0.3,NTU
+659684,2018-11-29,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+617740,2018-09-14,SO_11069,Southwold,E. coli,0,Orgs/100mL
+618737,2018-09-13,PO_16635,Pontybridge,Turbidity,0.3,NTU
+643278,2018-12-10,TA_11113,Tarnstead,E. coli,0,Orgs/100mL
+609107,2018-11-15,SO_11069,Southwold,E. coli,0,Orgs/100mL
+630326,2018-11-15,SN_18453,Snake's Canyon,E. coli,0,Orgs/100mL
+681162,2018-11-15,WA_14953,Wakefield,Turbidity,0.2,NTU
+649668,2018-11-15,BE_11469,Bellmoral,E. coli,0,Orgs/100mL
+624558,2018-11-15,SW_16507,Swadlincote,Turbidity,0.4,NTU
+676094,2018-11-12,TA_10279,Tarnstead,Turbidity,0.3,NTU
+649507,2018-11-15,BL_13530,Blancathey,E. coli,0,Orgs/100mL
+686312,2018-12-06,WA_14953,Wakefield,THM,0.047,mg/L
+629775,2018-12-10,TA_11113,Tarnstead,THM,0.006,mg/L
+677369,2018-11-29,BE_19973,Bellmoral,Turbidity,0.1,NTU
+654419,2018-04-19,BL_13530,Blancathey,THM,0.007,mg/L
+666419,2018-04-23,TA_11113,Tarnstead,E. coli,0,Orgs/100mL
+659931,2018-04-18,ME_16875,Merton,THM,0.006,mg/L
+607497,2018-04-19,ST_10485,Strathmore,Turbidity,0.2,NTU
+620397,2018-02-08,SO_17872,Southwold,E. coli,0,Orgs/100mL
+677495,2018-02-08,BL_15845,Blancathey,E. coli,0,Orgs/100mL
+683636,2018-02-08,PA_15640,Paethsmouth,E. coli,0,Orgs/100mL
+638410,2018-02-08,SN_18453,Snake's Canyon,E. coli,0,Orgs/100mL
+624552,2018-02-08,PO_19646,Pontybridge,E. coli,0,Orgs/100mL
+663213,2018-02-08,BE_14753,Bellmoral,E. coli,0,Orgs/100mL
+628063,2018-02-08,PO_17043,Pontybridge,E. coli,0,Orgs/100mL
+671441,2018-04-19,PO_17043,Pontybridge,THM,0.006,mg/L
+640780,2018-04-19,BE_18354,Bellmoral,THM,0.007,mg/L
+688662,2018-02-08,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+610927,2018-02-08,BL_15033,Blancathey,E. coli,0,Orgs/100mL
+664494,2018-02-08,SN_11519,Snake's Canyon,E. coli,0,Orgs/100mL
+680700,2018-02-08,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+682987,2018-02-08,BL_13422,Blancathey,E. coli,0,Orgs/100mL
+660639,2018-04-19,BE_18354,Bellmoral,Turbidity,0.05,NTU
+674302,2018-04-18,ME_16875,Merton,Turbidity,0.05,NTU
+621921,2018-03-22,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+659554,2018-03-22,BE_19973,Bellmoral,E. coli,0,Orgs/100mL
+637877,2018-02-08,SO_17872,Southwold,Turbidity,0.05,NTU
+616985,2018-03-19,TA_10128,Tarnstead,Turbidity,0.05,NTU
+670292,2018-03-22,SO_16944,Southwold,E. coli,0,Orgs/100mL
+602200,2018-03-22,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+644868,2018-09-24,TA_11113,Tarnstead,Turbidity,0.2,NTU
+685458,2018-09-20,BE_16549,Bellmoral,Turbidity,0.2,NTU
+687753,2018-09-26,ME_16639,Merton,Turbidity,0.2,NTU
+627097,2018-09-27,PO_14952,Pontybridge,Turbidity,6.19,NTU
+688879,2018-09-27,BE_19973,Bellmoral,E. coli,0,Orgs/100mL
+662873,2018-09-27,SO_16944,Southwold,E. coli,0,Orgs/100mL
+661496,2018-09-27,PA_11946,Paethsmouth,Turbidity,0.2,NTU
+634498,2018-09-27,BL_15101,Blancathey,E. coli,0,Orgs/100mL
+612864,2018-08-09,BL_19934,Blancathey,THM,0.014,mg/L
+619081,2018-09-27,SW_10554,Swadlincote,Turbidity,0.2,NTU
+600413,2018-09-27,SW_10554,Swadlincote,E. coli,0,Orgs/100mL
+698518,2018-09-27,SO_16944,Southwold,Turbidity,0.2,NTU
+627715,2018-09-27,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+699241,2018-09-27,PA_11946,Paethsmouth,E. coli,0,Orgs/100mL
+669005,2018-09-27,SN_19866,Snake's Canyon,Turbidity,0.2,NTU
+690060,2018-09-27,PO_13324,Pontybridge,E. coli,0,Orgs/100mL
+674530,2018-09-27,PO_14952,Pontybridge,E. coli,0,Orgs/100mL
+688014,2018-09-27,ST_10188,Strathmore,Turbidity,0.2,NTU
+602422,2018-09-27,BE_19973,Bellmoral,Turbidity,0.2,NTU
+688179,2018-09-27,BL_15552,Blancathey,E. coli,0,Orgs/100mL
+678247,2018-10-01,TA_11737,Tarnstead,Turbidity,0.2,NTU
+667490,2018-09-06,PO_16509,Pontybridge,Turbidity,0.2,NTU
+676656,2018-11-15,BL_13422,Blancathey,THM,0.008,mg/L
+636022,2018-11-15,BE_11469,Bellmoral,THM,0.008,mg/L
+643622,2018-11-15,PO_16635,Pontybridge,THM,0.006,mg/L
+672325,2018-10-04,BL_13051,Blancathey,E. coli,0,Orgs/100mL
+692131,2018-09-27,SN_19866,Snake's Canyon,THM,0.009,mg/L
+685040,2018-10-04,PO_18680,Pontybridge,E. coli,0,Orgs/100mL
+632552,2018-10-04,PO_15094,Pontybridge,E. coli,0,Orgs/100mL
+666142,2018-11-15,SW_16507,Swadlincote,THM,0.006,mg/L
+673130,2018-11-15,SN_16148,Snake's Canyon,THM,0.006,mg/L
+680529,2018-09-27,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+676463,2018-08-27,TA_10279,Tarnstead,E. coli,0,Orgs/100mL
+667643,2018-10-01,TA_11737,Tarnstead,E. coli,0,Orgs/100mL
+683487,2018-08-24,SO_11438,Southwold,THM,0.01,mg/L
+644005,2018-09-27,SO_16944,Southwold,THM,0.01,mg/L
+679299,2018-10-03,ME_12799,Merton,E. coli,0,Orgs/100mL
+610402,2018-10-04,PO_13517,Pontybridge,E. coli,0,Orgs/100mL
+660880,2018-10-04,SW_17736,Swadlincote,E. coli,0,Orgs/100mL
+660285,2018-12-06,PA_11946,Paethsmouth,Turbidity,0.1,NTU
+684289,2018-09-13,PA_14989,Paethsmouth,THM,0.011,mg/L
+628742,2018-12-13,SN_19289,Snake's Canyon,E. coli,0,Orgs/100mL
+608432,2018-12-13,PA_11134,Paethsmouth,THM,0.047,mg/L
+681358,2018-12-13,SW_17736,Swadlincote,THM,0.006,mg/L
+622229,2018-12-13,PO_15649,Pontybridge,THM,0.007,mg/L
+684918,2018-10-18,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+643705,2018-12-06,BE_12407,Bellmoral,E. coli,0,Orgs/100mL
+636808,2018-12-06,BL_13051,Blancathey,E. coli,0,Orgs/100mL
+669880,2018-12-06,ST_10188,Strathmore,E. coli,0,Orgs/100mL
+667987,2018-12-06,SN_19866,Snake's Canyon,E. coli,0,Orgs/100mL
+636922,2018-12-06,BL_14356,Blancathey,E. coli,0,Orgs/100mL
+699704,2018-12-06,BL_17970,Blancathey,E. coli,0,Orgs/100mL
+686131,2018-12-06,SO_15547,Southwold,E. coli,0,Orgs/100mL
+622983,2018-12-06,SO_15547,Southwold,Turbidity,0.2,NTU
+642107,2018-12-05,ME_12799,Merton,Turbidity,0.2,NTU
+630541,2018-12-06,BL_17970,Blancathey,Turbidity,0.1,NTU
+617702,2018-12-06,BE_12407,Bellmoral,Turbidity,0.2,NTU
+695832,2018-12-06,WA_14953,Wakefield,Turbidity,0.2,NTU
+620253,2018-12-06,SN_19866,Snake's Canyon,Turbidity,0.1,NTU
+687228,2018-12-06,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+668294,2018-12-06,ST_10188,Strathmore,Turbidity,0.1,NTU
+612593,2018-09-13,SW_16507,Swadlincote,E. coli,0,Orgs/100mL
+671111,2018-09-10,TA_10696,Tarnstead,Turbidity,0.2,NTU
+620798,2018-12-13,PO_15649,Pontybridge,E. coli,0,Orgs/100mL
+627173,2018-12-13,BL_15033,Blancathey,E. coli,0,Orgs/100mL
+654693,2018-12-13,ST_13507,Strathmore,E. coli,0,Orgs/100mL
+666836,2018-12-19,ME_13895,Merton,E. coli,0,Orgs/100mL
+699955,2018-12-17,TA_11737,Tarnstead,Turbidity,0.2,NTU
+687613,2018-12-20,SO_17872,Southwold,E. coli,0,Orgs/100mL
+686202,2018-12-20,BL_16870,Blancathey,E. coli,0,Orgs/100mL
+683932,2018-12-13,SO_17891,Southwold,E. coli,0,Orgs/100mL
+661772,2018-12-13,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+699472,2018-12-20,WA_13563,Wakefield,Turbidity,0.2,NTU
+684383,2018-12-20,SN_11496,Snake's Canyon,Turbidity,0.2,NTU
+641901,2018-12-24,BL_14206,Blancathey,E. coli,0,Orgs/100mL
+638890,2018-12-24,WA_15310,Wakefield,E. coli,0,Orgs/100mL
+675971,2018-12-24,BL_14206,Blancathey,Turbidity,0.3,NTU
+673002,2018-12-20,BE_14753,Bellmoral,E. coli,0,Orgs/100mL
+602242,2018-12-20,ST_14594,Strathmore,E. coli,0,Orgs/100mL
+636544,2018-12-20,PO_18483,Pontybridge,E. coli,0,Orgs/100mL
+639798,2018-12-20,SW_11822,Swadlincote,Turbidity,0.2,NTU
+646068,2018-12-19,ME_13895,Merton,Turbidity,0.1,NTU
+672077,2018-12-13,SN_19289,Snake's Canyon,THM,0.008,mg/L
+628974,2018-12-20,WA_13563,Wakefield,E. coli,0,Orgs/100mL
+675601,2018-12-20,BL_17892,Blancathey,E. coli,0,Orgs/100mL
+670270,2018-12-20,SO_17872,Southwold,Turbidity,0.2,NTU
+661875,2018-12-20,BL_17892,Blancathey,Turbidity,0.2,NTU
+692886,2018-12-20,PO_11431,Pontybridge,Turbidity,0.3,NTU
+677514,2018-12-24,ST_14962,Strathmore,E. coli,0,Orgs/100mL
+603130,2018-12-24,ST_14962,Strathmore,Turbidity,0.1,NTU
+652342,2018-07-19,PO_18009,Pontybridge,Turbidity,0.2,NTU
+666452,2018-07-26,BL_15552,Blancathey,E. coli,0,Orgs/100mL
+605282,2018-07-26,PO_15094,Pontybridge,Turbidity,6.33,NTU
+609017,2018-07-26,SW_17736,Swadlincote,Turbidity,0.3,NTU
+629831,2018-07-26,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+689072,2018-07-26,SN_19289,Snake's Canyon,Turbidity,0.2,NTU
+613581,2018-11-28,ME_16639,Merton,E. coli,0,Orgs/100mL
+645768,2018-11-29,SO_16944,Southwold,E. coli,0,Orgs/100mL
+661611,2018-11-28,ME_16639,Merton,Turbidity,0.2,NTU
+667499,2018-11-08,ST_13507,Strathmore,Turbidity,0.1,NTU
+617821,2018-11-15,PO_18499,Pontybridge,E. coli,0,Orgs/100mL
+647417,2018-11-15,WA_14953,Wakefield,E. coli,0,Orgs/100mL
+688417,2018-11-15,SN_16148,Snake's Canyon,E. coli,0,Orgs/100mL
+602666,2018-09-13,PO_18499,Pontybridge,E. coli,0,Orgs/100mL
+673754,2018-11-29,PO_14952,Pontybridge,E. coli,0,Orgs/100mL
+609930,2018-11-29,SO_16944,Southwold,Turbidity,0.1,NTU
+693073,2018-11-29,WA_13006,Wakefield,E. coli,0,Orgs/100mL
+643926,2018-11-29,WA_13006,Wakefield,Turbidity,0.1,NTU
+685236,2018-10-11,BL_11580,Blancathey,E. coli,0,Orgs/100mL
+619023,2018-10-11,SN_11496,Snake's Canyon,E. coli,0,Orgs/100mL
+668607,2018-10-11,BL_15033,Blancathey,E. coli,0,Orgs/100mL
+691045,2018-10-11,PO_15319,Pontybridge,E. coli,0,Orgs/100mL
+650957,2018-10-11,PA_15640,Paethsmouth,THM,0.049,mg/L
+666780,2018-11-15,BL_13422,Blancathey,E. coli,0,Orgs/100mL
+645898,2018-11-29,BL_15101,Blancathey,E. coli,0,Orgs/100mL
+607977,2018-11-29,SN_11855,Snake's Canyon,Turbidity,0.2,NTU
+617164,2018-11-29,BE_19973,Bellmoral,E. coli,0,Orgs/100mL
+629114,2018-11-29,ST_10485,Strathmore,E. coli,0,Orgs/100mL
+650387,2018-11-29,PA_17864,Paethsmouth,E. coli,0,Orgs/100mL
+682130,2018-11-29,PA_17864,Paethsmouth,Turbidity,0.2,NTU
+680728,2018-11-29,SN_11855,Snake's Canyon,E. coli,0,Orgs/100mL
+621449,2018-11-29,BL_15101,Blancathey,Turbidity,0.2,NTU
+608144,2018-10-11,SW_11822,Swadlincote,Turbidity,0.2,NTU
+637459,2018-10-11,WA_15310,Wakefield,Turbidity,0.2,NTU
+623758,2018-10-18,SO_17872,Southwold,E. coli,0,Orgs/100mL
+628030,2018-12-03,TA_16139,Tarnstead,E. coli,0,Orgs/100mL
+683595,2018-10-18,BL_16870,Blancathey,E. coli,1,Orgs/100mL
+611164,2018-10-18,ST_14962,Strathmore,E. coli,0,Orgs/100mL
+683325,2018-10-18,SN_10025,Snake's Canyon,E. coli,0,Orgs/100mL
+648288,2018-12-12,ME_17256,Merton,E. coli,0,Orgs/100mL
+699116,2018-12-10,TA_11113,Tarnstead,Turbidity,0.2,NTU
+663203,2018-12-12,ME_17256,Merton,THM,0.009,mg/L

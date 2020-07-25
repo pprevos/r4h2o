@@ -1,0 +1,144 @@
+---
+title: "Involvement with Tap Water"
+author: "Peter Prevos"
+date: "08/06/2020"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, dpi = 300)
+library(tidyverse)
+library(knitr)
+library(corrplot)
+
+# Load raw data
+rawdata  <- read_csv("casestudy2/customer_survey.csv")
+cities <- tibble(city = 1:3,
+                 city_name = c("Merton", "Snake's Canyon", "Wakefield"))
+
+customers <- rawdata[-1, ] %>%
+    type_convert() %>%
+    filter(is.na(term)) %>%
+    left_join(cities) %>% 
+    select(c(-2:-20, -34)) %>%
+    rename(survey_id = V1)
+
+# Extract PII
+pii <- select(customers, survey_id, starts_with("p")) %>%
+    mutate(p01 = 8 - p01,
+           p02 = 8 - p02,
+           p07 = 8 - p07,
+           p08 = 8 - p08,
+           p09 = 8 - p09,
+           p10 = 8 - p10)
+
+# Transform PII
+pii_long <- pivot_longer(pii, -survey_id, names_to = "Item", values_to = "Response") %>%
+    filter(!is.na(Response))
+```
+
+# Introduction
+Consumer involvement is an essential marketing metric that describes the relevance of a product or service has in somebody's life. People who own a car will most likely be highly involved with purchasing and owning the car due to a large amount of money involved and the social role it plays in developing their public self. Consumers will most likely have a much lower level of involvement with the instant coffee they drink than with the clothes they wear. More formally, consumer involvement can be defined as a person's perceived relevance of the object based on inherent needs, values, and interests.
+
+Consumer involvement is a vital metric to understand because it is causally related to willingness to pay and perceptions of quality. Consumers with a higher level of involvement are generally willing to pay more for a service and have a more favourable perception of quality.
+
+Understanding involvement in the context of urban water supply is also essential because sustainably managing water as a common pool resource requires the active involvement of all users. The level of consumer involvement depends on a complex array of factors, which are related to psychology, situational factors and the marketing mix of the service provider. The lowest level of involvement is considered a state of inertia, which occurs when people habitually purchase a product without comparing alternatives.
+
+Cult products have the highest possible level of involvement because customers are devoted to the product or brand. Commercial organisations use this knowledge to their advantage by maximising the level of consumer involvement through branding and advertising. This strategy is used effectively by the bottled water industry. Manufacturers focus on enhancing the emotional aspects of their product rather than emphasising the cognitive aspects. Water utilities tend to use a reversed strategy and emphasise the cognitive aspects of tap water, the pipes, plants and pumps, rather than trying to create an emotional relationship with their consumers.
+
+Water is more often than not positioned as a service that is essential for life. Most of the water that customer use is, however, used for a non-essential purpose. Water is available in the background of everyday life, which would suggest a low level of involvement. The essential nature of water would suggest a high level of involvement. This survey measure the involvement construct to gain a better insight into how involved consumers are with their water service.
+
+# Methodology
+The customer survey of the second case study includes ten questions to measure the level of consumer involvement. These questions form the Personal Involvement Inventory (PII), developed by Judity Zaichkowsky ([1994](https://www.sfu.ca/~zaichkow/JA%252094.pdf)). The Personal Involvement Inventory consists of two dimensions: 
+1. Cognitive involvement (importance, relevance, meaning, value and need) 
+2. Affective involvement (involvement, fascination, appeal, excitement and interest).
+
+The involvement question bank uses a semantic differential scale. This method requires respondents to choose on a scale between two antonyms (figure 1). This type of survey measures the meaning that people attach to a concept, such as a product or service. The items were presented in a random order to each respondent. In principle, the words on the right indicate a high level of involvement. Five questions have a reversed polarity, which means that the left side indicates a high level of involvement. This technique prevents respondents forces respondents to consider their response instead of providing the same answer to all questions.
+
+![Figure 1: Personal Involvement Inventory questionnaire.](../manuscript/resources/09_customers/semantic-differential.png)
+
+Table 1 shows the relationship between the items and the scale dimensions. The items with an asterisk are in reversed polarity.
+
+| Variable | Item                     |
+|----------|--------------------------|
+| p01      | Important – Unimportant* |
+| p02      | Relevant – Irrelevant*   |
+| p03      | Meaningless – Meaningful |
+| p04      | Worthless – Valuable     |
+| p05      | Not needed – Needed      |
+| p06      | Boring – Interesting     |
+| p07      | Exciting – Unexciting*   |
+| p08      | Appealing – Unappealing* |
+| p09      | Fascinating – Mundane*   |
+| p10      | Involving–  Uninvolving* |
+
+# Results
+A total of `r nrow(rawdata)` customers completed the survey. `r nrow(filter(rawdata, !is.na(term)))` responses were not used because they did not pass the attention filter, did not consent, did not have tap water in the home, lived outside Gormsey or were terminated for technical reasons (Table 2).
+
+```{r}
+count(rawdata, term, name = "Respondents") %>%
+  filter(!is.na(term)) %>%
+  rename(Reason = term) %>%
+  kable(caption = "Table 1: Terminated respondents")
+```
+
+The distribution of responses to the survey (Figure 1) shows a clear clustering between the first five items (cognitive involvement) and the last five (affective involvement).
+
+```{r, fig.cap="Distribution of item responsesfor tap water Personal Involvement Inventory."}
+ggplot(pii_long, aes(Item, Response)) + 
+  geom_boxplot(fill = "#0dabb6") + 
+  theme_minimal(base_size = 15) + 
+  labs(title = "Personal Involvement Index",
+       subtitle = "Tap Water")
+```
+
+# Survey Reliability
+The correlation matrix shows a high level of correlation between the items. The affective items (p01--p02) and the cognitive items (p06-p10) strongly correlate. The high level of correlation ...
+
+```{r, fig.cap="Correlation matrix for Personal Involvement Index"}
+corrplot(c_matrix, type = "lower")
+```
+
+# Survey Validity
+
+```{r}
+## Cluster involvement data
+pii_trans <- t(pii_wide[, -1])
+
+pii_clusters <- pii_trans %>%
+    scale() %>%
+    dist() %>%
+    hclust()
+
+plot(pii_clusters,
+     main = "Tap Water Consumer Involvement survey clusters",
+     sub = "Personal Involvement Index",
+     labels = names(pii_wide[, -1]))
+rect.hclust(pii_clusters, k = 2, border = 2:3)
+```
+
+
+# Discussion
+
+
+```{r, fig.cap="Personal Involvement Index scores"}
+involvement <- pii %>%
+  group_by(survey_id) %>%
+  summarise(Cognitive = p01 + p02 + p03 + p04 + p05,
+            Affective = p06 + p07 + p08 + p09 + p10,
+            Involvement = Cognitive + Affective) %>%
+  pivot_longer(Cognitive:Involvement, 
+               names_to = "Dimension",
+               values_to = "Score")
+
+ggplot(involvement, aes(Score, fill = Dimension)) + 
+    geom_histogram(bins = 30) + 
+    facet_wrap(~Dimension, scales = "free_x") + 
+    labs(title = "Personal Involvement Index",
+         subtitle = "Tap Water Customers in Gormsey") + 
+    theme_bw(base_size = 10)
+```
+
+
+# Conclusion
+
+

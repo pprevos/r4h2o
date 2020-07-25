@@ -1,0 +1,65 @@
+---
+title: "Gormsey Trihalomethane Compliance"
+author: "Peter Prevos"
+output:
+  powerpoint_presentation:
+    reference_doc: tf02922647.potx
+---
+
+```{r setup, include=FALSE}
+# Markdown setup
+library(knitr)
+opts_chunk$set(echo = FALSE, message = FALSE, dpi = 300)
+
+library(tidyverse)
+gormsey <- read_csv("gormsey.csv")
+thm <- filter(gormsey, Measure == "THM")
+```
+
+# Problem Statement
+* New guideline lowers the maximum value for THMs at the customer tap to 0.20 mg/l.
+* This report reviews historical data to assess the risk of non-compliance.
+* Assumes no operational changes are implemented. 
+
+# Methodology
+::::::{.columns}
+:::{.column}
+* Monthly samples are taken from customer taps in each town.
+* Data avalable between `r min(thm$Date)` and `r max(thm$Date)`.
+* Fields:
+    * `Sample_No`: Number of the sample
+    * `Date`: Date the sample was taken
+    * `Sample_Point`: Sample point asset number
+    * `Town`: Town
+    * `Result`: Test result
+:::
+:::{.column}
+![Sample tap.](https://www.tucsonaz.gov/files/water/img/IMG_3292.jpg)
+:::
+::::::
+
+# Exploratory Analysis
+```{r}
+thm_count <- count(thm, Town, name = "Samples")
+kable(thm_count, caption = "Summary sample numbers.")
+```
+
+# Analysis
+```{r}
+ggplot(thm, aes(Town, Result)) + 
+  geom_boxplot() + 
+  geom_hline(yintercept = .2, col = "red", linetype = "longdash") + 
+  scale_y_log10() + 
+  coord_flip() + 
+  theme_dark() + 
+  labs(title = "THM Results",
+       subtitle = "Gormsey") 
+```
+
+# Summary
+```{r}
+exceedances <- filter(thm, Result > 0.2)
+```
+
+* `r nrow(exceedances)` samples exceeded the proposed new limit in `r unique(exceedances$Town)`
+* Further investigation required to determine the cause.

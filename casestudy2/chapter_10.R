@@ -14,6 +14,12 @@ cor(pii_wide$p01, pii_wide$p02)
 c_matrix <- cor(pii_wide[, -1])
 round(c_matrix, 2)
 
+ggplot(pii_wide, aes(p01, p02)) + 
+    geom_jitter() + 
+    labs(title = "Scatterplot of p01 and p02") + 
+    theme_bw(base_size = 10)
+ggsave("manuscript/resources/10_surveys/scatterplot.png", width = 9, height = 5)
+
 cor.test(pii_wide$p01, pii_wide$p02)
 
 ## Visualise correlations

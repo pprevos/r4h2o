@@ -1,4 +1,4 @@
-# 8. Cleaning Data {#cleaning}
+# 8. Cleaning Data  {#cleaning}
 The data that we used in the first case study was perfect in many ways. There were no superfluous columns or missing observations, and everything was perfectly labelled, ready to be analysed. Data in the real world is, however, not always this clean. This chapter introduces some techniques to clean data with R and the Tidyverse to create reproducible code.
 
 The learning objectives for this session are:

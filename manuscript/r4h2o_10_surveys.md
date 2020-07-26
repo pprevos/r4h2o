@@ -100,12 +100,45 @@ We can glance at the output and note that all correlations are positive, which i
 
 The basic R functionality also has a function to test the statistical validity of a correlation. The `cor.test()` function takes two vectors as input and provides the 95% confidence interval. 
 
+X> Evaluate this code in the console and review the output.
+
 {format: r, line-numbers: false}
 ```
 cor.test(pii_wide$p01, pii_wide$p02)
 ```
 
-The numerical correlation matrix is not an easy way to detect patterns in the data. The [corrplot package](https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-intro.html) provides extensive functionality to visualise correlation matrices. Remember that before you can use this library, you need to install it with `install.packages("corrplot")`.
+The output provides a wealth of statistical information about this correlation:
+
+```
+	Pearson's product-moment correlation
+
+data:  pii_wide$p01 and pii_wide$p02
+t = 18.273, df = 437, p-value < 2.2e-16
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.6016030 0.7081116
+sample estimates:
+      cor 
+0.6581375 
+```
+
+The `t` and `df` values relate to the significance statistics. The `p` value tells us that the relationship between these to variables is based on coincidence is very small (`p < 2.2 10^{-16}`$). In social science, a value of less than 0.05 is often considered statistical significant. However, you need to be careful in interpreting this outcome as a correlation is only a starting point for analysis.
+
+The numerical correlation matrix is not an easy way to detect patterns in the data. Correlations can be visualised with a scatter-plot with each of the variables on the x and y-axes. The `geom_point()` geometry in the ggplot package creates scatter-plots. Visualising the data from the survey this way is problematic because we only have responses between 1 and 7 and many points will be plotted on top of each other, so-called overplotting. One of the solutions to this problem is to add jitter to the data. Jitter is a small random amount f variation applied to each data point. The ggplot package uses the jitter geometry (`geom_jitter()`) to implement this technique. 
+
+
+{format: r, line-numbers: false}
+```
+ggplot(pii_wide, aes(p01, p02)) + 
+    geom_jitter() + 
+    labs(title = "Scatterplot of p01 and p02") + 
+    theme_bw(base_size = 10)
+ggsave("manuscript/resources/10_surveys/scatterplot.png", width = 9, height = 5)
+```
+
+![Scatterplot of item 1 and 2](resources/10_surveys/scatterplot.png)
+
+Creating a scatter plot for each permutation in the data would be a lot of work. Several specialised R packages provide functionality to visualise a correlation matrix. The [corrplot package](https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-intro.html) provides extensive functionality to visualise correlation matrices. Remember that before you can use this library, you need to install it with `install.packages("corrplot")`.
 
 {format: r, line-numbers: false}
 ```
@@ -296,12 +329,19 @@ We can see that the largest trunk in the dendrogram is with two clusters. We can
 
 This analysis means that we can reasonably sure that each of these five items measures the same underlying latent variable.
 
+### Other techniques
+Hiereachical clustering is not the only technique that is available to cluster data. Another popular algorithm is _k_-means, which performs better when you analyse large sets of data.
+
+This article by George Serif provides a comprehensive overview of the various [methods to cluster data](https://towardsdatascience.com/the-5-clustering-algorithms-data-scientists-need-to-know-a36d136ef68) and their differences.
+
 ## Reviewing the Personal Involvement Index
 Now that we have shown that the first five and the last five questions cluster into one latent variable, we can review the level of involvement with tap water reported by the customers. 
 
 The easiest way to do this is by adding the scores for the questions for each dimension and add a total score.
 
-The code below groups the data by survey id (by customer) and calculates the new scores with the `mutate()` function. This function creates a new variable in the data frame. After we have these three variables, we can pivot the data around these values and ditch the individual responses.
+The code below groups the data by survey id (by customer) and calculates the new scores with the `mutate()` function. This function creates a new variable in the data frame. You can add more than one new variable within one function all, as shown below. 
+
+After we have these three variables, we can pivot the data around these values and ditch the individual responses.
 
 {format: r, line-numbers: false}
 ```
@@ -337,43 +377,53 @@ These results are intriguing as the level of cognitive involvement is much highe
 D> How would you interpret these scores? How do you explain the significant spike at the highest level of involvement?
 
 ### Further study
-Accurate measurement of psychological constructs is a complex topic that goes beyond the scope of this course. The main lesson for this section is that a good customer survey is more than a range of singular direct questions. If you are interested in the statistical intricacies of measuring the customer experience, you should read _Scale Development: Theory and Applications_ by Robert Devils (2011). 
-
+Accurate measurement of psychological constructs is a complex topic that goes beyond the scope of this course. Please note that the examples in this chapter do not constitute a thorough analysis of latent constructs. Correlations and cluster analysis are great for exploration. Structural equation modelling is best practice in psychographic analysis. If you are interested in the statistical intricacies of measuring the customer experience, then read _Scale Development: Theory and Applications_ by Robert Devils (2011). 
 ## Quiz
 The sixth quiz asks some questions about correlations and cluster analysis.
+
+The [next chapter](#customers) invites you to further analyse the information in the customer survey data and create a report with RMarkdown.
 
 {quiz, id: q6, attempts: 10}
 # Quiz 6: Correlations and Clustering
 The following questions test your comprehension of some of the theory and functionality explained in this chapter. Test your answer by evaluating the code in the console.
 
-? Use the data from the involvement survey to segment the customers using hierarchical clustering and plot the dendrogram. What conclusion can you draw from the plot? 
+X> Load the cleaned customer survey data you created in session 8. 
 
-I> The segmented variable is in the rows, and the features are in the columns.
+? What is the correlation between the level of self-reported hardship and the frequency at which they contact their utility? 
 
-
-
-a) There are no valid segments.
-B) There appear to be two segments. One of a small group of respondents and the remainder.
-c) Impossible to tell.
-d) There the graph identifies four customers.
-
-? Load the cleaned customer survey data. What is the correlation between the level of self-reported hardship and the frequency at which they contact their utility? 
-
-I> Remember to manage the missing variables with the `use` option in the correlation function.
+I> Remember to manage the missing variables with the `use` option in the correlation function. Check the help file for the correlation function to select the correct option.
 
 A) 0.483
 b) NA
 c) 1
 d) 0.12
 
+? What is the likelihood that the relationship between these two variables is coincidental?
 
+a) 0.05
+b) Impossible to tell
+C) close to 0
+d) 0.483
 
+X> Isolate the variables that start with the letter `t` or `f` from the customer data. This data relates to questions about service quality. Transform the data and undertake a hierarchical cluster analysis and review the dendrogram.
 
+? How many latent variables would you assign these 18 variables to?
+
+a) None
+b) Three
+c) Four
+D) Two
+
+? Determine the total score for `t01` to `t05` for each respondent. What is the mean value of this latent construct?
+
+I> Use the `mutate()` function to add variables for each respondent.
+
+A) 27.6
+b) 20.9
+c) 6.7
+d) NA
 
 That is it for the sixth quiz. If you get stuck, you can find the answers in the `quiz_06.R` file in the `casestudy2` folder. You can also watch the video to see the solutions.
 
-{width: 60%, align: middle}
-![Answers to Quiz 6.]()
-
-Before you proceed to the [next chapter](#customers), try and load a CSV file you use in your daily work and manipulate the data to practice your skills.
+The [next chapter](#customers) invites you to further analyse the information in the customer survey data and create a report with RMarkdown.
 {/quiz}

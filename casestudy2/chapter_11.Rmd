@@ -1,17 +1,20 @@
 ---
 title: "Involvement with Tap Water"
 author: "Peter Prevos"
-date: "08/06/2020"
+date: "20 July 2020"
+output:
+  word_document:
+    reference_docx: tf77791332.dotx
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, dpi = 300)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, dpi = 300)
 library(tidyverse)
 library(knitr)
 library(corrplot)
 
 # Load raw data
-rawdata  <- read_csv("casestudy2/customer_survey.csv")
+rawdata  <- read_csv("customer_survey.csv")
 cities <- tibble(city = 1:3,
                  city_name = c("Merton", "Snake's Canyon", "Wakefield"))
 
@@ -37,18 +40,16 @@ pii_long <- pivot_longer(pii, -survey_id, names_to = "Item", values_to = "Respon
 ```
 
 # Introduction
-Consumer involvement is an essential marketing metric that describes the relevance of a product or service has in somebody's life. People who own a car will most likely be highly involved with purchasing and owning the car due to a large amount of money involved and the social role it plays in developing their public self. Consumers will most likely have a much lower level of involvement with the instant coffee they drink than with the clothes they wear. More formally, consumer involvement can be defined as a person's perceived relevance of the object based on inherent needs, values, and interests.
-
 Consumer involvement is a vital metric to understand because it is causally related to willingness to pay and perceptions of quality. Consumers with a higher level of involvement are generally willing to pay more for a service and have a more favourable perception of quality.
 
-Understanding involvement in the context of urban water supply is also essential because sustainably managing water as a common pool resource requires the active involvement of all users. The level of consumer involvement depends on a complex array of factors, which are related to psychology, situational factors and the marketing mix of the service provider. The lowest level of involvement is considered a state of inertia, which occurs when people habitually purchase a product without comparing alternatives.
+Understanding involvement in the context of urban water supply is also essential because managing water as a common pool resource requires the active involvement of all users. The level of consumer involvement depends on a complex array of factors, which are related to psychology, situational factors and the marketing mix of the service provider. The lowest level of involvement is considered a state of inertia, which occurs when people habitually purchase a product without comparing alternatives.
 
 Cult products have the highest possible level of involvement because customers are devoted to the product or brand. Commercial organisations use this knowledge to their advantage by maximising the level of consumer involvement through branding and advertising. This strategy is used effectively by the bottled water industry. Manufacturers focus on enhancing the emotional aspects of their product rather than emphasising the cognitive aspects. Water utilities tend to use a reversed strategy and emphasise the cognitive aspects of tap water, the pipes, plants and pumps, rather than trying to create an emotional relationship with their consumers.
 
 Water is more often than not positioned as a service that is essential for life. Most of the water that customer use is, however, used for a non-essential purpose. Water is available in the background of everyday life, which would suggest a low level of involvement. The essential nature of water would suggest a high level of involvement. This survey measure the involvement construct to gain a better insight into how involved consumers are with their water service.
 
 # Methodology
-The customer survey of the second case study includes ten questions to measure the level of consumer involvement. These questions form the Personal Involvement Inventory (PII), developed by Judity Zaichkowsky ([1994](https://www.sfu.ca/~zaichkow/JA%252094.pdf)). The Personal Involvement Inventory consists of two dimensions: 
+The customer survey of the second case study includes ten questions to measure the level of consumer involvement. These questions form the Personal Involvement Inventory (PII), developed by Judith Zaichkowsky ([1994](https://www.sfu.ca/~zaichkow/JA%252094.pdf)). The Personal Involvement Inventory consists of two dimensions: 
 1. Cognitive involvement (importance, relevance, meaning, value and need) 
 2. Affective involvement (involvement, fascination, appeal, excitement and interest).
 
@@ -95,14 +96,18 @@ ggplot(pii_long, aes(Item, Response)) +
 The correlation matrix shows a high level of correlation between the items. The affective items (p01--p02) and the cognitive items (p06-p10) strongly correlate. The high level of correlation ...
 
 ```{r, fig.cap="Correlation matrix for Personal Involvement Index"}
+c_matrix <- cor(pii[, -1])
 corrplot(c_matrix, type = "lower")
 ```
 
 # Survey Validity
+We can see that the largest trunk in the dendrogram is with two clusters. We can safely choose this solution because the survey was designed as a two-dimensional construct. We can also see that the cluster analysis confirms the correlation matrix. The first five and the last five items are closest related to each other. 
+
+This analysis means that we can reasonably sure that each of these five items measures the same underlying latent variable.
 
 ```{r}
 ## Cluster involvement data
-pii_trans <- t(pii_wide[, -1])
+pii_trans <- t(pii[, -1])
 
 pii_clusters <- pii_trans %>%
     scale() %>%
@@ -112,13 +117,13 @@ pii_clusters <- pii_trans %>%
 plot(pii_clusters,
      main = "Tap Water Consumer Involvement survey clusters",
      sub = "Personal Involvement Index",
-     labels = names(pii_wide[, -1]))
+     labels = names(pii[, -1]))
 rect.hclust(pii_clusters, k = 2, border = 2:3)
 ```
 
 
 # Discussion
-
+These results are intriguing as the level of cognitive involvement is much higher than affective involvement. Customers see water more as a necessity than as something they have a relationship with. The level of affective involvement is, however, quite high compared to other commodities. This score is perhaps an expression of the types of benefits that we obtain from using tap water. The two involvement dimensions have a different distribution. While affective involvement is more or less a normal distribution, cognitive involvement is highly positively skewed.
 
 ```{r, fig.cap="Personal Involvement Index scores"}
 involvement <- pii %>%
@@ -137,8 +142,5 @@ ggplot(involvement, aes(Score, fill = Dimension)) +
          subtitle = "Tap Water Customers in Gormsey") + 
     theme_bw(base_size = 10)
 ```
-
-
-# Conclusion
 
 

@@ -14,7 +14,7 @@ Other programming languages, such as Python, Stata or Julia, are equally suitabl
 
 The content of this course represents a steep learning curve because we take a deep dive into the functionalities of the R language. While this might sound daunting, keep in mind that: 
 
-> The steeper the learning curve, the higher to pay-off.
+> The steeper the learning curve, the higher to pay-off
 
 This course is not an exhaustive introduction into data science programming, but a teaser to inspire water professionals to ditch their spreadsheets and instead write code to analyse data. The best way to learn to solve problems with computer code is to start with practical examples and learn the principles as you progress through ever more complex cases. This course, therefore, uses three realistic case studies to introduce you to the R language.
 
@@ -34,19 +34,19 @@ The main objective of this course is to show water professionals how to apply da
 To participate in this workshop, you need to have some understanding of the issues surrounding water management. Experience with analysing data is also preferred. This course is designed with spreadsheet users in mind. Experience with writing computer code is helpful, but not required.
 
 ## Case Study approach
-The course consists of 14 sessions. The introduction discusses the principles of data science within the context of managing a water utility. 
+The course consists of twelve chapters. The introduction discusses the principles of data science within the context of managing a water utility. 
 
-This course consists of three case studies. Each of the case studies uses realistic examples that conclude with a practical data product. This approach quickly introduces you to using the R language. 
+This course consists of two case studies. Both case studies uses realistic examples that conclude with a practical data product. This approach quickly introduces you to using the R language. 
 
-The case studies use material previously published on [The Devil is in the data](https://lucidmanager.org/data-science/), a blog about creating value and having fun with the R language. 
+The case studies use material previously published on [The Devil is in the data](https://lucidmanager.org/tags/hydroinformatics/), a blog about creating value and having fun with the R language, including content about water data science.
 
 The case studies take place on the fictional island of Gormsey, which has eleven towns with a water supply system. The names of the towns were randomly generated using the [Fantasy Names Generator](https://www.fantasynamegenerators.com/town_names.php) website. The case studies use a combination of real and simulated data. The actual data has been modified to anonymise the source and create more exciting results.
 
-Each of the case studies starts with a problem statement and introduces participants to the relevant aspects of the R language. Participants have to load, transform, explore and analyse the data to solve the stated problem. The case studies end with writing a real-life analysis of the data and producing a presentation, a report and an interactive web page. 
+The case studies start with a problem statement and introduces participants to the relevant aspects of the R language. Participants have to load, transform, explore and analyse the data to solve the stated problem. The case studies end with analysing the data and producing a presentation or a report to communicate the results.
 
 Each case study chapter ends with an assignment to test your comprehension. The tasks mostly use multiple-choice quizzes to verify your answers. Completed examples of all assignments are available in the course package, in case you are stuck.
 
-Each case study ends with a mini-hackathon. A hackathon is often used in software development as an event where developers collaborate to develop innovative software. In this course, a mini hackathon is a session where participants use the data and methods from the case study to create a presentation, a report and an interactive online application. 
+Both studies ends with a 'mini-hackathon'. A hackathon is often used in software development as an event where developers collaborate to develop innovative software. In this course, a mini hackathon is a session where participants use the data and methods from the case study to create a presentation or a report to communicate the results of the analysis.
 
 The case studies use the Tidyverse approach to R. The [Tidyverse](https://tidyverse.org/) is a collection of extensions of the R language that simplifies manipulating, analysing and presenting data science. 
 
@@ -61,9 +61,6 @@ Water management is not only about cubic metres and milligrams per litre. Water 
 The data for the second case study consists of the results of a survey of water consumers about their perception of tap water services. Participants use the Tidyverse to clean, visualise and analyse this data and produce output as a Word document.
 
 ![Figure 1.3: Case Study 2 visualisation](resources/10_surveys/pii_dendogram.png)
-
-### Case Study 3: Water Consumption
-In the last case study, participants use the advanced functionalities of the Tidyverse to analyse data from smart meters to find anomalies in water consumption. This case study is under development.
 
 ## Participant Activities
 Besides the case studies, the content of this course contains several activities for participants. These icons are used throughout the text to indicate these activities:

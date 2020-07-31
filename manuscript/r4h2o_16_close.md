@@ -1,4 +1,4 @@
-# 16. In Closing {#close}
+# 12. In Closing {#close}
 
 You have reached the end of the /Data Science for Water Professionals/ course. I hope you find it interesting and useful to see how writing code enables you to analyse data in a way that is useful, sound and aesthetic.
 

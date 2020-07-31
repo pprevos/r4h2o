@@ -9,7 +9,7 @@ The learning objectives for this session are:
 
 The next section explains some of the theoretical assumptions used in the customer survey you need to understand before you can analyse the data. 
 
-# Creating documents with RMarkdown 
+## Creating documents with RMarkdown 
 [Chapter 7](#dataproducts) discussed the data science workflow and using data products to share the results of the analysis. This section delves a bit deeper into the functionalities of RMarkdown as a tool to share data science.
 
 When you create a new document, RStudio provides four options. The document option results in either a web page (HTML), a PDF document or an MS Word document. The presentation option provides two HTML templates, PDF or PowerPoint. Shiny is a tool for interactive websites and presentations.
@@ -51,8 +51,8 @@ A final option that needs discussing is the working directory. The working direc
 
 The rules are slightly different for RMarkdown. The working directory for an RMarkdown file is the location it is stored at. You can change this behaviour by clicking the small triangle next to the knit button and select the Knit directory.
 
-# Survey Items
-## Customer characteristics
+## Survey Items
+### Customer characteristics
 The penultimate page of the survey started with two items related to the customer's relationship with their service provider. Customers were asked to indicate whether they struggle to pay their water bills when they fall due. This question used a seven-point Likert scale from "Strongly Disagree" to "Strongly Agree". 
 
 The second question asked customers to indicate the frequency at which they contact their utility for support, also using a seven-point Likert scale: 
@@ -64,7 +64,7 @@ The second question asked customers to indicate the frequency at which they cont
 - 2--3 Times a week
 - Daily
 
-## Service quality
+### Service quality
 Service quality is a construct that describes how customers perceive a service. Many statistically validated survey tools exist to measure service quality. The most well-known and oldest method is SERVQUAL. This is a tool that consists of over twenty items were customers provide insight into their views on a range of aspects of service quality.
 
 The questions in this customer survey were used to develop a service quality measurement tool for tap water called SERVAQUA. This tool consists of 18 questions, which were measured using a seven-point Likert scale from "Strongly Disagree" to "Strongly Agree". The items were presented in random order. 
@@ -103,21 +103,21 @@ The survey includes 13 functional quality items that measure the non-physical as
 
 This survey tool was validated using structural equation modelling. You can read about the detailed analysis of this data and the SERVQUAL model in [The Invisible Water Utility](http://hdl.handle.net/1959.9/561679) dissertation. The International Water Association has published a less-mathematical version of this research in the book _Customer Experience Management for Water Utilities_.
 
-# Mini Hackathon
+## Mini Hackathon
 Now it is your turn to put what you have learned in practice and create a report about the remaining data in the customer survey. The `casestudy2` folder contains the `chapter_11.Rmd` file, which you can use as an example. This RMarkdown file includes some of the code discussed in chapters 8, 9 and 10. However, to the best way to learn is to start from scratch and type the code.
 
-## Data Cleaning
+### Data Cleaning
 Start your analysis with the raw data as we did in [chapter 8](#cleaning). Writing your code in that way ensures that it becomes reproducible. If you undertake the same survey again, then you can immediately repeat the analysis. Your report should mention some basic statistics about the raw data and some information about any responses that were removed in the method section.
 
-## Data Exploration
+### Data Exploration
 The next step in your report explores the cleaned data, as we did in [chapter 9](#customers). The best way to explore data is to tell a visual story to summarise the contents of the data you are exploring.
 
-## Data Analysis
+### Data Analysis
 Your analysis should contain a correlation matrix and a clustering solution of the survey items. 
 
 Please note that hierarchical clustering is not best practice to analyse latent variables. It is only used here as an example. Best practice structural equation modelling is more suitable to assess the statistical validity of survey instruments, as discussed in the previous chapter(#surveys).
 
-## Write a report
+### Write a report
 Your task is to write a small report that shows R output and some explanatory text. When you have completed your report, you can submit it to the discussion group.
 
 The [final chapter](#close) of this course provides some closing comments and suggestions on how to further develop your skills.

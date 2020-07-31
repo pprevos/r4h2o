@@ -66,6 +66,30 @@ Q> Filter the data for the first 14 days of June and group the consumption by da
 
 The R language has extensive functionality to create and manipulate time data, which are outside the scope of this course. In the following section we look at some functions in the Tidyverse to manage dates and times.
 
+## Time Zones
+Most computers record time not in their local timezone but in Coordinated Universal Time (UTC). This timezone corresponds with the 0 meridian over Greenwich near London. Computers synchronise to this time which is measured with atomic clocks. Computers can access time servers to synchronise themselves with UTC. Using UTC instead of the local timezone is preferable. Local time zones are more often than not a political choice. The fact that the name of this time zone and its abbreviation don't match is a result of political compromise between different countries.
+
+The readr package in the Tidyverse library always converts date and time fields to UTC before saving.
+
+The Tidyverse lubridate package provides extensive functionality to make working with times a breeze.
+
+with_tz(digital_meters, TimeStamp
+
+This principle is a bit annoying when loading data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### Monthly consumption
 The Tidyverse contains the *lubridate* package which makes working with dates and times a little easier. This next example groups the data in the data frame by month and adds the total flows.
 

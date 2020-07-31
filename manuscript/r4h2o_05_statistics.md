@@ -168,6 +168,8 @@ summarise(gormsey_grouped, mean = mean(Result))
 
 You now have all the tools you need to analyse the Gormsey data and determine how the results compare to the regulations.
 
+## Quiz 3: Analysing Water Quality Data
+
 X> Click on the link below to complete the quiz or move the [next chapter](#ggplot). You can also practice on your own data generating summary statistics and grouping data frames.
 
 {quiz, id: q3, attempts: 10}

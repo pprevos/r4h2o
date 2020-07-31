@@ -1,12 +1,10 @@
 ---
 title: '$R^4$H\textsubscript{2}O: R for Water Professionals: Case Study 1'
 author: Dr Peter Prevos
-#Needs LaTeX installed on your computer
 output:
   beamer_presentation:
   theme: "Malmoe"
   fonttheme: "structurebold"
-
 params: 
   coupon: "esc-vic"
 editor_options:
@@ -19,6 +17,17 @@ opts_chunk$set(tidy.opts=list(width.cutoff=40), echo=TRUE)
 
 event <- paste0("https://leanpub.com/c/R4H2O/c/", params$coupon)
 ```
+
+# Online Sessions
+Case Study 1: Exploring and analysing water quality data
+
+1. Introduction to R
+2. Visualising and communicating results
+
+Case Study 2: Cleaning, exploring and analysing a customer survey
+
+3. Cleaning and exploring data
+4. Analysing and communicating results
 
 # Session 1 Program
 :::::: {.columns}
@@ -61,7 +70,7 @@ event <- paste0("https://leanpub.com/c/R4H2O/c/", params$coupon)
 # What is sound data science?
 Reproducible code:
 ```{r example, eval=FALSE}
-reserve %>%
+reservoirs %>%
     select(Date, River_Flow, Natural_Flow, ERV) %>%
     mutate(Date = as.Date(Date, format = "%d %m %Y")) %>%
     gather(Source, Value, -Date) %>%
@@ -124,22 +133,6 @@ abline(v = 0, col = "grey")
 
 # R is Meme-Proof
 ![Aritmetic memes.](../manuscript/resources/03_basics/memes.jpg)
-
-# Finding Help
-:::::: {.columns}
-::: {.column width="50%"}
-* Built-in `help()` function
-* Cheat sheets (RStudio and Tidyverse websites)
-* Twitter #rstats
-* Reddit rstats, rlanguage
-* stackoverflow.com
-* Google the problem
-:::
-::: {.column width="50%"}
-![screenshot of help window.](images/help.png)
-:::
-::::::
-
 
 # Quiz 1: Calculate Channel Flows
 :::::: {.columns}
@@ -227,7 +220,7 @@ dataframe <- read_csv(filename)
 ::::::
 
 # Filter a data frame
-![`filter(gormsey(Measure == "Turbidity")`](../manuscript/resources/04_tidyverse/filter.png)
+![`filter(gormsey, Measure == "Turbidity")`](../manuscript/resources/04_tidyverse/filter.png)
 
 # Quiz 2: Explore data
 * Load the CSV file for the Gormsey system in the `casestudy1` folder.
@@ -379,6 +372,22 @@ Data products:
 
 # RMarkdown Syntax
 ![RMarkdown syntax example](../manuscript/resources/07_data_products/rmarkdown-example.png)
+
+# Finding Help
+:::::: {.columns}
+::: {.column width="50%"}
+* Built-in `help()` function
+* Cheat sheets (RStudio and Tidyverse websites)
+* Use the R4H2O Slack channel
+* Twitter #rstats
+* Reddit rstats, rlanguage
+* stackoverflow.com
+* Google the problem
+:::
+::: {.column width="50%"}
+![screenshot of help window.](images/help.png)
+:::
+::::::
 
 # Mini Hackathon
 To close this day, we will do a mini hackathon.

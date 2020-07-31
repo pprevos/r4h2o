@@ -237,7 +237,7 @@ Now it is your turn to play with R and functionality of RStudio. You need to mea
 The width of the weir is 300mm, and you measure a height of 100mm. To calculate the flow, you can use a simplified version of the Kindsvater-Carter rectangular weir equation ([ISO 1438: 2017](https://www.iso.org/standard/66463.html)):
 
 ```$
-q = \frac{2}{3} C_d \sqrt{(2g)} bh^{(3/2)}
+q = \frac{2}{3} C_d \sqrt{(2g)}\ bh^{(3/2)}
 ```
 
 - `q`$: Flow rate (m^3^/s).
@@ -276,7 +276,7 @@ With this information, open the first quiz and answer three questions, or go to 
 You are processing measurements from a channel operator and need to calculate various flow rates. You can use the Kindsvater-Carter formula: 
 
 ```$
-q = \frac{2}{3} C_d \sqrt{(2g)} bh^{(3/2)}
+q = \frac{2}{3} C_d \sqrt{(2g)}\ bh^{(3/2)}
 ```
 
 * The discharge factor `C_d = 0.6`$. 

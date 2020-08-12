@@ -288,7 +288,7 @@ T> Start by defining the constants and variables, then enter the formula into R.
 
 {format: r, line-numbers: false}
 ```
-cd <- 0.6
+Cd <- 0.6
 g <- 9.81
 b <- 0.6
 ```

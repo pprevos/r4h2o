@@ -1,0 +1,257 @@
+---
+title: '$R^4$H\textsubscript{2}O: R for Water Professionals: Session 1'
+author: Dr Peter Prevos
+output:
+  beamer_presentation:
+  theme: "Malmoe"
+  fonttheme: "structurebold"
+params: 
+  coupon: "esc-vic"
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(tidy.opts=list(width.cutoff=40), echo=TRUE)
+
+event <- paste0("https://leanpub.com/c/R4H2O/c/", params$coupon)
+```
+
+# Online Sessions
+Case Study 1: Exploring and analysing water quality data
+
+1. Introduction to R
+2. Visualising and communicating results
+
+Case Study 2: Cleaning, exploring and analysing a customer survey
+
+3. Cleaning and exploring data
+4. Analysing and communicating results
+
+# Session 1 Program
+:::::: {.columns}
+::: {.column}
+* Introduction
+* Principles of Data Science
+* Introduction to R
+* Exploring Data
+* Descriptive Statistics
+:::
+::: {.column}
+![R for Water Professionals workshop (Melbourne, 2019).](../manuscript/resources/01_introduction/2019_workshop_melbourne.jpg)
+:::
+::::::
+
+# My Data Science Evolution
+![](images/data_science_evolution.png)
+
+# Resources
+![Register to get access to the on-line syllabus: `r event`](../manuscript/resources/01_introduction/r4h2o_logo.jpg)
+
+# Principles of Data Science
+![](../manuscript/resources/02_principles/StrategicDataScience.jpg)
+
+# What is Data Science?
+![The Conway Venn Diagram (Drew Conway, 2013).](../manuscript/resources/02_principles/conway.png)
+
+# What is good data science?
+![The Vitruvian triangle of good data science.](../manuscript/resources/02_principles/vitruvius.png)
+
+# What is useful data science?
+![Modified version of the DIKW model.](../manuscript/resources/02_principles/feedback-loop.png)
+
+# What is sound data science?
+![Validity and reliability.](../manuscript/resources/02_principles/soundness.png)
+
+# What is sound data science? 
+![Reverse-engineering a spreadsheet.](../manuscript/resources/02_principles/reverse-engineer-spreadsheet.jpg)
+
+# What is sound data science?
+Reproducible code:
+```{r example, eval=FALSE}
+reservoirs %>%
+    select(Date, River_Flow, Natural_Flow, ERV) %>%
+    mutate(Date = as.Date(Date, format = "%d %m %Y")) %>%
+    gather(Source, Value, -Date) %>%
+    mutate(type = factor(Source == "ERV"),
+           type = fct_recode(type, Flow = "FALSE", 
+                             Volume = "TRUE")) %>%
+    ggplot(aes(Date, Value, col = Source)) + 
+    geom_line() + 
+    facet_grid(type~., scales = "free_y")
+```
+
+# What is aesthetic data science?
+![Data visualisation is about telling stories.](../manuscript/resources/06_visualisation/stories.png)
+
+# Configure R Studio
+:::::: {.columns}
+::: {.column}
+**Desktop**
+
+* Install R and RStudio
+* Download materials: 
+`https://github.com/`
+`pprevos/r4h2o`
+* Unzip folder
+* *File* > *Open Project*
+* Open the `r4h2o.Rproj` file in the downloaded folder
+:::
+::: {.column}
+**Cloud**
+
+* Sign-up at: `rstudio.cloud`
+* *New Project* > *New Project from Git Repo*
+![](images/rstudio_cloud.png)
+* Enter GitHub URL
+:::
+::::::
+    
+# Console exercise
+::::::{.columns}
+:::{.column}
+1. Enter sample code into the console (see syllabus for examples)
+2. Observe the output in the console
+3. Observe the environment
+4. Use ↑↓ to scroll history
+5. Use TAB for completion
+6. Play with variations
+:::
+:::{.column}
+```{r}
+x <- -10:10
+y <- -x^2 -2 * x + 30
+
+plot(x, y, type = "l", 
+     col = "blue")
+abline(h = 0, col = "grey")
+abline(v = 0, col = "grey")
+```
+:::
+::::::
+
+# R is Meme-Proof
+![Aritmetic memes.](../manuscript/resources/03_basics/memes.jpg)
+
+# Quiz 1: Calculate Channel Flows
+:::::: {.columns}
+::: {.column width="50%"}
+Determine the flow in a channel. Go to exercise 1 and answer the questions.
+
+$$q = \frac{2}{3} C_d \sqrt{2g}\ bh^{3/2}$$
+
+* $q$: Flow [$m^3/s$].
+* $C_d \approx 0.6$: Constant.
+* $g = 9.81 m/s^2$
+* $b$: Width of the weir [$m$]
+* $h$: Water depth over weir [$m$]
+:::
+::: {.column width="50%"}
+![Channel with weirplate (Photo: Coliban Water).](../manuscript/resources/03_basics/weirplate.jpg)
+:::
+::::::
+    
+    
+# Scripts versus Console
+* Store all code in a text file with `.R` extension
+* Output in console, plots and viewer
+* Use comments (start with `#`) to explain the code
+* *File* > *New File* > *R Script*
+* Open the `channel_flow.R` script in `inroduction` folder.
+* Reverse-Engineer the code
+```{r, eval = FALSE}
+## Question 2
+h <- c(150, 136, 75) / 1000 # Create a vector
+q <- (2/3) * Cd * sqrt(2 * 9.81) * b * h^(3/2)
+mean(q) * 1000 # Convert to l/s
+```
+
+# Reproducible Code
+::::::{.columns}
+:::{.column}
+* Give meaningful names
+* Use a consistent method, e.g.:
+    - Only lower case: `channelflow`
+    - Underscore for spaces: `channel_flow`
+    - Camel case: `ChannelFlow`
+:::
+:::{.column}
+* Use comments to explain the process
+* Add links to documentation
+* Automate as much as possible
+:::
+::::::
+
+# The Tidyverse
+:::::: {.columns}
+::: {.column  width=60%}
+An opinionated collection of R packages optimised for data science. All packages share an underlying design philosophy, grammar, and data structures.
+
+```{r, eval=FALSE}
+install.packages("tidyverse")
+library(tidyverse)
+```
+
+Load the `casestudy1.R` script in the `casestudy1` folder.
+:::
+::: {.column  width=40%}
+![](images/tidyverse.png)
+:::
+::::::
+
+# Data frames or 'tibbles'
+:::::: {.columns}
+::: {.column width=60%}
+* Rectangular data
+* Variables in columns
+* Observations in rows
+* One variable in R environment
+* Tidy data
+* Read data:
+
+```{r, eval=FALSE}
+dataframe <- read_csv(filename)
+```
+:::
+::: {.column width=40%}
+![Data frame structure.](images/dataframe.png)
+:::
+::::::
+
+# Filter a data frame
+![`filter(gormsey, Measure == "Turbidity")`](../manuscript/resources/04_tidyverse/filter.png)
+
+# Quiz 2: Explore data
+* Load the CSV file for the Gormsey system in the `casestudy1` folder.
+* Explore the data.
+* Answer the questions in Exercise 2 in your syllabus.
+* You can cheat by opening the `quiz_02.R` script.
+
+# Descriptive Statistics
+Safe Drinking Water Regulations 2015:
+
+> “the 95th percentile of results for samples in any 12 months must be less than or equal to 5.0 Nephelometric Turbidity Units.”
+
+Guidance document:
+
+> “The method recommended by the department is described as the Weibull method and is the method adopted by the National Institute of Standards and Technology (NIST).”
+
+# Percentiles
+::::::{.columns}
+:::{.column}
+1. The data are placed in ascending order: $y_1, y_2, \ldots y_n$.
+2. Calculate the rank of the required percentile
+- Weibull: $r = p(n + 1)$
+  - Excel: $r = 1 + p(n - 1)$
+  3. Interpolate between adjacent numbers: 
+  $X_p=(1-r_{frac})Y_{r_{int}}+r_{frac}Y_{r_{int+1}}$
+:::
+:::{.column}
+![Explore the `percentiles.R` script in the `casestudy1` folder.](../manuscript/resources/05_statistics/percentiles.png)
+:::
+::::::
+
+# Grouping
+![`group_by(gormsey, Measure)`](../manuscript/resources/05_statistics/grouping.png)
+

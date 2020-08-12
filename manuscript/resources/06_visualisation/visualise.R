@@ -103,3 +103,19 @@ ggplot(filter(turbidity, Town == "Strathmore"), aes(Date, Result)) +
     geom_hline(yintercept = 5, col = "red") + 
     theme_bw(base_size = 10)
 ggsave("manuscript/resources/06_visualisation/labels.png", width = 9, height = 5)
+
+
+filter(gormsey, Town %in% c("Pontybridge", "Southwold", "Strathmore")) %>%
+ggplot(aes(Date, Result, col = Measure)) + 
+    geom_line() +
+    scale_color_brewer(palette = "Dark2", guide = FALSE) + 
+    facet_grid(Measure ~ Town, scales = "free_y") + 
+    labs(title = "Turbidity Spikes", 
+         subtitle = "Strathmore customer taps",
+         x = "Date sampled", y = "NTU") + 
+    theme_bw(base_size = 10)
+ggsave("presentations/images/ggplot.png", width = 6, height = 6)
+
+
+
+

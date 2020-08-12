@@ -25,36 +25,36 @@ This case study uses a simplified method to simulate water consumption that prod
 This approach can easily be extended to include more complex consumption anomalies, such as missing data, consumption spikes zero consumption, or seasonal influences.
 
 The simulation starts with setting the boundary conditions:
-* Number of simulated services (`n`)
-* Number of days (`d`) 
-* Date (`s`). 
+
+- Number of simulated services (`n`)
+- Number of days (`d`) 
+- Start date (`s`). 
 
 ```{r}
 library(tidyverse)
-
 n <- 100 # Number of services
-d <- 365 # Number of days
-s <- as.POSIXct("2069-01-01", tz = "Australia/Melbourne") # Start of simulation
+days <- 365 # Number of days
+start <- as.POSIXct("2069-01-01", tz = "Australia/Melbourne") # Start of simulation
 ```
 
-The data for this case study contains 100 services over 365 days and commences on 1 July 2069, to avoid any confusion with reality. The `as.Posixct()` function formats the information as a date-time field with the appropriate time zone. In most smart meter systems, data is time-stamped to UTC (Coordinated Universal Time) to avoid confusion with changes in time.
+The data for this case study contains 100 services over 365 days and commences on `r format(start, "%d %B %Y")`, to avoid any confusion with reality. The `as.Posixct()` function formats the information as a date-time field with the appropriate time zone. In most smart meter systems, data is time-stamped to UTC (Coordinated Universal Time) to avoid confusion with changes in time.
 
-The simulation uses random numbers to simulate variability. All random number generation is seeded to promote reproducibility. Computers don't produce truly random numbers but they run an algorithm that always provides the same result from the same starting point. When seeding a random number generator with the `set.seed()` function, the results are always the same, while still using a stochastic approach. Using seeded random numbers promotes reproducibility because everybody that runs the code will see exactly the same results.
+# Simulate Water meters
+The next step create the water meters used in this simulation. Each water meter has a serial number `rtu` and a time offset.
 
-The serial numbers for the data loggers (Radio Telemetry Units) are randomly generated. The `paste()` function concatenates two or more strings. The first part consists of the letters "RTU" and the second part samples a six-digit number between 1 and 9 million, separated by a dash.
-
-The `sample()` function takes a given number of samples from a vector. The `replace = FALSE` option implies that values can be chosen only once to generate unique numbers. The sample function results in a uniform distribution as each element of the vector has an equal likelihood of being sampled.
-
-## Smart meters
-Each smart meter submits a signal once every hour at a random point in the hour. This is done to prevent congestion at the base stations. The `offset` variable contains random numbers between 0 and 3599 seconds. The `replace = TRUE` option implies that the random number don't have to be unique.
+The simulation uses random numbers to simulate variability. All random number generation is seeded to promote reproducibility. Computers don't produce truly random numbers but they run an algorithm that always provides the same result from the same starting point. When seeding a random number generator with the `set.seed()` function, the results are always the same, while still using a stochastic approach. Using seeded random numbers promotes reproducibility because everybody that runs the code will see exactly the same results. If you change the seeding number, the random sequence will change.
 
 ```{r}
-set.seed(2069)
+set.seed(1)
 rtu <- paste("RTU", sample(1E5:9E5, n, replace = FALSE), sep = "-")
 offset <- sample(0:3599, n, replace = TRUE) # Unique Random offset for each RTU
 ```
 
-The basic method used to simulate water consumption uses a model diurnal curve sourced from a journal article by [Gurung et al](https://www.researchgate.net/publication/263930947_Smart_meters_for_enhanced_water_supply_network_modelling_and_infrastructure_planning) (2014). This diurnal curve shows the average indoor water consumption in litres per person per hour, for each hour of the day. Outdoor water consumption does not form part of this data. The consumption between midnight and 4 AM is reduced to zero to exclude any leakage that is already in the existing data. The numbers are hard-coded into a data frame.
+The serial numbers for the data loggers (Radio Telemetry Units) are randomly assigned. The `paste()` function concatenates two or more strings. The first part consists of the letters "RTU" and the second part samples a six-digit number between one and nine million, separated by a dash. The `sample()` function takes a given number of samples from a vector. The `replace = FALSE` option implies that values can be chosen only once to generate unique numbers. The sample function results in a uniform distribution because each element of the vector has an equal likelihood of being sampled.
+
+Each smart meter submits a signal once every hour at a random point in the hour. This approach prevents congestion at the base stations. The `offset` variable contains random numbers between 0 and 3599 seconds. The `replace = TRUE` option implies that the random number don't have to be unique.
+
+The basic method used to simulate water consumption uses a model diurnal curve sourced from a journal article by [Gurung et al](https://www.researchgate.net/publication/263930947_Smart_meters_for_enhanced_water_supply_network_modelling_and_infrastructure_planning) (2014). This diurnal curve provides the average indoor water consumption in litres per person per hour, for each hour of the day. Outdoor water consumption does not form part of this data. The consumption between midnight and 4 AM is reduced to zero to exclude any leakage that is present in the existing data. The numbers are hard-coded into a data frame (tibble).
 
 As the data is cyclical, it contains 25 numbers to show the overlap of 0:00 an 24:00 in the diagram in Figure 1. The 25^th^ number is removed after the diagram is saved.
 
@@ -73,29 +73,37 @@ ggplot(diurnal, aes(Time, Flow)) +
          subtitle = "Litres per person per hour",
          y = "Flow [L/h/p]")
 		 
-ggsave("manuscript/resources/session7/model-diurnal.png", width = 6, height = 4)
+ggsave("manuscript/resources/12_time_series/model-diurnal.png", width = 6, height = 4)
 
 diurnal <- diurnal[-24, ]
 ```
 
-## Consumers
-The number of consumers per service (each dwelling has one service) is determined by generating random numbers following a [Poisson distribution](https://en.wikipedia.org/wiki/Poisson_distribution) (`rpois()`). This distribution is often used to understand patterns of things that can be counted. Figure 2 visualises the number of people per household used in the model.
+# Simulate Consumers
+The number of consumers per service (each dwelling has one service) follows a [Poisson distribution](https://en.wikipedia.org/wiki/Poisson_distribution). This distribution helps to understand patterns of things that can be counted. The probability $P$ of a certain number of occupants in each house $k$ is:
+
+$P(k) = \frac{\lambda^k e^{-\lambda}}{k!}$
+
+Where $\lambda$ indicates the variance in the distribution. The `rpois()` function simulates `n` houses with a $\lambda$ value of 1.5. One is added to the random numbers to prevent unoccupied houses. Figure 2 visualises the number of people per household used in the model.
 
 ```{r, fig.cap="Number of occupants per service."}
+set.seed(1)
 occupants <- rpois(n, 1.5) + 1 # Number of occupants per connection
+
 as_tibble(occupants) %>%
   ggplot(aes(occupants)) + geom_bar(fill = "dodgerblue") + 
   labs(title = "Simulated occupants per connection",
        x = "Occupants", y = "Properties")
-
-ggsave("manuscript/resources/session7/occupants.png", width = 6, height = 4)
+ggsave("manuscript/resources/12_time_series/occupants.png", width = 6, height = 4)
 ```
 
-In this simulation, only 10% of water consumers is home all day. The `work` vector stores for which services consumers are home (1) or away (0). The `hols` vector indicates those 20% of customers who go on a holiday during the simulated period. A zero indicates that that the people at this sevice are on holidays.
+In this simulation, only 10% of water consumers is home all day. The `home` vector stores for which services consumers are home (1) or away (0). The `hols` vector indicates those 10% of customers who go on a holiday during the simulated period. A zero indicates that that the people at this service are on holidays. 
+
+A [binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) simulates these variables. This type of distribution is ideal for events that are like coin flips. The `rbinom()` function generates `n` random variables. The second number indicates the number of 'flips' and the last parameter indicates the probability of success. For example, using `c("heads", "tails")[rbinom(100, 1, .5) + 1]` simulates 100 coin flips with an unbiased coin.
 
 ```{r}
-work <- rbinom(n, 1, .1)
-hols <- rbinom(n, 1, .8)
+home <- rbinom(n, 1, .1)
+hols <- rbinom(n, 1, .1)
+garden <- rbinom(n, 1, .8)
 ```
 
 # Simulate Water consumption

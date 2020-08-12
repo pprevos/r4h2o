@@ -78,7 +78,7 @@ The `quantile()` function calculates the percentiles of a vector of numbers. The
 
 For example, `quantile(turbidity_pontybridge$Result, 0.95)` provides the 95^th^ percentile of the turbidity measurements in Pontybridge. The quantile function can also take a vector of one or more probabilities to calculate different outcomes, for example `quantile(turbidity_pontybridge$ Result, c(0.50, 0.95))` results in a vector with two variables.
 
-Q> What are the 33rd and 66th percentile for the NTU data in Paethsmouth?
+Q> What are the 33rd and 66th percentile for the turbidity data in Paethsmouth?
 
 I> To answer this question, you first need to create a subset of the data using the `filter()` function, after which you can calculate the required percentile.
 

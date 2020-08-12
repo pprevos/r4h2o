@@ -53,14 +53,16 @@ The case studies use the Tidyverse approach to R. The [Tidyverse](https://tidyve
 ### Case Study 1: Water Quality Regulations
 In this first case study, participants apply their skills to analysing and visualising laboratory testing data. The case study revolves around checking the data for compliance with water quality regulations. The case study ends with participants creating code that produces a PowerPoint presentation based on water quality data.
 
-![Figure 1.2: Case study 1 visualisation](resources/06_visualisation/labels.png)
+{width: 60%}
+![Figure 1.2: Case study 1 visualisation.](resources/06_visualisation/labels.png)
 
 ### Case Study 2: Customer Experience
 Water management is not only about cubic metres and milligrams per litre. Water professionals also need to know how to understand the voice of the customer. The second case study discusses how to collect and analyse customer survey data. 
 
 The data for the second case study consists of the results of a survey of water consumers about their perception of tap water services. Participants use the Tidyverse to clean, visualise and analyse this data and produce output as a Word document.
 
-![Figure 1.3: Case Study 2 visualisation](resources/10_surveys/pii_dendogram.png)
+templte and 
+![Figure 1.3: Case Study 2 visualisation.](resources/10_surveys/pii_dendogram.png)
 
 ## Participant Activities
 Besides the case studies, the content of this course contains several activities for participants. These icons are used throughout the text to indicate these activities:

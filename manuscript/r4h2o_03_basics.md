@@ -329,7 +329,7 @@ If you are stuck, you can find the answers in the `channel_flow.R` file in the `
 ![Answers to quiz 1](https://www.youtube.com/watch?v=cR995WCeD2g)
 {/quiz}
 
+## Further Study
 The [next chapter](#tidyverse) introduces the first case study and how to explore data using the Tidyverse libraries of R.
 
-## Further Study
 The [Base R Cheat Sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/base-r.pdf) provides a comprehensive list of basic functionality in the R language.

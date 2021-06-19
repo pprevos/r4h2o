@@ -17,15 +17,15 @@ plot(x, y, type = "l", col = "blue")
 abline(h = 0, col = "grey")
 abline(v = 0, col = "grey")
 
+barplot(complaints, main = "Complaints", names.arg = 1:7)
+
 # Vector functions
 flow <- c(12, 3, 23, 45, 2, 99, 1, 0)
+
+sum(flow)
+prod(flow)
 abs(flow)
 exp(flow)
 factorial(flow)
 log(flow, base = 10)
 sqrt(flow)
-sum(flow)
-prod(flow)
-min(flow)
-max(flow)
-

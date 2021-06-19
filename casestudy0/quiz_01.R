@@ -6,7 +6,7 @@ Cd <- 0.6 # approximation
 g <- 9.81
 
 ## Measurements
-b <- 0.6 # Width
+b <- 0.75 # Width
 
 
 ## Question 1
@@ -16,7 +16,7 @@ q
 
 ## Question 2
 h <- c(150, 136, 75) / 1000 # Create a vector
-q <- (2/3) * Cd * sqrt(2 * 9.81) * b * h^(3/2) # Same as before
+q <- (2/3) * Cd * sqrt(2 * 9.81 * b * h^(3/2)) # Same as before
 mean(q) * 1000 # Convert to l/s
 
 ## Question 3
@@ -28,4 +28,7 @@ h <- (50:500) / 1000 # Create a vector
 q <- (2/3) * Cd * sqrt(2 * 9.81) * b * h^(3/2) # Same as before
 q
 
+plot(h, q, type = "l", 
+     main = "Flow over a weir", 
+     sub = paste("Cd =", Cd, "b =", b))
 

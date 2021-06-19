@@ -48,7 +48,9 @@ If you need true random numbers, then use the `random` package, which accesses t
 
 ```{r}
 set.seed(1)
-meters <- data.frame(rtu = paste("RTU", sample(1E5:9E5, n, replace = FALSE), sep = "-"),
+meters <- data.frame(rtu = paste("RTU", 
+                                 sample(1E5:9E5, n, replace = FALSE), 
+                                 sep = "-"),
                      offset = sample(0:3599, n, replace = TRUE))
 ```
 
@@ -57,7 +59,7 @@ The serial numbers for the data loggers (Radio Telemetry Units) are randomly ass
 Each smart meter submits a signal once every hour at a random point in the hour. This approach prevents congestion at the base stations. The `offset` variable contains random numbers between 0 and 3599 seconds. The `replace = TRUE` option implies that the random number don't have to be unique.
 
 # Simulate Consumers
-The `customers` data frame holds the characteristics of the customers at each dwelling. The customer ID is in this case the same as the water meter serial number.
+The `customers` data frame holds the characteristics of the consumers at each dwelling. The customer ID is in this case the same as the water meter serial number.
 
 The number of consumers per service (each dwelling has one service) follows a [Poisson distribution](https://en.wikipedia.org/wiki/Poisson_distribution). This distribution helps to understand patterns of things that can be counted. The probability $P$ of a certain number of occupants in each house $k$ is:
 
@@ -67,17 +69,21 @@ Where $\lambda$ indicates the variance in the distribution. The `rpois()` functi
 
 ```{r, fig.cap="Number of occupants per service."}
 set.seed(1)
+# Number of occupants per connection
 customers <- tibble(service = meters$rtu,
-                    occupants = rpois(n, 1.5) + 1) # Number of occupants per connection
+                    occupants = rpois(n, 1.5) + 1)
 
 ggplot(customers, aes(occupants)) + geom_bar(fill = "dodgerblue") + 
   labs(title = "Simulated occupants per connection",
        x = "Occupants", y = "Properties") + 
   theme_bw(base_size = 10)
-ggsave("manuscript/resources/12_time_series/occupants.png", width = 6, height = 4)
 ```
 
-In this simulation, 20% of water consumers are home all day. The `home` vector stores for which services consumers are home (1) or away (0). Most houses in Gormsey have a garden. The `hols` variable indicates the 10% of customers who are on a holiday during the simulated period and the `duration` of their absence.
+This simulation assumes that 20% of water consumers are home all day. The `home` vector stores for which services consumers are home (1) or away (0). 
+
+Gardening is a majo 
+
+The `hols` variable indicates the 10% of customers who are on a holiday during the simulated period and the `duration` of their absence.
 
 A [binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) simulates these variables. This type of distribution is ideal for events that are like coin flips. The `rbinom()` function generates `n` random variables. The second parameter indicates the number of 'flips' and the last parameter indicates the probability of success. For example, using `c("heads", "tails")[rbinom(100, 1, .5) + 1]` simulates 100 coin flips with an unbiased coin.
 

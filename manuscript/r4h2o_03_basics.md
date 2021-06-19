@@ -21,7 +21,7 @@ This second session introduces the R language and the associated RStudio softwar
 
 The fastest way to learn to code is by doing it. Follow the examples in this chapter, but also change the code so you can explore how the software works.
 
-## Basic principles of a programming language
+## Basic principles of a programming
 Movies often portray programmers as smart geeks with minimal social skills. This archetype of the computer geek does not do justice to reality. It causes people to hold the incorrect belief that writing computer code is beyond their skill level.
 
 In simple terms, a computer program is a set of instructions to transforms an input into an output. This description might sound complicated and abstract, but that is what you do in a spreadsheet. Analysing data with a spreadsheet also involves writing code. 
@@ -58,7 +58,7 @@ Writing code can be a rewarding, but sometimes also frustrating, experience. Syn
 * Google the error message, exactly as written
 
 More problematic is when your code provdies the wrong answer. To prevent these types of errors, it is wise to test your code with known data where you can anticipate the outcomes. Always apply a common-sense review on your results.
-l
+
 ## Using R and RStudio
 The best way is to use R in combination with an *Integrated Development Environment* (IDE). This software helps you to write and manage code. An IDE typically consists of a source code editor, automation tools, and functionality to simplify writing and running code.
 
@@ -126,6 +126,8 @@ y <- -x^2 -2 * x + 30
 plot(x, y, type = "l", col = "blue")
 abline(h = 0, col = "grey")
 abline(v = 0, col = "grey")
+
+barplot(complaints, main = "Complaints", names.arg = 1:7)
 ```
 
 You should notice a few things when you start typing:
@@ -134,16 +136,17 @@ You should notice a few things when you start typing:
 * When you type `plot()`, `mean()`, or other functions, RStudio gives you suggestions on how to continue after you type the first characters.
 * When typing brackets or quotation marks, RStudio includes the closing bracket or quotation mark.
 * The variables you declared (`diameter`, `pipe-area` and so on) and their values are shown in the Environment window.
-* The plot appears in a tab of the bottom-right window.
+* The plots appear in a tab of the bottom-right window.
 
 X> Create some variations of this code to understand the principles. 
 
 {width: 60%, align: center}
 ![Basic principles of the R language](https://www.youtube.com/watch?v=ZK57uRg9l5Y)
 
+### Arithmetic
 In its most basic form, the R console is a calculator that uses arithmetic operators as listed in the table below. R is 'meme-proof' because it knows the correct answer to the many arithmetic memes distributed on social media (Figure 3.2).
 
-{width=60%, align=center}
+{width=40%, align=center}
 ![Figure 3.2: Arithmetic Facebook memes.](resources/03_basics/memes.jpg)
 
 | Operator | Function       | Example     |
@@ -163,6 +166,7 @@ You don't need to type the full name for any defined variable. As soon as you ty
 
 R uses the `<-` operator to assign values to a variable, for example `a <- 6` assigns the number 6 to the variable `a`, `a <- "R"` assigns the letter R to the variable `a`. This notation effectively means the value 6 is assigned to the variable. You can use the `=` symbol, but doing so can lead to confusion when writing more advanced code.
 
+### Vectors
 Vectors are the most essential principle in R. A vector is a sequence of values, which can be defined with the `c()` function, as shown in the example. The colon is a shortcut to creating a vector of integers. The two expressions `1:3` and `c(1, 2, 3)` have the same result. Vectors can contain millions of values, and later we find out how R deals with external data sets.
 
 Functions are the powerhouse of R. A function converts the input to an output. Simple function parameters undertake mathematical operations such as mean, median, square root, and so on. Functions can also perform complex tasks such as visualising and analysing data. A function call a word and empty brackets, such as `sqrt()` to determine the square root of a number or variable, e.g. `sqrt(25)`.
@@ -197,7 +201,13 @@ log(flow, base = 10)
 sqrt(flow)
 ```
 
-The last section plots the variables `x` and `y` as a line (`type = "l"`), showing the parabola in the plot window. The `abline()` function draws a straight line on top of the current plot.
+### Basic plots
+R has extensive capability for visualising data and the results of analysis. The last section shows some examples of simple graphs.
+
+The first few lines defines the variables `x` and `y` and plots them as a line (`type = "l"`), showing the parabola in the plot window. The `abline()` function draws a straight line on top of the current plot. The barplot function creates a bar chart with the complaints vector (Figure 3.3).
+
+{width=80%, align=center}
+![Figure 3.3: Basic R Plots](resources/03_basics/basic_plots.png)
 
 X> Try the same plot without the `type` parameter, or with `type = "b"` and review the difference. Change the parameters in the `abline()` function and review the results.
 
@@ -234,7 +244,7 @@ The following sections in the help function provide background information and l
 X> Open the help file for the `plot()` function. How do you plot a function with both points and lines?
 
 ## Quiz 1: Calculating channel flows
-Now it is your turn to play with R and functionality of RStudio. You need to measure the flow in a rural channel with a rectangular weir (figure 3.3). Measuring flows in open channels is usually achieved by measuring the depth of the water at through section with a standard profile. A mathematical relationship determines the volume of water the passes through the channel.
+Now it is your turn to play with R and functionality of RStudio. You need to measure the flow in a rural channel with a rectangular weir (figure 3.4). Measuring flows in open channels is usually achieved by measuring the depth of the water at through section with a standard profile. A mathematical relationship determines the volume of water the passes through the channel.
 
 The width of the weir is 300mm, and you measure a height of 100mm. To calculate the flow, you can use a simplified version of the Kindsvater-Carter rectangular weir equation ([ISO 1438: 2017](https://www.iso.org/standard/66463.html)):
 
@@ -251,7 +261,7 @@ q = \frac{2}{3} C_d \sqrt{(2g)}\; bh^{(3/2)}
 The value for `C_d`$ is an estimate because it depends on the dimensions of the weir and the flow conditions. Follow [this link](https://www.engineeringexcelspreadsheets.com/tag/kindsvater-carter-formula/) for a detailed discussion on using this formula. The photo below shows what such a weir looks like in practice.
 
 {width: 60%, align: center}
-![Figure 3.3: Example of a channel with a rectangular weir.](resources/03_basics/weirplate.jpg)
+![Figure 3.4: Example of a channel with a rectangular weir.](resources/03_basics/weirplate.jpg)
 
 Some tips for answering the quiz questions:
 
@@ -261,19 +271,14 @@ T> Start with opening a new script and define your constants, so you can reuse t
 ```
 cd <- 0.6
 g <- 9.81
-b <- 0.6
+b <- 0.75
 ```
 
 T> To evaluate the Kindsvater-Carter formula, use the `sqrt()` function for a square root. The key to getting the formula right is to use parenthesis where appropriate.
 
 T> The dimensions in the formula are in metres, while the measurements in reality are in mm. You need to use `h / 1000` in all your formulas. The output of the formulas is in m^3^/s.
 
-With this information, open the first quiz and answer three questions, or go to the [next chapter](#tidyverse).
-
-The [next chapter](#tidyverse) introduces the first case study and how to explore data using the Tidyverse libraries of R.
-
-## Further Study
-The [Base R Cheat Sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/base-r.pdf) provides a comprehensive list of basic functionality in the R language.
+With this information, open the first quiz and answer three questions.
 
 {quiz, id: q1, attempts: 10}
 # Quiz 1: Channel Flow Measurements
@@ -302,15 +307,15 @@ T> To evaluate the Kindsvater-Carter formula, use the `sqrt()` function for a sq
 
 ? What is the flow in the channel in m^3^/s when the height `h = 100mm`$?
 
-A) 0.0336 m^3^/s.
-b) 1063.067 m^3^/s.
-c) 0.0005 m^3^/s.
+A) 0.042 m^3^/s.
+b) 42.02 m^3^/s.
+c) 0.273 m^3^/s.
 
 ? What is the average flow for these three heights: 150mm, 136mm, 75mm, in litres per second? Tip: create a vector of height measurements with `c()` to use the formula only once. Don't forget to convert the units (1 m^3^/s = 1000 L/s). You can use the `mean()` function to average the results in a vector.
 
 a) 0.0456
-b) 394.30
-C) 45.637
+b) 311.12
+C) 57.05
 
 ? Which of these expressions calculates the flow in cubic meters per second for all heights (`h`$) between 50mm and 500mm? Type the proposed solutions into the console and inspect the output. Run the parts that are different separately to diagnose any issues.
 
@@ -323,4 +328,8 @@ If you are stuck, you can find the answers in the `channel_flow.R` file in the `
 {width: 60%, align: middle}
 ![Answers to quiz 1](https://www.youtube.com/watch?v=cR995WCeD2g)
 {/quiz}
-	
+
+The [next chapter](#tidyverse) introduces the first case study and how to explore data using the Tidyverse libraries of R.
+
+## Further Study
+The [Base R Cheat Sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/base-r.pdf) provides a comprehensive list of basic functionality in the R language.

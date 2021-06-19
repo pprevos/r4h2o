@@ -21,7 +21,7 @@ class(gormsey$Measure)
 
 # What is the median THM result in Swadlincote and Wakefield?
 thm_swad_wak <- filter(gormsey, (Town == "Swadlincote" | Town == "Wakefield") & Measure == "THM")
-mean(thm_swad_wak$Result)
+median(thm_swad_wak$Result)
 
 # How many E Coli results breached the regulations? The limit for E Coli is 0 org/100ml.
 nrow(filter(gormsey, Measure == "E. coli" & Result > 0))

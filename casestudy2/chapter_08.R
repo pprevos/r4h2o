@@ -11,7 +11,6 @@ questions <- data.frame(t(questions), row.names = NULL)
 
 ## Explore data
 glimpse(rawdata)
-View(rawdata)
 
 ## Clean headers
 customers <- rawdata[-1, ]
@@ -57,3 +56,4 @@ customers <- rawdata[-1, ] %>%
     left_join(cities) %>% 
     select(c(-2:-20, -33)) %>%
     rename(survey_id = V1)
+

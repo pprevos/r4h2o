@@ -4,7 +4,7 @@ author: "Peter Prevos"
 date: "20 July 2020"
 output:
   word_document:
-    reference_docx: tf77791332.dotx
+    reference_docx: template.dotx
 ---
 
 ```{r setup, include=FALSE}

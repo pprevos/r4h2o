@@ -9,14 +9,15 @@ n <- length(sample)
 p <- 0.95
 
 ## Visualise
+png("manuscript/resources/05_statistics/percentiles.png", width = 1024, height = 768)
 par(mar=c(6, 5, 4, 1))
 plot(sample, type = "b", 
      main = "Percentile example", 
      sub = "Excel and Weibull percentile method", 
      cex.axis = 2,
      cex.lab = 2,
-     cex.main = 3,
-     cex.sub = 1,
+     cex.main = 2,
+     cex.sub = 2,
      pch = 20,
      lwd = 3)
 
@@ -33,7 +34,8 @@ abline(v = r_weibull, col = "red", lwd = 3, lty = 3)
 abline(v = r_excel, col = "blue", lwd = 3, lty = 2)
 
 ## Legend
-legend("topleft", legend = c("Excel", "Weibull"), fill = c("blue", "red"))
+legend("topleft", legend = c("Excel", "Weibull"), fill = c("blue", "red"), cex = 2)
+dev.off()
 
 ## R
 x_r <- sapply(1:9, function(t) quantile(sample, 0.95, type = t))

@@ -69,7 +69,7 @@ X> Create an R script and copy and evaluate the code as you read through this ch
 You can also watch the screencast that demonstrates the functionality explained in this chapter. The best way to learn is to type the expressions in this chapter as you read the text or view the video. A productive way to comprehend the information is to change the examples and study the output.
 
 {width: 60%, align: center}
-![Chapter 3 screen cast.](https://www.youtube.com/watch?v=vPwsrMhoLY8)
+![Chapter 4 screencast.](https://www.youtube.com/watch?v=vPwsrMhoLY8)
 
 {format: r, line-numbers: false}
 ```
@@ -107,6 +107,7 @@ The `gormsey` variable is now visible in the *Environment* tab. The `gormsey` va
 
 Each column is a variable, which is also called a data field or a parameter. Each row holds an observation or a measurement. The table below shows two rows of the data frame.
 
+{title="Gormsey data summary."}
 | Sample_No | Date_Sampled | Sample_Point | Town      | Measure   | Result | Units      |
 |-----------|--------------|--------------|-----------|-----------|--------|------------|
 | 5890227   | 2018-12-30   | S11765       | Southwold | Turbidity | 0.2    | NTU        |

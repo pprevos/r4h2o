@@ -16,7 +16,7 @@ This chapter discusses how psychographic surveys relate to consumer psychology a
 
 The data and code for this session are available in the `chapter_10.R` file in the `casestudy2` folder of your RStudio project.
 
-## The Reliability of Surveys
+## The Reliability and Validity of Surveys
 As discussed in the [first chapter](#datascience), data science needs to be valid and reliable. Validity in this sense means that a survey actually measures the psychological construct we seek to understand. Reliability means that the responses have an acceptable level of accuracy.
 
 Measuring subjective phenomenons such as involvement and customer satisfaction requires special techniques to ensure that we can draw valid conclusions. This section introduces some principles of analysing subjective measures, which are applied in the remainder of this chapter.
@@ -135,7 +135,7 @@ ggplot(pii_wide, aes(p01, p02)) +
     theme_bw(base_size = 10)
 ggsave("manuscript/resources/10_surveys/scatterplot.png", width = 9, height = 5)
 ```
-
+{width: 60%}
 ![Scatterplot of item 1 and 2](resources/10_surveys/scatterplot.png)
 
 Creating a scatter plot for each permutation in the data would be a lot of work. Several specialised R packages provide functionality to visualise a correlation matrix. The corrplot package provides extensive functionality to visualise correlation matrices. Remember that before you can use this library, you need to install it with `install.packages("corrplot")`.
@@ -162,15 +162,15 @@ The strong correlation between the survey items does not mean that these respons
 ## Hierarchical Clustering to assess validity
 The correlation matrix indicates that the responses from customers are reliable as the individual items strongly relate to each other. But how do we know that these ten items point to a single latent variable? In other words, are the results of this survey valid; are we actually measuring an underlying psychological phenomenon?
 
-Several methods are available to reduce the ten survey dimensions two one or two latent variables. Best practice in psychometric analysis is factor analysis and structural equation modelling. The [psych package](http://personality-project.org/r/) provides extensive functionality to undertake such an analysis. Structural equation modelling is a complex topic that is outside the scope of this course.
+Following the theory of latent variables, the ten measured variables should point to underlying phenomena. Several methods are available to reduce the ten survey dimensions two one or two latent variables. Best practice in psychometric analysis is factor analysis and structural equation modelling. The [psych package](http://personality-project.org/r/) provides extensive functionality to undertake such an analysis. Structural equation modelling is a complex topic that is outside the scope of this course.
 
 Another method to reduce the dimensions of a set of data is hierarchical clustering. Clustering is a method to detect patterns in data. Various methods are available to identify clusters, such as _k_-means and hierarchical clustering, which we implement in this case study.
 
 The basic idea of hierarchical clustering is that the algorithm calculates the 'distance' between data points as if they were situated in a geometric space of _n_ dimensions. The algorithm then groups the points that are closest to each other. When the algorithm has identified all clusters, it proceeds to clusters these groups. This process continues until all observations are part of the same cluster.
 
-Various techniques are available to calculate distances and to determine the nearest neighbour. In this chapter, we use the default values in the R functions, which calculates the Euclidean distance between points. The video below explains the principles of this technique in more detail.
+Euclidean distance in `n`$ dimensions: `d(p,q) = \sqrt{(p_1- q_1)^2 + (p_2 - q_2)^2+\cdots+(p_i - q_i)^2+\cdots+(p_n - q_n)^2}`$
 
-Euclidean distance: `d(p,q) = \sqrt{(p_1- q_1)^2 + (p_2 - q_2)^2+\cdots+(p_i - q_i)^2+\cdots+(p_n - q_n)^2}`$
+Various techniques are available to calculate distances and to determine the nearest neighbour. In this chapter, we use the default values in the R functions, which calculates the Euclidean distance between points. The video below explains the principles of this technique in more detail.
 
 {width: 60%, align: middle}
 ![Hierarchical clustering video by Augmented Startups.](https://www.youtube.com/watch?v=EUQY3hL38cw)
@@ -277,7 +277,7 @@ plot(customer_clusters,
 
 You can view the clusters at each level of the analysis, working your way up to one supercluster. The vertical distance in the graph relates to the distance matrix. The longer the line, the less related the customers are. Visually, both figure 10.2 and figure 10.3 suggest that we should have two clusters. In this case, we only have two features, which are easy to visualise. In reality, we often have a lot more than three features which are not easy to visualise on a two-dimensional screen.
 
-You can extract more information from the clusters with the `cutree()` function. This function allows you to cut the tree at a certain level. The output is a vector of the cluster number that each customer belongs to. At the highest level (`k = 1`), all customers form part of the same cluster. At the lowest level (`k = 10`), all customers are separate.
+You can extract more information from the clusters with the `cutree()` function. This function allows you to cut the tree at a certain level. The output is a vector of the cluster number that each customer belongs to. At the highest level (`k = 1`), all customers form part of the same cluster. At the lowest level (`k = 10`), all customers are individuals.
 
 Extracting two clusters, we can assign these variables as segments to our customer table and visualise the data. Note the `fill = factor(segment)`. This option assigns a fill colour to the label. The factor function is needed to force R to assign qualitative colours instead of a variable range. 
 
@@ -380,9 +380,6 @@ These results are intriguing as the level of cognitive involvement is much highe
 
 D> How would you interpret these scores? How do you explain the significant spike at the highest level of involvement?
 
-### Further study
-Accurate measurement of psychological constructs is a complex topic that goes beyond the scope of this course. Please note that the examples in this chapter do not constitute a thorough analysis of latent constructs. Correlations and cluster analysis are great for exploration. Structural equation modelling is best practice in psychographic analysis. If you are interested in the statistical intricacies of measuring the customer experience, then read _Scale Development: Theory and Applications_ by Robert Devils (2011). 
-
 ## Quiz
 The sixth quiz asks some questions about correlations and cluster analysis.
 
@@ -394,7 +391,7 @@ The following questions test your comprehension of some of the theory and functi
 
 X> Load the cleaned customer survey data you created in session 8. 
 
-? What is the correlation between the level of self-reported hardship and the frequency at which they contact their utility? 
+? What is the correlation between the level of self-reported hardship (`hardship`) and the frequency at which they contact  (`contact`) their utility? 
 
 I> Remember to manage the missing variables with the `use` option in the correlation function. Check the help file for the correlation function to select the correct option.
 
@@ -419,9 +416,9 @@ b) Three
 c) Four
 D) Two
 
-? Determine the total score for `t01` to `t05` for each respondent. What is the mean value of this latent construct?
+? The variables starting with the letter t measure technical quality. Determine the total score for `t01` to `t05` for each respondent. What is the mean value of this latent construct?
 
-I> Use the `mutate()` function to add variables for each respondent.
+I> Use the `mutate()` function to add the scores for each respondent.
 
 A) 27.6
 b) 20.9
@@ -429,6 +426,7 @@ c) 6.7
 d) NA
 
 That is it for the sixth quiz. If you get stuck, you can find the answers in the `quiz_06.R` file in the `casestudy2` folder. You can also watch the video to see the solutions.
-
-The [next chapter](#customers) invites you to further analyse the information in the customer survey data and create a report with RMarkdown.
 {/quiz}
+
+## Further study
+Accurate measurement of psychological constructs is a complex topic that goes beyond the scope of this course. Please note that the examples in this chapter do not constitute a thorough analysis of latent constructs. Correlations and cluster analysis are great for exploration. Structural equation modelling is best practice in psychographic analysis. If you are interested in the statistical intricacies of measuring the customer experience, then read _Scale Development: Theory and Applications_ by Robert Devils (2011). 

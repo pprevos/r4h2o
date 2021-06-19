@@ -3,7 +3,6 @@
 
 library(tidyverse)
 library(gridExtra)
-gormsey <- read_csv("casestudy1/gormsey.csv")
 
 ## Figure 6.3
 ## library(devtools)
@@ -25,7 +24,6 @@ bad <- ggplot(comparison, aes(item, value, fill = item)) +
          subtitle = "Low Data-Pixel Ratio",
          x = "Brand", y = "Sales")
 
-bad
 comparison$item <- factor(comparison$item, level = comparison$item[order(comparison$value)])
 
 good <- ggplot(comparison, aes(item, value)) +
@@ -36,7 +34,6 @@ good <- ggplot(comparison, aes(item, value)) +
     labs(title= "Cat food sales",
          subtitle = "High Data-Pixel Ratio",
          x = "Brand", y = "Sales")
-good
 
 png("manuscript/resources/06_visualisation/data-pixel-ratio.png", width = 1920, height = 1080)
 grid.arrange(bad, good, ncol = 2, widths = c(1.1, 0.9))
@@ -84,11 +81,13 @@ grid.arrange(c, d, r1, r2, ncol=2)
 dev.off()
 
 ## Figure 6.13
-p <- ggplot(gormsey, aes(Measure)) + geom_bar()
-a <- p + theme_classic(base_size = 22)+ ggtitle("theme_clasic()")
-b <- a + theme_bw(base_size = 22) + ggtitle("theme_bw()")
-c <- a + theme_dark(base_size = 22) + ggtitle("theme_dark()")
-d <- a + theme_void(base_size = 22) + ggtitle("theme_void()")
+gormsey <- read_csv("casestudy1/gormsey.csv")
+
+p <- ggplot(gormsey, aes(Measure)) + geom_bar(fill = "dodgerblue")
+a <- p + theme_classic(base_size = 40)+ ggtitle("theme_clasic()")
+b <- a + theme_bw(base_size = 40) + ggtitle("theme_bw()")
+c <- a + theme_dark(base_size = 40) + ggtitle("theme_dark()")
+d <- a + theme_void(base_size = 40) + ggtitle("theme_void()")
 
 png("manuscript/resources/06_visualisation/themes.png", width = 1920, height = 1080)
 grid.arrange(a, b, c, d)

@@ -96,7 +96,7 @@ You might notice that the total number of items in the table does not match the 
 table(customers$term, useNA = "ifany")
 ```
 
-The `table()` function forms part of the core R functionality. In the previous case study, we already saw the `count()` function of the Tidyverse. This function includes `NA` values. Another advantage of this function is that the output is a data frame, which we can use for further calculations or visualise with ggplot2.
+The `table()` function forms part of the core R functionality. In the previous case study, we already saw the `count()` function of the Tidyverse. This function includes `NA` values. Another advantage of this function is that the output is a data frame, which we can use for further calculations or visualise with ggplot.
 
 {format: r, line-numbers: false}
 ```
@@ -232,7 +232,7 @@ We now have a reproducible script that can be reused every time we run this same
 Now that we have a clean set of data and some new knowledge, it is time for another quiz.
 
 ## Quiz 4: Cleaning Data
-The fourth quiz has five questions to practice the content of this chapter. In the [next chapter](#customers), we further analyse the personal involvement data with some advanced techniques. 
+The fourth quiz has five questions to practice the content of this chapter. 
 
 {quiz, id: q4, attempts: 10}
 # Quiz 4: Cleaning data
@@ -294,6 +294,7 @@ That is it for the fourth quiz. If you get stuck, you can find the answers in th
 
 {width: 60%, align: middle}
 ![Answers to Quiz four.](https://youtu.be/QyuVKWpkXIU)
-
-Before you proceed to the [next chapter](#customers), try and load a CSV file you use in your daily work and manipulate the data to practice your skills.
 {/quiz}
+
+## Further Study
+In the [next chapter](#customers), we further analyse the personal involvement data with some advanced techniques. 

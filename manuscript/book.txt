@@ -9,4 +9,4 @@ r4h2o_08_cleaning.md
 r4h2o_09_customers.md
 r4h2o_10_surveys.md
 r4h2o_11_reporting.md
-r4h2o_16_close.md
+r4h2o_21_close.md

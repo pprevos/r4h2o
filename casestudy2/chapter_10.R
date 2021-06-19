@@ -57,7 +57,7 @@ plot(customer_clusters,
      main = "Clustering Example",
      sub = "Simulated data",
      labels = customers$id,
-     lwd = 2)
+     lwd = 4)
 dev.off()
 
 customers$Segment <- cutree(customer_clusters, 2)

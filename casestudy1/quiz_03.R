@@ -19,5 +19,6 @@ max_turbidity <- summarise(gormsey_turbidity_town, Maximum = max(Result))
 filter(max_turbidity, Maximum == max(Maximum))
 
 ## What is the highest 95th percentile of the turbidity for each zone in the Gormsey system, using the Weibull method?
-turbidity_p95 <- summarise(gormsey_turbidity_town, p95 = quantile(Result, 0.95, method = 6))
+turbidity_p95 <- summarise(gormsey_turbidity_town, 
+                           p95 = quantile(Result, 0.95, method = 6))
 mean(turbidity_p95$p95)

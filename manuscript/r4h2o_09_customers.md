@@ -262,6 +262,7 @@ d) Each type of observational unit forms a table.
 That's it for the fifth quiz. If you get stuck, you can find the answers in the `quiz_05.R` file in the `casestudy2` folder. You can also watch the video to see the solutions.
 
 ![Answers to Quiz 5.](https://youtu.be/F_QoQyP5Q40)
-
-You are now ready to proceed to the [next chapter](#latent) where we delve deeper into analysing customer responses.
 {/quiz}
+
+## Further Study
+In the [next chapter](#latent) we delve deeper into analysing customer responses.

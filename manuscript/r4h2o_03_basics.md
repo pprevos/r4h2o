@@ -146,18 +146,21 @@ X> Create some variations of this code to understand the principles.
 ### Arithmetic
 In its most basic form, the R console is a calculator that uses arithmetic operators as listed in the table below. R is 'meme-proof' because it knows the correct answer to the many arithmetic memes distributed on social media (Figure 3.2).
 
-{width=40%, align=center}
-![Figure 3.2: Arithmetic Facebook memes.](resources/03_basics/memes.jpg)
+{title="R basic arithmitic functions."}
+| Operator | Function         |
+|:--------:|:-----------------|
+| `+`      | Addition         |
+| `-`      | Subtraction      |
+| `*`      | Multiplication   |
+| `/`      | Division         |
+| `^`      | Exponentiation   |
+| `%%`     | Modulo           |
+| `%/%`    | Integer division |
 
-| Operator | Function       | Example     |
-|:--------:|:---------------|:------------|
-| `+`      | Addition       | 6 + 5 = 11  |
-| `-`      | Subtraction    | 6 - 5 = 1   |
-| `*`      | Multiplication | 6 * 5 = 30  |
-| `/`      | Division       | 6 / 5 = 1.2 |
-| `^`      | Exponentiation | 6^5^ = 7776 |
-| `%%`     | Modulo         | 6 mod 5 = 1 |
+{width=20%, align="middle"}
+![Figure 3.2: Arithmetic Facebook memes.](resources/03_basics/memes.jpg)
 	
+### Variables
 Variables are the basic building blocks of computational analysis. A variable can store numbers, text, image, matrix or any other kind of information that needs to be analysed. In a spreadsheet, a variable is a cell or a group of cells.
 
 You can give variables almost any name you like, as long as they only contain letters, numbers, dots and underscores. When you name a variable, try to use a meaningful name that describes its content. Don't call a flow measurement `f`, but something like `flow_daily` or similar. 
@@ -173,15 +176,16 @@ Functions are the powerhouse of R. A function converts the input to an output. S
 
 Functions or mathematical operators can be applied to single numbers and vectors. This method makes it easy to apply a mathematical operation to a large set of numbers with one line of code. You can, for example, run `sqrt(c(1, 4, 9, 16, 25))` to obtain a new vector with the square roots of these five numbers. The table below shows some of the basic mathematical operators available in R.
 
-| Function           | Operation                      |
-|--------------------|--------------------------------|
-| `sum(x)`           | Sum of all elements in `x`     |
-| `prod(x)`          | Product of all elements in `x` |
-| `abs(x)`           | Absolute value of `x`          |
-| `exp(x)`           | e^x^                           |
-| `factorial(x)`     | x!                             |
-| `log(x, base = b)` | Logarithm of `x`               |
-| `sqrt(x)`          | Square root of `x`             |
+{title="Basic mathematical functions."}
+| Function           | Operation               |
+|--------------------|-------------------------|
+| `sum(x)`           | Sum of all elements     |
+| `prod(x)`          | Product of all elements |
+| `abs(x)`           | Absolute value          |
+| `exp(x)`           | e^x^                    |
+| `factorial(x)`     | Factorial               |
+| `log(x, base = b)` | Logarithm               |
+| `sqrt(x)`          | Square root`            |
 
 The `sum()` function adds all the members of the `x` vector. The `length()` function determines the number of elements in a vector.
 

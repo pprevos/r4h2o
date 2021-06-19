@@ -238,7 +238,6 @@ b <- 78378626879380808297
 format(b, big.mark =",")
 
 format(b, big.mark =",", scientific = FALSE)
-
 ```
 
 X> Read the help files for format and try some of the other options.
@@ -246,7 +245,7 @@ X> Read the help files for format and try some of the other options.
 ### Export formats
 Rstudio can export R-Markdown to many standard formats. A standard file can be 'knitted' to an HTML file for websites, Word, PowerPoint or PDF. To create a PDF, you need to have the LaTeX software installed on your computer. LaTeX is a powerful markup language, often used for publications in the formal and physical sciences.
 
-The export format is listed in the first few lines, the front matter, of the markdown file. The example below shows how to define a title, author name and define the output as a Powerpoint presentation. This example also shows how to relate the output to a template (`tf02922647.potx`).  This way, you can create presentations or reports using your organisation's templates.
+The export format is listed in the first few lines, the front matter, of the markdown file. The example below shows how to define a title, author name and define the output as a Powerpoint presentation. This example also shows how to relate the output to a template (`template.potx`).  This way, you can create data-enabled presentations or reports using your organisation's templates.
 
 ```
 ---
@@ -254,7 +253,7 @@ title: "Gormsey Trihalomethane Compliance"
 author: "Peter Prevos"
 output:
   powerpoint_presentation:
-    reference_doc: tf02922647.potx
+    reference_doc: template.potx
 ---
 ```
 
@@ -285,4 +284,4 @@ You can download the [R Markdown Cheat Sheet](https://raw.githubusercontent.com/
 
 D> You can submit the results of your mini hackathon on the [discussion forum](https://community.leanpub.com/c/r4h2o) for feedback.
 
-You have now completed the first case study. The [next case study](#cleaning) data from a customer survey and analysing their experiences.
+You have now completed the first case study. The [next case study](#cleaning) deals with data from a customer survey and analyses their experiences.

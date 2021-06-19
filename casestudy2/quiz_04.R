@@ -25,6 +25,6 @@ employees$department
 
 ggplot(employees, aes(department)) +
     geom_bar() + labs(title = "Employees per department type") + 
-    theme_bw(base_size = 10)
+    theme_bw(base_size = 20)
 ggsave("manuscript/resources/08_cleaning/employees.png")
 

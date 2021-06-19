@@ -52,6 +52,7 @@ summary(turbidity_pontybridge$Result)
 
 The table below shows some of the other descriptive statistical functions you can use in R:
 
+{title="Descriptive statistical functions"}
 | Function     | Description                           |
 |--------------|---------------------------------------|
 | `mean()`     | Geometric mean                        |
@@ -144,6 +145,7 @@ summarise(df_grouped,
 
 The `summarise()` function uses the grouped data frame and creates two new variables that show the average and maximum values for each measure. The results will differ every time you run it due to the randomisation.
 
+{title="Summarised results."}
 | Measure   | Average | Maximum |
 |-----------|---------|---------|
 | THM       | 0.589   | 0.679   |
@@ -157,35 +159,32 @@ We can now apply this abstract example to the water quality case study. You can 
 {format: r, line-numbers: false} 
 ```
 gormsey_grouped <- group_by(gormsey, Town, Measure)
-summarise(gormsey_grouped, mean = mean(Result))
+summarise(gormsey_grouped, 
+          min = min(Result),
+          mean = mean(Result),
+          max = max(Result))
 ```
 
 This code produces a new data frame that shows the mean result for each measure and town. The table below show the first few rows of the result.
 
-| Town       | Measure   | mean    |
-|------------|-----------|---------|
-| Bellmoral  | E. coli   | 0       |
-| Bellmoral  | THM       | 0.0177  |
-| Bellmoral  | Turbidity | 0.148   |
-| Blancathey | E. coli   | 0.00429 |
-| Blancathey | THM       | 0.0166  |
-| Blancathey | Turbidity | 0.153   |
-| Merton     | E. coli   | 0       |
+{title="Gormsey results summary."}
+| Town       | Measure   | min   | mean    | max  |
+|------------|-----------|-------|---------|------|
+| Bellmoral  | E. coli   | 0     | 0       | 0    |
+| Bellmoral  | THM       | 0.03  | 0.0177  | 0.15 |
+| Bellmoral  | Turbidity | 0.05  | 0.148   | 0.3  |
+| Blancathey | E. coli   | 0     | 0.00429 | 1    |
+| Blancathey | THM       | 0.004 | 0.0166  | 0.14 |
+| Blancathey | Turbidity | 0.05  | 0.153   | 0.5  |
+| Merton     | E. coli   | 0     | 0       | 0    |
 
 X> Use the grouping and summarise functions with other parameters and inspect the results.
 
 You now have all the tools you need to analyse the Gormsey data and determine how the results compare to the regulations.
 
-## Further Study
-Graham McBride has written a comprehensive account of using statistical methods in water quality management:
-
-McBride, Graham B. _Using Statistical Methods for Water Quality Management: Issues, Problems, and Solutions_. Wiley Series in Statistics in Practice. Hoboken, NJ: Wiley-Interscience, 2005.
-
-The [next chapter](#ggplot) discusses how to visualise the results of your analysis.
-
 ## Quiz 3: Analysing Water Quality Data
 
-X> Click on the link below to complete the quiz or move the [next chapter](#ggplot). You can also practice on your own data generating summary statistics and grouping data frames.
+X> Click on the link below to complete the quiz.
 
 {quiz, id: q3, attempts: 10}
 # Quiz 3: Analysing Water Quality Data
@@ -222,8 +221,15 @@ b) 8.82
 c) 0.3
 d) 7.34
 
+
+
 That's it for this quiz. If you get stuck, you can find the answers in the `quiz_03.R` file in the `casestudy1` folder, or watch the video below.
 
 {width: 60%, align: middle}
 ![Answers to Quiz 3.](https://youtu.be/oP3YnsB3sEs)
 {/quiz}
+
+## Further Study
+Graham McBride has written a comprehensive account of using statistical methods in water quality management: McBride, Graham B. *Using Statistical Methods for Water Quality Management: Issues, Problems, and Solutions*. Wiley Series in Statistics in Practice. Hoboken, NJ: Wiley-Interscience, 2005.
+
+The [next chapter](#ggplot) discusses how to visualise the results of your analysis.

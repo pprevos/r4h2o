@@ -38,7 +38,7 @@ For organisations that deliver physical products, data science is about improvin
 Data science is a systematic and strategic approach to using data, mathematics and computers to solve practical problems. A data scientist is not a scientist as such who understands the world in generalised terms. The challenges facing data scientists are practical rather than scientific. A data scientist in an organisation is less interested in a generalised solution to a problem but focuses on improving how the organisation achieves its goals. In this sense, a data scientist is not strictly speaking a scientist.
 
 ## The Elements of Data Science
-The best way to unpack the art and craft of data science is Drew Conway's often-cited Venn diagram cite ([Figure](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram 2.3)). Conway defines three competencies that a data scientist or a data science team as a collective need to possess. The diagram positions data science as an interdisciplinary activity with three dimensions: domain knowledge, mathematics and computer science. A data scientist understands the subject matter under consideration in mathematical terms and writes computer code to solve problems.
+The best way to unpack the art and craft of data science is Drew Conway's often-cited Venn diagram cite ([Figure 2.3](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram)). Conway defines three competencies that a data scientist or a data science team as a collective need to possess. The diagram positions data science as an interdisciplinary activity with three dimensions: domain knowledge, mathematics and computer science. A data scientist understands the subject matter under consideration in mathematical terms and writes computer code to solve problems.
 
 {width: 80%, align=center}
 ![Figure 2.3: Conway's data science Venn Diagram.](resources/02_principles/conway.png)
@@ -53,7 +53,7 @@ Each domain of human enquiry or activity has different methodologies to collect 
 Domain expertise can also become a source of bias and prevent innovative ways of looking at information. Solutions that are developed through systematic research can contradict long-held beliefs that are sometimes hard to shift. Implementing data science is thus as much a cultural process as it is a scientific one.
 
 ### Mathematical Knowledge
-The analyst uses mathematical skills to convert data into actionable insights. Mathematics consists of pure mathematics as a science in itself and applied mathematics that helps us to solve problems. The scope of applied mathematics is broad, and data science is opportunistic in choosing the most suitable method. Various types of regression models, graph theory, _k_-means clustering, and decision trees are some of the favourite tools of a data scientist.
+The analyst uses mathematical skills to convert data into actionable insights. Mathematics consists of pure mathematics as a science in itself and applied mathematics that helps us to solve problems. The scope of applied mathematics is broad, and data science is opportunistic in choosing the most suitable method. Various types of regression models, graph theory, *k*-means clustering, and decision trees are some of the favourite tools of a data scientist.
 
 Combining subject-matter expertise with mathematical skills is the domain of traditional *research*. Academics are moving towards integrating computer science with their work towards a data science approach to conventional analysis.
 
@@ -147,7 +147,7 @@ Buildings must have utility so people can use them for their intended purpose. A
 
 The Vitruvian rules for architecture can also define good data science. Excellent data science needs to have utility; it needs to be helpful to create value. The analysis should be sound so it can be trusted. Data science products also need to be aesthetic to maximise the value they provide to an organisation (Figure 2.6).
 
-{width: 80%, align=center}
+{width: 40%, align=center}
 ![Figure 2.6: The principles of good data science.](resources/02_principles/vitruvius.png)
 
 ### Useful Data Science
@@ -170,7 +170,7 @@ The third modification to the traditional model is a feedback loop from knowledg
 
 Anchoring the model for useful data science to reality emphasises the importance of domain knowledge when analysing data. In addition, subject-matter expertise helps to contextualise abstract data, resulting in better outcomes.
 
-{width: 80%, align=center}
+{width: 40%, align=center}
 ![Figure 2.7: Reality, Data, Information, Knowledge Pyramid.](resources/02_principles/feedback-loop.png)
 
 ### Reality
@@ -226,7 +226,7 @@ Just like a building should be sound and not collapse, a data product needs to b
 
 The distinguishing difference between traditional business analysis and data science is the systematic approach to solving problems. The keyword in the term data science is thus not data but *science*. Data science is only useful when the data answers a helpful question, which is the science part of the process.
 
-{width: 80%, align=center}
+{width: 100%, align=center}
 ![Figure 2.8: Validity and reliability of data and analysis.](resources/02_principles/soundness.png)
 
 #### Reliability

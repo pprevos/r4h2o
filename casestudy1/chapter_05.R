@@ -10,13 +10,13 @@ summary(gormsey$Result)
 
 ## What is the mean turbidity result in Pontybridge?
 turbidity_pontybridge <- filter(gormsey, Town == "Pontybridge" & Measure == "Turbidity")
-mean(turbidity_pontybridge$Result)
+summary(turbidity_pontybridge$Result)
+
+max(turbidity_pontybridge$Result) == range(turbidity_pontybridge$Result)[2]
 
 ## Percentiles (quantiles)
 quantile(turbidity_pontybridge$Result, 0.95) # 95th percentile
 quantile(turbidity_pontybridge$ Result, c(0.50, 0.95)) #50th and 95th percentile
-
-unique(gormsey$Town)
 
 ## What is the 33rd percentile for the NTU data in Paethsmouth?
 thm_paethsmouth <- filter(gormsey, Town == "Paethsmouth" & Measure == "THM")
@@ -37,4 +37,8 @@ summarise(df_grouped,
 
 ## Mean result per town and per measure
 gormsey_grouped <- group_by(gormsey, Town, Measure)
-summarise(gormsey_grouped, mean = mean(Result))
+overview <- summarise(gormsey_grouped, 
+                      min = min(Result),
+                      mean = mean(Result),
+                      max = max(Result))
+

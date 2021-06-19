@@ -1,5 +1,5 @@
 # 1. Data Science for Water Professionals {#introduction}
-{width=100%}
+{width: 100%}
 ![](resources/01_introduction/r4h2o_logo.jpg)
 
 Managing reliable water services requires not only a sufficient volume of water but also significant amounts of data. Water professionals continuously measure the flow and quality of water and assess how customers perceive their service. Water utilities are awash or even flooded with data. Data professionals use data pipelines and data lakes and make data flow from one place to another.
@@ -28,7 +28,7 @@ The main objective of this course is to teach water professionals how to use dat
 * Write R code to load, transform, analyse and visualise data
 * Develop presentations, reports and applications to share results
 
-{width=80%,float=center}
+{width: 80%, align=center}
 ![Figure 1.1 Data Science for Water Professionals workshop (Melbourne, 2019).](resources/01_introduction/2019_workshop_melbourne.jpg)
 
 ## Prerequisites

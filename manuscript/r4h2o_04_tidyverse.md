@@ -337,6 +337,7 @@ c) Factor
 D) Character
 
 ? What is the median THM result in Swadlincote and Wakefield?
+
 a) 0.125
 b) 0.051
 c) 0.033

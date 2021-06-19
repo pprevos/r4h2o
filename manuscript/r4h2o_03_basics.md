@@ -143,17 +143,17 @@ X> Create some variations of this code to understand the principles.
 
 In its most basic form, the R console is a calculator that uses arithmetic operators as listed in the table below. R is 'meme-proof' because it knows the correct answer to the many arithmetic memes distributed on social media (Figure 3.2).
 
-{align: middle}
+{width=60%, float=left}
 ![Figure 3.2: Arithmetic Facebook memes.](resources/03_basics/memes.jpg)
 
-| Operator | Function         | Example               |
-|:--------:|:-----------------|:----------------------|
-| `+`      | Addition         | {$$}6 + 5 = 11{/$$}   |
-| `-`      | Subtraction      | {$$}6 - 5 = 1{/$$}    |
-| `*`      | Multiplication   | {$$}6 * 5 = 30{/$$}   |
-| `/`      | Division         | {$$}6 / 5 = 1.2{/$$}  |
-| `^`      | Exponentiation   | {$$}6^5 = 7776{/$$}   |
-| `%%`     | Modulo           | {$$}6 \ mod \ 5 = 1{/$$} |
+| Operator | Function       | Example     |
+|:--------:|:---------------|:------------|
+| `+`      | Addition       | 6 + 5 = 11  |
+| `-`      | Subtraction    | 6 - 5 = 1   |
+| `*`      | Multiplication | 6 * 5 = 30  |
+| `/`      | Division       | 6 / 5 = 1.2 |
+| `^`      | Exponentiation | 6^5^ = 7776 |
+| `%%`     | Modulo         | 6 mod 5 = 1 |
 	
 Variables are the basic building blocks of computational analysis. A variable can store numbers, text, image, matrix or any other kind of information that needs to be analysed. In a spreadsheet, a variable is a cell or a group of cells.
 
@@ -169,23 +169,17 @@ Functions are the powerhouse of R. A function converts the input to an output. S
 
 Functions or mathematical operators can be applied to single numbers and vectors. This method makes it easy to apply a mathematical operation to a large set of numbers with one line of code. You can, for example, run `sqrt(c(1, 4, 9, 16, 25))` to obtain a new vector with the square roots of these five numbers. The table below shows some of the basic mathematical operators available in R.
 
-
-`\sum_{i=1}^{i=n} x_i`$
-
-{$$}\sum_{i=1}^{i=n} x_i{/$$}
-
-| Function           | Operation               |
-|--------------------|-------------------------|
-| `sum(x)`           | `\sum_{i=1}^{i=n} x_i`$ |
-| `prod(x)`          | {$$}\PI x {/$$}         |
-| `abs(x)`           | {$$}\mid x \mid{/$$}    |
-| `exp(x)`           | {$$}e^x{/$$}            |
-| `factorial(x)`     | {$$}x!{/$$}             |
-| `log(x, base = b)` | {$$}log _b x{/$$}       |
-| `sqrt(x)`          | {$$}x^2{/$$}            |
+| Function           | Operation                      |
+|--------------------|--------------------------------|
+| `sum(x)`           | Sum of all elements in `x`     |
+| `prod(x)`          | Product of all elements in `x` |
+| `abs(x)`           | Absolute value of `x`          |
+| `exp(x)`           | e^x^                           |
+| `factorial(x)`     | x!                             |
+| `log(x, base = b)` | Logarithm of `x`               |
+| `sqrt(x)`          | Square root of `x`             |
 
 The `sum()` function adds all the members of the `x` vector. The `length()` function determines the number of elements in a vector.
-
 
 X> Apply the functions in the previous two tables to the following vector of flow measurements and inspect the result: `c(12, 3, -23, 45, 2, 99, 1, 0)`.
 

@@ -1,5 +1,5 @@
 # 1. Data Science for Water Professionals {#introduction}
-{width: 100%}
+{width=100%}
 ![](resources/01_introduction/r4h2o_logo.jpg)
 
 Managing reliable water services requires not only a sufficient volume of water but also significant amounts of data. Water professionals continuously measure the flow and quality of water and assess how customers perceive their service. Water utilities are awash or even flooded with data. Data professionals use data pipelines and data lakes and make data flow from one place to another.
@@ -28,7 +28,7 @@ The main objective of this course is to teach water professionals how to use dat
 * Write R code to load, transform, analyse and visualise data
 * Develop presentations, reports and applications to share results
 
-{width: "80%", alt: "R for Water Professionals workshop (Melbourne, 2019)."}
+{width=80%,float=center}
 ![Figure 1.1 Data Science for Water Professionals workshop (Melbourne, 2019).](resources/01_introduction/2019_workshop_melbourne.jpg)
 
 ## Prerequisites
@@ -56,7 +56,7 @@ The course concludes with some suggestions on how to find help and advance your 
 ### Case Study 1: Water Quality Regulations
 In this first case study, participants analyse and visualise laboratory testing data. The case study revolves around checking the data for compliance with water quality regulations. The case study ends with participants creating code that produces a PowerPoint presentation linked to water quality data.
 
-{width: "50%"}
+{width=60%,float=center}
 ![Figure 1.2: Case study 1 visualisation.](resources/06_visualisation/boxplot.png)
 
 ### Case Study 2: Customer Experience
@@ -64,6 +64,7 @@ Water management is not only about cubic metres and milligrams per litre. Water 
 
 The data for the second case study consists of the results of a survey of water consumers about their perception of tap water services. Participants clean, visualise and analyse this data and produce output as a Word document.
 
+{width=60%,float=center}
 ![Figure 1.3: Case Study 2 visualisation.](resources/10_surveys/pii_dendogram.png)
 
 ## Face to Face and Online Teaching Sessions

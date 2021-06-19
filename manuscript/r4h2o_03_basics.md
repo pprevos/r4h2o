@@ -153,7 +153,7 @@ In its most basic form, the R console is a calculator that uses arithmetic opera
 | `*`      | Multiplication   | {$$}6 * 5 = 30{/$$}   |
 | `/`      | Division         | {$$}6 / 5 = 1.2{/$$}  |
 | `^`      | Exponentiation   | {$$}6^5 = 7776{/$$}   |
-| `%%`     | Modulo           | {$$}6 \mod 5 = 1{/$$} |
+| `%%`     | Modulo           | {$$}6 \ mod \ 5 = 1{/$$} |
 	
 Variables are the basic building blocks of computational analysis. A variable can store numbers, text, image, matrix or any other kind of information that needs to be analysed. In a spreadsheet, a variable is a cell or a group of cells.
 
@@ -169,15 +169,16 @@ Functions are the powerhouse of R. A function converts the input to an output. S
 
 Functions or mathematical operators can be applied to single numbers and vectors. This method makes it easy to apply a mathematical operation to a large set of numbers with one line of code. You can, for example, run `sqrt(c(1, 4, 9, 16, 25))` to obtain a new vector with the square roots of these five numbers. The table below shows some of the basic mathematical operators available in R.
 
-| Function           | Operation            |
-|--------------------|----------------------|
-| `sum(x)`           | {$$}\sum x{/$$}      |
-| `prod(x)`          | {$$}\PI x {/$$}      |
-| `abs(x)`           | {$$}\mid x \mid{/$$} |
-| `exp(x)`           | {$$}e^x{/$$}         |
-| `factorial(x)`     | {$$}x!{/$$}          |
-| `log(x, base = b)` | {$$}log _b x{/$$}    |
-| `sqrt(x)`          | {$$}x^2{/$$}         |
+
+| Function           | Operation                       |
+|--------------------|---------------------------------|
+| `sum(x)`           | {$$} \sum_{i=1}^{i=n} x_i {/$$} |
+| `prod(x)`          | {$$}\PI x {/$$}                 |
+| `abs(x)`           | {$$}\mid x \mid{/$$}            |
+| `exp(x)`           | {$$}e^x{/$$}                    |
+| `factorial(x)`     | {$$}x!{/$$}                     |
+| `log(x, base = b)` | {$$}log _b x{/$$}               |
+| `sqrt(x)`          | {$$}x^2{/$$}                    |
 
 The `sum()` function adds all the members of the `x` vector. The `length()` function determines the number of elements in a vector.
 

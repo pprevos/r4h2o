@@ -1,5 +1,5 @@
 # 1. Data Science for Water Professionals {#introduction}
-{width: 100%}
+{width: 100%, align=left}
 ![](resources/01_introduction/r4h2o_logo.jpg)
 
 Managing reliable water services requires not only a sufficient volume of water but also significant amounts of data. Water professionals continuously measure the flow and quality of water and assess how customers perceive their service. Water utilities are awash or even flooded with data. Data professionals use data pipelines and data lakes and make data flow from one place to another.

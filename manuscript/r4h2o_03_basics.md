@@ -84,12 +84,12 @@ If you use the desktop version of RStudio, then you can download the documents b
 
 You can open the RStudio project file (`r4h2o.Rproj`) to start playing with the data and code. If you use Git, then fork or clone the repository. Feel free to create an issue or pull request if you find errors or like to provide additional content.
 
-{width: 60%}
+{width: 60%, align=center}
 ![Initial setup for RStudio desktop version.](https://www.youtube.com/watch?v=uHr71iUySaA)
 
 For those using the cloud version of RStudio, click on the arrow next to the 'New Project' button and select 'New Project from GitHub Repo'. Copy the URL ([`https://github.com/pprevos/r4h2o/`](https://github.com/pprevos/r4h2o/)) to the text field and hit enter. RStudio copies the files from GitHub, which takes a minute.
 
-{width: 60%}
+{width: 60%, align=center}
 ![Initial setup for RStudio cloud version.](https://www.youtube.com/watch?v=NyOY620JHyw)
 
 When you open RStudio for the first time, the window consists of three panes, each with various tabs. The left panel is the console. The top-right pane shows the system environment and the one below that shows a list of files and folders (Figure 3.1).
@@ -100,7 +100,7 @@ X> Open the appearance menu and change the settings to your personal preferences
 
 Now we are ready to write some code.
 
-{width: 100%}
+{width: 100%, align=center}
 ![Figure 3.1: RStudio default screen layout](resources/03_basics/rstudio.png)
 
 ## Basics of the R language
@@ -138,12 +138,12 @@ You should notice a few things when you start typing:
 
 X> Create some variations of this code to understand the principles. 
 
-{width: 60%, align: middle}
+{width: 60%, align: center}
 ![Basic principles of the R language](https://www.youtube.com/watch?v=ZK57uRg9l5Y)
 
 In its most basic form, the R console is a calculator that uses arithmetic operators as listed in the table below. R is 'meme-proof' because it knows the correct answer to the many arithmetic memes distributed on social media (Figure 3.2).
 
-{width=60%, float=left}
+{width=60%, align=center}
 ![Figure 3.2: Arithmetic Facebook memes.](resources/03_basics/memes.jpg)
 
 | Operator | Function       | Example     |
@@ -250,7 +250,7 @@ q = \frac{2}{3} C_d \sqrt{(2g)}\; bh^{(3/2)}
 
 The value for `C_d`$ is an estimate because it depends on the dimensions of the weir and the flow conditions. Follow [this link](https://www.engineeringexcelspreadsheets.com/tag/kindsvater-carter-formula/) for a detailed discussion on using this formula. The photo below shows what such a weir looks like in practice.
 
-{width: 100%, align: middle}
+{width: 60%, align: center}
 ![Figure 3.3: Example of a channel with a rectangular weir.](resources/03_basics/weirplate.jpg)
 
 Some tips for answering the quiz questions:

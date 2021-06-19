@@ -30,7 +30,7 @@ This revolution is not only about powerful machine learning algorithms but about
 
 The expectations of data science are very high. Business authors position data science and its natural partner 'big data', as a panacea for all societal problems and a means to increase business profits. In a 2012 article in *Harvard Business Review*, Davenport and Patil even proclaimed data scientist the "sexiest job of the 21st century" ([Figure 2.2](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)). Who would not want to be part of a new profession with such enticing career prospects?
 
-{width: 80%, align=center}
+{width: 60%, align=center}
 ![Figure 2.2: The sexiest job of the 21st century?](resources/02_principles/sexiest_job.png)
 
 For organisations that deliver physical products, data science is about improving how they collect, store and analyse data to extract more value from this resource. The objectives of data science are not the data or the analysis itself but the organisation's strategic goals. For a water utility, these objectives are generically maintaining or improving the experience that customers have with their service and minimising the impact on the natural environment. Whatever kind of organisation you are in, the purpose of data science is to assist managers with changing reality to a more desirable state. A data scientist achieves this objective by measuring the current and past states of reality and using mathematical tools to predict a future state.

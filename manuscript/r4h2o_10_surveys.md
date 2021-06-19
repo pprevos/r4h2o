@@ -1,4 +1,4 @@
-# 10. Analysing the customer experience {#latent}
+# 10. Analysing the customer experience {#survey}
 The code in the previous two chapters cleaned customer survey data and explored the content of the involvement construct. We will dig deeper into the involvement data to test its reliability and validity. We will write some code to reduce the number of dimensions so we can draw a conclusion about the level of involvement. 
 
 Water professionals often focus on the tangible aspects of water services and measure performance in cubic metres, gallons or kilolitres. The customer experience does not relate to these physical variables as it is a psychological dimension. 
@@ -10,9 +10,9 @@ While water utilities tout their services as essential for life, only a small am
 
 This chapter discusses how psychographic surveys relate to consumer psychology and some techniques to analyse this type of data. The learning objectives for this chapter are:
 
-* Understand the concept of latent variables
+* Asses the reliability and validity of customer surveys
 * Create and visualise a correlation matrix
-* Use hierarchical clustering to reduce dimensions
+* Use hierarchical clustering to reduce data dimensions
 
 The data and code for this session are available in the `chapter_10.R` file in the `casestudy2` folder of your RStudio project.
 
@@ -92,11 +92,11 @@ The diagonal correlations are logically all 1.00, and all values are repeated ab
 
 The `cor()` function provides various ways to deal with missing data. Read the help file of this function to learn about the options. In this case, all missing data was removed previously and thus does not need to be accounted for. 
 
-This function provides the most common Pearson correlation by default. In some specific cases, you might need to use different methods, which this function can also evaluate. The standard Spearman method for correlations works best with normal distributions. 
+This function provides the common Pearson correlation by default. In some specific cases, you might need to use different methods, which this function can also evaluate. The standard method for correlations works best with normal distributions. 
 
 X> Read the help file for the correlation function with `help(cor)`.
 
-We can glance at the output and note that all correlations are positive, which is a first confirmation of the reliability of the PII data. If the questions did not all relate to an underlying latent variable, then the correlation matrix would be less uniform.
+We can glance at the output and note that all correlations are positive, which is a first confirmation of the reliability of the PII data. If the questions did not all relate to an underlying latent variable, then the correlation matrix would be less uniform. A uniform correlation matrix suggests that the data possibly describes an underlying phenomenon, which in the case is a consumer’s involvement with tap water.
 
 The basic R functionality also has a function to test the statistical validity of a correlation. The `cor.test()` function takes two vectors as input and provides the 95% confidence interval. 
 
@@ -124,7 +124,7 @@ sample estimates:
 
 The `t` and `df` values relate to the significance statistics. The `p` value tells us that the relationship between these to variables is based on coincidence is very small (`p < 2.2 10^{-16}`$). In social science, a value of less than 0.05 is often considered statistical significant. However, you need to be careful in interpreting this outcome as a correlation is only a starting point for analysis.
 
-The numerical correlation matrix is not an easy way to detect patterns in the data. Correlations can be visualised with a scatter-plot with each of the variables on the x and y-axes. The `geom_point()` geometry in the ggplot package creates scatter-plots. Visualising the data from the survey this way is problematic because we only have responses between 1 and 7 and many points will be plotted on top of each other, so-called overplotting. One of the solutions to this problem is to add jitter to the data. Jitter is a small random amount f variation applied to each data point. The ggplot package uses the jitter geometry (`geom_jitter()`) to implement this technique. 
+Correlations can be visualised with a scatter-plot with each of the variables on the x and y-axes. The `geom_point()` geometry in the ggplot package creates scatter-plots. Visualising the data from the survey this way is problematic because we only have responses between 1 and 7 and many points will be plotted on top of each other, so-called overplotting. One of the solutions to this problem is to add jitter to the data. Jitter is a small random amount f variation applied to each data point. The ggplot package uses the jitter geometry (`geom_jitter()`) to implement this technique. 
 
 
 {format: r, line-numbers: false}
@@ -138,7 +138,7 @@ ggsave("manuscript/resources/10_surveys/scatterplot.png", width = 9, height = 5)
 
 ![Scatterplot of item 1 and 2](resources/10_surveys/scatterplot.png)
 
-Creating a scatter plot for each permutation in the data would be a lot of work. Several specialised R packages provide functionality to visualise a correlation matrix. The [corrplot package](https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-intro.html) provides extensive functionality to visualise correlation matrices. Remember that before you can use this library, you need to install it with `install.packages("corrplot")`.
+Creating a scatter plot for each permutation in the data would be a lot of work. Several specialised R packages provide functionality to visualise a correlation matrix. The corrplot package provides extensive functionality to visualise correlation matrices. Remember that before you can use this library, you need to install it with `install.packages("corrplot")`.
 
 {format: r, line-numbers: false}
 ```
@@ -153,18 +153,24 @@ Figure 10.3 shows that the first five items correlate more strongly with each ot
 
 X> Read the [corrplot documentation](https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-intro.html) and create different versions of this correlation matrix.
 
-However, correlations are an insufficient metric to draw conclusions about the world. A strong correlation is only an invitation to undertake further research. The old adage 'correlation is not causation' certainly is valid in this case. The strong correlation between the survey items does not mean that these responses cause each other. Instead, the correlation indicates that there might be an underlying cause that causes them to correlate. This cause is the psychological construct of involvement, which is what we set out to measure.
+However, correlations are an insufficient metric to draw conclusions about the world. A strong correlation is only an invitation to undertake further research. The old adage 'correlation is not causation' certainly is valid in this case. 
+
+> Correlation is not causation.
+
+The strong correlation between the survey items does not mean that these responses cause each other. Instead, the correlation indicates that there might be an underlying cause that causes them to correlate. This cause is the psychological construct of involvement, which is what we set out to measure.
 
 ## Hierarchical Clustering to assess validity
 The correlation matrix indicates that the responses from customers are reliable as the individual items strongly relate to each other. But how do we know that these ten items point to a single latent variable? In other words, are the results of this survey valid; are we actually measuring an underlying psychological phenomenon?
 
-Several methods are available to reduce the ten survey dimensions two one or two latent variables. Best practice in psychometric analysis is to use factor analysis and structural equation modelling. The [psych package](http://personality-project.org/r/) provides extensive functionality to undertake such an analysis. Structural equation modelling is a complex topic that is outside the scope of this course.
+Several methods are available to reduce the ten survey dimensions two one or two latent variables. Best practice in psychometric analysis is factor analysis and structural equation modelling. The [psych package](http://personality-project.org/r/) provides extensive functionality to undertake such an analysis. Structural equation modelling is a complex topic that is outside the scope of this course.
 
 Another method to reduce the dimensions of a set of data is hierarchical clustering. Clustering is a method to detect patterns in data. Various methods are available to identify clusters, such as _k_-means and hierarchical clustering, which we implement in this case study.
 
-The basic idea of hierarchical clustering is that the algorithm calculates the 'distance' between data points as if they were situated in a geometric space. The algorithm then groups the two points that are closest to each other. When the algorithm has identified all two-point clusters, it proceeds to clusters these groups. This process continues until all observations are part of the same cluster.
+The basic idea of hierarchical clustering is that the algorithm calculates the 'distance' between data points as if they were situated in a geometric space of _n_ dimensions. The algorithm then groups the points that are closest to each other. When the algorithm has identified all clusters, it proceeds to clusters these groups. This process continues until all observations are part of the same cluster.
 
-Various techniques are available to calculate distances and to determine the nearest neighbour. In this chapter, we use the default values in the R functions. The video below explains the principles of this technique in more detail.
+Various techniques are available to calculate distances and to determine the nearest neighbour. In this chapter, we use the default values in the R functions, which calculates the Euclidean distance between points. The video below explains the principles of this technique in more detail.
+
+Euclidean distance: `d(p,q) = \sqrt{(p_1- q_1)^2 + (p_2 - q_2)^2+\cdots+(p_i - q_i)^2+\cdots+(p_n - q_n)^2}`$
 
 {width: 60%, align: middle}
 ![Hierarchical clustering video by Augmented Startups.](https://www.youtube.com/watch?v=EUQY3hL38cw)
@@ -182,11 +188,11 @@ Hierarchical clustering involves five steps:
 
 The next five sections show how to undertake cluster analysis using a simple two-dimensional example before we analyse the involvement survey data. The simple example contains data from 10 customers (A--J). 
 
-The first data dimension in the test data is the average consumption during the week and the second dimension is daily consumption on the weekends. The data consists of random numbers with a known distribution. The code is not explained, and you can reverse-engineer it at your leisure. Simulating data is described in a bit more detail in [chapter 12](#time).
+The first data dimension in the test data is the average consumption during the week and the second dimension is daily consumption on the weekends. The data consists of random numbers with a known distribution. The code is not explained, and you can reverse-engineer it at your leisure.
 
 {format: r, line-numbers: false}
 ```
-set.seed(1969)
+set.seed(1969) #Always create the same pseudorandom variables
 customers <- tibble(id = LETTERS[1:10],
                     weekday = c(rnorm(5, 155 * 2.7, 200), rnorm(5, 750, 200)),
                     weekend = c(rnorm(5, 250 * 2.7, 200), rnorm(5, 50, 10)))
@@ -210,9 +216,9 @@ For hierarchical clustering, the columns need to contain the features by which w
 The data in the example is in the format we want it to be as the rows contain the clustering variable, and the columns are the features by which we seek to cluster.
 
 ### Scaling
-When the features are not measured with the same method, we first need to scale the data. We don't need to do so in this case because all features are in volume per day. If, for example, we try to segment customers and we have their average daily water consumption, the number of times they contact the utility, and whether they are in a hardship program, then we have three very different variables that need scaling.
+When the features are not measured with the same method, we first need to normalise the data. We don't need to do so in this case because all features are in volume per day. If, for example, we try to segment customers and we have their average daily water consumption, the number of times they contact the utility, and whether they are in a hardship program, then we have three very different variables that need scaling.
 
-The `scale()` function normalises data to. The default setting of this function calculates the mean and standard deviation of the entire vector, then scales each element by subtracting the mean and dividing the result by the standard deviation. The output of the `scale()` function is a matrix with normalised observations.
+The `scale()` function normalises data. The default setting of this function calculates the mean and standard deviation of the entire vector, then scales each element by subtracting the mean and dividing the result by the standard deviation. The output of the `scale()` function is a matrix with normalised observations.
 
 A matrix in R is different from a data frame because all observations are of the same type, and you can undertake algebra with its content. A data frame can store observations of many kinds, as long as each column has the same kind of data.
 
@@ -224,11 +230,9 @@ customers_scaled <- scale(customers[, -1])
 ```
 
 ### Distances
-Hierarchical clustering requires the distance between observations. With two or three dimensions, this is fairly easy to understand. The most common method is to calculate the Euclidean distance, using the famous Pythagoras formula:
+Hierarchical clustering requires the distance between observations. With two or three dimensions, this is fairly easy to understand. The most common method is to calculate the Euclidean distance, using the famous Pythagoras formula for two dimensions:
 
 `d = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}`$. 
-
-Other methods to determine distances are available and outlined in the help file of the `dist()` function.
 
 The output of this function is a matrix with the same size as the number of cluster observations. In the example, we are clustering ten customers, so the result is a ten by ten matrix with a 'distance' between each of them. However, the matrix only contains the lower triangle. Review the output of the function in the console.
 
@@ -258,7 +262,7 @@ Distance         : euclidean
 Number of objects: 10 
 ```
 
-This is not very helpful, and the best way to view the output is to plot it, which gives a dendrogram (tree diagram). The `main` and `sub` options provide the title and subtitle to the plot. The `labels` option adds the names to the cluster numbers.
+This is not very helpful, and the best way to view the output is to plot it, which gives a dendrogram (tree diagram). The code below uses the base plotting functionality in R and not the ggplot version we have used previously. The `main` and `sub` options provide the title and subtitle to the plot. The `labels` option adds the names to the cluster numbers.
 
 {format: r, line-numbers: false}
 ```
@@ -275,7 +279,7 @@ You can view the clusters at each level of the analysis, working your way up to 
 
 You can extract more information from the clusters with the `cutree()` function. This function allows you to cut the tree at a certain level. The output is a vector of the cluster number that each customer belongs to. At the highest level (`k = 1`), all customers form part of the same cluster. At the lowest level (`k = 10`), all customers are separate.
 
-Extracting two clusters, we can assign these variables as segments to our customer table and visualise the data. Note the `fill = factor(segment)`. This option assigns a fill colour to the label. The factor function is needed to force R to assign discrete colours instead of a variable range. 
+Extracting two clusters, we can assign these variables as segments to our customer table and visualise the data. Note the `fill = factor(segment)`. This option assigns a fill colour to the label. The factor function is needed to force R to assign qualitative colours instead of a variable range. 
 
 X> Evaluate this function without the `factor()` function to understand the difference.
 
@@ -378,6 +382,7 @@ D> How would you interpret these scores? How do you explain the significant spik
 
 ### Further study
 Accurate measurement of psychological constructs is a complex topic that goes beyond the scope of this course. Please note that the examples in this chapter do not constitute a thorough analysis of latent constructs. Correlations and cluster analysis are great for exploration. Structural equation modelling is best practice in psychographic analysis. If you are interested in the statistical intricacies of measuring the customer experience, then read _Scale Development: Theory and Applications_ by Robert Devils (2011). 
+
 ## Quiz
 The sixth quiz asks some questions about correlations and cluster analysis.
 

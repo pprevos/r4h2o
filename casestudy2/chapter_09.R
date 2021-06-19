@@ -37,7 +37,9 @@ pivot_longer(lab_wide, cols = -1:-2, names_to = "Analyte", values_to = "Result")
     filter(!is.na(Result))
 
 ## Pivot PII data
-pii_long <- pivot_longer(pii, -survey_id, names_to = "Item", values_to = "Response") %>%
+pii_long <- pivot_longer(pii, -survey_id, 
+                         names_to = "Item", 
+                         values_to = "Response") %>%
     filter(!is.na(Response))
 pii_long
 write_csv(pii_long, "casestudy2/pii_long.csv")
@@ -51,6 +53,6 @@ ggplot(pii_long, aes(Item, Response)) +
     theme_minimal(base_size = 10)
 ggsave("manuscript/resources/09_customers/pii-responses.png", width = 9, height = 5)
 
-ggplot(pii_long, aes(Response, fill = Item)) +
+ggplot(pii_long, aes(Response)) +
     geom_bar() +
     facet_wrap(~Item)

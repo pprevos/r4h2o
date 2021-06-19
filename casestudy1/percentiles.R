@@ -29,8 +29,8 @@ x_weibull <- (1 - (r_weibull - floor(r_weibull))) * sample[floor(r_weibull)] + (
 x_excel <- (1 - (r_excel - floor(r_excel))) * sample[floor(r_excel)] + (r_excel - floor(r_excel)) * sample[ceiling(r_excel)]
 
 ## Visualise
-abline(v = r_weibull, col = "red", lwd = 3)
-abline(v = r_excel, col = "blue", lwd = 3)
+abline(v = r_weibull, col = "red", lwd = 3, lty = 3)
+abline(v = r_excel, col = "blue", lwd = 3, lty = 2)
 
 ## Legend
 legend("topleft", legend = c("Excel", "Weibull"), fill = c("blue", "red"))

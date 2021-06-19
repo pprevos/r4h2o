@@ -28,4 +28,3 @@ scores <- customers %>%
 
 mean(scores$Score, na.rm = TRUE)
 
-5 * 4

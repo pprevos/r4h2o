@@ -1,13 +1,10 @@
-# 14. Principles of Machine Learning {#learning}
+# 16. Principles of Machine Learning {#learning}
 
 The words machine learning and artificial intelligence are often used to tout the seemingly magical powers of mathematics. 
 
 This chapter 
 
-## Types of Machine Learning
-We have already encountered a machine learning technique in [chapter 10](#latent). Cluster analysis is an unsupervised method that in essence learns from the data by investigating relationships,
-
-### Machine Learning
+## What is Machine Learning?
 Machine learning is without a doubt the poster child of data science. This popular technique possibly promises more than it is able to deliver. Machines cannot actually learn anything. Machine learning is a group of complex algorithms that convert the input into output by recognising patterns in data. The term was coined by Arthur Samuel from IBM in 1959 to promote their capabilities in software development.[^ml]
 
 [^ml]: Burkov, A. (2019). _The Hundred-Page Machine Learning Book_. LeanPub.
@@ -32,7 +29,11 @@ The output of these machine learning methods is very different from traditional 
 
 The third method, reinforcement learning is a technique that is used in prescriptive analysis, which is the topic of the next section.
 
-
+## Types of Machine Learning
+We have already encountered a machine learning technique in [chapter 10](#latent). Cluster analysis is an unsupervised method that in essence learns from the data by investigating relationships,
 
 
 ![Types of machine learning](resources/14_learning/ml_types.png)
+
+## Supervised Learning
+### Training and Testing data

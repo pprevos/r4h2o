@@ -1,12 +1,13 @@
 # 9. Exploring the Customer Experience {#customers}
-The services that water utilities provide to their communities rely heavily on technology—most of the data that water utility professionals analyse is derived from measurement instruments and laboratory tests. The technological data does, however, only tell part of the story of urban water supply. We can physically measure the process from catchment to tap, but what happens downstream of the connection is a matter of psychology instead of chemistry and physics.
+The services that water utilities provide to their communities rely heavily on technology---most of the data that water utility professionals analyse is derived from measurement instruments and laboratory tests. The technological data does, however, only tell part of the story of urban water supply. We can physically measure the process from catchment to tap, but what happens downstream of the connection is a matter of psychology instead of chemistry and physics.
 
 Water utilities are becoming ever more aware of their role in the community. Water professionals now also need to analyse the information they collect from customers. Data collected from living human beings instead of from scientific instruments requires a different approach to technical data. Measurement in the social sciences follows a different approach to measuring physical processes. 
 
 This chapter introduces some principles of collecting and analysing data from customers and further techniques to manipulate data. The learning objectives for this chapter are:
-- Understand the principles of measuring the customer experience with latent variables.
-- Evaluate data with missing observations.
-- Apply the principles of tidy data.
+
+* Understand the principles of measuring the customer experience with latent variables.
+* Evaluate data with missing observations.
+* Apply the principles of tidy data.
 
 The data and code for this session are available in the `chapter_09.R` file in the `casestudy2` folder of your RStudio project.
 
@@ -29,6 +30,7 @@ Measuring a state of mind is a complex task that goes beyond asking direct quest
 Physical measurements can be calibrated by comparing it with a known value. Psychological states of mind cannot be calibrated as we have no direct insight into the software of the brain. In the social sciences, mental states are called latent variables because we can only measure them indirectly. Researchers use banks of questions that ask for a response to similar questions. The basic idea is that people with a particular disposition will all respond in the same way to these stimuli (the questions). We use the answers to multiple questions to test the responses for internal and external consistency.
 
 The customer survey of the second case study includes ten questions to measure the level of consumer involvement. These questions form the Personal Involvement Inventory (PII), developed by Judith Zaichkowsky ([1994](https://www.sfu.ca/~zaichkow/JA%252094.pdf)). The Personal Involvement Inventory consists of two dimensions: 
+
 1. Cognitive involvement (importance, relevance, meaning, value and need) 
 2. Affective involvement (involvement, fascination, appeal, excitement and interest).
 
@@ -37,7 +39,7 @@ The involvement question bank uses a semantic differential scale. This method re
 {width: 60%, align: middle}
 ![Figure 9.1: Personal Involvement Inventory questionnaire.](resources/09_customers/semantic-differential.png)
 
-The customer survey data we cleaned in the previous chapter contains the ten items of the PII scale (`p01`, `p02`, ... `p10`). Table 1 shows the relationship between the items and the scale. The items with an asterisk are in reversed polarity. The next section explains how to analyse this information.
+The customer survey data we cleaned in the previous chapter contains the ten items of the PII scale (`p01`, `p02`... `p10`). Table 1 shows the relationship between the items and the scale. The items with an asterisk are in reversed polarity. The next section explains how to analyse this information.
 
 {title="Table 1: Personal Involvement Inventory variables."}
 | Variable | Item                     |
@@ -73,13 +75,11 @@ X> Go to the web page of the [readr](https://readr.tidyverse.org/) package and r
 
 To analyse the level of involvement, we only need the `survey_id` as a unique identifier and the ten PII items. The `select()` function we saw in the previous chapter has some helper functions that simplify selecting the columns we need.  The `starts_with()` helper function lets you choose columns based on a prefix. We can now select the eleven variables of interest, but before we can analyse them, we need to correct the reversed polarity of five of the items. 
 
-The scale measured from 1 to 7, so we can reverse the five items by subtracting the response from 8. The `mutate()` function changes variables or creates new ones in a data frame.
-
-The `select()` and `mutate()` functions form part of the [dplyr package](https://dplyr.tidyverse.org/) in the Tidyverse, so we need to load this library first.
+The scale measured from 1 to 7, so we can reverse the five items by subtracting the response from 8. The dplyr `mutate()` function changes variables or creates new ones in a tibble.
 
 {format: r, line-numbers: false}
 ```
-library(dplyr)
+library(dplyr) # Part of the Tidyverse
 pii <- select(customers, survey_id, starts_with("p")) %>%
     mutate(p01 = 8 - p01,
            p02 = 8 - p02,
@@ -107,7 +107,7 @@ Data can be missing at random or through an underlying pattern. We deal with eac
 
 The fact that the same number of data points are missing for each variable is an intriguing clue. The data in this survey seems to be missing not at random.
 
-Using missing data requires special considerations during analysis. Almost all functions will return an `NA` value when one or more of the observations are not available, as shown in the example below. Most functions have options to instruct R how to deal with missing values. The second line of code tells R to remove any `NA` values from the vector. The default setting for this option is to keep the missing observations.
+Using missing data requires special considerations during analysis. Almost all functions will return an `NA` value when one or more of the observations are not available, as shown in the example below. Most functions accept the `na.rnm = TRUE`option to instruct R how to deal with missing values. The second line of code tells R to remove any `NA` values from the vector. The default setting for this option is to keep the missing observations.
 
 {format: r, line-numbers: false}
 ```
@@ -120,9 +120,9 @@ sum(x, na.rm = TRUE)
 
 X> Evaluate these expressions to note the difference in output.
 
-When data is missing at random, we can possibly replace missing values with the best guess, called imputation. The most common method is to replace the missing value with the median or mean of the sample. 
+When data is missing at random, we can possibly replace missing values with a best guess, called imputation. The most common method is to replace the missing value with the median or mean of the sample. 
 
-This method needs to be used with great care because you can bias the results. The second principle of ethical data science is that we do justice to the participants. Imputing missing values is like putting words in the mouth of the respondent. Imputation can only be used when the primary method of analysis cannot process missing values, and when the number of missing values is low. 
+Imputation needs to be used with great care because you can bias the results. The second principle of ethical data science is that we do justice to the participants. Imputing missing values is like putting words in the mouth of the respondent. Imputation can only be used when the primary method of analysis cannot process missing values, and when the number of missing values is only a few percent of the total number of observations. 
 
 When data is missing not at random, as in this case, we usually need to remove these observations, which we will do in the next step.
 
@@ -132,6 +132,7 @@ In the previous session, we cleaned the survey data by removing unwanted columns
 A dataset is a collection of values, mostly numbers or strings. Every value belongs to a variable (column) and to an observation (rows). A variable contains all values that measure the same underlying attribute (like height, temperature, duration) across units. An observation provides all values measured on the same unit (like a person, a day, or a location), across attributes. 
 
 A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations, variables and types. In tidy data:
+
 * Each variable forms a column.
 * Each observation forms a row.
 * Each type of observational unit forms a table.
@@ -159,7 +160,7 @@ The involvement data is, however, untidy because the results are spread across t
 | S1235  | 2017-12-14 |       0.1 | 0.07 |         |
 | S1236  | 2017-12-15 |      0.23 | 0.21 |       0 |
 
-To tidy the involvement data we need to, speaking in Excel terms, unpivot the data. The `pivot_longer()` function in the [tidyr package](https://tidyr.tidyverse.org/index.html) helps to create tidy sets of data. This function takes multiple columns and collapses them into key-value pairs.
+To tidy the involvement data we need to, speaking in Excel terms, unpivot the data. The `pivot_longer()` function in the [tidyr package](https://tidyr.tidyverse.org/index.html) helps to create tidy data. This function takes multiple columns and collapses them into key-value pairs.
 
 The example below defines the laboratory data as in the previous table and transforms it into the tidy long version. The first option in the `pivot_longer()` function is the name of the data frame. The next option defines which columns need to pivot, which are the ones that contain the data. The remainder of the columns will be used as the keys. 
 
@@ -213,7 +214,7 @@ D> What pattern do you observe in these results?
 ## Quiz 5: Transforming data
 The next quiz consists of five multiple-choice questions about working with missing data and transforming data into a tidy format.
 
-The [next chapter](#latent) analyses the consumer involvement data using correlations and cluster analysis.
+The [next chapter](#survey) analyses the consumer involvement data using correlations and cluster analysis.
 
 {quiz, id:q5, attempts:10}
 # Quiz 5: Transforming data

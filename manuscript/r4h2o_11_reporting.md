@@ -1,5 +1,4 @@
 # 11. Writing Reports {#reporting}
-
 This last section of the case study is another mini hackathon where you will be exploring the other variables in the customer survey. Besides the _Personal Involvement Index_, the survey also contains information about perceptions of quality, the level of hardship that customers reported to experience and the frequency at which they contact their water utility. The section will guide you to analyse this data and present the result in a report using RMarkdown.
 
 The learning objectives for this session are:

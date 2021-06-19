@@ -1,0 +1,95 @@
+---
+title: '$R^4$H\textsubscript{2}O: R for Water Professionals: Session 3'
+author: Dr Peter Prevos
+output:
+  beamer_presentation:
+  theme: "Malmoe"
+  fonttheme: "structurebold"
+params: 
+  coupon: "esc-vic"
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+opts_chunk$set(tidy.opts=list(width.cutoff=40), echo=TRUE)
+```
+
+# Session 3 Program
+:::::: {.columns}
+::: {.column}
+* Recap
+* Data cleaning
+* Exploring customer perception
+:::
+::: {.column}
+![](images/2017b_wum.png)
+:::
+::::::
+
+# Recap
+:::::: {.columns}
+::: {.column}
+* Read CSV file
+* Filter data
+* Group data
+* Arithmetic
+* Descriptive statistics
+* Visualise data
+* Export to PowerPoint
+:::
+::: {.column}
+![](../manuscript/resources/06_visualisation/grammar_of_graphics.jpg)
+:::
+::::::
+
+# Cleaning Data
+:::::: {.columns}
+::: {.column}
+* Go to the the `casestudy2` folder
+* Open the `chapter_08.R` file
+* Cleaning data with code
+:::
+::: {.column}
+![Tap water consumer involvement.](../manuscript/resources/09_customers/pii-responses.png)
+:::
+::::::
+
+# Joining Data
+![Tidyverse functions to join data.](../manuscript/resources/08_cleaning/dplyr_join.png){width=80%}
+
+# Pipes
+:::::: {.columns}
+::: {.column}
+```{r, eval=FALSE}
+customers <- rawdata[-1, ] %>%
+    type_convert() %>%
+    filter(is.na(term)) %>%
+    left_join(cities) %>% 
+    select(c(-2:-20, -33)) %>%
+    rename(survey_id = V1)
+```
+:::
+
+::: {.column}
+![René Magritte (1929), _The Treachery of Images_.](images/pipes.jpg)
+:::
+::::::
+
+# Consumer Involvement
+:::::: {.columns}
+::: {.column}
+1. Cognitive involvement (importance, relevance, meaning, value and need) 
+2. Affective involvement (involvement, fascination, appeal, excitement and interest)
+:::
+:::{.column}
+![Personal Involvement Index differential semantic scale.](../manuscript/resources/09_customers/semantic-differential.png)
+:::
+::::::
+
+# Pivoting Data
+![`pivot_longer(lab_wide, cols = -1:-2, names_to = "Analyte", values_to = "Result")`](images/tidy_data.png)
+
+
+

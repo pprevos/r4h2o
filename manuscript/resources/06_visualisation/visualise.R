@@ -2,6 +2,7 @@
 ## Chapter 6 images
 
 library(tidyverse)
+library(gridExtra)
 gormsey <- read_csv("casestudy1/gormsey.csv")
 
 ## Figure 6.3
@@ -9,6 +10,9 @@ gormsey <- read_csv("casestudy1/gormsey.csv")
 ## devtools::install_github("hilaryparker/cats")
 
 library(cats)
+
+comparison <- tibble(item = LETTERS[1:5],
+                     value = c(20, 11, 9, 13, 17))
 
 bad <- ggplot(comparison, aes(item, value, fill = item)) +
     add_cat(bw = FALSE) +
@@ -32,51 +36,54 @@ good <- ggplot(comparison, aes(item, value)) +
     labs(title= "Cat food sales",
          subtitle = "High Data-Pixel Ratio",
          x = "Brand", y = "Sales")
+good
 
-png("manuscript/resources/06_visualisation/data-pixel-ratio2.png", width = 1920, height = 1080)
+png("manuscript/resources/06_visualisation/data-pixel-ratio.png", width = 1920, height = 1080)
 grid.arrange(bad, good, ncol = 2, widths = c(1.1, 0.9))
 dev.off()
 
-## Figure 6.6
-ggplot(gormsey, aes(Town))
-ggsave("manuscript/resources/06_visualisation/towns_canvas.png", width = 9, height = 5)
+## Figure 6.4
+set.seed(1969)
 
-## Figure 6.7
-ggplot(gormsey, aes(Town)) + 
-    geom_bar()
-ggsave("manuscript/resources/06_visualisation/towns_bars.png", width = 9, height = 5)
+comparison <- tibble(item = LETTERS[1:5],
+                     value = sample(10:20, 5))
 
-## Figure 6.9
-turbidity <- filter(gormsey, Measure == "Turbidity")
-ggplot(turbidity, aes(Date, Result, col = Town)) + 
-    geom_line()
-ggsave("manuscript/resources/06_visualisation/time_series.png", width = 9, height = 5)
+c <- ggplot(comparison, aes(item, value)) + geom_col(fill = "#002859", alpha = 0.5) +
+    theme_minimal(base_size = 40) +
+    theme(plot.title = element_text(face="bold")) +
+    scale_x_discrete(breaks = NULL) +     
+    ggtitle("Comparison")
 
-## Figure 6.10
-ggplot(turbidity, aes(Town, Result, fill = Town)) + 
-    geom_boxplot() +
-    scale_y_log10()
-ggsave("manuscript/resources/06_visualisation/boxplot.png", width = 9, height = 5)
+relationship <- tibble(x = 1:20,
+                       y = x + sample(-2:2, 20, replace = TRUE),
+                       z = sample(1:5, 20 , replace = TRUE))
 
-## Figure 6.11
-ggplot(turbidity, aes(Date, Result, col = Town)) + 
-    geom_line() + 
-    facet_wrap(~Town)
-ggsave("manuscript/resources/06_visualisation/facets.png", width = 9, height = 5)
+r1 <- ggplot(relationship, aes(x, y, z)) +
+    geom_point(size = 10, col = "#002859") +
+    ggtitle("Relationship: Two variables") + 
+    theme_minimal(base_size = 40) +
+    theme(plot.title = element_text(face="bold"))
 
-## Figure 6.12
-thm <- filter(gormsey, Measure == "THM")
-thm_grouped <- group_by(thm, Date)
-thm_max <- summarise(thm_grouped, thm_max = max(Result))
+r2 <- ggplot(relationship, aes(x, y, z)) +
+    geom_point(aes(size = z), col = "#002859", alpha = 0.5) +
+    scale_size_area(max_size = 25) +
+    theme_minimal(base_size = 40) +
+    theme(plot.title = element_text(face="bold")) +
+    ggtitle("Relationship: Three variables")
 
-ggplot(thm_max, aes(Date, thm_max)) + 
-    geom_smooth() + 
-    geom_line() + 
-    geom_hline(yintercept = 0.25, col = "red") 
-ggsave("manuscript/resources/06_visualisation/thm_trend.png", width = 9, height = 5)
+distribution <- enframe(rnorm(1000))
+
+d <- ggplot(distribution, aes(value)) +
+    geom_histogram(bins = 40, fill = "#002859", alpha = 0.5) +
+    theme_minimal(base_size = 40) +
+    theme(plot.title = element_text(face="bold")) +
+    ggtitle("Distribution")
+
+png("manuscript/resources/06_visualisation/stories.png", width = 2048, height = 1536)
+grid.arrange(c, d, r1, r2, ncol=2)
+dev.off()
 
 ## Figure 6.13
-library(gridExtra)
 p <- ggplot(gormsey, aes(Measure)) + geom_bar()
 a <- p + theme_classic(base_size = 22)+ ggtitle("theme_clasic()")
 b <- a + theme_bw(base_size = 22) + ggtitle("theme_bw()")
@@ -86,36 +93,3 @@ d <- a + theme_void(base_size = 22) + ggtitle("theme_void()")
 png("manuscript/resources/06_visualisation/themes.png", width = 1920, height = 1080)
 grid.arrange(a, b, c, d)
 dev.off()
-
-## Figure 6.14
-ggplot(turbidity, aes(Date, Result)) + 
-    geom_area(fill = "red", col = "black") + 
-    facet_wrap(~Town, ncol = 1) + 
-    theme_void(base_size = 10)
-ggsave("manuscript/resources/06_visualisation/sparklets.png", width = 9, height = 5)
-
-## Figure 6.15
-ggplot(filter(turbidity, Town == "Strathmore"), aes(Date, Result)) + 
-    geom_line() +
-    labs(title = "Turbidity Spikes", 
-         subtitle = "Strathmore customer taps",
-         x = "Date sampled", y = "NTU") + 
-    geom_hline(yintercept = 5, col = "red") + 
-    theme_bw(base_size = 10)
-ggsave("manuscript/resources/06_visualisation/labels.png", width = 9, height = 5)
-
-
-filter(gormsey, Town %in% c("Pontybridge", "Southwold", "Strathmore")) %>%
-ggplot(aes(Date, Result, col = Measure)) + 
-    geom_line() +
-    scale_color_brewer(palette = "Dark2", guide = FALSE) + 
-    facet_grid(Measure ~ Town, scales = "free_y") + 
-    labs(title = "Turbidity Spikes", 
-         subtitle = "Strathmore customer taps",
-         x = "Date sampled", y = "NTU") + 
-    theme_bw(base_size = 10)
-ggsave("presentations/images/ggplot.png", width = 6, height = 6)
-
-
-
-

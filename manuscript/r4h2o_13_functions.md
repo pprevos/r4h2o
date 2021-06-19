@@ -1,16 +1,17 @@
 # 13. Functions {#functions}
 
-In the chapter about the [basics](#basics) of the R language you had to repeatedly run the same expression to convert a level measurement to a flow. As a general rule, if you need to write the same code more than twice, then there must be a better way. Not only does it take time to write repetitive code, more importantly, duplicate code increases the risk of bugs. 
+In the chapter about the [basics](#basics) of the R language you had to repeatedly run the same expression to convert a level measurement to a flow. As a general rule, if you need to write the same code more than twice, then there must be a more efficient method. Not only does it take time to write repetitive code, more importantly, duplicated code increases the risk of bugs.
 
-Functions are a way to reuse bits of code. You can use functions to make your own code easier to write and understand. You can also use functions to share methods you developed to analyse specific problems with other water professionals. R packages essentially consist of libraries of functions written in the R language itself.
+Functions allow you to reuse bits of code. You can use functions to make your own code easier to write and understand. You can also use functions to share methods you developed to analyse specific problems with other water professionals. R packages essentially consist of libraries of functions written in the R language itself.
 
 This session introduces building functions to streamline your code. The learning objectives for this session are:
+
 * Recognise instances where a function is useful
 * Identify the basic elements of a function
 * Develop functions in the R language
 
 ## Function basics
-The R language is in essence a library of functions. A function is a section of code that we can evaluate. 
+The R language is in essence an extensible library of functions. A function is a procedure that 
 
 In the first coding chapter, you reused a bit a code to covert he water level in an open channel to a flow several times. The code below provides a function that calculates the flow in a channel with a given height `h`$, width `b`$ and discharge factor `C_d`$. This function implements the Kindsvater-Carter formula explained in [chapter 2](#bascis). 
 
@@ -25,7 +26,8 @@ channel_flow <- function(h, b, cd = 0.6){
     return(q)
 }
 
-channel_flow(0.12, 0.6)
+channel_flow(0.12, 0.7)
+channel_flow(0.12, 0.7, 0.8)
 ```
 
 When you call the function, R expects you to either explicity assign the variables or keep them in the same order.

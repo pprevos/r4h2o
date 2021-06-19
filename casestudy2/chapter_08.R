@@ -5,8 +5,9 @@
 library(tidyverse)
 rawdata  <- read_csv("casestudy2/customer_survey.csv")
 
-questions <- read_csv("casestudy2/customer_survey.csv", skip = 1, n_max = 1)
-questions <- names(questions)
+# Show first two columns as data frame
+questions <- read_csv("casestudy2/customer_survey.csv", n_max = 2, col_names = FALSE)
+questions <- data.frame(t(questions), row.names = NULL)
 
 ## Explore data
 glimpse(rawdata)

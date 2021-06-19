@@ -56,7 +56,7 @@ The course concludes with some suggestions on how to find help and advance your 
 ### Case Study 1: Water Quality Regulations
 In this first case study, participants analyse and visualise laboratory testing data. The case study revolves around checking the data for compliance with water quality regulations. The case study ends with participants creating code that produces a PowerPoint presentation linked to water quality data.
 
-{width=60%,float=center}
+{width: 80%, align=center}
 ![Figure 1.2: Case study 1 visualisation.](resources/06_visualisation/boxplot.png)
 
 ### Case Study 2: Customer Experience
@@ -64,7 +64,7 @@ Water management is not only about cubic metres and milligrams per litre. Water 
 
 The data for the second case study consists of the results of a survey of water consumers about their perception of tap water services. Participants clean, visualise and analyse this data and produce output as a Word document.
 
-{width=60%,float=center}
+{width: 80%, align=center}
 ![Figure 1.3: Case Study 2 visualisation.](resources/10_surveys/pii_dendogram.png)
 
 ## Face to Face and Online Teaching Sessions

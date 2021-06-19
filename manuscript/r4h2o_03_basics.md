@@ -206,7 +206,6 @@ R has extensive capability for visualising data and the results of analysis. The
 
 The first few lines defines the variables `x` and `y` and plots them as a line (`type = "l"`), showing the parabola in the plot window. The `abline()` function draws a straight line on top of the current plot. The barplot function creates a bar chart with the complaints vector (Figure 3.3).
 
-{width=80%, align=center}
 ![Figure 3.3: Basic R Plots](resources/03_basics/basic_plots.png)
 
 X> Try the same plot without the `type` parameter, or with `type = "b"` and review the difference. Change the parameters in the `abline()` function and review the results.

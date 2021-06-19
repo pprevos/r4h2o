@@ -210,31 +210,6 @@ Q> What is the result of the last sample in the Gormsey data? Hint, use the `nro
 
 I> Answer: `gormsey[nrow(gormsey), ]`
 
-### Counting results
-The last exploratory activity to be discussed is to count the number of results. The `table()` function in base R lets you quickly view the content of a data frame or a vector. To find out how many samples each measure has, you can use:
-
-{format: r, line-numbers: false}
-```
-table(gormsey$Measure)
-```
-
-The Tidyverse equivalent of this function is `count()`. The equivalent of the previous example is `count(gormsey, measure)`. Note the difference in syntax. The first argument in the function is the data frame, and the second is the variable we want to count. We can now combine these functions to create a table of the number of turbidity results for each Town. First, we create a subset of the data, and then we count the results. The output of this function is a new data frame with the results of the count.
-
-{format: r, line-numbers: false}
-```
-turbidity <- filter(gormsey, Measure == "Turbidity")
-turbidity_count <- count(turbidity, Town)
-turbidity_count
-```
-
-Two further useful functions are `length()` and `unique()`. These two functions result in the length of a vector and the distinct values within a vector.
-
-{format: r, line-numbers: false}
-```
-length(gormsey$Measure)
-unique(gormsey$Measure)
-```
-
 ### Filtering data
 You can also filter the data using conditions. If, for example, you like to see only the turbidity data, then you can subset the data:
 
@@ -243,7 +218,7 @@ You can also filter the data using conditions. If, for example, you like to see 
 gormsey[gormsey$Measure == "Turbidity", ]
 ```
 
-This method looks similar to what we discussed above. The difference is that the row indicator now shows an equation. When you execute the equation between brackets separately, you see a list of values that are either `TRUE` or `FALSE`. These values indicate whether the variable at that location meets the condition. For example, the following code results in a vector with the values TRUE and FALSE.
+This method looks similar to what we discussed above. The difference is that the row indicator now shows an equation. When you execute the equation between brackets separately, you see a list of values that are either `TRUE` or `FALSE`. These values indicate whether the variable at that location meets the condition. For example, the following code results in a vector with the values `TRUE` and `FALSE`.
 
 {format: r, line-numbers: false}
 ```
@@ -282,12 +257,12 @@ The Tidyverse method uses the `filter()` function, which is more convenient than
 
 {format: r, line-numbers: false}
 ```
-filter(gormsey, Measure == "Turbidity")
+turbidity <- filter(gormsey, Measure == "Turbidity")
 ```
 
 Note that this method is tidier than the brackets method because we don't have to add the data frame name and `$` to the variables. Figure 4.1 illustrates the principles of filtering a data frame.
 
-{width: 80%, align: center}
+{width: 80%}
 ![Figure 4.1: Filtering a data frame: `filter(gormsey, Measure == "Turbidity")`](resources/04_tidyverse/filter.png)
 
 We can apply this knowledge to our case study to test subsets of the data: `filter(gormsey, Town == "Strathmore" & Measure == "Turbidity" & Result > 1)` shows the turbidity samples in Strathmore with a result greater than 1 NTU. Note that testing for equality requires two equal signs.
@@ -296,15 +271,29 @@ Q> How many turbidity results in all Towns, except Strathmore, are lower than 0.
 
 I> Answer: Subset the data for all results less than 0.1 NTU *and* where the Town is not Strathmore. The `nrow()` function counts the results: `nrow(filter(gormsey, Town != "Strathmore" & Result < 0.1))`.
 
-## Further Study
-Several R libraries provide additional functionality to read other file formats:
-* [readxl](https://readxl.tidyverse.org/): Tidyverse package to read Excel files.
-* [RODBC](https://cran.r-project.org/web/packages/RODBC/index.html): Interface for databases such as SQL.
-* [rvest](https://rvest.tidyverse.org/): Tidyverse package to scrape data from websites.
+### Counting results
+The last exploratory activity to be discussed is to count the number of results. The `table()` function in base R lets you quickly view the content of a data frame or a vector. To find out how many samples each measure has, you can use:
 
-The [next chapter](#statistics) explains how to use R and the Tidyverse to explore the data and determine whether the results are following the relevant regulations. 
+{format: r, line-numbers: false}
+```
+table(gormsey$Measure)
+```
 
-X> Before you proceed to the next chapter, try and load a CSV file you use in your daily work and explore the data to practice your skills.
+The Tidyverse equivalent of this function is `count()`. The equivalent of the previous example is `count(gormsey, measure)`. Note the difference in syntax. The first argument in the function is the data frame, and the second is the variable we want to count. We can now combine these functions to create a table of the number of turbidity results for each Town. First, we create a subset of the data, and then we count the results. The output of this function is a new data frame with the results of the count.
+
+{format: r, line-numbers: false}
+```
+turbidity_count <- count(turbidity, Town)
+turbidity_count
+```
+
+Two further useful functions are `length()` and `unique()`. These two functions result in the length of a vector and the distinct values within a vector.
+
+{format: r, line-numbers: false}
+```
+length(gormsey$Measure)
+unique(gormsey$Measure)
+```
 
 ## Quiz 2: Exploring Water Quality Data
 You now have reviewed a series of functions that you can use to load and explore the laboratory data. With this knowledge, you can complete the next five quiz questions.
@@ -358,6 +347,14 @@ That's it for the second quiz. If you get stuck, you can find the answers in the
 
 {width: 60%, align: middle}
 ![Answers to quiz 1](https://www.youtube.com/watch?v=Z9BRc2dljS8)
-
-X> Before you proceed to the [next chapter](#statistics), try and load a CSV file you use in your daily work and explore the data to practice your skills.
 {/quiz}
+
+g## Further Study
+Several R libraries provide additional functionality to read other file formats:
+* [readxl](https://readxl.tidyverse.org/): Tidyverse package to read Excel files.
+* [RODBC](https://cran.r-project.org/web/packages/RODBC/index.html): Interface for databases such as SQL.
+* [rvest](https://rvest.tidyverse.org/): Tidyverse package to scrape data from websites.
+
+X> Before you proceed to the next chapter, try and load a CSV file you use in your daily work and explore the data to practice your skills.
+
+The [next chapter](#statistics) explains how to use R and the Tidyverse to explore the data and determine whether the results are following the relevant regulations. 

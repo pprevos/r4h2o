@@ -2,7 +2,7 @@
 
 This session provides a framework for best practice in data science. The two sections define data science and how it applies to the water supply value chain.  This framework is explained in more detail in the book _Principles of Strategic Data Science_ by Peter Prevos, available through [Packt Publishing](https://www.packtpub.com/big-data-and-business-intelligence/principles-strategic-data-science).
 
-{width: 40%, align="center"}
+{width: 40%, align="middle"}
 ![Figure 2.1: Principles of Strategic Data Science](resources/02_principles/StrategicDataScience.jpg)
 
 This chapter has the following learning objectives:

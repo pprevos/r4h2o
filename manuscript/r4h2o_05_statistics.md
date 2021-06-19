@@ -110,7 +110,7 @@ Please note that there is no one correct way to calculate percentiles, as shown 
 
 The `percentiles.R` script in the `casestudy1` folder compares the Weibull method with the method used in Excel (Figure 5.1). With highly skewed data, as is often the case with turbidity measurements, the Weibull method results in a higher percentile value.
 
-{width: 60%, align: middle}
+{width: 80%, align: center}
 ![Figure 5.1: Comparing the Excell and Weibull method for percentiles with highly-skewed data.](resources/05_statistics/percentiles.png)
 
 T> Open the percentiles script and run the code. Reverse-engineer the code to understand how it works.
@@ -139,7 +139,7 @@ summarise(df_grouped,
           Maximum = max(Result))
 ```
 
-{width: 60%, align: middle}
+{width: 80%, align: center}
 ![Figure 5.2: Grouping a data frame with `group_by(gormsey, Measure)`.](resources/05_statistics/grouping.png)
 
 The `summarise()` function uses the grouped data frame and creates two new variables that show the average and maximum values for each measure. The results will differ every time you run it due to the randomisation.

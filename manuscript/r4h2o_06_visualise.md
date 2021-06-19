@@ -11,6 +11,7 @@ This chapter introduces some principles of best practice in data visualisation. 
 
 The data and code for this session are available in the `chapter_06.R` file in the `casestudy1` folder of your RStudio project.
 
+{width: 60%, align: center}
 ![Presentation on aesthetic data science.](https://www.youtube.com/watch?v=5grTD8cGZQM)
 
 ## Principles of Visualisation
@@ -31,12 +32,12 @@ Data visualisations are everywhere. They are no longer the domain of scientific 
 
 Some data visualisations in engineering remind me of a [Jackson Pollock](https://en.wikipedia.org/wiki/Jackson_Pollock) painting (Figure 6.1). Engineers love to maximise the number of visual elements in a graph, with lines and colours splashed across the screen. Adding too much information to a chart and using too many colours reduces its usability. When visualisation is not aesthetic, it becomes harder to interpret, which leads to the wrong conclusions and can even deceive the user.
 
-{width: 70%, alt: "Jackson Pollock, Blue Poles number 11.", align: middle}
+{width: 70%, alt: "Jackson Pollock, Blue Poles number 11.", align: center}
 ![Figure 6.1: Jackson Pollock (1952) _Blue Poles number 11_. Drip Painting in enamel and aluminium paint with glass on canvas (National Gallery, Canberra. Source: Wikimedia).](resources/06_visualisation/bluepoles.jpg)
 
 Perhaps a good data visualisation should look more like a painting by [Piet Mondrian](https://en.wikipedia.org/wiki/Piet_Mondrian) who is famous for his austere compositions with straight lines and primary colours (Figure 6.2). Using art to explain data visualisation is not an accidental metaphor because visual art represents how the artist perceives reality. This comparison between Pollock and Mondrian is not a judgement of their artistic abilities. For Pollock, reality was chaotic and messy, while Mondrian saw a geometric order behind the perceived world.
 
-{width: 50%, alt: "Piet Mondrian, Composition in Red, Yellow and Blue."}
+{width: 50%, alt: "Piet Mondrian, Composition in Red, Yellow and Blue.", align=center}
 ![Figure 6.2: Piet Mondrian (1928) Composition with red, yellow and blue. Oil on canvas (Municipal Museum, the Hague).](resources/06_visualisation/mondrian.jpg)
 
 Edward Tufte is an American statistician who is famous for his work on visualisation. Tufte introduced the concept of the data-ink ratio. In simple terms, this ratio expresses the relationship between the ink on the paper that tells a story, and the total amount of ink on the paper. Tufte argues that this ratio should be as close to one as possible. In other words, we should not use any graphical elements that don't communicate any information, such as background images, redundant lines and text.
@@ -47,7 +48,7 @@ The data-pixel ratio is not a mathematical concept that needs to be expressed in
 
 Figure 6.3 shows an example of maximising the data-ink ratio. The bar chart on the left has a meagre data-pixel ratio. The background image of a cat might be cute and possibly even related to the topic of the visualisation, but it only distracts from the message. Using colours to identify the variables is unnecessary because the labels are at the bottom of the graph. The legend is not very functional because it also duplicates the labels. Lastly, the lines around the bars have no function.
 
-{width: 70%, align: middle}
+{width: 60%, align: center}
 ![Figure 6.3: Examples of low and high data-pixel ratios.](resources/06_visualisation/data-pixel-ratio.png)
 
 In the improved version, all unnecessary graphical elements have been removed. Assuming that the story of this graph is to compare variables, the columns have been ranked from large to small. If the narrative of this graph was to compare one or more of the variables with other variables, then groups of bars can be coloured to indicate the categories.
@@ -59,7 +60,7 @@ First and foremost, visualisations need to tell a story. The story in graph shou
 
 Numerical data can contain several types of narratives. A graph can compare data points to show a trend among items or communicate differences between them. Bar charts are the best option to compare data points with each other. A line graph is possibly your best option to compare data points over time. The distribution of data points is best visualised using a histogram. Scatter plots or bubble charts show relationships between two or three variables (Figure 6.4).
 
-{width: 100%, align: middle}
+{width: 100%, align: center}
 ![Figure 6.4: Examples of stories told with quantitative data.](resources/06_visualisation/stories.png)
 
 Every visualisation needs to tell a story and not just summarise a bunch of numbers. The detailed considerations of choosing the most suitable visualisation are outside the scope of this course. The internet contains many tools to help you with this choice. [Andrew Abela](https://extremepresentation.typepad.com/blog/2008/06/visualization-taxonomies.html) developed one of the earliest examples of a tool to choose the most suitable visualisation. The [R Graph Gallery](https://www.r-graph-gallery.com/) provides some guidance on the methods available in R.
@@ -71,7 +72,7 @@ The Tidyverse set of packages contains ggplot2, one of the most powerful data vi
 
 The ggplot2 library applies the grammar of graphics developed by Leland Wilkinson. This grammar is an approach to systematically develop visualisations in logical layers (Figure 6.5). 
 
-{width: 40%, align: middle}
+{width: 40%, align: center}
 ![Figure 6.5: Leland Wilkinson, *Grammar of Graphics* (2005).](resources/06_visualisation/grammar_of_graphics.jpg)
 
 The data exists at the lowest level, without which there is nothing to visualise. The aesthetics define which variables of the graph are visualised. These are generally the axes and any colouring or shapes of the geometries. The geometries are elements that represent the data, such as bars, pies or lines.
@@ -82,7 +83,7 @@ Lastly, each graph has a coordinate system and a theme that defines background c
 
 The ggplot functions use this vocabulary and layered approach to build visualisations. The next section shows various examples using Gormsey water quality data.
 
-{width: 60%, align: middle}
+{width: 60%, align: center}
 ![Visualising data with ggplot](https://youtu.be/guRhnxg5-Is)
 
 ### Aesthetics
@@ -100,7 +101,7 @@ ggplot(gormsey, aes(Town))
 
 Evaluating the first ggplot function call results in an empty canvas. When we add the aesthetics, ggplot draws a canvas with a spot for each the eleven towns on the x-axis.
 
-{width: 100%, align: middle}
+{width: 100%, align: center}
 ![Figure 6.6: Empty canvas to plot water quality Zones.](resources/06_visualisation/towns_canvas.png)
 
 
@@ -119,7 +120,7 @@ It is common practice to start a new line after each layer to create readable co
 
 If we don't write anything between the parenthesis, then ggplot will create a simple chart. The `ggplot()` function passes the variable in the aesthetics to the bar chart geometry. It then counts the number of elements for each category in the Measure variable (Figure 6.7).
 
-{width: 100%, align: middle}
+{width: 100%, align: center}
 ![Figure 6.7: Bar chart of the number of samples for each water quality Zone.](resources/06_visualisation/towns_bars.png)
 
 This function creates a simple grey plot. The paradigm of maximising the data-pixel ratio suggests that colour should be used sparingly. As a general rule, only use multiple colours when they express a variable. 
@@ -141,7 +142,7 @@ ggplot(turbidity, aes(Date, Result, col = Town)) +
     geom_line()
 ```
 
-{width: 100%, align: middle}
+{width: 100%, align: center}
 ![Figure 6.9: Gormsey turbidity time series.](resources/06_visualisation/time_series.png)
 
 This example is not an optimal use of this functionality because there are too many lines, which are hard to read. Referring back to the visual arts, this graph is a bit like a Jackson Pollock action painting. We will fix this when we discuss facets. 
@@ -152,7 +153,7 @@ One of the problems that plagued mathematicians for centuries is how many colour
 
 Besides minimising the number of colours, we also need to know which colours to use. Cartographers Mark Harrower and Cynthia Brewer developed the Color Brewer system ([colorbrewer2.org](http://colorbrewer2.org/)) to help designers of visualisations select a useful scheme. These colour schemes are designed for choropleth maps, but can also be used for non-spatial visualisations. The Color Brewer system consists of three types of colour palettes: sequential, diverging and qualitative (Figure 6.8). 
 
-{width: 40%, align: middle}
+{width: 40%, align: center}
 ![Figure 6.8: Types of colour palettes.](resources/06_visualisation/ColorBrewer.png)
 
 Sequential schemes contain a series of colours with increasing strength. These colour schemes are most suitable to visualise magnitude from low to high, with light colours usually for low data values and dark colours for high values.
@@ -182,7 +183,7 @@ ggplot(turbidity, aes(Town, Result, fill = Town)) +
 
 If we pass one value to the box plot aesthetic, then only one box is plotted. If we add a second value, then ggplot will group the data by that variable. The fill argument tells ggplot by which variable to colour the boxes. The third line introduces a new layer that converts the y-axis to a logarithmic scale because the data in one town is positively skewed.
 
-{width: 100%, align: middle}
+{width: 100%, align: center}
 ![Figure 6.10: Box plot of turbidity in water quality zones.](resources/06_visualisation/boxplot.png)
 
 ### Facets
@@ -196,7 +197,7 @@ ggplot(turbidity, aes(Date, Result, col = Town)) +
     geom_line() + 
     facet_wrap(~Town)
 ```
-{width: 100%, align: middle}
+{width: 100%, align: center}
 ![Figure 6.11: Faceted plot of turbidity in water quality zones.](resources/06_visualisation/facets.png)
 
 Q> This graph includes a redundant aesthetic. Which aspect of this graph would you remove?
@@ -224,7 +225,7 @@ ggplot(thm_max, aes(Date, thm_max)) +
     geom_hline(yintercept = 0.25, col = "red")
 ```
 
-{width: 100%, align: middle}
+{width: 100%, align: center}
 ![Figure 6.12: THM Trends.](resources/06_visualisation/thm_trend.png)
 
 ### Coordinates
@@ -255,12 +256,12 @@ You can try different themes by typing `theme_` and hit tab to see the available
 
 X> Try various themes and select the one that suits you best.
 
-{width: 100%, align: middle}
+{width: 100%, align: center}
 ![Figure 6.13: Some examples of ggplot themes](resources/06_visualisation/themes.png) 
 
 The void theme removes all axes and background, so we only see the geometries.  This code creates eleven lines that communicate the trend to the viewer, without worrying about the mathematical details (Figure 6.13), a so-called sparkline. 
 
-{width: 100%, align: middle}
+{width: 100%, align: center}
 ![Figure 6.14: Void theme for time series.](resources/06_visualisation/sparklets.png)
 
 The graphs we have created so far don't include much context to know what we are looking at. The `labs()` function is useful to add text to the plot and change the axes labels, as shown in the example below (Figure 6.14). Adding text to plot prevents any confusion in case the file is separated from its context.
@@ -276,7 +277,7 @@ ggplot(filter(turbidity, Town == "Strathmore"), aes(Date, Result)) +
          x = "Date sampled", y = "NTU") + 
     theme_bw(base_size = 10)
 ```
-{width: 100%, align: middle}
+{width: 100%, align: center}
 ![Figure 6.15: Adding text to a plot](resources/06_visualisation/labels.png)
 
 This visualisation is an example of a complete data story. Anyone looking at this graph has all information available to draw the conclusion that we had three spikes of turbidity data in Strathmore, sourced from the Gormsey laboratory. The graph is easy to read, and the criterion for what constitutes a spike is also visible.

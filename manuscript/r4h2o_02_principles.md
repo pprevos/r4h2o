@@ -2,7 +2,7 @@
 
 This session provides a framework for best practice in data science. The two sections define data science and how it applies to the water supply value chain.  This framework is explained in more detail in the book _Principles of Strategic Data Science_ by Peter Prevos, available through [Packt Publishing](https://www.packtpub.com/big-data-and-business-intelligence/principles-strategic-data-science).
 
-{width: 80%, align=center}
+{width: 40%, align="center"}
 ![Figure 2.1: Principles of Strategic Data Science](resources/02_principles/StrategicDataScience.jpg)
 
 This chapter has the following learning objectives:
@@ -94,7 +94,7 @@ Customer-centric water utilities also collect data from the perspective of the c
 
 The term 'digital water utility' is often used to describe the situation where the flow of water and customer experience is fully captured with data. Some experts even suggest that digitisation disrupts the business model of water utilities. However, the digital water utility is a distraction because data is not replacing effective water management. No matter how much water utilities digitise, electronics will not meaningfully change the service utilities provide: a reliable supply of drinking water and sewerage services. Water utilities provide a physical service that can be enhanced but not replaced by digitisation.
 
-{width: 80%, align=center}
+{width: 100%, align=center}
 ![Figure 2.4: Tap water supply chain.](resources/02_principles/water-utility-supply-chain.png)
 
 Digitisation also has limitations. Firstly, data cannot describe everything. Measuring physical processes is only ever a sample of the reality we seek to control. Secondly, the experience of customers is subjective, which requires human insight to understand. These limitations highlight the need for domain expertise to complement skills in mathematics and computing. Relying on data alone without recognising water management's physical and social reality does not add value to a community.
@@ -107,7 +107,7 @@ Spreadsheets are the most common tool to solve data problems. They are a great p
 
 Spreadsheets are straightforward to use, but they are almost impossible to reverse-engineer. The biggest issue with spreadsheets is the reproducibility of the analysis process. We all have had the unpleasant experience of trying to understand how a spreadsheet made by somebody else, or one that you did ages ago, actually functions (Figure 2.5).
 
-{width: 80%, alt: "Reverse-engineering a spreadsheet.", align: middle}
+{width: 100%, alt: "Reverse-engineering a spreadsheet.", align: middle}
 ![Figure 2.5: Reverse-engineering a spreadsheet.](resources/02_principles/reverse-engineer-spreadsheet.jpg)
 
 ### Business Intelligence Systems
@@ -170,7 +170,7 @@ The third modification to the traditional model is a feedback loop from knowledg
 
 Anchoring the model for useful data science to reality emphasises the importance of domain knowledge when analysing data. In addition, subject-matter expertise helps to contextualise abstract data, resulting in better outcomes.
 
-{width: 60%, align=center}
+{width: 80%, align=center}
 ![Figure 2.7: Reality, Data, Information, Knowledge Pyramid.](resources/02_principles/feedback-loop.png)
 
 ### Reality

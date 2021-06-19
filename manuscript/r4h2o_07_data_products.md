@@ -25,10 +25,10 @@ The data and code for this session are available in the `chapter_07.Rmd` file in
 ## Data Science Workflow
 The workflow for analytical projects starts with defining a problem that needs solving (Figure 7.1). The next step involves loading and transforming the data into a format that is suitable for the required analysis. The centre of the data science workflow contains a loop, the so-called data vortex. This vortex consists of three steps: exploration, modelling and reflection. The analyst repeats these steps until the problem is solved or found to be unsolvable.
 
-{width: 80%, align: middle}
+{width: 80%, align:  "center"}
 ![Figure 7.1: Data science workflow.](resources/07_data_products/workflow.png)
 
-{width: 60%}
+{width: 80%, align:  "center"}
 ![Data science workflow presentation.](https://www.youtube.com/watch?v=PHc6clrOxvs)
 
 ### Define
@@ -67,7 +67,7 @@ Justin Matejka and George Fitzmaurice from *AutoDesk* demonstrated how very diff
 
 Each of these six visualisations shows that these sets of data have very different patterns. When, however, analysing this data without visualising it, the mean values of `x` and `y`, and their correlations are almost precisely the same for all six subsets. In their paper, they presented an algorithm that generates several patterns with the same summary values, six of which are shown in the illustration.
 
-{width: 80%, align: middle}
+{width: 80%, align: center}
 ![Figure 7.2: Six patterns with very similar summary statistics.](resources/07_data_products/datasaurus.png)
 
 The data and code to create this visualisation are available in the `manuscript/resources/07_data_products` folder of your course material.
@@ -150,7 +150,7 @@ When you click the *Knit* button, RStudio asks you to save the file and generate
 
 An R-Markdown document consists of three elements. The content between the three-dash lines (lines 1--6) is the header that specifies necessary information about the title, author, date and the output format (Figure 7.4). You can manually edit these entries to change the document properties.
 
-{width: 100%, align: middle}
+{width: 100%, align: "center"}
 ![Figure 7.4: Template R Markdown document.](resources/07_data_products/rmarkdown-example.png)
 
 The R code is written in 'chunks' (lines 19--21). The three grave accents (backticks) indicate the start and end of a code chunk. The text between curly braces indicates the language and any options. 

@@ -16,7 +16,7 @@ q
 
 ## Question 2
 h <- c(150, 136, 75) / 1000 # Create a vector
-q <- (2/3) * Cd * sqrt(2 * 9.81 * b * h^(3/2)) # Same as before
+q <- (2/3) * Cd * sqrt(2 * 9.81) * b * h^(3/2) # Same as before
 mean(q) * 1000 # Convert to l/s
 
 ## Question 3

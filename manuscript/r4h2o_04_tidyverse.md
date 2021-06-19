@@ -322,12 +322,25 @@ B) 1470
 c) 264
 d) 2879
 
+? What is the maximum turbidity measurement in Blancathey?
+
+A) 0.5
+b) 0.15
+c) 8.25
+d) 1.0
+
 ? What is the data type of the `Town` field?
 
 a) Integer
 b) Numeric
 c) Factor
 D) Character
+
+? What is the median THM result in Swadlincote and Wakefield?
+a) 0.125
+b) 0.051
+c) 0.033
+D) 0.037
 
 ? How many E Coli results breached the regulations? The limit for E Coli is 0 org/100ml.
 
@@ -349,7 +362,7 @@ That's it for the second quiz. If you get stuck, you can find the answers in the
 ![Answers to quiz 1](https://www.youtube.com/watch?v=Z9BRc2dljS8)
 {/quiz}
 
-g## Further Study
+## Further Study
 Several R libraries provide additional functionality to read other file formats:
 * [readxl](https://readxl.tidyverse.org/): Tidyverse package to read Excel files.
 * [RODBC](https://cran.r-project.org/web/packages/RODBC/index.html): Interface for databases such as SQL.

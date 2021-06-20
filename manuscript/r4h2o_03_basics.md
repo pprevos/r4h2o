@@ -84,12 +84,12 @@ If you use the desktop version of RStudio, then you can download the documents b
 
 You can open the RStudio project file (`r4h2o.Rproj`) to start playing with the data and code. If you use Git, then fork or clone the repository. Feel free to create an issue or pull request if you find errors or like to provide additional content.
 
-{width: 60%, align=center}
+{width: 60%, align: "center"}
 ![Initial setup for RStudio desktop version.](https://www.youtube.com/watch?v=uHr71iUySaA)
 
 For those using the cloud version of RStudio, click on the arrow next to the 'New Project' button and select 'New Project from GitHub Repo'. Copy the URL ([`https://github.com/pprevos/r4h2o/`](https://github.com/pprevos/r4h2o/)) to the text field and hit enter. RStudio copies the files from GitHub, which takes a minute.
 
-{width: 60%, align=center}
+{width: 60%, align: "center"}
 ![Initial setup for RStudio cloud version.](https://www.youtube.com/watch?v=NyOY620JHyw)
 
 When you open RStudio for the first time, the window consists of three panes, each with various tabs. The left panel is the console. The top-right pane shows the system environment and the one below that shows a list of files and folders (Figure 3.1).
@@ -100,7 +100,7 @@ X> Open the appearance menu and change the settings to your personal preferences
 
 Now we are ready to write some code.
 
-{width: 100%, align=center}
+{width: 100%, align: "center"}
 ![Figure 3.1: RStudio default screen layout](resources/03_basics/rstudio.png)
 
 ## Basics of the R language
@@ -140,7 +140,7 @@ You should notice a few things when you start typing:
 
 X> Create some variations of this code to understand the principles. 
 
-{width: 60%, align: center}
+{width: 60%, align: "center"}
 ![Basic principles of the R language](https://www.youtube.com/watch?v=ZK57uRg9l5Y)
 
 ### Arithmetic
@@ -157,7 +157,7 @@ In its most basic form, the R console is a calculator that uses arithmetic opera
 | `%%`     | Modulo           |
 | `%/%`    | Integer division |
 
-{width=20%, align="middle"}
+{width=20%, align: "center"}
 ![Figure 3.2: Arithmetic Facebook memes.](resources/03_basics/memes.jpg)
 	
 ### Variables
@@ -210,6 +210,7 @@ R has extensive capability for visualising data and the results of analysis. The
 
 The first few lines defines the variables `x` and `y` and plots them as a line (`type = "l"`), showing the parabola in the plot window. The `abline()` function draws a straight line on top of the current plot. The barplot function creates a bar chart with the complaints vector (Figure 3.3).
 
+{width: 60%, align: "center"}
 ![Figure 3.3: Basic R Plots](resources/03_basics/basic_plots.png)
 
 X> Try the same plot without the `type` parameter, or with `type = "b"` and review the difference. Change the parameters in the `abline()` function and review the results.
@@ -263,7 +264,7 @@ q = \frac{2}{3} C_d \sqrt{(2g)}\; bh^{(3/2)}
 
 The value for `C_d`$ is an estimate because it depends on the dimensions of the weir and the flow conditions. Follow [this link](https://www.engineeringexcelspreadsheets.com/tag/kindsvater-carter-formula/) for a detailed discussion on using this formula. The photo below shows what such a weir looks like in practice.
 
-{width: 60%, align: center}
+{width: 60%, align: "center"}
 ![Figure 3.4: Example of a channel with a rectangular weir.](resources/03_basics/weirplate.jpg)
 
 Some tips for answering the quiz questions:
@@ -328,7 +329,7 @@ c) Repeat for each value of `h`$: `(2/3) * Cd * sqrt(2 * 9.81) * b * h^(3/2)`
 
 If you are stuck, you can find the answers in the `channel_flow.R` file in the `casestudy0` folder of your R project. You can also watch the video below to see the solutions.
 
-{width: 60%, align: middle}
+{width: 60%, align: "center"}
 ![Answers to quiz 1](https://www.youtube.com/watch?v=cR995WCeD2g)
 {/quiz}
 

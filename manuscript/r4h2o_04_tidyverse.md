@@ -56,7 +56,7 @@ The first case study looks at water quality data in the eleven towns on the isla
 
 This file contains samples for [turbidity](https://en.wikipedia.org/wiki/Turbidity), [Escherichia coli](https://en.wikipedia.org/wiki/Escherichia_coli) and [trihalomethanes](https://en.wikipedia.org/wiki/Trihalomethane) (THMs). E Coli is a coliform bacterium that can cause gastroenteritis. THMs are a group of chemical compounds that are predominantly formed as a by-product when chlorine is used to disinfect drinking water. Long-term exposure to high level of these byproducts can cause diseases such as cancer. Turbidity is a measure of the cloudiness of a liquid. It is not only a measure of the aesthetics of drinking water, it is also a indicator for other issues.
 
-{width: 60%, align: center}
+{width: 60%, align: "center"}
 ![Turbidity measurement](https://www.youtube.com/watch?v=qz8xHQJw6qY)
 
 ## Exploring the Case Study Data
@@ -68,7 +68,7 @@ X> Create an R script and copy and evaluate the code as you read through this ch
 
 You can also watch the screencast that demonstrates the functionality explained in this chapter. The best way to learn is to type the expressions in this chapter as you read the text or view the video. A productive way to comprehend the information is to change the examples and study the output.
 
-{width: 60%, align: center}
+{width: 60%, align: "center"}
 ![Chapter 4 screencast.](https://www.youtube.com/watch?v=vPwsrMhoLY8)
 
 {format: r, line-numbers: false}
@@ -263,7 +263,7 @@ turbidity <- filter(gormsey, Measure == "Turbidity")
 
 Note that this method is tidier than the brackets method because we don't have to add the data frame name and `$` to the variables. Figure 4.1 illustrates the principles of filtering a data frame.
 
-{width: 80%}
+{width: 80%, align: "center"}
 ![Figure 4.1: Filtering a data frame: `filter(gormsey, Measure == "Turbidity")`](resources/04_tidyverse/filter.png)
 
 We can apply this knowledge to our case study to test subsets of the data: `filter(gormsey, Town == "Strathmore" & Measure == "Turbidity" & Result > 1)` shows the turbidity samples in Strathmore with a result greater than 1 NTU. Note that testing for equality requires two equal signs.
@@ -360,7 +360,7 @@ d) 0
 
 That's it for the second quiz. If you get stuck, you can find the answers in the `quiz_02.R` file in the `casestudy1` folder. You can also watch the video to see the solutions.
 
-{width: 60%, align: middle}
+{width: 60%, align: "center"}
 ![Answers to quiz 1](https://www.youtube.com/watch?v=Z9BRc2dljS8)
 {/quiz}
 

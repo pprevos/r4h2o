@@ -64,7 +64,7 @@ The table below shows some of the other descriptive statistical functions you ca
 
 X> Try these functions with the Gormsey data to hone your coding skills. How can you use the `range()` function to produce a maximum value?
 
-{width: 60%, align: middle}
+{width: 60%, align: "center"}
 ![Screencast of the descriptive statistics functions](https://youtu.be/OzONMjXw-Ag).
 
 ## Calculating Percentiles
@@ -111,7 +111,7 @@ Please note that there is no one correct way to calculate percentiles, as shown 
 
 The `percentiles.R` script in the `casestudy1` folder compares the Weibull method with the method used in Excel (Figure 5.1). With highly skewed data, as is often the case with turbidity measurements, the Weibull method results in a higher percentile value.
 
-{width: 80%, align: center}
+{width: 80%, align: "center"}
 ![Figure 5.1: Comparing the Excell and Weibull method for percentiles with highly-skewed data.](resources/05_statistics/percentiles.png)
 
 T> Open the percentiles script and run the code. Reverse-engineer the code to understand how it works.
@@ -140,7 +140,7 @@ summarise(df_grouped,
           Maximum = max(Result))
 ```
 
-{width: 80%, align: center}
+{width: 80%, align: "center"}
 ![Figure 5.2: Grouping a data frame with `group_by(gormsey, Measure)`.](resources/05_statistics/grouping.png)
 
 The `summarise()` function uses the grouped data frame and creates two new variables that show the average and maximum values for each measure. The results will differ every time you run it due to the randomisation.
@@ -151,7 +151,7 @@ The `summarise()` function uses the grouped data frame and creates two new varia
 | THM       | 0.589   | 0.679   |
 | Turbidity | 0.326   | 0.794   |
 
-{width: 50%, align: middle}
+{width: 50%, align: "center"}
 ![Grouping and summarising data](https://youtu.be/qSL90CBWtZ8)
 
 We can now apply this abstract example to the water quality case study. You can also group a data frame or tibble by more than one variable. The result of this code is a new data frame that shows the average result by Town and by measure. In the [next chapter](#ggplot), we will visualise these results.
@@ -225,7 +225,7 @@ d) 7.34
 
 That's it for this quiz. If you get stuck, you can find the answers in the `quiz_03.R` file in the `casestudy1` folder, or watch the video below.
 
-{width: 60%, align: middle}
+{width: 60%, align: "center"}
 ![Answers to Quiz 3.](https://youtu.be/oP3YnsB3sEs)
 {/quiz}
 

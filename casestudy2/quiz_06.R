@@ -7,12 +7,11 @@ customers <- read_csv("casestudy2/customer_survey_clean.csv")
 ## Question 1
 cor(customers$hardship, customers$contact, use = "complete.obs")
 
-## Question 1  
+## Question 2
 cor.test(customers$hardship, customers$contact, use = "complete.obs")
 
 ## Question 3
-quality <- select(customers, starts_with("t") | starts_with("f")) %>%
-  filter(complete.cases(.)) 
+quality <- select(customers, starts_with("t") | starts_with("f")) 
 
 clust <- t(quality) %>%
   scale() %>%

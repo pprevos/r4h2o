@@ -5,7 +5,7 @@ Water utilities are becoming ever more aware of their role in the community. Wat
 
 This chapter introduces some principles of collecting and analysing data from customers and further techniques to manipulate data. The learning objectives for this chapter are:
 
-* Understand the principles of measuring the customer experience with latent variables.
+* Understand the principles of measuring the customer experience with surveys.
 * Evaluate data with missing observations.
 * Apply the principles of tidy data.
 
@@ -36,7 +36,7 @@ The customer survey of the second case study includes ten questions to measure t
 
 The involvement question bank uses a semantic differential scale. This method requires respondents to choose on a scale between two antonyms (figure 9.1). This type of survey measures the meaning that people attach to a concept, such as a product or service. The items were presented in a random order to each respondent. In principle, the words on the right indicate a high level of involvement. Five questions have a reversed polarity, which means that the left side shows a high level of involvement. This technique prevents respondents forces respondents to consider their response instead of providing the same answer to all questions.
 
-{width: 60%, align: middle}
+{width: 60%, align: "center"}
 ![Figure 9.1: Personal Involvement Inventory questionnaire.](resources/09_customers/semantic-differential.png)
 
 The customer survey data we cleaned in the previous chapter contains the ten items of the PII scale (`p01`, `p02`... `p10`). Table 1 shows the relationship between the items and the scale. The items with an asterisk are in reversed polarity. The next section explains how to analyse this information.
@@ -54,42 +54,6 @@ The customer survey data we cleaned in the previous chapter contains the ten ite
 | p08      | Appealing – Unappealing* |
 | p09      | Fascinating – Mundane*   |
 | p10      | Involving–  Uninvolving* |
-
-## Preparing the Involvement Data
-The first step in writing an R script is, as always, to initialise the appropriate libraries and read the data. In this case, we do not start with the usual `library(tidyverse)` but call the specific libraries as we need them. This approach saves computing resources. We begin with the [readr](https://readr.tidyverse.org/) package, which provides the functionality that reads CSV files and similar types. We also load the [tibble](https://tibble.tidyverse.org/index.html) package to access improved functionality for data frames.
-
-{format: r, line-numbers: false}
-```
-library(readr)
-library(tibble)
-customers <- read_csv("casestudy2/customer_survey_clean.csv")
-glimpse(customers)
-```
-
-The [Tidyverse website](https://tidyverse.org/) hosts extensive documentation on each of the packages and functionality. 
-
-{width:60%, align: middle}
-![Exploring involvement data screencast.](https://youtu.be/-IESjNX12sc)
-
-X> Go to the web page of the [readr](https://readr.tidyverse.org/) package and read the documentation. Each Tidyverse package has a cheat sheet you can use to help you write code.
-
-To analyse the level of involvement, we only need the `survey_id` as a unique identifier and the ten PII items. The `select()` function we saw in the previous chapter has some helper functions that simplify selecting the columns we need.  The `starts_with()` helper function lets you choose columns based on a prefix. We can now select the eleven variables of interest, but before we can analyse them, we need to correct the reversed polarity of five of the items. 
-
-The scale measured from 1 to 7, so we can reverse the five items by subtracting the response from 8. The dplyr `mutate()` function changes variables or creates new ones in a tibble.
-
-{format: r, line-numbers: false}
-```
-library(dplyr) # Part of the Tidyverse
-pii <- select(customers, survey_id, starts_with("p")) %>%
-    mutate(p01 = 8 - p01,
-           p02 = 8 - p02,
-           p07 = 8 - p07,
-           p08 = 8 - p08,
-           p09 = 8 - p09,
-           p10 = 8 - p10)
-```
-
-X> Read the documentation of the [select function](https://dplyr.tidyverse.org/reference/select.html) on the Tidyverse website for a complete overview. How would you select the PII columns with the `:` operator?
 
 ## Missing Data
 Data collected from reality is never perfect. Besides issues with the reliability and validity of measurements, completeness is another problem that analysis needs to manage. The customers that submitted the survey did not respond to each item. We thus have to deal with missing data points.
@@ -120,11 +84,49 @@ sum(x, na.rm = TRUE)
 
 X> Evaluate these expressions to note the difference in output.
 
+### Imputation
 When data is missing at random, we can possibly replace missing values with a best guess, called imputation. The most common method is to replace the missing value with the median or mean of the sample. 
 
 Imputation needs to be used with great care because you can bias the results. The second principle of ethical data science is that we do justice to the participants. Imputing missing values is like putting words in the mouth of the respondent. Imputation can only be used when the primary method of analysis cannot process missing values, and when the number of missing values is only a few percent of the total number of observations. 
 
 When data is missing not at random, as in this case, we usually need to remove these observations, which we will do in the next step.
+
+## Preparing the Involvement Data
+The first step in writing an R script is, as always, to initialise the appropriate libraries and read the data. In this case, we do not start with the usual `library(tidyverse)` but call the specific libraries as we need them. We begin with the [readr](https://readr.tidyverse.org/) package, which provides the functionality that reads CSV files and similar types. We also load the [tibble](https://tibble.tidyverse.org/index.html) package to access improved functionality for data frames.
+
+{format: r, line-numbers: false}
+```
+library(readr)
+library(tibble)
+customers <- read_csv("casestudy2/customer_survey_clean.csv")
+glimpse(customers)
+```
+
+{width:60%, align: "center"}
+![Exploring involvement data screencast.](https://youtu.be/-IESjNX12sc)
+
+To analyse the level of involvement, we only need the `survey_id` as a unique identifier and the ten PII items. The `select()` function we saw in the previous chapter has some helper functions that simplify selecting the columns we need.  The `starts_with()` helper function lets you choose columns based on a prefix. We can now select the eleven variables of interest, but before we can analyse them, we need to correct the reversed polarity of five of the items. 
+
+The scale measured from 1 to 7, so we can reverse the five items by subtracting the response from 8. The dplyr `mutate()` function changes variables or creates new ones in a tibble.
+
+{format: r, line-numbers: false}
+```
+library(dplyr) # Part of the Tidyverse
+pii <- select(customers, survey_id, starts_with("p")) %>%
+    mutate(p01 = 8 - p01,
+           p02 = 8 - p02,
+           p07 = 8 - p07,
+           p08 = 8 - p08,
+           p09 = 8 - p09,
+           p10 = 8 - p10)
+```
+
+X> Read the documentation of the [select function](https://dplyr.tidyverse.org/reference/select.html) on the Tidyverse website for a complete overview. How would you select the PII columns with the `:` operator?
+
+{format: r, line-numbers: false}
+```
+pii <- select(customers, survey_id, P01:p10)
+```
 
 ## Tidy Data
 In the previous session, we cleaned the survey data by removing unwanted columns and respondents. Although the data is clean, it is not yet in its ideal `tidy` state. [Tidy data](https://www.jstatsoft.org/article/view/v059i10) is a standard way of mapping the meaning of a data set to its structure. Data that is structured in a tidy way is more natural to analyse and visualise.
@@ -187,9 +189,7 @@ When we inspect the resulting data frame, you will notice quite 520 missing resp
 
 {format: r, line-numbers: false}
 ```
-pii_long <- pivot_longer(pii, -survey_id, 
-                         names_to = "Item", 
-						 values_to = "Response") %>%
+pii_long <- pivot_longer(pii, -survey_id, names_to = "Item", values_to = "Response") %>%
     filter(!is.na(response))
 ```
 
@@ -206,10 +206,12 @@ ggplot(pii_long, aes(item, response)) +
     theme_minimal(base_size = 20)
 ```
 
-{width: 100%, align: middle}
+{width: 60%, align: "center"}
 ![Figure 9.2: Distribution of involvement responses.](resources/09_customers/pii-responses.png)
 
 D> What pattern do you observe in these results?
+
+Q> How would you visualise this data using faceting and column geometry? Does this visualisation tell the same story?
 
 ## Quiz 5: Transforming data
 The next quiz consists of five multiple-choice questions about working with missing data and transforming data into a tidy format.
@@ -261,8 +263,11 @@ d) Each type of observational unit forms a table.
 
 That's it for the fifth quiz. If you get stuck, you can find the answers in the `quiz_05.R` file in the `casestudy2` folder. You can also watch the video to see the solutions.
 
+{width: 60%, align: "center"}
 ![Answers to Quiz 5.](https://youtu.be/F_QoQyP5Q40)
 {/quiz}
 
 ## Further Study
+Measuring the customer experience with surveys is a complex craft. The [Questionnaire Design for Social Surveys](https://www.coursera.org/learn/questionnaire-design) course from the University of Maryland goes into a lot of depth on how to best design surveys.
+
 In the [next chapter](#latent) we delve deeper into analysing customer responses.

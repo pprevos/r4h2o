@@ -1,8 +1,8 @@
 # 11. Writing Reports {#reporting}
-This last section of the case study is another mini hackathon where you will be exploring the other variables in the customer survey. Besides the _Personal Involvement Index_, the survey also contains information about perceptions of quality, the level of hardship that customers reported to experience and the frequency at which they contact their water utility. The section will guide you to analyse this data and present the result in a report using RMarkdown.
+This last section of the case study is another mini hackathon where you will be exploring the other variables in the customer survey. Besides the *Personal Involvement Index*, the survey also contains information about perceptions of quality, the level of hardship that customers reported to experience and the frequency at which they contact their water utility. The section will guide you to analyse this data and present the result in a report using RMarkdown.
 
 The learning objectives for this session are:
-- Fine-tune an RMarkdown document.
+- Fine-tune RMarkdown document settings.
 - Practice analysing data with Tidyverse code
 - Understand the principles of measuring service quality.
 
@@ -13,6 +13,7 @@ The next section explains some of the theoretical assumptions used in the custom
 
 When you create a new document, RStudio provides four options. The document option results in either a web page (HTML), a PDF document or an MS Word document. The presentation option provides two HTML templates, PDF or PowerPoint. Shiny is a tool for interactive websites and presentations.
 
+{width: 60%, align: "center"}
 ![New RMarkdown file menu.](resources/11_reports/rmarkdown-menu.jpg)
 
 X> Open the `chapter_11.Rmd` file in The `casestudy2` folder to experiment with the different options.
@@ -51,6 +52,8 @@ A final option that needs discussing is the working directory. The working direc
 The rules are slightly different for RMarkdown. The working directory for an RMarkdown file is the location it is stored at. You can change this behaviour by clicking the small triangle next to the knit button and select the Knit directory.
 
 ## Survey Items
+The customer survey also contains data about some customer characteristics and how they perceive the quality of the service.
+
 ### Customer characteristics
 The penultimate page of the survey started with two items related to the customer's relationship with their service provider. Customers were asked to indicate whether they struggle to pay their water bills when they fall due. This question used a seven-point Likert scale from "Strongly Disagree" to "Strongly Agree". 
 
@@ -114,7 +117,7 @@ The next step in your report explores the cleaned data, as we did in [chapter 9]
 ### Data Analysis
 Your analysis should contain a correlation matrix and a clustering solution of the survey items. 
 
-Please note that hierarchical clustering is not best practice to analyse latent variables. It is only used here as an example. Best practice structural equation modelling is more suitable to assess the statistical validity of survey instruments, as discussed in the previous chapter(#surveys).
+Please note that hierarchical clustering is not the ideal method to analyse latent variables. It is only used here as an example. Structural equation modelling is more suitable to assess the statistical validity of survey instruments.
 
 ### Write a report
 Your task is to write a small report that shows R output and some explanatory text. When you have completed your report, you can submit it to the discussion group.

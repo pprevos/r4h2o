@@ -2,7 +2,7 @@
 
 This session provides a framework for best practice in data science. The two sections define data science and how it applies to the water supply value chain.  This framework is explained in more detail in the book _Principles of Strategic Data Science_ by Peter Prevos, available through [Packt Publishing](https://www.packtpub.com/big-data-and-business-intelligence/principles-strategic-data-science).
 
-{width: 40%, align="middle"}
+{width: 40%, align: "center"}
 ![Figure 2.1: Principles of Strategic Data Science](resources/02_principles/StrategicDataScience.jpg)
 
 This chapter has the following learning objectives:
@@ -17,7 +17,7 @@ Although data science is merely a new term for something that has existed for de
 
 Firstly, businesses have much more data available than ever before. The move to electronic transactions means that almost every process leaves a digital footprint. Collecting and storing this data has become exponentially cheaper than in the days of pencil and paper. However, many organisations manage this data without maximising the value they extract from it. After the data served its intended purpose, it becomes 'dark data', stored on servers but languishing in obscurity. This data provides opportunities to optimise how an organisation operates by recycling and analysing it to learn about the past to create a better future.
 
-{width: 80%, align=center}
+{width: 80%, align: "center"}
 ![What is data science?](https://www.youtube.com/watch?v=cJO8ASwk_XU)
 
 Secondly, the computing power that is now available in a tablet was not long ago the domain of supercomputers. [Piotr Luszczek](https://www.phoronix.com/scan.php?page=news_item&px=MTE4NjU) showed that an iPad-2 produced in 2012 matched the performance of the world's fastest computer in 1985. The affordability of enormous computing power enables even small organisations to reap the benefits of advanced analytics.
@@ -30,7 +30,7 @@ This revolution is not only about powerful machine learning algorithms but about
 
 The expectations of data science are very high. Business authors position data science and its natural partner 'big data', as a panacea for all societal problems and a means to increase business profits. In a 2012 article in *Harvard Business Review*, Davenport and Patil even proclaimed data scientist the "sexiest job of the 21st century" ([Figure 2.2](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)). Who would not want to be part of a new profession with such enticing career prospects?
 
-{width: 60%, align=center}
+{width: 60%, align: "center"}
 ![Figure 2.2: The sexiest job of the 21st century?](resources/02_principles/sexiest_job.png)
 
 For organisations that deliver physical products, data science is about improving how they collect, store and analyse data to extract more value from this resource. The objectives of data science are not the data or the analysis itself but the organisation's strategic goals. For a water utility, these objectives are generically maintaining or improving the experience that customers have with their service and minimising the impact on the natural environment. Whatever kind of organisation you are in, the purpose of data science is to assist managers with changing reality to a more desirable state. A data scientist achieves this objective by measuring the current and past states of reality and using mathematical tools to predict a future state.
@@ -40,7 +40,7 @@ Data science is a systematic and strategic approach to using data, mathematics a
 ## The Elements of Data Science
 The best way to unpack the art and craft of data science is Drew Conway's often-cited Venn diagram cite ([Figure 2.3](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram)). Conway defines three competencies that a data scientist or a data science team as a collective need to possess. The diagram positions data science as an interdisciplinary activity with three dimensions: domain knowledge, mathematics and computer science. A data scientist understands the subject matter under consideration in mathematical terms and writes computer code to solve problems.
 
-{width: 80%, align=center}
+{width: 80%, align: "center"}
 ![Figure 2.3: Conway's data science Venn Diagram.](resources/02_principles/conway.png)
 
 ### Domain Knowledge
@@ -94,7 +94,7 @@ Customer-centric water utilities also collect data from the perspective of the c
 
 The term 'digital water utility' is often used to describe the situation where the flow of water and customer experience is fully captured with data. Some experts even suggest that digitisation disrupts the business model of water utilities. However, the digital water utility is a distraction because data is not replacing effective water management. No matter how much water utilities digitise, electronics will not meaningfully change the service utilities provide: a reliable supply of drinking water and sewerage services. Water utilities provide a physical service that can be enhanced but not replaced by digitisation.
 
-{width: 100%, align=center}
+{width: 100%, align: "center"}
 ![Figure 2.4: Tap water supply chain.](resources/02_principles/water-utility-supply-chain.png)
 
 Digitisation also has limitations. Firstly, data cannot describe everything. Measuring physical processes is only ever a sample of the reality we seek to control. Secondly, the experience of customers is subjective, which requires human insight to understand. These limitations highlight the need for domain expertise to complement skills in mathematics and computing. Relying on data alone without recognising water management's physical and social reality does not add value to a community.
@@ -107,7 +107,7 @@ Spreadsheets are the most common tool to solve data problems. They are a great p
 
 Spreadsheets are straightforward to use, but they are almost impossible to reverse-engineer. The biggest issue with spreadsheets is the reproducibility of the analysis process. We all have had the unpleasant experience of trying to understand how a spreadsheet made by somebody else, or one that you did ages ago, actually functions (Figure 2.5).
 
-{width: 100%, alt: "Reverse-engineering a spreadsheet.", align: middle}
+{width: 100%, alt: "Reverse-engineering a spreadsheet.", align: "center"}
 ![Figure 2.5: Reverse-engineering a spreadsheet.](resources/02_principles/reverse-engineer-spreadsheet.jpg)
 
 ### Business Intelligence Systems
@@ -137,7 +137,7 @@ This model is helpful for data scientists as an internal check to ensure that th
 
 The three case studies of this course implement these principles so that participants not only learn R syntax but also best practice in analysing data.
 
-{width: 60%, align=center}
+{width: 60%, align: "center"}
 ![What is good data science?](https://www.youtube.com/watch?v=Gge5aZ9jZqo)
 
 ### Data Science Trivium
@@ -147,13 +147,13 @@ Buildings must have utility so people can use them for their intended purpose. A
 
 The Vitruvian rules for architecture can also define good data science. Excellent data science needs to have utility; it needs to be helpful to create value. The analysis should be sound so it can be trusted. Data science products also need to be aesthetic to maximise the value they provide to an organisation (Figure 2.6).
 
-{width: 40%, align=center}
+{width: 40%, align: "center"}
 ![Figure 2.6: The principles of good data science.](resources/02_principles/vitruvius.png)
 
 ### Useful Data Science
 Whether something is useful is a subjective measure. What is useful to one, might be detrimental or useless to somebody else. Data science is a business or social activity, so usefulness is the extent to which something contributes to their strategic or operational objectives. If a data science project is unable to meet this criterion, then it is strictly speaking useless. 
 
-{width: 60%, align=center}
+{width: 60%, align: "center"}
 ![What is useful data science?](https://www.youtube.com/watch?v=_ITXY6Daa5s)
 
 After digesting a research report or viewing a visualisation, managers ask themselves: "What do I do differently today?" Therefore, usefulness in data science depends on the ability of the results to empower professionals to influence reality positively. In other words, the conclusions of data science either comfort management that objectives have been met or provide actionable insights to resolve existing problems or prevent future ones.
@@ -170,7 +170,7 @@ The third modification to the traditional model is a feedback loop from knowledg
 
 Anchoring the model for useful data science to reality emphasises the importance of domain knowledge when analysing data. In addition, subject-matter expertise helps to contextualise abstract data, resulting in better outcomes.
 
-{width: 40%, align=center}
+{width: 40%, align: "center"}
 ![Figure 2.7: Reality, Data, Information, Knowledge Pyramid.](resources/02_principles/feedback-loop.png)
 
 ### Reality
@@ -221,12 +221,12 @@ Either option eventually leads to improved decisions using the best available da
 ### Sound Data Science
 Just like a building should be sound and not collapse, a data product needs to be sound to create business value. Soundness is where the science and the data meet. The soundness of a data product is defined by the validity and reliability of the analysis, which are well-established scientific principles (Figure 2.8).  The soundness of data science also requires that the results are reproducible. Lastly, the data and the process of creating data products need good governance to assure beneficial outcomes.
 
-{width: 60%, align=center}
+{width: 60%, align: "center"}
 ![What is sound data science?](https://www.youtube.com/watch?v=_hAXvAvx92I)
 
 The distinguishing difference between traditional business analysis and data science is the systematic approach to solving problems. The keyword in the term data science is thus not data but *science*. Data science is only useful when the data answers a helpful question, which is the science part of the process.
 
-{width: 100%, align=center}
+{width: 100%, align: "center"}
 ![Figure 2.8: Validity and reliability of data and analysis.](resources/02_principles/soundness.png)
 
 #### Reliability

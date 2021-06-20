@@ -17,14 +17,14 @@ The customer experience manager has two questions:
 
 The survey that includes a series of questions from a sample of customers in three towns. The results of the survey are stored in a CSV file. Your task over the next four sessions is to analyse the results of this survey and produce a written report.
 
-In reality, the data used in this case study is taken from a PhD research project about customer-centricity for water utilities. If you are interested reading more about a scientific view of customer experience in water utilities, then you can read *Customer Experience Management for Water Utilities* by Peter Prevos, available from [IWA Publishing](https://www.iwapublishing.com/books/9781780408668/customer-experience-management-water-utilities-marketing-urban-water-supply).
+The data used in this case study is taken from a PhD research project about customer-centricity for water utilities. If you are interested reading more about a scientific view of customer experience in water utilities, then you can read *Customer Experience Management for Water Utilities* by Peter Prevos, available from [IWA Publishing](https://www.iwapublishing.com/books/9781780408668/customer-experience-management-water-utilities-marketing-urban-water-supply).
 
 ## Cleaning data
 Many data science practitioners know that cleaning data can consume 80% of the available time. Cleaning data is fundamental because even the most advanced algorithm cannot create value from dirty data. As the old adagio goes: "rubbish-in is rubbish-out". The following code snippets show how to clean this survey data using reproducible code. 
 
 Using code to clean data is better than to manually manipulate data in Excel because with code, the process of changing the data is transparent, and the original raw data still exists. The process can always be rolled back. Using code to clean data is also reproducible because it can be repeated with other raw data sets that have the same structure.
 
-{width: 60%, align: middle}
+{width: 60%, align: "center"}
 ![Data cleaning screencast.](https://youtu.be/agWU8UXirSU)
 
 ### Load and explore the data
@@ -113,12 +113,12 @@ customers <- filter(customers, is.na(term))
 nrow(customers)
 ```
 
-To see all respondents that did not complete the survey, you can negate the `is.na(term)` statement with an exclamation mark (the NOT function): `filter(customers, !is.na(term))`. We are thus asking R to filter the customer data frame for all entries where `term` is not (`!`) not available (`NA`). The exclamation mark indicates a logical negation and thus reverses the value of the condition. For example: `!(3 == 3)` results in `FALSE`.
+To see all respondents that did not complete the survey, you can negate the `is.na(term)` statement with an exclamation mark (the NOT function): `filter(customers, !is.na(term))`. We are thus asking R to filter the customer data frame for all entries where `term` is not (`!`) not available (`NA`).
 
 ### Remove unwanted variables
 The survey data contains metadata that we do not need for further analysis. The first 19 columns contain information about when the survey was taken and so on. The next step is to remove the metadata and the `trap` question, which was used as the attention filter.
 
-In the dplyr package, the `select()` function works just like the filter function, but for columns. You can use numbers or names to indicate the required columns. In this case, we like to keep the first column, which is the unique id for each respondent, and the columns with survey responses, excluding the attention question. The easiest way to do this is to remove columns 2 to 19 and column 34 by using negative numbers.
+In the dplyr package, the `select()` function works just like the filter function, but for columns. You can use numbers or names to indicate the required columns. In this case, we like to keep the first column, which is the unique id for each respondent, and the columns with survey responses, excluding the attention question. The easiest way to do this is to remove columns 2 to 20 and 33 by using negative numbers.
 
 {format: r, line-numbers: false}
 ```
@@ -161,7 +161,7 @@ If one of the city variables in the customer data contains a number that is not 
 
 The `left_join()` function is the most common way to join two data sets. The Tidyverse has several other [join functions](https://dplyr.tidyverse.org/reference/join.html) that match values in different ways (Figure 8.1). 
 
-{width: 60%, align: middle}
+{width: 60%, align: "center"}
 ![Figure 8.1: Schematic view of the dplyr join functions](resources/08_cleaning/dplyr_join.png)
 
 We now have a clean data frame that we can use in further analysis. The last step saves this data to disc so that we can reuse it in the following sessions.
@@ -171,7 +171,7 @@ We now have a clean data frame that we can use in further analysis. The last ste
 write_csv(customers, "casestudy2/customer_survey_clean.csv")
 ```
 
-## Code structure
+## Simplifying Code with Data Pipes
 The sequence of functions explained above cleans the data for further analysis from the raw data to the finished product. The benefit of this approach is that the raw data remains unchanged so that we can use this code also on other survey results with the same data structure.
 
 However, the code is repetitive because we change the `customers` variable several times in a sequence. In summary, we have taken the following steps to clean the data:
@@ -186,7 +186,7 @@ customers <- rename(customers, id = V1)        $ Rename first column
 customers <- left_join(customers, cities)      # Joing city names
 ```
 
-A rule-of-thumb in coding is that if you repeat the same thing more than twice, there will be a more efficient way of achieving the same result. In this example, we used `customer <-` six times. There are two ways of combining these lines of code.
+A rule-of-thumb in coding is that if you repeat the same thing more than twice, there will be a more efficient way of achieving the same result. In this example, we used “`customer <-`” six times. There are two ways of combining these lines of code.
 
 A typical way to code in a spreadsheet is to join the steps in a nested formula. While the nested approach uses less space, it is not as easy to understand because you have to read from the inside out.
 
@@ -280,6 +280,7 @@ d) 184
 
 ? You want to visualise the number of employees per department. Complete the following `ggplot()` function that produces this result:
 
+{width: 60%, align: "center"}
 ![Figure 8.1: Employees per department](resources/08_cleaning/employees.png)
 
 `ggplot(employees, aes(department)) + `
@@ -292,7 +293,7 @@ D) `bar`
 
 That is it for the fourth quiz. If you get stuck, you can find the answers in the `quiz_04.R` file in the `casestudy2` folder. You can also watch the video to see the solutions.
 
-{width: 60%, align: middle}
+{width: 60%, align: "center"}
 ![Answers to Quiz four.](https://youtu.be/QyuVKWpkXIU)
 {/quiz}
 

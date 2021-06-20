@@ -4,7 +4,6 @@ Communicating the results of your analysis are an essential part of the data sci
 The purpose of data science is to create value from data by creating useful, sound and aesthetic data products. Analysing data is a rewarding activity, but creating value requires you to communicate the results. 
 
 The generic term for the result of a data science project is a 'data product', which can be a:
-
 * Presentation
 * Report
 * Application
@@ -25,7 +24,7 @@ The data and code for this session are available in the `chapter_07.Rmd` file in
 ## Data Science Workflow
 The workflow for analytical projects starts with defining a problem that needs solving (Figure 7.1). The next step involves loading and transforming the data into a format that is suitable for the required analysis. The centre of the data science workflow contains a loop, the so-called data vortex. This vortex consists of three steps: exploration, modelling and reflection. The analyst repeats these steps until the problem is solved or found to be unsolvable.
 
-{width: 80%, align:  "center"}
+{width: 60%, align:  "center"}
 ![Figure 7.1: Data science workflow.](resources/07_data_products/workflow.png)
 
 {width: 80%, align:  "center"}
@@ -45,7 +44,7 @@ The available data needs to be loaded and wrangled into the required format befo
 
 Best practice in data science is to describe every field used in the analysis to ensure the context in which the data was created is understood. Including a transparent methodology is where the science comes into data science, and this is where it distinguishes itself from traditional business analysis.
 
-For the problem statement above, we have the Gormsey data from the previous chapters. This data is already a tidy data set and does not need cleaning. We need to filter the data to contain only the THM values.
+For the problem statement above, we have the Gormsey data from the previous chapters. This data is already ‘tidy‘ and does not need cleaning. [Chapter](#customers) 9 further explains the concept of tidy data. We just need to filter the data to contain only the THM values.
 
 {format: r, line-numbers: false}
 ```
@@ -67,10 +66,10 @@ Justin Matejka and George Fitzmaurice from *AutoDesk* demonstrated how very diff
 
 Each of these six visualisations shows that these sets of data have very different patterns. When, however, analysing this data without visualising it, the mean values of `x` and `y`, and their correlations are almost precisely the same for all six subsets. In their paper, they presented an algorithm that generates several patterns with the same summary values, six of which are shown in the illustration.
 
-{width: 80%, align: center}
+{width: 80%, align: "center"}
 ![Figure 7.2: Six patterns with very similar summary statistics.](resources/07_data_products/datasaurus.png)
 
-The data and code to create this visualisation are available in the `manuscript/resources/07_data_products` folder of your course material.
+The data and code to create the datasaurus visualisation are available in the `casestudy2` folder of your course material.
 
 Another reason visualisations are essential to explore data is to reveal anomalies, such as spikes in time series or outliers. A sudden increase and decrease in physical measurements are often caused by issues with measurement or data transmission instead of actual changes in reality. These spikes need to be removed to ensure the analysis is reliable. Anomalies in social data such as surveys could be subjects that provide the same question to all answers, discussed in the previous chapter.
 
@@ -104,7 +103,7 @@ The last, and arguably, the hardest phase of a data science project is to commun
 
 Detailed reports and visualisations need to provide an accurate description of the outcomes, and they need to convince the reader. The most critical aspect of successfully communicating the solution to a problem is to ensure that the consumers of the results understand them and are willing to use the data product to solve their problem. As much as data science is a systematic process, it is also a cultural process that involves managing the internal change in the organisation.
 
-Advertising executive Fred Barnard coined the well-worn cliche that "a picture is worth (ten) thousand words" in 1927. While this might be the case, the complexity of data science in most cases requires text to explain the analysis.
+Advertising executive Fred Barnard coined the well-worn cliche that "a picture is worth (ten) thousand words" in 1927. While this might be the case, the complexity of data science in most cases requires text to explain the analysis. Perhaps we should say: “A picture is worth a 1000 numbers”.
 
 To claim that a report needs to be written with clarity and precision in proper spelling and grammar almost seems redundant. The importance of readable reports implies that the essential language a data scientist needs to master is not Python or R but English, or whatever language you communicate in.
 
@@ -125,12 +124,6 @@ The most effective method to achieve full reproducibility is to use literate pro
 
 Several methods are available in the R language to ensure analysis is reproducible. The most basic one is adding comments to the code. A comment is a statement that is not evaluated when running the code. In the R language, comments are indicated with one or more pound signs, also known as a number sign, hash or hashtag, at the start of a line or after a function call.
 
-{format: r, line-numbers: false}
-```
-# Example of a comment
-ggsave("test.png", width = 8, height = 4)  # This is how you save a plot
-```
-
 Within any language, there are many ways to communicate the same message. Just like in natural language, data scientists use coding conventions to make a text readable. The developers of the Tidyverse have published a [style guide](https://style.tidyverse.org/) to assist data scientists with writing code that is easy to read and follow. In the developer's parlance, this is called elegant code. RStudio can help you format the code with the Reformat Code option in the Code menu.
 
 Comments in code help a human reader understand the flow of logic. There is a point, however, where your analysis is so complex that you need more comments than code. When this is the case, you need to use more advanced methods. Furthermore, most consumers of data products are not interested in the code and only want to see the results. The next section explains how to use RStudio to create data products in various formats, such as Word, Powerpoint, PDF and HTML.
@@ -146,7 +139,7 @@ Markdown is, paradoxically, a markup language, known for its simplicity, which i
 
 Let's put this theory into practice. Go to the *File* menu and create a new R Markdown file. You see a popup menu where you can enter the document title, author name and select the output type. Select *Word* as the output and enter a title related to the problem statement at the start of this chapter. When you click OK, RStudio creates a template document that explains the basic principles.
 
-When you click the *Knit* button, RStudio asks you to save the file and generates a HTML document that includes content, some of the code and the output of any R code embedded in the report. When you do this for the first time, you might receive a message that specific packages need to be installed. Follow the prompts to let that happen.
+When you click the *Knit* button, RStudio asks you to save the file and generates a document that includes the written content, some of the code, and the output of any R code embedded in the report. When you do this for the first time, you might receive a message that specific packages need to be installed. Follow the prompts to let that happen.
 
 An R-Markdown document consists of three elements. The content between the three-dash lines (lines 1--6) is the header that specifies necessary information about the title, author, date and the output format (Figure 7.4). You can manually edit these entries to change the document properties.
 
@@ -260,7 +253,7 @@ output:
 Please note the indentation at the start of the lines, you need to follow this exactly for RStudio to recognise the data structure.
 
 ### Sharing results online
-If you like to share the results of your analysis with the world, then you can upload the HTML output to [RPubs](https://rpubs.com/). Please note the that documents on RPubs are publicly visible, so don't publish any sensitive data.
+If you like to share the results of your analysis with the world, then you can upload the HTML output to [RPubs](https://rpubs.com/). 
 
 You need to install various packages to enable publishing functionality in RStudio. The software automatically prompts you to install these when you first try to publish to the internet.
 
@@ -268,15 +261,26 @@ You need to install various packages to enable publishing functionality in RStud
 2. Click the Knit HTML button in the doc toolbar to preview your document.
 3. In the preview window, click the Publish button.
 
-You need to create a free account with RPubs before you can publish any documents.
+You need to create a free account with RPubs before you can publish any documents. Please note the that documents on RPubs are publicly visible, so don't publish any sensitive data.
     
 ## Mini Hackathon
 This chapter closes with an assignment using the data from the first case study.
 
-X> Create a short PowerPoint presentation about the Gormsey data or any other data you like to explore.
+The `chlorine.csv` file contains chlorine measurements from Gormsey. Chlorine is an important chemical in water supply because it kills harmful pathogens. This means that we need a minimum concentration to ensure the water is safe to drink. Chlorine has the unpleasant side-effect that it is not pleasant to drink. There is as such a tension between providing water that is safe to drink and water that is pleasant for consumers.
 
-1. Select a problem and a story you like to tell about this data.
-2. Create an RMarkdown script that results in a Powerpoint presentation.
+The drinking water quality guidelines state that the odour threshold for chlorine is generally 0.6 mg/L, but 0.2 mg/L for some people. It may be necessary to exceed the aesthetic guideline in order to maintain an effective disinfectant residual throughout the system. The table below summarises the two competing objectives.
+
+{title: "Health and aesthetic chlorine limits."}
+|         | Health        | Aesthetics |
+|---------|---------------|------------|
+| Minimum | 0.2--0.5 mg/l | 0.2mg/l    |
+| Maximum | 5 mg/l        | 0.6mg/l    |
+
+X> Create a short PowerPoint presentation about the Gormsey chlorine data that visualises the tension between health and aesthetic guidelines.
+
+1. Explore and analyse the chlorine data.
+2. Determine how to best present the data.
+3. Create an RMarkdown script that results in a Powerpoint presentation.
 
 The `casestudy1` folder contains an example R Markdown file that you can reverse-engineer for your project.
 

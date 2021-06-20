@@ -1,8 +1,7 @@
 # In Closing {#close}
+You have reached the end of the *Data Science for Water Professionals* course. I hope you found it interesting and useful to see how writing code enables you to analyse data in a way that is useful, sound and aesthetic.
 
-You have reached the end of the _Data Science for Water Professionals_ course. I hope you find it interesting and useful to see how writing code enables you to analyse data in a way that is useful, sound and aesthetic.
-
-As stated in the introduction, this course only introduces you to the possibilities of the R language. My aim is to motivate you to want to learn more about writing data science code to manage this precious resource.
+As stated in the first chapter, this course only introduces you to the possibilities of the R language. My aim is to motivate you to want to learn more about writing data science code to manage this precious resource.
 
 The best path towards the digital water utility is to educate established professionals in the possibilities of data science. You might not do this as your day job, but it will undoubtedly help you to communicate with data experts if you need a problem to be solved.
 

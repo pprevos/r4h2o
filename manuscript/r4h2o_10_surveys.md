@@ -5,7 +5,7 @@ Water professionals often focus on the tangible aspects of water services and me
 
 While water utilities tout their services as essential for life, only a small amount of water consumption is required to sustain life. Most water consumption meets other critical needs, such as social belonging and self-esteem. For example, our daily shower is not strictly necessary for health reasons. Anthropologically, the daily shower is a ritual that prepares us for the day. The daily shower is perhaps one of the greatest contributes to the economy because it is also a contemplative moment where we have our great ideas (figure 10.1). This qualitative aspect adds additional complexity to how we analyse this data.
 
-{width: 60%, align: middle}
+{width: 60%, align: "center"}
 ![Figure 10.1: Mock tap water advertisement to emphasise the importance of intangible experiences.](resources/10_surveys/tap-water-advertisement-1.jpg)
 
 This chapter discusses how psychographic surveys relate to consumer psychology and some techniques to analyse this type of data. The learning objectives for this chapter are:
@@ -31,17 +31,18 @@ The state of mind of the customer is a latent variable, which means that it cann
 
 Asking a single direct question, such as "How much do you trust the water utility?" or "How involved are you with tap water?" are not suitable methods to measure latent variables. Firstly, these questions assume that the respondent and the researcher have the same understanding of what trust and involvement means. Secondly, with only one item, it is impossible to assess the reliability of the responses.
 
-The _Personal Involvement Inventory_ is a statistically validated psychological construct. This means that the researchers followed a formal process to assess the validity and reliability of the survey tool. 
+The *Personal Involvement Inventory* is a statistically validated psychological construct. This means that the researchers followed a formal process to assess the validity and reliability of the survey tool. 
 
 Figure 10.2 shows the theoretical model for the Personal Involvement Inventory and the ten questions. The ovals are latent the variables, and the squares are the manifest (measured) variables. The manifest variables are the answers to the survey questions. The straight arrows imply causality and the curved arrow indicates a correlation. This diagram thus means that involvement has cognitive and affective dimensions that correlate with each other. These two latent variables cause the respondent to answer each of the five items. The stronger the latent variable, the higher the response on the survey item.
 
-{width: 25%, align: middle}
+{width: 25%, align: "center"}
 ![Figure 10.2: Personal Involvement Inventory statistical model](resources/10_surveys/pii_model.png)
 
 This diagram shows how we can reduce the ten questions to one or two items. If all manifest variables within one construct correlate highly with each other, then we have reason to believe that the survey is reliable. We can also use other techniques, such factor analysis to reduce the ten survey questions to one or two dimensions.
 
 Measuring latent variables is complicated because we need to account for a lot of issues. Firstly, the structure of the questionnaire and the wording of the questions can introduce [response bias](https://en.wikipedia.org/wiki/Response_bias). A bias is a situation where the respondent provides a response that is not causally related to the construct we like to measure. A bias introduces a systematic error in the analysis. Researchers have identified many causes of response bias. We have already seen how the survey managed inattentive customers with a trap question.
 
+{width: 60%, align: "center"}
 ![Screencast of the involvement analysis.](https://www.youtube.com/watch?v=AM8TDd0ZVKw)
 
 ## Correlations
@@ -135,7 +136,7 @@ ggplot(pii_wide, aes(p01, p02)) +
     theme_bw(base_size = 10)
 ggsave("manuscript/resources/10_surveys/scatterplot.png", width = 9, height = 5)
 ```
-{width: 60%}
+{width: 60%, align: "center"}
 ![Scatterplot of item 1 and 2](resources/10_surveys/scatterplot.png)
 
 Creating a scatter plot for each permutation in the data would be a lot of work. Several specialised R packages provide functionality to visualise a correlation matrix. The corrplot package provides extensive functionality to visualise correlation matrices. Remember that before you can use this library, you need to install it with `install.packages("corrplot")`.
@@ -146,12 +147,12 @@ library(corrplot)
 corrplot(c_matrix, type = "lower")
 ```
 
-{align: middle, width: 60%}
+{width: 60%, align: "center"}
 ![Figure 10.3: Correlation matrix for PII](resources/10_surveys/corplot_01.png)
 
 Figure 10.3 shows that the first five items correlate more strongly with each other than with the other five items, and vice versa. This is another indication that the model for PII matches what we see in this survey.
 
-X> Read the [corrplot documentation](https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-intro.html) and create different versions of this correlation matrix.
+X> Read the corrplot documentation and create different versions of this correlation matrix.
 
 However, correlations are an insufficient metric to draw conclusions about the world. A strong correlation is only an invitation to undertake further research. The old adage 'correlation is not causation' certainly is valid in this case. 
 
@@ -172,7 +173,7 @@ Euclidean distance in `n`$ dimensions: `d(p,q) = \sqrt{(p_1- q_1)^2 + (p_2 - q_2
 
 Various techniques are available to calculate distances and to determine the nearest neighbour. In this chapter, we use the default values in the R functions, which calculates the Euclidean distance between points. The video below explains the principles of this technique in more detail.
 
-{width: 60%, align: middle}
+{width: 60%, align: "center"}
 ![Hierarchical clustering video by Augmented Startups.](https://www.youtube.com/watch?v=EUQY3hL38cw)
 
 In machine learning, clustering techniques are often used to reduce the number of variables in a predictive model. Clustering is also a technique that we can use to segment customers by grouping them together.
@@ -205,7 +206,7 @@ ggplot(customers, aes(weekday, weekend)) +
     theme_bw(base_size = 10)						
 ```
 
-{width: 100%, align: middle}
+{width: 100%, align: "center"}
 ![Figure 10.2: Clustering example](resources/10_surveys/clustering_example.png)
 
 X> Practice your skills and create a correlation matrix of the customer water consumption table.
@@ -272,7 +273,7 @@ plot(customer_clusters,
      labels = customers$id)
 ```
 
-{width: 100%, align: middle}
+{width: 100%, align: "center"}
 ![Figure 10.3: Dendrogram of the example data.](resources/10_surveys/example_dendogram.png)
 
 You can view the clusters at each level of the analysis, working your way up to one supercluster. The vertical distance in the graph relates to the distance matrix. The longer the line, the less related the customers are. Visually, both figure 10.2 and figure 10.3 suggest that we should have two clusters. In this case, we only have two features, which are easy to visualise. In reality, we often have a lot more than three features which are not easy to visualise on a two-dimensional screen.
@@ -296,13 +297,13 @@ ggplot(customers, aes(weekday, weekend)) +
     theme_bw(base_size = 10)
 ```
 
-{width: 100%, align: middle}
+{width: 100%, align: "center"}
 ![Figure 10.4: Clustered customer segments.](resources/10_surveys/customer_segments.png)
 
 Two clusters are the obvious answer for this problem, but in reality, the boundary between clusters is not always this clear. Interpreting the results and selecting the ideal number of clusters is a combination of scientific insight and statistical analysis.
 
 ### Interpreting the Results
-Clustering is just like a correlation and can be easily misinterpreted. You cluster any data, and you will find clusters, but that does not imply that these clusters are meaningful. Some statistical techniques exist to assess how well the chosen model fits the data, but there is no single objective criterion to determine the ideal number of clusters. The statistical methods also often don't provide a conclusive answer.
+Clustering are intuitive but can be easily misinterpreted. You cluster any data, and you will find clusters, but that does not imply that these clusters are meaningful. Some statistical techniques exist to assess how well the chosen model fits the data, but there is no single objective criterion to determine the ideal number of clusters. The statistical methods also often don't provide a conclusive answer.
 
 How do we know the ideal number of clusters? The dendrogram helps to visually review the number of clusters. The customer data is clearly best fitted with two clusters. The vertical line of the two clusters is the longest, which means the distance between the two clusters is larger than the distance between the other clusters. 
 
@@ -326,7 +327,7 @@ X> Undertake hierarchical clustering for the Personal Involvement Index data. Tr
 
 T> Use `rect.hclust(pii_clusters, k = 2, border = 2:3)` to draw a rectangle around the two-cluster (`k = 2`) solution. The `border = 2:3` defines the colour numbers of the two rectangles.
 
-{width: 100%, align: middle}
+{width: 100%, align: "center"}
 ![Figure 10.5: Dendrogram of the Personal Involvement Index for tap water.](resources/10_surveys/pii_dendogram.png)
 
 We can see that the largest trunk in the dendrogram is with two clusters. We can safely choose this solution because the survey was designed as a two-dimensional construct. We can also see that the cluster analysis confirms the correlation matrix. The first five and the last five items are closest related to each other. 
@@ -334,7 +335,7 @@ We can see that the largest trunk in the dendrogram is with two clusters. We can
 This analysis means that we can reasonably sure that each of these five items measures the same underlying latent variable.
 
 ### Other techniques
-Hiereachical clustering is not the only technique that is available to cluster data. Another popular algorithm is _k_-means, which performs better when you analyse large sets of data.
+Hiereachical clustering is not the only technique that is available to cluster data. Another popular algorithm is *k*-means, which performs better when you analyse large sets of data.
 
 This article by George Serif provides a comprehensive overview of the various [methods to cluster data](https://towardsdatascience.com/the-5-clustering-algorithms-data-scientists-need-to-know-a36d136ef68) and their differences.
 
@@ -373,7 +374,7 @@ ggplot(pii, aes(Score, fill = Dimension)) +
     theme_bw(base_size = 10)
 ```
 
-{width: 100%, align: middle}
+{width: 100%, align: "center"}
 ![Figure 10.6: Personal Involvement Index for tap water in Gormsey.](resources/10_surveys/pii_scores.png)
 
 These results are intriguing as the level of cognitive involvement is much higher than affective involvement. Customers see water more as a necessity than as something they have a relationship with. The level of affective involvement is, however, quite high compared to other commodities. This score is perhaps an expression of the types of benefits that we obtain from using tap water. The two involvement dimensions have a different distribution. While affective involvement is more or less a normal distribution, cognitive involvement is highly positively skewed.
@@ -429,4 +430,4 @@ That is it for the sixth quiz. If you get stuck, you can find the answers in the
 {/quiz}
 
 ## Further study
-Accurate measurement of psychological constructs is a complex topic that goes beyond the scope of this course. Please note that the examples in this chapter do not constitute a thorough analysis of latent constructs. Correlations and cluster analysis are great for exploration. Structural equation modelling is best practice in psychographic analysis. If you are interested in the statistical intricacies of measuring the customer experience, then read _Scale Development: Theory and Applications_ by Robert Devils (2011). 
+Accurate measurement of psychological constructs is a complex topic that goes beyond the scope of this course. Please note that the examples in this chapter do not constitute a thorough analysis of latent constructs. Correlations and cluster analysis are great for exploration. Structural equation modelling is best practice in psychographic analysis. If you are interested in the statistical intricacies of measuring the customer experience, then read *Scale Development: Theory and Applications* by Robert Devils (2011). 

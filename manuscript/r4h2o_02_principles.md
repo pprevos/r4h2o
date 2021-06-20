@@ -40,7 +40,7 @@ Data science is a systematic and strategic approach to using data, mathematics a
 ## The Elements of Data Science
 The best way to unpack the art and craft of data science is Drew Conway's often-cited Venn diagram cite ([Figure 2.3](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram)). Conway defines three competencies that a data scientist or a data science team as a collective need to possess. The diagram positions data science as an interdisciplinary activity with three dimensions: domain knowledge, mathematics and computer science. A data scientist understands the subject matter under consideration in mathematical terms and writes computer code to solve problems.
 
-{width: 80%, align: "center"}
+{width: 40%, align: "center"}
 ![Figure 2.3: Conway's data science Venn Diagram.](resources/02_principles/conway.png)
 
 ### Domain Knowledge
@@ -147,7 +147,7 @@ Buildings must have utility so people can use them for their intended purpose. A
 
 The Vitruvian rules for architecture can also define good data science. Excellent data science needs to have utility; it needs to be helpful to create value. The analysis should be sound so it can be trusted. Data science products also need to be aesthetic to maximise the value they provide to an organisation (Figure 2.6).
 
-{width: 40%, align: "center"}
+{width: 50%, align: "center"}
 ![Figure 2.6: The principles of good data science.](resources/02_principles/vitruvius.png)
 
 ### Useful Data Science
@@ -170,7 +170,7 @@ The third modification to the traditional model is a feedback loop from knowledg
 
 Anchoring the model for useful data science to reality emphasises the importance of domain knowledge when analysing data. In addition, subject-matter expertise helps to contextualise abstract data, resulting in better outcomes.
 
-{width: 40%, align: "center"}
+{width: 50%, align: "center"}
 ![Figure 2.7: Reality, Data, Information, Knowledge Pyramid.](resources/02_principles/feedback-loop.png)
 
 ### Reality

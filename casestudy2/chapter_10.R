@@ -85,7 +85,7 @@ plot(pii_clusters,
      sub = "Personal Involvement Index items",
      labels = names(pii_wide[, -1]), 
      lwd = 2)
-rect.hclust(pii_clusters, k = 2, border = 3:4)
+rect.hclust(pii_clusters, k = 2, border = 4)
 dev.off()
 
 ## Calculate the PII index

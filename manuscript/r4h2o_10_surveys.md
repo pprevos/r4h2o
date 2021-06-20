@@ -169,8 +169,6 @@ Another method to reduce the dimensions of a set of data is hierarchical cluster
 
 The basic idea of hierarchical clustering is that the algorithm calculates the 'distance' between data points as if they were situated in a geometric space of _n_ dimensions. The algorithm then groups the points that are closest to each other. When the algorithm has identified all clusters, it proceeds to clusters these groups. This process continues until all observations are part of the same cluster.
 
-Euclidean distance in `n`$ dimensions: `d(p,q) = \sqrt{(p_1- q_1)^2 + (p_2 - q_2)^2+\cdots+(p_i - q_i)^2+\cdots+(p_n - q_n)^2}`$
-
 Various techniques are available to calculate distances and to determine the nearest neighbour. In this chapter, we use the default values in the R functions, which calculates the Euclidean distance between points. The video below explains the principles of this technique in more detail.
 
 {width: 60%, align: "center"}
@@ -384,8 +382,6 @@ D> How would you interpret these scores? How do you explain the significant spik
 ## Quiz
 The sixth quiz asks some questions about correlations and cluster analysis.
 
-The [next chapter](#customers) invites you to further analyse the information in the customer survey data and create a report with RMarkdown.
-
 {quiz, id: q6, attempts: 10}
 # Quiz 6: Correlations and Clustering
 The following questions test your comprehension of some of the theory and functionality explained in this chapter. Test your answer by evaluating the code in the console.
@@ -431,3 +427,5 @@ That is it for the sixth quiz. If you get stuck, you can find the answers in the
 
 ## Further study
 Accurate measurement of psychological constructs is a complex topic that goes beyond the scope of this course. Please note that the examples in this chapter do not constitute a thorough analysis of latent constructs. Correlations and cluster analysis are great for exploration. Structural equation modelling is best practice in psychographic analysis. If you are interested in the statistical intricacies of measuring the customer experience, then read *Scale Development: Theory and Applications* by Robert Devils (2011). 
+
+The [next chapter](#reporting) invites you to further analyse the information in the customer survey data and create a report with RMarkdown.

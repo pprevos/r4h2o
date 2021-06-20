@@ -270,7 +270,6 @@ The `chlorine.csv` file contains chlorine measurements from Gormsey. Chlorine is
 
 The drinking water quality guidelines state that the odour threshold for chlorine is generally 0.6 mg/L, but 0.2 mg/L for some people. It may be necessary to exceed the aesthetic guideline in order to maintain an effective disinfectant residual throughout the system. The table below summarises the two competing objectives.
 
-{title: "Health and aesthetic chlorine limits."}
 |         | Health        | Aesthetics |
 |---------|---------------|------------|
 | Minimum | 0.2--0.5 mg/l | 0.2mg/l    |

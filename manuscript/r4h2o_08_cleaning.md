@@ -186,7 +186,7 @@ customers <- rename(customers, id = V1)        $ Rename first column
 customers <- left_join(customers, cities)      # Joing city names
 ```
 
-A rule-of-thumb in coding is that if you repeat the same thing more than twice, there will be a more efficient way of achieving the same result. In this example, we used “`customer <-`” six times. There are two ways of combining these lines of code.
+A rule-of-thumb in coding is that if you repeat the same thing more than twice, there will be a more efficient way of achieving the same result. In this example, we used "`customer <-`" six times. There are two ways of combining these lines of code.
 
 A typical way to code in a spreadsheet is to join the steps in a nested formula. While the nested approach uses less space, it is not as easy to understand because you have to read from the inside out.
 

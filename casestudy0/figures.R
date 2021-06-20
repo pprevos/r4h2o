@@ -5,7 +5,7 @@ par(mfrow = c(1, 2))
 
 x <- -10:10
 y <- -x^2 -2 * x + 30
-plot(x, y, type = "l", col = "blue", main = "wParabola")
+plot(x, y, type = "l", col = "blue", main = "Parabola")
 abline(h = 0, col = "grey")
 abline(v = 0, col = "grey")
 

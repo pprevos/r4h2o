@@ -270,4 +270,4 @@ That's it for the fifth quiz. If you get stuck, you can find the answers in the 
 ## Further Study
 Measuring the customer experience with surveys is a complex craft. The [Questionnaire Design for Social Surveys](https://www.coursera.org/learn/questionnaire-design) course from the University of Maryland goes into a lot of depth on how to best design surveys.
 
-In the [next chapter](#latent) we delve deeper into analysing customer responses.
+In the [next chapter](#survey) we delve deeper into analysing customer responses.

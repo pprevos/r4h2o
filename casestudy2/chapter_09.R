@@ -47,10 +47,10 @@ write_csv(pii_long, "casestudy2/pii_long.csv")
 ## Visualise responses
 library(ggplot2)
 ggplot(pii_long, aes(Item, Response)) +
-    geom_boxplot(fill = "dodgerblue") +
+    geom_boxplot(fill = "blue", alpha = 0.2) +
     labs(title = "Personal Involvement Inventory items",
          subtitle = "Tap water") +
-    theme_minimal(base_size = 10)
+    theme_minimal(base_size = 20)
 ggsave("manuscript/resources/09_customers/pii-responses.png", width = 9, height = 5)
 
 ggplot(pii_long, aes(Response)) +

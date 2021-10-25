@@ -8,9 +8,15 @@ gormsey <- read_csv("casestudy1/gormsey.csv")
 gormsey_thm <- filter(gormsey, Measure == "THM")
 median(gormsey_thm$Result)
 
-## Which town has breached the regulations for THM? The limit is 0.25 mg/l.
+## Which town has breached the regulations for THM most often? The limit is 0.25 mg/l.
 gormsey_thm_breach <- filter(gormsey_thm, Result > 0.25)
 count(gormsey_thm_breach, Town)
+
+## Which sample point has registered the highest level of THM?
+sample_points_thm <- group_by(gormsey_thm, Sample_Point)
+sample_points_thm_max <- summarise(sample_points_thm,
+                                   max_result = max(Result))
+filter(sample_points_thm_max, max_result == max(max_result))
 
 ## Which town in the Gormsey town shows the highest level of turbidity?
 gormsey_turbidity <- filter(gormsey, Measure == "Turbidity")
@@ -22,3 +28,11 @@ filter(max_turbidity, Maximum == max(Maximum))
 turbidity_p95 <- summarise(gormsey_turbidity_town, 
                            p95 = quantile(Result, 0.95, method = 6))
 mean(turbidity_p95$p95)
+
+## Plot
+gormsey_thm <- arrange(gormsey_thm, Date)
+plot(gormsey_thm$Date, gormsey_thm$Result,
+     pch = 19,
+     main = "THM Results, Gormsey",
+     xlab = "Date", ylab = "Result")
+abline(h = 0.25, col = "red")

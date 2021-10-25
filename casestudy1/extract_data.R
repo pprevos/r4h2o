@@ -75,4 +75,3 @@ summary(gormsey$Result[gormsey$Measure == "Turbidity"])
 
 ## Write to disk
 write_csv(gormsey, "casestudy1/gormsey.csv")
-

@@ -6,7 +6,7 @@ output:
   theme: "Malmoe"
   fonttheme: "structurebold"
 params: 
-  coupon: "esc-vic"
+  coupon: "waterra"
 editor_options:
   chunk_output_type: console
 ---

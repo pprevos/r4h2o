@@ -11,6 +11,7 @@ The data and code for this session are available in the `chapter_05.R` file in t
 The water quality regulations on the island of Gormsey look suspiciously similar to the [Australian Drinking Water Quality Guidelines](https://www.nhmrc.gov.au/about-us/publications/australian-drinking-water-guidelines). Gormsey also complies with the Victorian regulations for water quality, the [Safe Drinking Water Regulations](https://www2.health.vic.gov.au/public-health/water/drinking-water-in-victoria/drinking-water-legislation).
 
 The Gormsean *Safe Drinking Water Regulations* sets limits for each of the three parameters in our data:
+
 * *Escherichia coli*: All samples of drinking water collected are found to contain no Escherichia coli per 100 millilitres of drinking water, except false positive samples.
 * *Total trihalomethanes*: Less than or equal to 0.25 milligrams per litre of drinking water.
 * *Turbidity*: The 95^th^ percentile of results for samples in any 12 months must be less than or equal to 5.0 Nephelometric Turbidity Units.
@@ -159,13 +160,13 @@ We can now apply this abstract example to the water quality case study. You can 
 {format: r, line-numbers: false} 
 ```
 gormsey_grouped <- group_by(gormsey, Town, Measure)
-summarise(gormsey_grouped, 
-          min = min(Result),
-          mean = mean(Result),
-          max = max(Result))
+overview <- summarise(gormsey_grouped, 
+                      min = min(Result),
+                      mean = mean(Result),
+                      max = max(Result))
 ```
 
-This code produces a new data frame that shows the mean result for each measure and town. The table below show the first few rows of the result.
+This code produces a new data frame that shows the mean result for each measure and town. The table below show the first few rows of the result (`head(overview)`).
 
 {title="Gormsey results summary."}
 | Town       | Measure   | min   | mean    | max  |
@@ -207,7 +208,14 @@ b) Bellmoral
 c) Wakefield
 D) Southwold
 
-? Which town in the Gormsey town shows the highest level of turbidity?
+? Which sample point has registered the highest level of THM?
+
+a) BE_19426
+B) SO_11423
+c) SN_19289
+d) TA_11737
+
+? Which town in the Gormsey system shows the highest level of turbidity?
 
 a) Swadlincote
 b) Pontybridge
@@ -220,8 +228,6 @@ A) 0.777
 b) 8.82
 c) 0.3
 d) 7.34
-
-
 
 That's it for this quiz. If you get stuck, you can find the answers in the `quiz_03.R` file in the `casestudy1` folder, or watch the video below.
 

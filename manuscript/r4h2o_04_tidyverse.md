@@ -3,6 +3,7 @@
 Now that we have covered the basics of the R language, it is time to analyse some data. The next four sessions use water quality data from a reticulation network which we analyse for compliance with regulations. 
 
 This chapter has the following learning objectives:
+
 * Understand the principles of R packages
 * Load and describe a CSV data set
 * Summarise rectangular data
@@ -17,6 +18,7 @@ Thousands of specialised packages are available that undertake a vast range of c
 The majority of R packages are available on [CRAN](https://cran.r-project.org/), the *Comprehensive R Archive Network*. You can install packages in R with the `install.packages()` function. Within RStudio, you install packages in the *Tools* menu. When you install a package, RStudio downloads a library of files and stores them for future use. The words package and library are sometimes used interchangeably. In R, a package is a collection of R functions, data and compiled code. The location where the packages are stored is called the library.
 
 The CRAN repository contains many packages with specific functionality to analyse water, some of which are:
+
 * [baytrends](https://cran.r-project.org/web/packages/baytrends/index.html): Long Term Water Quality Trend Analysis.
 * [biotic](https://cran.r-project.org/web/packages/biotic/index.html): Calculation of Freshwater Biotic Indices.
 * [CityWaterBalance](https://cran.r-project.org/web/packages/CityWaterBalance/index.html): Track Flows of Water Through an Urban System.
@@ -86,6 +88,8 @@ You can find see the current working directory with the `getwd()` function, whic
 In this example, the working directory is `C:/Users/peterp/Documents/r4h2o/`. Using an RStudio project saves you having to type this every time.
 
 The `read_csv()` function assumes that the first row contains the field names and the following rows contain the data, organised in columns. After you type the quotation marks, you can use the tab button to select a file.
+
+The read function has a lot of parameters to fine tune how you collect the data. The `skip` option skips the first rows, which are often used for information about the file. Go to the help file for `read_csv()` or use the tab key to view the available options.
 
 After loading the data, R shows a summary. In this example, we have seven columns in various data formats. The double format are numbers. The data also contains a date and some character values.
 
@@ -337,7 +341,7 @@ b) Numeric
 c) Factor
 D) Character
 
-? What is the median THM result in Swadlincote and Wakefield?
+? What is the median THM result in Swadlincote or Wakefield?
 
 a) 0.125
 b) 0.051

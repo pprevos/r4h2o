@@ -20,7 +20,7 @@ quantile(turbidity_pontybridge$ Result, c(0.50, 0.95)) #50th and 95th percentile
 
 ## What is the 33rd percentile for the NTU data in Paethsmouth?
 thm_paethsmouth <- filter(gormsey, Town == "Paethsmouth" & Measure == "THM")
-quantile(thm_paethsmouth$Result, 0.33)
+quantile(thm_paethsmouth$Result, c(0.33, 0.66))
 
 ## Grouped data Example
 df <- tibble(Town = rep(c("Bellmoral", "Blancathey", "Merton"), each = 2),
@@ -42,3 +42,4 @@ overview <- summarise(gormsey_grouped,
                       mean = mean(Result),
                       max = max(Result))
 
+head(overview)

@@ -67,19 +67,6 @@ The data for the second case study consists of the results of a survey of water 
 {width: 80%, align: "center"}
 ![Figure 1.3: Case Study 2 visualisation.](resources/10_surveys/pii_dendogram.png)
 
-## Face to Face and Online Teaching Sessions
-This course is also available through face-to-face and online teaching sessions. These are fast-paced sessions that allow participants time to explore the R language and complete coding assignments. The online course is delivered over six three-hour sessions. The classroom version over three days.
-
-| Topic        | Chapters | Online    | Face to Face |
-|--------------|----------|-----------|--------------|
-| Introduction | 1--3     | Session 1 | Day 1        |
-|--------------|----------|-----------|--------------|
-| Case Study 1 | 4--7     | Session 2 |              |
-|--------------|----------|-----------|--------------|
-| Case Study 2 | 8--9     | Session 3 | Day 2        |
-|--------------|----------|-----------|--------------|
-|              | 10--11   | Session 4 |              |
-
 ## Participant Activities
 Besides the case studies, the content of this course contains several activities for participants. These icons are used throughout the text to indicate these activities:
 

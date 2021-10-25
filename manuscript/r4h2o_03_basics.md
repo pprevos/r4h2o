@@ -29,6 +29,7 @@ In simple terms, a computer program is a set of instructions to transforms an in
 The main issue with spreadsheets is that the data, the code and the output are merged. The code does not run sequentially and can be hard to reverse-engineer. When writing computer code, the data, the code and the output are separate and processed in a linear form. 
 
 A computer language like a human language and consists of vocabulary, grammar and context. In computing terms, this is the syntax. Computer language syntax consists of three levels:
+
 * Words: The functions of a language.
 * Phrases: The grammar of computer code.
 * Context: Do the instructions make sense?
@@ -65,6 +66,7 @@ The best way is to use R in combination with an *Integrated Development Environm
 The most popular IDE for the R language is [RStudio](https://rstudio.com/). This software is also an open-source project, with free and paid versions for companies that want to use advanced features. RStudio is also capable of working with other languages such as Python.
 
 To install the required software, follow these steps:
+
 * Go to the [R Project](https://cran.r-project.org/) website.
 * Download the *base* version for your operating system and install the software.
 * Go to the [RStudio download page](https://www.rstudio.com/products/rstudio/download/).
@@ -192,6 +194,7 @@ The `sum()` function adds all the members of the `x` vector. The `length()` func
 X> Apply the functions in the previous two tables to the following vector of flow measurements and inspect the result: `c(12, 3, -23, 45, 2, 99, 1, 0)`.
 
 Solution:
+
 {format: r, line-numbers: false}
 ```R
 flow <- c(12, 3, 23, 45, 2, 99, 1, 0)

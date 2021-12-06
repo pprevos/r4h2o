@@ -1,6 +1,6 @@
 ---
 title: "Gormsey Trihalomethane Compliance"
-author: "Peter Prevos"
+author: "Dr Peter Prevos"
 output:
   powerpoint_presentation:
     reference_doc: template.potx

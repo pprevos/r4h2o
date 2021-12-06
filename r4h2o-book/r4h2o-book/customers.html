@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 Exploring the Customer Experience | Data Science for Water Professionals - Create Value from Data with the R Language</title>
+  <meta name="description" content="Data science course for water management professionals using the R language. This course is developed for water professionals with little to no experience writing code to analyse data." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 Exploring the Customer Experience | Data Science for Water Professionals - Create Value from Data with the R Language" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://lucidmanager.org/r4h2o" />
+  <meta property="og:image" content="https://lucidmanager.org/r4h2o/images/r4h2o-cover.jpg" />
+  <meta property="og:description" content="Data science course for water management professionals using the R language. This course is developed for water professionals with little to no experience writing code to analyse data." />
+  <meta name="github-repo" content="pprevos/r4h2o" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 Exploring the Customer Experience | Data Science for Water Professionals - Create Value from Data with the R Language" />
+  
+  <meta name="twitter:description" content="Data science course for water management professionals using the R language. This course is developed for water professionals with little to no experience writing code to analyse data." />
+  <meta name="twitter:image" content="https://lucidmanager.org/r4h2o/images/r4h2o-cover.jpg" />
+
+<meta name="author" content="Dr Peter Prevos" />
+
+
+<meta name="date" content="2021-12-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="cleaning.html"/>
+<link rel="next" href="survey.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Data Science for Water Professionals</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#continuous-improvement"><i class="fa fa-check"></i>Continuous Improvement</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#learning-objectives"><i class="fa fa-check"></i><b>1.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#prerequisites"><i class="fa fa-check"></i><b>1.2</b> Prerequisites</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#case-study-approach"><i class="fa fa-check"></i><b>1.3</b> Case Study approach</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#case-study-1-water-quality-regulations"><i class="fa fa-check"></i><b>1.3.1</b> Case Study 1: Water Quality Regulations</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#case-study-2-customer-experience"><i class="fa fa-check"></i><b>1.3.2</b> Case Study 2: Customer Experience</a></li>
+<li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#case-study-3-digital-metering-data"><i class="fa fa-check"></i><b>1.3.3</b> Case Study 3: Digital Metering Data</a></li>
+<li class="chapter" data-level="1.3.4" data-path="introduction.html"><a href="introduction.html#case-study-4-spatial-analysis"><i class="fa fa-check"></i><b>1.3.4</b> Case Study 4: Spatial Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#learning-the-r-language"><i class="fa fa-check"></i><b>1.4</b> Learning the R Language</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="datascience.html"><a href="datascience.html"><i class="fa fa-check"></i><b>2</b> Principles of Water Utility Data Science</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="datascience.html"><a href="datascience.html#what-is-data-science"><i class="fa fa-check"></i><b>2.1</b> What is data science?</a></li>
+<li class="chapter" data-level="2.2" data-path="datascience.html"><a href="datascience.html#the-elements-of-data-science"><i class="fa fa-check"></i><b>2.2</b> The Elements of Data Science</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="datascience.html"><a href="datascience.html#domain-knowledge"><i class="fa fa-check"></i><b>2.2.1</b> Domain Knowledge</a></li>
+<li class="chapter" data-level="2.2.2" data-path="datascience.html"><a href="datascience.html#mathematical-knowledge"><i class="fa fa-check"></i><b>2.2.2</b> Mathematical Knowledge</a></li>
+<li class="chapter" data-level="2.2.3" data-path="datascience.html"><a href="datascience.html#computer-science"><i class="fa fa-check"></i><b>2.2.3</b> Computer Science</a></li>
+<li class="chapter" data-level="2.2.4" data-path="datascience.html"><a href="datascience.html#the-unicorn-data-scientist"><i class="fa fa-check"></i><b>2.2.4</b> The Unicorn Data Scientist?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="datascience.html"><a href="datascience.html#the-water-data-value-chain"><i class="fa fa-check"></i><b>2.3</b> The Water-Data Value Chain</a></li>
+<li class="chapter" data-level="2.4" data-path="datascience.html"><a href="datascience.html#data-science-tools"><i class="fa fa-check"></i><b>2.4</b> Data Science Tools</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="datascience.html"><a href="datascience.html#spreadsheets"><i class="fa fa-check"></i><b>2.4.1</b> Spreadsheets</a></li>
+<li class="chapter" data-level="2.4.2" data-path="datascience.html"><a href="datascience.html#business-intelligence-systems"><i class="fa fa-check"></i><b>2.4.2</b> Business Intelligence Systems</a></li>
+<li class="chapter" data-level="2.4.3" data-path="datascience.html"><a href="datascience.html#data-science-code"><i class="fa fa-check"></i><b>2.4.3</b> Data science code</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="datascience.html"><a href="datascience.html#good-data-science"><i class="fa fa-check"></i><b>2.5</b> Good Data Science</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="datascience.html"><a href="datascience.html#data-science-trivium"><i class="fa fa-check"></i><b>2.5.1</b> Data Science Trivium</a></li>
+<li class="chapter" data-level="2.5.2" data-path="datascience.html"><a href="datascience.html#useful-data-science"><i class="fa fa-check"></i><b>2.5.2</b> Useful Data Science</a></li>
+<li class="chapter" data-level="2.5.3" data-path="datascience.html"><a href="datascience.html#sound-data-science"><i class="fa fa-check"></i><b>2.5.3</b> Sound Data Science</a></li>
+<li class="chapter" data-level="2.5.4" data-path="datascience.html"><a href="datascience.html#aesthetic-data-science"><i class="fa fa-check"></i><b>2.5.4</b> Aesthetic Data Science</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="datascience.html"><a href="datascience.html#further-study"><i class="fa fa-check"></i><b>2.6</b> Further Study</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>3</b> Introduction to the R Language</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="basics.html"><a href="basics.html#the-r-language"><i class="fa fa-check"></i><b>3.1</b> The R Language</a></li>
+<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#basic-principles-of-programming"><i class="fa fa-check"></i><b>3.2</b> Basic principles of programming</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="basics.html"><a href="basics.html#understanding-computer-code"><i class="fa fa-check"></i><b>3.2.1</b> Understanding computer code</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#debugging-code"><i class="fa fa-check"></i><b>3.3</b> Debugging Code</a></li>
+<li class="chapter" data-level="3.4" data-path="basics.html"><a href="basics.html#using-r-and-rstudio"><i class="fa fa-check"></i><b>3.4</b> Using R and RStudio</a></li>
+<li class="chapter" data-level="3.5" data-path="basics.html"><a href="basics.html#basics-of-the-r-language"><i class="fa fa-check"></i><b>3.5</b> Basics of the R language</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="basics.html"><a href="basics.html#variables"><i class="fa fa-check"></i><b>3.5.1</b> Variables</a></li>
+<li class="chapter" data-level="3.5.2" data-path="basics.html"><a href="basics.html#arithmetic"><i class="fa fa-check"></i><b>3.5.2</b> Arithmetic</a></li>
+<li class="chapter" data-level="3.5.3" data-path="basics.html"><a href="basics.html#vectors"><i class="fa fa-check"></i><b>3.5.3</b> Vectors</a></li>
+<li class="chapter" data-level="3.5.4" data-path="basics.html"><a href="basics.html#basic-plots"><i class="fa fa-check"></i><b>3.5.4</b> Basic plots</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="basics.html"><a href="basics.html#rstudio-scripts-and-projects"><i class="fa fa-check"></i><b>3.6</b> RStudio scripts and projects</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="basics.html"><a href="basics.html#readable-code"><i class="fa fa-check"></i><b>3.6.1</b> Readable Code</a></li>
+<li class="chapter" data-level="3.6.2" data-path="basics.html"><a href="basics.html#finding-help"><i class="fa fa-check"></i><b>3.6.2</b> Finding help</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="basics.html"><a href="basics.html#quiz-1-calculating-channel-flows"><i class="fa fa-check"></i><b>3.7</b> Quiz 1: Calculating channel flows</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="basics.html"><a href="basics.html#question-1"><i class="fa fa-check"></i><b>3.7.1</b> Question 1</a></li>
+<li class="chapter" data-level="3.7.2" data-path="basics.html"><a href="basics.html#question-2"><i class="fa fa-check"></i><b>3.7.2</b> Question 2</a></li>
+<li class="chapter" data-level="3.7.3" data-path="basics.html"><a href="basics.html#question-3"><i class="fa fa-check"></i><b>3.7.3</b> Question 3</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="basics.html"><a href="basics.html#further-study-1"><i class="fa fa-check"></i><b>3.8</b> Further Study</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tidyverse.html"><a href="tidyverse.html"><i class="fa fa-check"></i><b>4</b> Exploring Data with the Tidyverse</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tidyverse.html"><a href="tidyverse.html#r-libraries"><i class="fa fa-check"></i><b>4.1</b> R Libraries</a></li>
+<li class="chapter" data-level="4.2" data-path="tidyverse.html"><a href="tidyverse.html#introducing-the-tidyverse"><i class="fa fa-check"></i><b>4.2</b> Introducing the Tidyverse</a></li>
+<li class="chapter" data-level="4.3" data-path="tidyverse.html"><a href="tidyverse.html#case-study-1"><i class="fa fa-check"></i><b>4.3</b> Case Study 1</a></li>
+<li class="chapter" data-level="4.4" data-path="tidyverse.html"><a href="tidyverse.html#exploring-the-case-study-data"><i class="fa fa-check"></i><b>4.4</b> Exploring the Case Study Data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="tidyverse.html"><a href="tidyverse.html#inspect-the-data"><i class="fa fa-check"></i><b>4.4.1</b> Inspect the data</a></li>
+<li class="chapter" data-level="4.4.2" data-path="tidyverse.html"><a href="tidyverse.html#explore-the-content"><i class="fa fa-check"></i><b>4.4.2</b> Explore the content</a></li>
+<li class="chapter" data-level="4.4.3" data-path="tidyverse.html"><a href="tidyverse.html#explore-variables"><i class="fa fa-check"></i><b>4.4.3</b> Explore variables</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="tidyverse.html"><a href="tidyverse.html#filtering-data"><i class="fa fa-check"></i><b>4.5</b> Filtering data</a></li>
+<li class="chapter" data-level="4.6" data-path="tidyverse.html"><a href="tidyverse.html#counting-results"><i class="fa fa-check"></i><b>4.6</b> Counting results</a></li>
+<li class="chapter" data-level="4.7" data-path="tidyverse.html"><a href="tidyverse.html#quiz-2-exploring-water-quality-data"><i class="fa fa-check"></i><b>4.7</b> Quiz 2: Exploring Water Quality Data</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="tidyverse.html"><a href="tidyverse.html#question-1-1"><i class="fa fa-check"></i><b>4.7.1</b> Question 1</a></li>
+<li class="chapter" data-level="4.7.2" data-path="tidyverse.html"><a href="tidyverse.html#question-2-1"><i class="fa fa-check"></i><b>4.7.2</b> Question 2</a></li>
+<li class="chapter" data-level="4.7.3" data-path="tidyverse.html"><a href="tidyverse.html#question-3-1"><i class="fa fa-check"></i><b>4.7.3</b> Question 3</a></li>
+<li class="chapter" data-level="4.7.4" data-path="tidyverse.html"><a href="tidyverse.html#question-4"><i class="fa fa-check"></i><b>4.7.4</b> Question 4</a></li>
+<li class="chapter" data-level="4.7.5" data-path="tidyverse.html"><a href="tidyverse.html#question-5"><i class="fa fa-check"></i><b>4.7.5</b> Question 5</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="tidyverse.html"><a href="tidyverse.html#further-study-2"><i class="fa fa-check"></i><b>4.8</b> Further Study</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="tidyverse.html"><a href="tidyverse.html#packages"><i class="fa fa-check"></i><b>4.8.1</b> Packages</a></li>
+<li class="chapter" data-level="4.8.2" data-path="tidyverse.html"><a href="tidyverse.html#loading-data"><i class="fa fa-check"></i><b>4.8.2</b> Loading data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="statistics.html"><a href="statistics.html"><i class="fa fa-check"></i><b>5</b> Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="statistics.html"><a href="statistics.html#problem-statement"><i class="fa fa-check"></i><b>5.1</b> Problem Statement</a></li>
+<li class="chapter" data-level="5.2" data-path="statistics.html"><a href="statistics.html#analyse-the-data"><i class="fa fa-check"></i><b>5.2</b> Analyse the Data</a></li>
+<li class="chapter" data-level="5.3" data-path="statistics.html"><a href="statistics.html#calculating-percentiles"><i class="fa fa-check"></i><b>5.3</b> Calculating Percentiles</a></li>
+<li class="chapter" data-level="5.4" data-path="statistics.html"><a href="statistics.html#analysing-grouped-data"><i class="fa fa-check"></i><b>5.4</b> Analysing Grouped Data</a></li>
+<li class="chapter" data-level="5.5" data-path="statistics.html"><a href="statistics.html#quiz-3-analysing-water-quality-data"><i class="fa fa-check"></i><b>5.5</b> Quiz 3: Analysing Water Quality Data</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="statistics.html"><a href="statistics.html#question-1-2"><i class="fa fa-check"></i><b>5.5.1</b> Question 1</a></li>
+<li class="chapter" data-level="5.5.2" data-path="statistics.html"><a href="statistics.html#question-2-2"><i class="fa fa-check"></i><b>5.5.2</b> Question 2</a></li>
+<li class="chapter" data-level="5.5.3" data-path="statistics.html"><a href="statistics.html#question-3-2"><i class="fa fa-check"></i><b>5.5.3</b> Question 3</a></li>
+<li class="chapter" data-level="5.5.4" data-path="statistics.html"><a href="statistics.html#question-4-1"><i class="fa fa-check"></i><b>5.5.4</b> Question 4</a></li>
+<li class="chapter" data-level="5.5.5" data-path="statistics.html"><a href="statistics.html#question-5-1"><i class="fa fa-check"></i><b>5.5.5</b> Question 5</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="statistics.html"><a href="statistics.html#further-study-3"><i class="fa fa-check"></i><b>5.6</b> Further Study</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>6</b> Visualising Data with ggplot2</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ggplot.html"><a href="ggplot.html#principles-of-visualisation"><i class="fa fa-check"></i><b>6.1</b> Principles of Visualisation</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="ggplot.html"><a href="ggplot.html#the-aesthetics-of-visualising-data"><i class="fa fa-check"></i><b>6.1.1</b> The aesthetics of visualising data</a></li>
+<li class="chapter" data-level="6.1.2" data-path="ggplot.html"><a href="ggplot.html#telling-stories"><i class="fa fa-check"></i><b>6.1.2</b> Telling Stories</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="ggplot.html"><a href="ggplot.html#visualising-data-with-ggplot"><i class="fa fa-check"></i><b>6.2</b> Visualising data with ggplot</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="ggplot.html"><a href="ggplot.html#data-1"><i class="fa fa-check"></i><b>6.2.1</b> Data</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ggplot.html"><a href="ggplot.html#aesthetics"><i class="fa fa-check"></i><b>6.2.2</b> Aesthetics</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ggplot.html"><a href="ggplot.html#geometries"><i class="fa fa-check"></i><b>6.2.3</b> Geometries</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ggplot.html"><a href="ggplot.html#colour-aesthetics"><i class="fa fa-check"></i><b>6.3</b> Colour Aesthetics</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="ggplot.html"><a href="ggplot.html#facets"><i class="fa fa-check"></i><b>6.3.1</b> Facets</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ggplot.html"><a href="ggplot.html#statistics-1"><i class="fa fa-check"></i><b>6.3.2</b> Statistics</a></li>
+<li class="chapter" data-level="6.3.3" data-path="ggplot.html"><a href="ggplot.html#coordinates"><i class="fa fa-check"></i><b>6.3.3</b> Coordinates</a></li>
+<li class="chapter" data-level="6.3.4" data-path="ggplot.html"><a href="ggplot.html#theme"><i class="fa fa-check"></i><b>6.3.4</b> Theme</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="ggplot.html"><a href="ggplot.html#sharing-visualisations"><i class="fa fa-check"></i><b>6.4</b> Sharing visualisations</a></li>
+<li class="chapter" data-level="6.5" data-path="ggplot.html"><a href="ggplot.html#further-study-4"><i class="fa fa-check"></i><b>6.5</b> Further Study</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="dataproducts.html"><a href="dataproducts.html"><i class="fa fa-check"></i><b>7</b> Creating Data Products</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="dataproducts.html"><a href="dataproducts.html#data-science-workflow"><i class="fa fa-check"></i><b>7.1</b> Data Science Workflow</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="dataproducts.html"><a href="dataproducts.html#define"><i class="fa fa-check"></i><b>7.1.1</b> Define</a></li>
+<li class="chapter" data-level="7.1.2" data-path="dataproducts.html"><a href="dataproducts.html#prepare"><i class="fa fa-check"></i><b>7.1.2</b> Prepare</a></li>
+<li class="chapter" data-level="7.1.3" data-path="dataproducts.html"><a href="dataproducts.html#understand"><i class="fa fa-check"></i><b>7.1.3</b> Understand</a></li>
+<li class="chapter" data-level="7.1.4" data-path="dataproducts.html"><a href="dataproducts.html#communicate"><i class="fa fa-check"></i><b>7.1.4</b> Communicate</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="dataproducts.html"><a href="dataproducts.html#reproducible-research"><i class="fa fa-check"></i><b>7.2</b> Reproducible Research</a></li>
+<li class="chapter" data-level="7.3" data-path="dataproducts.html"><a href="dataproducts.html#r-markdown"><i class="fa fa-check"></i><b>7.3</b> R-Markdown</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="dataproducts.html"><a href="dataproducts.html#formatting-tables"><i class="fa fa-check"></i><b>7.3.1</b> Formatting tables</a></li>
+<li class="chapter" data-level="7.3.2" data-path="dataproducts.html"><a href="dataproducts.html#presenting-numbers"><i class="fa fa-check"></i><b>7.3.2</b> Presenting numbers</a></li>
+<li class="chapter" data-level="7.3.3" data-path="dataproducts.html"><a href="dataproducts.html#export-formats"><i class="fa fa-check"></i><b>7.3.3</b> Export formats</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="dataproducts.html"><a href="dataproducts.html#further-study-5"><i class="fa fa-check"></i><b>7.4</b> Further Study</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="tidyverse.html"><a href="tidyverse.html#cleaning"><i class="fa fa-check"></i><b>8</b> Cleaning Data</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="cleaning.html"><a href="cleaning.html"><i class="fa fa-check"></i><b>8.1</b> Case Study 2</a></li>
+<li class="chapter" data-level="8.2" data-path="cleaning.html"><a href="cleaning.html#cleaning-data"><i class="fa fa-check"></i><b>8.2</b> Cleaning data</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="cleaning.html"><a href="cleaning.html#load-and-explore-the-data"><i class="fa fa-check"></i><b>8.2.1</b> Load and explore the data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="cleaning.html"><a href="cleaning.html#remove-unwanted-responses"><i class="fa fa-check"></i><b>8.2.2</b> Remove unwanted responses</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="cleaning.html"><a href="cleaning.html#joining-data-frames"><i class="fa fa-check"></i><b>8.3</b> Joining data frames</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="cleaning.html"><a href="cleaning.html#select-relevant-variables"><i class="fa fa-check"></i><b>8.3.1</b> Select relevant variables</a></li>
+<li class="chapter" data-level="8.3.2" data-path="cleaning.html"><a href="cleaning.html#writedata"><i class="fa fa-check"></i><b>8.3.2</b> Write data to disk</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="cleaning.html"><a href="cleaning.html#simplifying-code-with-data-pipes"><i class="fa fa-check"></i><b>8.4</b> Simplifying Code with Data Pipes</a></li>
+<li class="chapter" data-level="8.5" data-path="cleaning.html"><a href="cleaning.html#quiz-4-cleaning-data"><i class="fa fa-check"></i><b>8.5</b> Quiz 4: Cleaning Data</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="cleaning.html"><a href="cleaning.html#question-1-3"><i class="fa fa-check"></i><b>8.5.1</b> Question 1</a></li>
+<li class="chapter" data-level="8.5.2" data-path="cleaning.html"><a href="cleaning.html#question-2-3"><i class="fa fa-check"></i><b>8.5.2</b> Question 2</a></li>
+<li class="chapter" data-level="8.5.3" data-path="cleaning.html"><a href="cleaning.html#question-3-3"><i class="fa fa-check"></i><b>8.5.3</b> Question 3</a></li>
+<li class="chapter" data-level="8.5.4" data-path="cleaning.html"><a href="cleaning.html#question-4-2"><i class="fa fa-check"></i><b>8.5.4</b> Question 4</a></li>
+<li class="chapter" data-level="8.5.5" data-path="cleaning.html"><a href="cleaning.html#question-5-2"><i class="fa fa-check"></i><b>8.5.5</b> Question 5</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="cleaning.html"><a href="cleaning.html#further-study-6"><i class="fa fa-check"></i><b>8.6</b> Further Study</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="customers.html"><a href="customers.html"><i class="fa fa-check"></i><b>9</b> Exploring the Customer Experience</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="customers.html"><a href="customers.html#measuring-mental-states"><i class="fa fa-check"></i><b>9.1</b> Measuring Mental States</a></li>
+<li class="chapter" data-level="9.2" data-path="customers.html"><a href="customers.html#consumer-involvement"><i class="fa fa-check"></i><b>9.2</b> Consumer Involvement</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="customers.html"><a href="customers.html#personal-involvement-inventory"><i class="fa fa-check"></i><b>9.2.1</b> Personal Involvement Inventory</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="customers.html"><a href="customers.html#preparing-the-involvement-data"><i class="fa fa-check"></i><b>9.3</b> Preparing the Involvement Data</a></li>
+<li class="chapter" data-level="9.4" data-path="customers.html"><a href="customers.html#missing-data"><i class="fa fa-check"></i><b>9.4</b> Missing Data</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="customers.html"><a href="customers.html#imputation"><i class="fa fa-check"></i><b>9.4.1</b> Imputation</a></li>
+<li class="chapter" data-level="9.4.2" data-path="customers.html"><a href="customers.html#calculations-with-missing-data"><i class="fa fa-check"></i><b>9.4.2</b> Calculations with missing data</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="customers.html"><a href="customers.html#tidy-data"><i class="fa fa-check"></i><b>9.5</b> Tidy Data</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="customers.html"><a href="customers.html#explore-the-results"><i class="fa fa-check"></i><b>9.5.1</b> Explore the results</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="customers.html"><a href="customers.html#quiz-5-transforming-data"><i class="fa fa-check"></i><b>9.6</b> Quiz 5: Transforming data</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="customers.html"><a href="customers.html#question-1-4"><i class="fa fa-check"></i><b>9.6.1</b> Question 1</a></li>
+<li class="chapter" data-level="9.6.2" data-path="customers.html"><a href="customers.html#question-2-4"><i class="fa fa-check"></i><b>9.6.2</b> Question 2</a></li>
+<li class="chapter" data-level="9.6.3" data-path="customers.html"><a href="customers.html#question-3-4"><i class="fa fa-check"></i><b>9.6.3</b> Question 3</a></li>
+<li class="chapter" data-level="9.6.4" data-path="customers.html"><a href="customers.html#question-4-3"><i class="fa fa-check"></i><b>9.6.4</b> Question 4</a></li>
+<li class="chapter" data-level="9.6.5" data-path="customers.html"><a href="customers.html#question-5-3"><i class="fa fa-check"></i><b>9.6.5</b> Question 5</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="customers.html"><a href="customers.html#further-study-7"><i class="fa fa-check"></i><b>9.7</b> Further Study</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="customers.html"><a href="customers.html#the-dplyr-package"><i class="fa fa-check"></i><b>9.7.1</b> The <em>dplyr</em> package</a></li>
+<li class="chapter" data-level="9.7.2" data-path="customers.html"><a href="customers.html#customer-surveys"><i class="fa fa-check"></i><b>9.7.2</b> Customer Surveys</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="survey.html"><a href="survey.html"><i class="fa fa-check"></i><b>10</b> Analysing the customer experience</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="survey.html"><a href="survey.html#the-reliability-and-validity-of-survey-results"><i class="fa fa-check"></i><b>10.1</b> The Reliability and Validity of Survey Results</a></li>
+<li class="chapter" data-level="10.2" data-path="survey.html"><a href="survey.html#correlations"><i class="fa fa-check"></i><b>10.2</b> Correlations</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="survey.html"><a href="survey.html#visualising-correlation"><i class="fa fa-check"></i><b>10.2.1</b> Visualising correlation</a></li>
+<li class="chapter" data-level="10.2.2" data-path="survey.html"><a href="survey.html#statisical-significance"><i class="fa fa-check"></i><b>10.2.2</b> Statisical significance</a></li>
+<li class="chapter" data-level="10.2.3" data-path="survey.html"><a href="survey.html#limitations-of-correlations"><i class="fa fa-check"></i><b>10.2.3</b> Limitations of correlations</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="survey.html"><a href="survey.html#cronbachs-alpha"><i class="fa fa-check"></i><b>10.3</b> Cronbach’s Alpha</a></li>
+<li class="chapter" data-level="10.4" data-path="survey.html"><a href="survey.html#hierarchical-clustering-to-assess-validity"><i class="fa fa-check"></i><b>10.4</b> Hierarchical Clustering to assess validity</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="survey.html"><a href="survey.html#clustering-analysis-example"><i class="fa fa-check"></i><b>10.4.1</b> Clustering Analysis Example</a></li>
+<li class="chapter" data-level="10.4.2" data-path="survey.html"><a href="survey.html#pre-processing"><i class="fa fa-check"></i><b>10.4.2</b> Pre-processing</a></li>
+<li class="chapter" data-level="10.4.3" data-path="survey.html"><a href="survey.html#scaling"><i class="fa fa-check"></i><b>10.4.3</b> Scaling</a></li>
+<li class="chapter" data-level="10.4.4" data-path="survey.html"><a href="survey.html#distances"><i class="fa fa-check"></i><b>10.4.4</b> Distances</a></li>
+<li class="chapter" data-level="10.4.5" data-path="survey.html"><a href="survey.html#clustering"><i class="fa fa-check"></i><b>10.4.5</b> Clustering</a></li>
+<li class="chapter" data-level="10.4.6" data-path="survey.html"><a href="survey.html#interpreting-cluster-analyses"><i class="fa fa-check"></i><b>10.4.6</b> Interpreting Cluster Analyses</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="survey.html"><a href="survey.html#clustering-the-involvement-data"><i class="fa fa-check"></i><b>10.5</b> Clustering the Involvement Data</a></li>
+<li class="chapter" data-level="10.6" data-path="survey.html"><a href="survey.html#reviewing-the-personal-involvement-index"><i class="fa fa-check"></i><b>10.6</b> Reviewing the Personal Involvement Index</a></li>
+<li class="chapter" data-level="10.7" data-path="survey.html"><a href="survey.html#quiz"><i class="fa fa-check"></i><b>10.7</b> Quiz</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="survey.html"><a href="survey.html#question-1-5"><i class="fa fa-check"></i><b>10.7.1</b> Question 1</a></li>
+<li class="chapter" data-level="10.7.2" data-path="survey.html"><a href="survey.html#question-2-5"><i class="fa fa-check"></i><b>10.7.2</b> Question 2</a></li>
+<li class="chapter" data-level="10.7.3" data-path="survey.html"><a href="survey.html#question-3-5"><i class="fa fa-check"></i><b>10.7.3</b> Question 3</a></li>
+<li class="chapter" data-level="10.7.4" data-path="survey.html"><a href="survey.html#question-4-4"><i class="fa fa-check"></i><b>10.7.4</b> Question 4</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="survey.html"><a href="survey.html#further-study-8"><i class="fa fa-check"></i><b>10.8</b> Further study</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="survey.html"><a href="survey.html#other-techniques"><i class="fa fa-check"></i><b>10.8.1</b> Other techniques</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="close.html"><a href="close.html"><i class="fa fa-check"></i><b>11</b> In Closing</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="close.html"><a href="close.html#searching-for-answers"><i class="fa fa-check"></i><b>11.1</b> Searching for answers</a></li>
+<li class="chapter" data-level="11.2" data-path="close.html"><a href="close.html#forums"><i class="fa fa-check"></i><b>11.2</b> Forums</a></li>
+<li class="chapter" data-level="11.3" data-path="close.html"><a href="close.html#further-study-9"><i class="fa fa-check"></i><b>11.3</b> Further Study</a></li>
+<li class="chapter" data-level="11.4" data-path="close.html"><a href="close.html#thanks"><i class="fa fa-check"></i><b>11.4</b> Thanks</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>12</b> Appendix</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="appendix.html"><a href="appendix.html#answers-to-quiz-1"><i class="fa fa-check"></i><b>12.1</b> Answers to Quiz 1</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="appendix.html"><a href="appendix.html#question-1-6"><i class="fa fa-check"></i><b>12.1.1</b> Question 1</a></li>
+<li class="chapter" data-level="12.1.2" data-path="appendix.html"><a href="appendix.html#question-2-6"><i class="fa fa-check"></i><b>12.1.2</b> Question 2</a></li>
+<li class="chapter" data-level="12.1.3" data-path="appendix.html"><a href="appendix.html#question-3-6"><i class="fa fa-check"></i><b>12.1.3</b> Question 3</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="appendix.html"><a href="appendix.html#answers-to-quiz-2"><i class="fa fa-check"></i><b>12.2</b> Answers to Quiz 2</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="appendix.html"><a href="appendix.html#question-1-7"><i class="fa fa-check"></i><b>12.2.1</b> Question 1</a></li>
+<li class="chapter" data-level="12.2.2" data-path="appendix.html"><a href="appendix.html#question-2-7"><i class="fa fa-check"></i><b>12.2.2</b> Question 2</a></li>
+<li class="chapter" data-level="12.2.3" data-path="appendix.html"><a href="appendix.html#question-3-7"><i class="fa fa-check"></i><b>12.2.3</b> Question 3</a></li>
+<li class="chapter" data-level="12.2.4" data-path="appendix.html"><a href="appendix.html#question-4-5"><i class="fa fa-check"></i><b>12.2.4</b> Question 4</a></li>
+<li class="chapter" data-level="12.2.5" data-path="appendix.html"><a href="appendix.html#question-5-4"><i class="fa fa-check"></i><b>12.2.5</b> Question 5</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="appendix.html"><a href="appendix.html#answers-to-quiz-3"><i class="fa fa-check"></i><b>12.3</b> Answers to Quiz 3</a></li>
+<li class="chapter" data-level="12.4" data-path="appendix.html"><a href="appendix.html#answers-to-quiz-4"><i class="fa fa-check"></i><b>12.4</b> Answers to Quiz 4</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#question-1-8"><i class="fa fa-check"></i>Question 1</a></li>
+<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#question-2-8"><i class="fa fa-check"></i>Question 2</a></li>
+<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#question-3-8"><i class="fa fa-check"></i>Question 3</a></li>
+<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#question-4-6"><i class="fa fa-check"></i>Question 4</a></li>
+<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#question-5-5"><i class="fa fa-check"></i>Question 5</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://peterprevos.com/" target="blank">Dr Peter Prevos</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Science for Water Professionals - Create Value from Data with the R Language</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="customers" class="section level1" number="9">
+<h1><span class="header-section-number">Chapter 9</span> Exploring the Customer Experience</h1>
+<p>The services that water utilities provide to their communities rely heavily on technology—most of the data that water utility professionals analyse is derived from measurement instruments and laboratory tests. The technological data does, however, only tell part of the story of urban water supply. We can physically measure the process from catchment to tap, but what happens downstream of the connection is a matter of psychology and sociology instead of chemistry and physics.</p>
+<p>Water utilities are becoming ever more aware of their role in the community. Water professionals now also need to analyse the information they collect from customers. Data collected from living human beings instead of from scientific instruments requires a different approach to technical data. Measurement in the social sciences follows a different approach to measuring physical processes.</p>
+<p>Technical professionals often lament that customer data is merely subjective and that it, therefore, is unable to provide real insights. The following three chapters demonstrate some techniques that social scientists use to construct and analyse surveys. While each individual answer is a subjective assessment, a well-designed and appropriately investigated customer survey can provide actionable insights into how a utility can improve its services perceived by the customer.</p>
+<p>This chapter introduces some principles of collecting and analysing data from customers and further techniques to manipulate data to create sound data science. The learning objectives for this chapter are:</p>
+<ul>
+<li>Understand the principles of measuring the customer experience with surveys.</li>
+<li>Evaluate data with missing observations.</li>
+<li>Apply the principles of tidy data.</li>
+</ul>
+<p>The data for this chapter is available in the <code>casestudy2</code> folder of your <a href="https://github.com/pprevos/r4h2o">RStudio project</a>.</p>
+<div id="measuring-mental-states" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Measuring Mental States</h2>
+<p>Unlike physical measurements in a water treatment plant, the state of mind of a consumer cannot be measured directly. Even the latest brain scanning techniques are unable to measure how satisfied a customer is when using a product or any of the other phenomenons we might want to measure.</p>
+<p>Surveys are the most common way to measure psychological constructs. The underlying assumption behind measuring a survey is that a causal relationship exists between the respondent’s state of mind and the answers they provide on the survey.</p>
+<p>Measuring a state of mind is a complex task that goes beyond asking direct questions. Simply asking: “How satisfied are you with tap water?” would not yield valid and reliable results. Firstly, this question assumes that respondents have the same understanding of satisfaction as the researcher. Secondly, with only one question, there is insufficient information to test the reliability and reliability of the responses, and we have to take the answer at face value.</p>
+<p>Physical measurements can be calibrated by comparing it with a known value. We can compare a length measurement with a known standardised value, calibrate a flow meter by measuring the volume pumped over a fixed time interval, and so on.</p>
+<p>Psychological states of mind cannot be calibrated as we have no direct insight into the software of the brain. In psychology and the social sciences, mental states are modelled as latent variables because we can only measure them indirectly (figure <a href="customers.html#fig:mental-state">9.1</a>).</p>
+<p>Researchers use groups of questions (called banks) that ask for a response to similar items. The words in the question are a stimulus that solicits a known response from the mind. The basic idea is that people with a similar disposition will respond in the same way to these stimuli. We use the answers to the multiple questions to test the responses for internal and external consistency.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:mental-state"></span>
+<img src="images/mental-state.jpg" alt="Relationship between mental states, latent variables and survey questions." width="60%" />
+<p class="caption">
+Figure 9.1: Relationship between mental states, latent variables and survey questions.
+</p>
+</div>
+<p>Measuring customer satisfaction, for example, involves asking respondents several questions about topic that contribute to satisfaction, such as friendliness of employees, the taste of water and other such topics. The number and wording of the individual items depends on the research question.</p>
+<p>Marketing researchers, sociologists and psychologists have published statistically validated survey scales that can be used to measure various latent variables, such as personality, consumer trust, service quality and many more.</p>
+</div>
+<div id="consumer-involvement" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> Consumer Involvement</h2>
+<p>Consumer involvement is an essential marketing metric that describes the relevance of a product or service has in somebody’s life. People who own a car will most likely be highly involved with purchasing and owning the vehicle due to a large amount of money involved and the social role it plays in developing their public self. Consumers will most likely have a much lower level of involvement with the instant coffee they drink than with the clothes they wear. More formally, consumer involvement can be defined as a person’s perceived relevance of the object based on inherent needs, values, and interests.</p>
+<p>Consumer involvement is a vital metric to understand because it is causally related to willingness to pay and perceptions of quality. Consumers with a higher level of involvement are generally willing to pay more for a service and have a more favourable impression of quality.</p>
+<p>Understanding involvement in the context of urban water supply is also essential because sustainably managing water as a common pool resource requires the active involvement of all users. The level of consumer involvement depends on a complex array of factors, which are related to psychology, situational factors and the marketing mix of the service provider. The lowest level of involvement is considered to be a state of inertia, which occurs when people habitually purchase a product without comparing alternatives.</p>
+<p>Cult products have the highest possible level of involvement because customers are devoted to the product or brand. Commercial organisations use this knowledge to their advantage by maximising the level of consumer involvement through branding and advertising. This strategy is used effectively by the bottled water industry. Manufacturers focus on enhancing the emotional aspects of their product rather than emphasising the cognitive elements. Water utilities tend to use a reversed strategy and highlight the cognitive elements of tap water, the pipes, plants and pumps, rather than trying to create an emotional relationship with their consumers.</p>
+<p>Water is more often than not positioned as a service that is essential for life. Most of the water that customer use is, however, used for a non-essential purpose. Water is available in the background of everyday life, which would suggest a low level of involvement. The essential nature of water would indicate a high level of involvement. This survey measure the involvement construct to gain a better insight into how involved consumers are with their water service.</p>
+<div id="personal-involvement-inventory" class="section level3" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> Personal Involvement Inventory</h3>
+<p>The customer survey of the second case study includes ten questions to measure the level of consumer involvement. These questions form the Personal Involvement Inventory (PII), developed by Judith Zaichkowsky (<a href="https://www.sfu.ca/~zaichkow/JA%252094.pdf">1994</a>). The Personal Involvement Inventory consists of two dimensions:</p>
+<ol style="list-style-type: decimal">
+<li>Cognitive involvement (importance, relevance, meaning, value and need)</li>
+<li>Affective involvement (involvement, fascination, appeal, excitement and interest).</li>
+</ol>
+<p>The involvement question bank uses a semantic differential scale. This method requires respondents to choose on a scale between two antonyms (figure <a href="customers.html#fig:invol">9.2</a>). This type of survey measures the meaning that people attach to a concept, such as a product or service. The items were presented in a random order to each respondent. In principle, the words on the right indicate a high level of involvement. Five questions have a reversed polarity, which means that the left side shows a high level of involvement. This technique prevents respondents forces respondents to consider their response instead of providing the same answer to all questions.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:invol"></span>
+<img src="images/semantic-differential.png" alt="Personal Involvement Inventory questionnaire (randomised item order)." width="80%" />
+<p class="caption">
+Figure 9.2: Personal Involvement Inventory questionnaire (randomised item order).
+</p>
+</div>
+<p>The customer survey data we cleaned in the previous chapter contains the ten items of the PII scale (<code>p01</code>, <code>p02</code> <span class="math inline">\(\ldots\)</span> <code>p10</code>). Table <a href="customers.html#tab:pii">9.1</a> shows the relationship between the items and the scale. The items with an asterisk are in reversed polarity.</p>
+<p>Reversed polarity is a technique to ensure respondent are attentive by reversing the direction of the scale. For example: <em>important</em> implies a high level of involvement, but is at the start of the scale, while <em>worthless</em> implies a low level of involvement. The next section shows how to normalise these responses.</p>
+<table>
+<caption><span id="tab:pii">Table 9.1: </span>Personal Involvement Inventory variables.</caption>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Item</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">p 01</td>
+<td align="left">Important – Unimportant*</td>
+</tr>
+<tr class="even">
+<td align="left">p 02</td>
+<td align="left">Relevant – Irrelevant*</td>
+</tr>
+<tr class="odd">
+<td align="left">p 03</td>
+<td align="left">Meaningless – Meaningful</td>
+</tr>
+<tr class="even">
+<td align="left">p 04</td>
+<td align="left">Worthless – Valuable</td>
+</tr>
+<tr class="odd">
+<td align="left">p 05</td>
+<td align="left">Not needed – Needed</td>
+</tr>
+<tr class="even">
+<td align="left">p 06</td>
+<td align="left">Boring – Interesting</td>
+</tr>
+<tr class="odd">
+<td align="left">p 07</td>
+<td align="left">Exciting – Unexciting*</td>
+</tr>
+<tr class="even">
+<td align="left">p 08</td>
+<td align="left">Appealing – Unappealing*</td>
+</tr>
+<tr class="odd">
+<td align="left">p 09</td>
+<td align="left">Fascinating – Mundane*</td>
+</tr>
+<tr class="even">
+<td align="left">p 10</td>
+<td align="left">Involving– Uninvolving*</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="preparing-the-involvement-data" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> Preparing the Involvement Data</h2>
+<p>The first step in writing an R script is, as always, to initialise the appropriate libraries and read the data. In this case, we do not start with the usual <code>library(tidyverse)</code> but call the specific libraries as we need them. We begin with the <a href="https://readr.tidyverse.org/">readr</a> package, which provides the functionality that reads CSV files and similar types. We also load the <a href="https://tibble.tidyverse.org/index.html">tibble</a> package to access improved functionality for data frames and <a href="https://dplyr.tidyverse.org/index.html">dplyr</a> to transform data.</p>
+<p>We can load the cleaned data set created in <a href="tidyverse.html#cleaning">chapter 8</a> as a starting point.</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="customers.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb137-2"><a href="customers.html#cb137-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb137-3"><a href="customers.html#cb137-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb137-4"><a href="customers.html#cb137-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb137-5"><a href="customers.html#cb137-5" aria-hidden="true" tabindex="-1"></a>customers <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;casestudy2/customer_survey_clean.csv&quot;</span>)</span></code></pre></div>
+<p>To analyse the level of involvement, we only need the <code>survey_id</code> as a unique identifier and the ten PII items. The <code>select()</code> function we saw in the previous chapter has some helper functions that simplify selecting the columns we need. The <code>starts_with()</code> helper function lets you choose columns based on a prefix. We can now select the eleven variables of interest, but before we can analyse them, we need to correct the reversed polarity of five items.</p>
+<p>The scale measured from 1 to 7, so we can reverse the five items by subtracting the response from 8. The dplyr <code>mutate()</code> function changes variables or creates new ones in a tibble.</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="customers.html#cb138-1" aria-hidden="true" tabindex="-1"></a>pii <span class="ot">&lt;-</span> <span class="fu">select</span>(customers, survey_id, <span class="fu">starts_with</span>(<span class="st">&quot;p&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb138-2"><a href="customers.html#cb138-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">p01 =</span> <span class="dv">8</span> <span class="sc">-</span> p01,</span>
+<span id="cb138-3"><a href="customers.html#cb138-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">p02 =</span> <span class="dv">8</span> <span class="sc">-</span> p02,</span>
+<span id="cb138-4"><a href="customers.html#cb138-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">p07 =</span> <span class="dv">8</span> <span class="sc">-</span> p07,</span>
+<span id="cb138-5"><a href="customers.html#cb138-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">p08 =</span> <span class="dv">8</span> <span class="sc">-</span> p08,</span>
+<span id="cb138-6"><a href="customers.html#cb138-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">p09 =</span> <span class="dv">8</span> <span class="sc">-</span> p09,</span>
+<span id="cb138-7"><a href="customers.html#cb138-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">p10 =</span> <span class="dv">8</span> <span class="sc">-</span> p10)</span></code></pre></div>
+<blockquote>
+<p><strong>Practice task</strong>: Read the documentation of the <a href="https://dplyr.tidyverse.org/reference/select.html">select function</a> on the Tidyverse website for a complete overview. How would you select the PII columns with the <code>:</code> operator?</p>
+</blockquote>
+<p>Answer:</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="customers.html#cb139-1" aria-hidden="true" tabindex="-1"></a>pii <span class="ot">&lt;-</span> <span class="fu">select</span>(customers, survey_id, p01<span class="sc">:</span>p10)</span></code></pre></div>
+</div>
+<div id="missing-data" class="section level2" number="9.4">
+<h2><span class="header-section-number">9.4</span> Missing Data</h2>
+<p>Data collected from reality is never perfect. Besides issues with the reliability and validity of measurements, completeness is another problem that analysis needs to manage. The respondents did not complete each item. We thus have to deal with missing data points.</p>
+<p>To review the completeness of the data, we can use the <code>summary()</code> function. The next line of code summarises all columns, except for the index (only the first four variables are analysed to save space on this page).</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="customers.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(customers, p01<span class="sc">:</span>p04) <span class="sc">%&gt;%</span> </span>
+<span id="cb140-2"><a href="customers.html#cb140-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code></pre></div>
+<pre><code>##       p01            p02            p03            p04      
+##  Min.   :1.00   Min.   :1.00   Min.   :1.00   Min.   :1.00  
+##  1st Qu.:1.00   1st Qu.:1.00   1st Qu.:5.00   1st Qu.:6.00  
+##  Median :1.00   Median :1.00   Median :6.00   Median :7.00  
+##  Mean   :1.86   Mean   :2.17   Mean   :5.77   Mean   :6.13  
+##  3rd Qu.:2.00   3rd Qu.:3.00   3rd Qu.:7.00   3rd Qu.:7.00  
+##  Max.   :7.00   Max.   :7.00   Max.   :7.00   Max.   :7.00  
+##  NA&#39;s   :52     NA&#39;s   :52     NA&#39;s   :52     NA&#39;s   :52</code></pre>
+<p>When you study the output, you see that for all ten variables, the minimum is 1 and the maximum is 7, as expected. At the bottom of the output for each variable, you will also note that there are 52 missing responses, which R indicates with <code>NA</code> (Not Available).</p>
+<p>Missing data is a common problem in surveys. Respondents might not answer all questions, or exit the survey early. While electronic surveys can make answers compulsory, this strategy will also increase the number of respondents who drop out.</p>
+<p><a href="https://en.wikipedia.org/wiki/Missing_data">Mssing data</a> can be random or through an underlying pattern. We need deal with each type of missing data differently.</p>
+<p>Data Completely Missing At Random (CMAR) is part of the sampling error. The missing data is independent of any other variables in the survey. Randomly missing data can be either ignored or could be imputed. Depending on your type of analysis, you might have to remove respondents with random missing data from the sample.</p>
+<p>Data that is Missing Not At Random (MNAR) indicates an underlying pattern. These respondents are, in most cases, omitted from the analysis.</p>
+<p>The fact that the same number of data points are missing for each variable is an intriguing clue. The data in this survey seems to be Missing Not At Random. Reviewing the data shows that there are 52 respondents that did not answer the involvement questions. When data is missing not at random, as in this case, we usually need to remove these observations, which we will do in the next step.</p>
+<div id="imputation" class="section level3" number="9.4.1">
+<h3><span class="header-section-number">9.4.1</span> Imputation</h3>
+<p>When data is Completely Missing At Random, we can possibly replace missing values with a best guess, called imputation. The most common method is to replace the missing value with the median or mean of the sample. More advanced methods use statistical analysis to infer the most likely missing response.</p>
+<p>Imputation needs to be used with great care because you can bias the results. The second principle of ethical data science is that we do justice to the participants. Imputing missing values is like putting words in the mouth of the respondent. Imputation can only be used when the primary method of analysis cannot process missing values, and when the number of missing values is only a few percent of the total number of observations.</p>
+</div>
+<div id="calculations-with-missing-data" class="section level3" number="9.4.2">
+<h3><span class="header-section-number">9.4.2</span> Calculations with missing data</h3>
+<p>Using missing data requires special considerations during analysis. Almost all functions will return an <code>NA</code> value when one or more of the observations are not available, as shown in the example below. Most functions accept the <code>na.rnm = TRUE</code> option to instruct R how to deal with missing values. The second line of code tells R to remove any <code>NA</code> values from the vector. The default setting for this option is to keep the missing observations.</p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="customers.html#cb142-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="cn">NA</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb142-2"><a href="customers.html#cb142-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-3"><a href="customers.html#cb142-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="customers.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="customers.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x)</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="customers.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 15</code></pre>
+<p>Note the differences in the output with and without the <code>na.rm = TRUE</code> parameter.</p>
+</div>
+</div>
+<div id="tidy-data" class="section level2" number="9.5">
+<h2><span class="header-section-number">9.5</span> Tidy Data</h2>
+<p>In the previous session, we cleaned the survey data by removing unwanted columns and respondents. Although the data is clean, it is not yet in its ideal <code>tidy</code> state. <a href="https://www.jstatsoft.org/article/view/v059i10">Tidy data</a> is a standard way of mapping the meaning of a data set to its structure. Data that is structured in a tidy way is more natural to analyse and visualise.</p>
+<p>A dataset is a collection of values, mostly numbers or strings of characters. Every value belongs to a variable (column) and to an observation (rows). A variable should contains all values that measure the same underlying attribute (like height, temperature, duration) across units. An observation provides all values measured on the same unit (like a person, a day, or a location), across attributes.</p>
+<p>A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations, variables and types. In tidy data:</p>
+<ul>
+<li>Each variable forms a column.</li>
+<li>Each observation forms a row.</li>
+</ul>
+<p>The laboratory results sets used in the first <a href="#casestudy1">case study</a> are tidy because all measurements are in the same result column, as shown in table <a href="customers.html#tab:tidy">9.2</a>.</p>
+<table>
+<caption><span id="tab:tidy">Table 9.2: </span>Tidy laboratory data.</caption>
+<thead>
+<tr class="header">
+<th align="right">Sample_No</th>
+<th align="left">Date</th>
+<th align="left">Sample_Point</th>
+<th align="left">Town</th>
+<th align="left">Measure</th>
+<th align="right">Result</th>
+<th align="left">Units</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">677629</td>
+<td align="left">2070-09-10</td>
+<td align="left">SN_11009</td>
+<td align="left">Snake’s Canyon</td>
+<td align="left">Chlorine Total</td>
+<td align="right">0.59</td>
+<td align="left">mg/L</td>
+</tr>
+<tr class="even">
+<td align="right">623402</td>
+<td align="left">2070-06-18</td>
+<td align="left">SN_11009</td>
+<td align="left">Snake’s Canyon</td>
+<td align="left">E. coli</td>
+<td align="right">0.00</td>
+<td align="left">Orgs/100mL</td>
+</tr>
+<tr class="odd">
+<td align="right">632223</td>
+<td align="left">2070-04-03</td>
+<td align="left">SN_11009</td>
+<td align="left">Snake’s Canyon</td>
+<td align="left">Chlorine Total</td>
+<td align="right">0.03</td>
+<td align="left">mg/L</td>
+</tr>
+<tr class="even">
+<td align="right">642296</td>
+<td align="left">2070-06-18</td>
+<td align="left">SN_11009</td>
+<td align="left">Snake’s Canyon</td>
+<td align="left">Chlorine Total</td>
+<td align="right">0.55</td>
+<td align="left">mg/L</td>
+</tr>
+<tr class="odd">
+<td align="right">668668</td>
+<td align="left">2069-06-13</td>
+<td align="left">SN_11009</td>
+<td align="left">Snake’s Canyon</td>
+<td align="left">E. coli</td>
+<td align="right">0.00</td>
+<td align="left">Orgs/100mL</td>
+</tr>
+<tr class="even">
+<td align="right">623674</td>
+<td align="left">2070-12-17</td>
+<td align="left">SN_11009</td>
+<td align="left">Snake’s Canyon</td>
+<td align="left">E. coli</td>
+<td align="right">0.00</td>
+<td align="left">Orgs/100mL</td>
+</tr>
+</tbody>
+</table>
+<p>The involvement data is, however, untidy because the results for each respondent are spread across ten columns. This data structure is more challenging because it cannot be grouped. The functionalities of the Tidyverse work only with tidy data. There are, however, other functions that require the wide format, as we shall see in the next chapter.</p>
+<p>To tidy the involvement data we need to, speaking in Excel terms, unpivot the data. The <code>pivot_longer()</code> function in the <strong><a href="https://tidyr.tidyverse.org/index.html">tidyr package</a></strong> helps to create tidy data. This function takes multiple columns and collapses them into key-value pairs.</p>
+<p>The example in figure <a href="customers.html#fig:pivot-longer">9.3</a> transforms a wide version into a tidy long version. The first option in the <code>pivot_longer()</code> function is the name of the data frame to be transformed. The next option defines which columns need to pivot, which are the ones that contain the data. The remainder of the columns will be used as the keys.</p>
+<p>The last two options provide the names of the new columns. The <code>names_to</code> option defines the name of the column that will store the names of the pivoted variables. The <code>values_to</code> option specifies the name of the column that will hold the values in the pivoted columns:</p>
+<p><code>pivot_longer(data, -country, names_to = "year", values_to = "cases")</code>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:pivot-longer"></span>
+<img src="images/pivot-longer.png" alt="Principles of the pivot longer function." width="60%" />
+<p class="caption">
+Figure 9.3: Principles of the pivot longer function.
+</p>
+</div>
+<blockquote>
+<p><strong>Practice task</strong>: How would you apply this function to the PII data?</p>
+</blockquote>
+<p>For the involvement data, we include all columns, except the <code>survey_id</code>. The names column will be called <code>Item</code>, which contains the name of the ten items <code>p01</code> to <code>p10</code>. The values column is <code>Response</code>, which contains the results.</p>
+<p>The 52 respondents who did not complete this part of the survey can be removed because this data is not missing at random, we exclude them from further analysis.</p>
+<p>Lastly, we write this clean data to disk for use in the next chapter.</p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="customers.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb150-2"><a href="customers.html#cb150-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb150-3"><a href="customers.html#cb150-3" aria-hidden="true" tabindex="-1"></a>pii_long <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(pii, <span class="sc">-</span>survey_id, </span>
+<span id="cb150-4"><a href="customers.html#cb150-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">names_to =</span> <span class="st">&quot;Item&quot;</span>, </span>
+<span id="cb150-5"><a href="customers.html#cb150-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">values_to =</span> <span class="st">&quot;Response&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb150-6"><a href="customers.html#cb150-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Response))</span>
+<span id="cb150-7"><a href="customers.html#cb150-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb150-8"><a href="customers.html#cb150-8" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(pii_long, <span class="st">&quot;casestudy2/pii_long.csv&quot;</span>)</span></code></pre></div>
+<div id="explore-the-results" class="section level3" number="9.5.1">
+<h3><span class="header-section-number">9.5.1</span> Explore the results</h3>
+<p>The best way to explore the results of this transformed data is to visualise the distribution of each response with a boxplot for each item. Note how the <code>scale_y_continuous()</code> function configures the <span class="math inline">\(y\)</span>-scale to display all seven numbers. Using <code>scale_y_continuous(breaks = c(1, 7))</code> only shows number 1 and 7.</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="customers.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb151-2"><a href="customers.html#cb151-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb151-3"><a href="customers.html#cb151-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pii_long, <span class="fu">aes</span>(Item, Response)) <span class="sc">+</span></span>
+<span id="cb151-4"><a href="customers.html#cb151-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;dodgerblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb151-5"><a href="customers.html#cb151-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>) <span class="sc">+</span> </span>
+<span id="cb151-6"><a href="customers.html#cb151-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Personal Involvement Inventory items&quot;</span>,</span>
+<span id="cb151-7"><a href="customers.html#cb151-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Tap water&quot;</span>) <span class="sc">+</span></span>
+<span id="cb151-8"><a href="customers.html#cb151-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-86"></span>
+<img src="r4h2o_files/figure-html/unnamed-chunk-86-1.png" alt="Distribution of involvement responses." width="80%" />
+<p class="caption">
+Figure 9.4: Distribution of involvement responses.
+</p>
+</div>
+<blockquote>
+<p><strong>Question</strong>: What pattern do you observe in these results (remember that the Personal Involvement Index consists of a cognitive and affective dimension)?</p>
+</blockquote>
+</div>
+</div>
+<div id="quiz-5-transforming-data" class="section level2" number="9.6">
+<h2><span class="header-section-number">9.6</span> Quiz 5: Transforming data</h2>
+<p>The following five questions test your comprehension of some of the functionality explained in this chapter. Test your answer by executing the code in the console. Any files are available in the <code>casestudy2</code> folder of the course project.</p>
+<div id="question-1-4" class="section level3" number="9.6.1">
+<h3><span class="header-section-number">9.6.1</span> Question 1</h3>
+<p>The table below shows the first few rows of some random laboratory data. Is this data tidy?</p>
+<table>
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>Sample_Point</th>
+<th align="right">Chlorine</th>
+<th align="right">Turbidity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2022-12-01</td>
+<td>S2365</td>
+<td align="right">0.62</td>
+<td align="right">0.12</td>
+</tr>
+<tr class="even">
+<td>2022-12-08</td>
+<td>S2365</td>
+<td align="right">0.34</td>
+<td align="right">0.10</td>
+</tr>
+<tr class="odd">
+<td>2022-12-15</td>
+<td>S2365</td>
+<td align="right">1.20</td>
+<td align="right">0.8</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: lower-alpha">
+<li>Yes. There are no missing data points.</li>
+<li>No. The observations are spread over multiple columns.</li>
+</ol>
+</div>
+<div id="question-2-4" class="section level3" number="9.6.2">
+<h3><span class="header-section-number">9.6.2</span> Question 2</h3>
+<p>How would you transform the data shown in the first question, named <code>lab</code>?</p>
+<ol style="list-style-type: lower-alpha">
+<li><code>pivot_longer(lab, names_to = "Analyte", values_to = "Result")</code></li>
+<li>The data is already tidy.</li>
+<li><code>pivot_longer(lab, cols = 3:4, names_to = "Analyte", values_to = "Result")</code></li>
+<li><code>pivot_longer(lab, Chlorine:Turbidity, names_to = "Measure", values_to = "Result")</code></li>
+</ol>
+</div>
+<div id="question-3-4" class="section level3" number="9.6.3">
+<h3><span class="header-section-number">9.6.3</span> Question 3</h3>
+<p>You have a vector of channel level measurements, but one observation is missing. What is the average of the numbers in this vector: <code>c(100, 50, 25, NA, 25)</code>?</p>
+</div>
+<div id="question-4-3" class="section level3" number="9.6.4">
+<h3><span class="header-section-number">9.6.4</span> Question 4</h3>
+<p>Load the raw data from the customer survey. Select the <code>hardship</code> and <code>contact</code> variables. What is the total number of missing variables in the raw data?</p>
+</div>
+<div id="question-5-3" class="section level3" number="9.6.5">
+<h3><span class="header-section-number">9.6.5</span> Question 5</h3>
+<p>Which one of these is <em>not</em> a property of tidy data?</p>
+<ol style="list-style-type: lower-alpha">
+<li>Each variable forms a column.</li>
+<li>Each observation forms a row.</li>
+<li>Each observation is complete (no missing data)</li>
+</ol>
+<p>That’s it for the fifth quiz. If you get stuck, you can find the answers in the appendix.</p>
+</div>
+</div>
+<div id="further-study-7" class="section level2" number="9.7">
+<h2><span class="header-section-number">9.7</span> Further Study</h2>
+<div id="the-dplyr-package" class="section level3" number="9.7.1">
+<h3><span class="header-section-number">9.7.1</span> The <em>dplyr</em> package</h3>
+<p>You have now seen most of the functions, also called verbs, of the <em>dplyr</em> package. The ones we have used so far are:</p>
+<ul>
+<li><code>count()</code> counts the number of rows in each group</li>
+<li><code>filter()</code> picks cases based on their values.</li>
+<li><code>group_by</code> perform operations by grouped variables</li>
+<li><code>summarise()</code> reduces multiple values down to a single summary.</li>
+<li><code>select()</code> picks variables based on their names.</li>
+<li><code>mutate()</code> adds new variables that are functions of existing variables</li>
+<li><code>rename()</code> changes the name of a variable</li>
+<li><code>left_join()</code> joins two tables</li>
+</ul>
+<p>These functions provide a powerful toolkit to transform and analyse data. These are, however, not the only functions in this package. The <a href="https://dplyr.tidyverse.org/articles/dplyr.html">dplyr vignette</a> describes all verbs available in this powerful package. Read this page to familiarise yourself with the complete capabilities of the <em>dplyr</em> package.</p>
+</div>
+<div id="customer-surveys" class="section level3" number="9.7.2">
+<h3><span class="header-section-number">9.7.2</span> Customer Surveys</h3>
+<p>Measuring the customer experience with surveys is a complex craft. The <a href="https://www.coursera.org/learn/questionnaire-design">Questionnaire Design for Social Surveys</a> course from the University of Maryland goes into a lot of depth on how to best design surveys.</p>
+<p>The <a href="survey.html#survey">next chapter</a> delves deeper into analysing customer responses.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="cleaning.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="survey.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pprevos/r4h2o/edit/master/09_customers.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/pprevos/r4h2o/r4h2o-book/blob/master/09_customers.Rmd",
+"text": null
+},
+"download": ["r4h2o.pdf", "r4h2o.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,323 @@
+# Exploring the Customer Experience {#customers}
+
+The services that water utilities provide to their communities rely heavily on technology---most of the data that water utility professionals analyse is derived from measurement instruments and laboratory tests. The technological data does, however, only tell part of the story of urban water supply. We can physically measure the process from catchment to tap, but what happens downstream of the connection is a matter of psychology and sociology instead of chemistry and physics.
+
+Water utilities are becoming ever more aware of their role in the community. Water professionals now also need to analyse the information they collect from customers. Data collected from living human beings instead of from scientific instruments requires a different approach to technical data. Measurement in the social sciences follows a different approach to measuring physical processes. 
+
+Technical professionals often lament that customer data is merely subjective and that it, therefore, is unable to provide real insights. The following three chapters demonstrate some techniques that social scientists use to construct and analyse surveys. While each individual answer is a subjective assessment, a well-designed and appropriately investigated customer survey can provide actionable insights into how a utility can improve its services perceived by the customer.
+
+This chapter introduces some principles of collecting and analysing data from customers and further techniques to manipulate data to create sound data science. The learning objectives for this chapter are:
+
+* Understand the principles of measuring the customer experience with surveys.
+* Evaluate data with missing observations.
+* Apply the principles of tidy data.
+
+The data for this chapter is available in the `casestudy2` folder of your [RStudio project](https://github.com/pprevos/r4h2o).
+
+## Measuring Mental States
+
+
+Unlike physical measurements in a water treatment plant, the state of mind of a consumer cannot be measured directly. Even the latest brain scanning techniques are unable to measure how satisfied a customer is when using a product or any of the other phenomenons we might want to measure.
+
+Surveys are the most common way to measure psychological constructs. The underlying assumption behind measuring a survey is that a causal relationship exists between the respondent's state of mind and the answers they provide on the survey. 
+
+Measuring a state of mind is a complex task that goes beyond asking direct questions. Simply asking: "How satisfied are you with tap water?" would not yield valid and reliable results. Firstly, this question assumes that respondents have the same understanding of satisfaction as the researcher. Secondly, with only one question, there is insufficient information to test the reliability and reliability of the responses, and we have to take the answer at face value. 
+
+Physical measurements can be calibrated by comparing it with a known value. We can compare a length measurement with a known standardised value, calibrate a flow meter by measuring the volume pumped over a fixed time interval, and so on. 
+
+Psychological states of mind cannot be calibrated as we have no direct insight into the software of the brain. In psychology and the social sciences, mental states are modelled as latent variables because we can only measure them indirectly (figure \@ref(fig:mental-state)). 
+
+Researchers use groups of questions (called banks) that ask for a response to similar items. The words in the question are a stimulus that solicits a known response from the mind. The basic idea is that people with a similar disposition will respond in the same way to these stimuli. We use the answers to the multiple questions to test the responses for internal and external consistency.
+
+```{r mental-state, fig.cap="Relationship between mental states, latent variables and survey questions.", echo=FALSE, out.width = "60%"}
+knitr::include_graphics("images/mental-state.jpg")
+```
+
+Measuring customer satisfaction, for example, involves asking respondents several questions about topic that contribute to satisfaction, such as friendliness of employees, the taste of water and other such topics. The number and wording of the individual items depends on the research question.
+
+Marketing researchers, sociologists and psychologists have published statistically validated survey scales that can be used to measure various latent variables, such as personality, consumer trust, service quality and many more.
+
+## Consumer Involvement
+
+Consumer involvement is an essential marketing metric that describes the relevance of a product or service has in somebody's life. People who own a car will most likely be highly involved with purchasing and owning the vehicle due to a large amount of money involved and the social role it plays in developing their public self. Consumers will most likely have a much lower level of involvement with the instant coffee they drink than with the clothes they wear. More formally, consumer involvement can be defined as a person's perceived relevance of the object based on inherent needs, values, and interests.
+
+Consumer involvement is a vital metric to understand because it is causally related to willingness to pay and perceptions of quality. Consumers with a higher level of involvement are generally willing to pay more for a service and have a more favourable impression of quality.
+
+Understanding involvement in the context of urban water supply is also essential because sustainably managing water as a common pool resource requires the active involvement of all users. The level of consumer involvement depends on a complex array of factors, which are related to psychology, situational factors and the marketing mix of the service provider. The lowest level of involvement is considered to be a state of inertia, which occurs when people habitually purchase a product without comparing alternatives.
+
+Cult products have the highest possible level of involvement because customers are devoted to the product or brand. Commercial organisations use this knowledge to their advantage by maximising the level of consumer involvement through branding and advertising. This strategy is used effectively by the bottled water industry. Manufacturers focus on enhancing the emotional aspects of their product rather than emphasising the cognitive elements. Water utilities tend to use a reversed strategy and highlight the cognitive elements of tap water, the pipes, plants and pumps, rather than trying to create an emotional relationship with their consumers.
+
+Water is more often than not positioned as a service that is essential for life. Most of the water that customer use is, however, used for a non-essential purpose. Water is available in the background of everyday life, which would suggest a low level of involvement. The essential nature of water would indicate a high level of involvement. This survey measure the involvement construct to gain a better insight into how involved consumers are with their water service.
+
+### Personal Involvement Inventory
+
+The customer survey of the second case study includes ten questions to measure the level of consumer involvement. These questions form the Personal Involvement Inventory (PII), developed by Judith Zaichkowsky ([1994](https://www.sfu.ca/~zaichkow/JA%252094.pdf)). The Personal Involvement Inventory consists of two dimensions: 
+
+1. Cognitive involvement (importance, relevance, meaning, value and need) 
+2. Affective involvement (involvement, fascination, appeal, excitement and interest).
+
+The involvement question bank uses a semantic differential scale. This method requires respondents to choose on a scale between two antonyms (figure \@ref(fig:invol)). This type of survey measures the meaning that people attach to a concept, such as a product or service. The items were presented in a random order to each respondent. In principle, the words on the right indicate a high level of involvement. Five questions have a reversed polarity, which means that the left side shows a high level of involvement. This technique prevents respondents forces respondents to consider their response instead of providing the same answer to all questions.
+
+```{r invol, fig.cap="Personal Involvement Inventory questionnaire (randomised item order).", echo=FALSE, out.width = '80%'}
+knitr::include_graphics("images/semantic-differential.png")
+```
+
+The customer survey data we cleaned in the previous chapter contains the ten items of the PII scale (`p01`, `p02` $\ldots$ `p10`). Table \@ref(tab:pii) shows the relationship between the items and the scale. The items with an asterisk are in reversed polarity. 
+
+Reversed polarity is a technique to ensure respondent are attentive by reversing the direction of the scale. For example: *important* implies a high level of involvement, but is at the start of the scale, while *worthless* implies a low level of involvement. The next section shows how to normalise these responses.
+
+```{r pii, echo=FALSE}
+knitr::kable(data.frame(Variable = paste("p", formatC(1:10, width = 2, format = "d", flag = "0")),
+                        Item = c("Important – Unimportant*", 
+                                 "Relevant – Irrelevant*",
+                                 "Meaningless – Meaningful",
+                                 "Worthless – Valuable",
+                                 "Not needed – Needed",
+                                 "Boring – Interesting",
+                                 "Exciting – Unexciting*",
+                                 "Appealing – Unappealing*",
+                                 "Fascinating – Mundane*",
+                                 "Involving–  Uninvolving*")), 
+             caption = "Personal Involvement Inventory variables.")
+```
+
+## Preparing the Involvement Data
+
+The first step in writing an R script is, as always, to initialise the appropriate libraries and read the data. In this case, we do not start with the usual `library(tidyverse)` but call the specific libraries as we need them. We begin with the [readr](https://readr.tidyverse.org/) package, which provides the functionality that reads CSV files and similar types. We also load the [tibble](https://tibble.tidyverse.org/index.html) package to access improved functionality for data frames and [dplyr](https://dplyr.tidyverse.org/index.html) to transform data.
+
+We can load the cleaned data set created in [chapter 8](#cleaning) as a starting point.
+
+```{r message=FALSE, eval=FALSE}
+library(readr)
+library(tibble)
+library(dplyr)
+
+customers <- read_csv("casestudy2/customer_survey_clean.csv")
+```
+
+```{r message=FALSE, echo=FALSE}
+library(readr)
+library(tibble)
+library(dplyr)
+
+customers <- read_csv("../casestudy2/customer_survey_clean.csv")
+```
+
+To analyse the level of involvement, we only need the `survey_id` as a unique identifier and the ten PII items. The `select()` function we saw in the previous chapter has some helper functions that simplify selecting the columns we need.  The `starts_with()` helper function lets you choose columns based on a prefix. We can now select the eleven variables of interest, but before we can analyse them, we need to correct the reversed polarity of five items. 
+
+The scale measured from 1 to 7, so we can reverse the five items by subtracting the response from 8. The dplyr `mutate()` function changes variables or creates new ones in a tibble.
+
+```{r, message=FALSE}
+pii <- select(customers, survey_id, starts_with("p")) %>%
+    mutate(p01 = 8 - p01,
+           p02 = 8 - p02,
+           p07 = 8 - p07,
+           p08 = 8 - p08,
+           p09 = 8 - p09,
+           p10 = 8 - p10)
+```
+
+>**Practice task**: Read the documentation of the [select function](https://dplyr.tidyverse.org/reference/select.html) on the Tidyverse website for a complete overview. How would you select the PII columns with the `:` operator?
+
+Answer:
+
+```{r, eval=FALSE}
+pii <- select(customers, survey_id, p01:p10)
+```
+
+## Missing Data
+
+Data collected from reality is never perfect. Besides issues with the reliability and validity of measurements, completeness is another problem that analysis needs to manage. The respondents did not complete each item. We thus have to deal with missing data points.
+
+To review the completeness of the data, we can use the `summary()` function. The next line of code summarises all columns, except for the index (only the first four variables are analysed to save space on this page).
+
+```{r message=FALSE}
+select(customers, p01:p04) %>% 
+  summary()
+```
+
+When you study the output, you see that for all ten variables, the minimum is 1 and the maximum is 7, as expected. At the bottom of the output for each variable, you will also note that there are 52 missing responses, which R indicates with `NA` (Not Available).
+
+Missing data is a common problem in surveys. Respondents might not answer all questions, or exit the survey early. While electronic surveys can make answers compulsory, this strategy will also increase the number of respondents who drop out.
+
+[Mssing data](https://en.wikipedia.org/wiki/Missing_data) can be random or through an underlying pattern. We need deal with each type of missing data differently. 
+
+Data Completely Missing At Random (CMAR) is part of the sampling error. The missing data is independent of any other variables in the survey. Randomly missing data can be either ignored or could be imputed. Depending on your type of analysis, you might have to remove respondents with random missing data from the sample.
+
+Data that is Missing Not At Random (MNAR) indicates an underlying pattern. These respondents are, in most cases, omitted from the analysis.
+
+The fact that the same number of data points are missing for each variable is an intriguing clue. The data in this survey seems to be Missing Not At Random. Reviewing the data shows that there are 52 respondents that did not answer the involvement questions. When data is missing not at random, as in this case, we usually need to remove these observations, which we will do in the next step.
+
+### Imputation
+
+When data is Completely Missing At Random, we can possibly replace missing values with a best guess, called imputation. The most common method is to replace the missing value with the median or mean of the sample. More advanced methods use statistical analysis to infer the most likely missing response.
+
+Imputation needs to be used with great care because you can bias the results. The second principle of ethical data science is that we do justice to the participants. Imputing missing values is like putting words in the mouth of the respondent. Imputation can only be used when the primary method of analysis cannot process missing values, and when the number of missing values is only a few percent of the total number of observations.
+
+### Calculations with missing data
+
+Using missing data requires special considerations during analysis. Almost all functions will return an `NA` value when one or more of the observations are not available, as shown in the example below. Most functions accept the `na.rnm = TRUE` option to instruct R how to deal with missing values. The second line of code tells R to remove any `NA` values from the vector. The default setting for this option is to keep the missing observations.
+
+```{r}
+x <- c(1, 2, 3, NA, 4, 5)
+
+mean(x)
+mean(x, na.rm = TRUE)
+
+sum(x)
+sum(x, na.rm = TRUE)
+```
+
+Note the differences in the output with and without the `na.rm = TRUE` parameter.
+
+## Tidy Data
+
+In the previous session, we cleaned the survey data by removing unwanted columns and respondents. Although the data is clean, it is not yet in its ideal `tidy` state. [Tidy data](https://www.jstatsoft.org/article/view/v059i10) is a standard way of mapping the meaning of a data set to its structure. Data that is structured in a tidy way is more natural to analyse and visualise.
+
+A dataset is a collection of values, mostly numbers or strings of characters. Every value belongs to a variable (column) and to an observation (rows). A variable should contains all values that measure the same underlying attribute (like height, temperature, duration) across units. An observation provides all values measured on the same unit (like a person, a day, or a location), across attributes. 
+
+A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations, variables and types. In tidy data:
+
+* Each variable forms a column.
+* Each observation forms a row.
+
+The laboratory results sets used in the first [case study](#casestudy1) are tidy because all measurements are in the same result column, as shown in table \@ref(tab:tidy).
+
+```{r, echo=FALSE, message=FALSE, eval=FALSE}
+gormsey <- read_csv("casestudy1/gormsey.csv") 
+  
+knitr::kable(head(gormsey), caption = "Tidy laboratory data.", digits = 2)
+```
+
+```{r tidy, echo=FALSE, message=FALSE, echo=FALSE}
+gormsey <- read_csv("../casestudy1/gormsey.csv") 
+  
+knitr::kable(head(gormsey), caption = "Tidy laboratory data.", digits = 2)
+```
+
+The involvement data is, however, untidy because the results for each respondent are spread across ten columns. This data structure is more challenging because it cannot be grouped. The functionalities of the Tidyverse work only with tidy data. There are, however, other functions that require the wide format, as we shall see in the next chapter.
+
+To tidy the involvement data we need to, speaking in Excel terms, unpivot the data. The `pivot_longer()` function in the **[tidyr package](https://tidyr.tidyverse.org/index.html)** helps to create tidy data. This function takes multiple columns and collapses them into key-value pairs.
+
+The example in figure \@ref(fig:pivot-longer) transforms a wide version into a tidy long version. The first option in the `pivot_longer()` function is the name of the data frame to be transformed. The next option defines which columns need to pivot, which are the ones that contain the data. The remainder of the columns will be used as the keys.
+
+The last two options provide the names of the new columns. The `names_to` option defines the name of the column that will store the names of the pivoted variables. The `values_to` option specifies the name of the column that will hold the values in the pivoted columns: 
+
+`pivot_longer(data, -country, names_to = "year", values_to = "cases")`.
+
+```{r pivot-longer, fig.cap="Principles of the pivot longer function.", echo=FALSE, out.width="60%"}
+knitr::include_graphics("images/pivot-longer.png")
+```
+
+>**Practice task**: How would you apply this function to the PII data?
+
+For the involvement data, we include all columns, except the `survey_id`. The names column will be called `Item`, which contains the name of the ten items `p01` to `p10`. The values column is `Response`, which contains the results.
+
+The 52 respondents who did not complete this part of the survey can be removed because this data is not missing at random, we exclude them from further analysis.
+
+Lastly, we write this clean data to disk for use in the next chapter.
+
+```{r, echo=FALSE}
+library(tidyr)
+
+pii_long <- pivot_longer(pii, -survey_id, names_to = "Item", values_to = "Response") %>%
+    filter(!is.na(Response))
+
+write_csv(pii_long, "../casestudy2/pii_long.csv")
+```
+
+```{r, eval=FALSE}
+library(tidyr)
+
+pii_long <- pivot_longer(pii, -survey_id, 
+                         names_to = "Item", 
+                         values_to = "Response") %>%
+    filter(!is.na(Response))
+
+write_csv(pii_long, "casestudy2/pii_long.csv")
+```
+
+### Explore the results
+
+The best way to explore the results of this transformed data is to visualise the distribution of each response with a boxplot for each item. Note how the `scale_y_continuous()` function configures the $y$-scale to display all seven numbers. Using `scale_y_continuous(breaks = c(1, 7))` only shows number 1 and 7.
+
+```{r, fig.cap="Distribution of involvement responses.", message=FALSE, out.width="80%", fig.asp=9/16}
+library(ggplot2)
+
+ggplot(pii_long, aes(Item, Response)) +
+  geom_boxplot(fill = "dodgerblue") +
+  scale_y_continuous(breaks = 1:7) + 
+  labs(title = "Personal Involvement Inventory items",
+       subtitle = "Tap water") +
+  theme_minimal(base_size = 12)
+```
+
+>**Question**: What pattern do you observe in these results (remember that the Personal Involvement Index consists of a cognitive and affective dimension)?
+
+## Quiz 5: Transforming data
+
+The following five questions test your comprehension of some of the functionality explained in this chapter. Test your answer by executing the code in the console. Any files are available in the `casestudy2` folder of the course project.
+
+### Question 1
+
+The table below shows the first few rows of some random laboratory data. Is this data tidy?
+
+
+| Date       | Sample_Point | Chlorine | Turbidity |
+|------------|--------------|---------:|----------:|
+| 2022-12-01 | S2365        |     0.62 |      0.12 |
+| 2022-12-08 | S2365        |     0.34 |      0.10 |
+| 2022-12-15 | S2365        |     1.20 |       0.8 |
+
+a) Yes. There are no missing data points.
+b) No. The observations are spread over multiple columns.
+
+### Question 2 
+
+How would you transform the data shown in the first question, named `lab`?
+
+a) `pivot_longer(lab, names_to = "Analyte", values_to = "Result")`
+b) The data is already tidy.
+c) `pivot_longer(lab, cols = 3:4, names_to = "Analyte", values_to = "Result")`
+d) `pivot_longer(lab, Chlorine:Turbidity, names_to = "Measure", values_to = "Result")`
+
+### Question 3
+
+You have a vector of channel level measurements, but one observation is missing. What is the average of the numbers in this vector: `c(100, 50, 25, NA, 25)`?
+
+### Question  4
+
+Load the raw data from the customer survey. Select the `hardship` and `contact` variables. What is the total number of missing variables in the raw data?
+
+### Question 5
+
+Which one of these is _not_ a property of tidy data?
+
+a) Each variable forms a column.
+b) Each observation forms a row.
+c) Each observation is complete (no missing data)
+
+That's it for the fifth quiz. If you get stuck, you can find the answers in the appendix.
+
+## Further Study
+
+### The *dplyr* package
+
+You have now seen most of the functions, also called verbs, of the *dplyr* package. The ones we have used so far are:
+
+- `count()` counts the number of rows in each group
+- `filter()` picks cases based on their values.
+- `group_by` perform operations by grouped variables
+- `summarise()` reduces multiple values down to a single summary.
+- `select()` picks variables based on their names.
+- `mutate()` adds new variables that are functions of existing variables
+- `rename()` changes the name of a variable
+- `left_join()` joins two tables
+
+These functions provide a powerful toolkit to transform and analyse data. These are, however, not the only functions in this package. The [dplyr vignette](https://dplyr.tidyverse.org/articles/dplyr.html) describes all verbs available in this powerful package. Read this page to familiarise yourself with the complete capabilities of the *dplyr* package.
+
+### Customer Surveys
+
+Measuring the customer experience with surveys is a complex craft. The [Questionnaire Design for Social Surveys](https://www.coursera.org/learn/questionnaire-design) course from the University of Maryland goes into a lot of depth on how to best design surveys.
+
+The [next chapter](#survey) delves deeper into analysing customer responses.

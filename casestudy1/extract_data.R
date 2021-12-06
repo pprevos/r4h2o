@@ -5,19 +5,26 @@
 library(RODBC)
 library(tidyverse)
 library(stringr)
+library(lubridate)
 
 ## Extract laboratory data from database
-dwh <- odbcDriverConnect("driver={SQL Server};server=DWH;DATABASE=CW_DataWarehouse;trusted_connection=true")
+dwh <- odbcDriverConnect("driver={SQL Server};
+                         server=datawarehouse;
+                         database=datawarehouse;
+                         trusted_connection=true")
+
 labdata <- sqlQuery(dwh, "SELECT Sample_No, Date_Sampled AS Date, Subsite_Code AS Sample_Point, 
-                                System, Zone, Measure, Result, Units  
-                                FROM WSL_retic_Sample_results 
-                                WHERE Subsite_Type='Customer Tap' AND
-                                    Measure IN ('Turbidity', 'THMs', 'E Coli') AND
-                                    Date_sampled>='2017-01-01' AND 
-                                    Date_sampled<='2018-12-31' AND
-                                    System IN ('Bendigo')")
+                                 System, Zone, Measure, Result, Units  
+                          FROM WSL_retic_Sample_results 
+                          WHERE Subsite_Type='Customer Tap' AND
+                                Measure IN ('Turbidity', 'THMs', 'E Coli', 'Chlorine') AND
+                                Date_sampled>='2017-01-01' AND 
+                                Date_sampled<='2018-12-31' AND
+                                System IN ('Bendigo')")
 odbcCloseAll()
+
 labdata$Date <- as.Date(labdata$Date, tz = "")
+year(labdata$Date) <- 2069
 
 ## List of sample points per zone
 sample_points <- labdata %>%

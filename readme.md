@@ -1,6 +1,6 @@
 # R<sup>4</sup>H<sub>2</sub>O: Data Science for Water Utility Professionals
 
-![https://leanpub.com/c/R4H2O](images/r4h2o-cover.jpg)
+![https://leanpub.com/c/R4H2O](r4h2o-book/images/cover/r4h2o.jpg)
 
 This GitHub repository contains the instructions, examples and data sets for a course on writing data science code for water professionals. 
 

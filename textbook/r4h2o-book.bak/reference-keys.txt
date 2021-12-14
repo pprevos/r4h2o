@@ -1,0 +1,6 @@
+introduction
+learning-objectives
+prerequisites
+case-study-approach
+case-study-1-water-quality-regulations
+case-study-2-customer-experience

@@ -14,7 +14,7 @@ plot(sample, type = "b",
      main = "Percentile example", 
      sub = "Excel and Weibull percentile method", 
      pch = 20,
-     lwd = 1)
+     lwd = 1, xlab = "Rank", ylab = "Result")
 
 ## Calculate rank
 r_weibull <- p * (n + 1)

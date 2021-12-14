@@ -1,2 +1,0 @@
-# Analysing Time Series Data {#timeseries}
-

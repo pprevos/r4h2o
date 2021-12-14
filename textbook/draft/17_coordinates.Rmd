@@ -1,0 +1,43 @@
+# Coordinate Systems
+
+https://geocompr.robinlovelace.net/
+
+To be more precise, the surface of the earth is a curved two-dimensional embedded in in three-dimensional space.
+
+The earth is not a perfect obloid sphere. Gravity is not distributed uniformly and the continents are unequally distributed around the globe. 
+
+Any map of the earth normalises these 
+
+These irregularities mean that 
+
+## Projections and Project Strings
+
+Details about the projection used in a map are stored in the project string. This is 
+
+The Coordinate Reference System (CRS) (Also known as Spatial Reference System) 
+
+CRS information has three components:
+
+- *Datum*: A model of the shape of the earth. It has angular units (i.e. degrees) and defines the starting point (i.e. where is (0,0)?) so the angles reference a meaningful spot on the earth. Common global datums are WGS84 and NAD83. Datums can also be local - fit to a particular area of the globe, but ill-fitting outside the area of intended use. In this workshop, we will use the WGS84 datum.
+- *Projection*: A mathematical transformation of the angular measurements on a round earth to a flat surface (i.e. paper or a computer screen). The units associated with a given projection are usually linear (feet, meters, etc.). In this workshop, we will see data in two different projections.
+- *Additional Parameters*: Additional parameters are often necessary to create the full coordinate reference system. One common additional parameter is a definition of the center of the map. The number of required additional parameters depends on what is needed by each specific projection.
+
+
+
+Well-known mapping systems such as Open Streetmap or Google maps use 
+
+
+PROJ is an open-source library for storing, representing and transforming CRS information. PROJ.5 has been recently released, but PROJ.4 was in use for 25 years so you will still mostly see PROJ referred to as PROJ.4. PROJ represents CRS information as a text string of key-value pairs, which makes it easy to customise (and with a little practice, easy to read and interpret).
+
+A PROJ4 string includes the following information:
+
+- *proj*: the projection of the data
+- *zone*: the zone of the data (this is specific to the UTM projection) 
+- *datum*: the datum use
+- *units*: the units for the coordinates of the data
+- *ellps*: the ellipsoid (how the earth’s roundness is calculated) for the data
+
+Note that the zone is unique to the UTM projection. Not all CRSs will have a zone.
+
+
+## Coordinate Systems in ggplot2

@@ -1,0 +1,430 @@
+# Linear Regression
+
+The previous two chapters demonstrated some of the basic principles of administering and analysing customer survey data. Hierarchical clustering reduces the number of dimensions in the involvement data and informally assesses its validity and reliability. This chapter uses these clustered results to investigate relationships between the various parts of the survey results.
+
+Regression analysis is one of the most common method to investigate relationships between variables. Understanding and using linear regression is a first step towards predictive analysis and machine learning. This chapter investigates possible linear relationships between the responses in the customer survey and uses these results to explain the theory and practice of building and assessing linear models.
+
+The learning objectives for this chapter are:
+
+- Understand the principles of linear regression
+- Perform a linear regression of the customer survey data
+- Assess the significance of a linear regression
+
+## Principles of Linear Regression
+
+A regression analysis finds the best possible relationship between two or more variables. The result of this analysis is a function that describes this relationship, which can be used to predict unobserved events. Through regression, the computer learns from existing observations in order to predict future events.
+
+Dependent and independent variables relate to experiments where researchers manipulate the independent variables to study their effect on the dependent variable. In an urban water context, a common dependent variable is water consumption and independent variables are parameters such as household size, outdoor temperature and so on. Lets look at a simple simulated example. Figure \@ref(fig:lm) shows a random set of data points ($x,y$).
+
+```{r lm, echo = FALSE, fig.cap="Linear regression example.", warning=FALSE, message=FALSE, out.width="60%"}
+library(tidyverse)
+
+set.seed(123)
+d <- tibble(x = c(sample(22:38, 8), 20, 40),
+            y = round(runif(1), 2) * x + sample(5:10 , 1) + rnorm(10) * 1.5)
+
+d$y[d$x %in% c(20, 40)] <- NA
+ab <- lm(y ~ x, d)
+a <- coef(ab)[2]
+b <- coef(ab)[1]
+d$yhat <- a * d$x + b
+
+ggplot(d, aes(x, y)) +
+  geom_segment(aes(x = x, xend = x, y = y, yend = yhat), col = "red", linetype = 3) + 
+  geom_point(size = 1) +
+  geom_line(aes(x, yhat), col = "blue") +
+  scale_x_continuous(limits = c(20, 40), name = "x", minor_breaks = NULL, 
+                     breaks = seq(22, 38, 2)) +
+  scale_y_continuous(minor_breaks = NULL, name = "y", 
+                     breaks = seq(round(min(d$y, na.rm = TRUE)), round(max(d$y, na.rm = TRUE)), 2)) +
+    theme_minimal(base_size = 12) +
+    coord_fixed()
+```
+
+The purpose of regression analysis is to find the line of best fit through the points (the solid blue line). The best fit is defined as the line that minimises error, indicated by the red dotted lines. The error $\epsilon$, also called residual, is the absolute difference between the measured value for $y$ and the predicted value $\hat{y}$ (pronounced $y$-hat).
+
+$$\hat{y} = \beta_0 + \beta_1 x + \epsilon$$
+
+The predicted value $\hat{y}$ is $\beta_0 + \beta_1 x$ plus an error $\epsilon$. The easiest method to determine the parameters for this line is [Ordinary Least Squares](https://en.wikipedia.org/wiki/Ordinary_least_squares "Wikipedia") (OLS).
+
+The first step to build the model is to determine the squared deviation from the mean ($\bar{y}$, pronounced $y$-bar) of the $n$ observations ($y_i$):
+
+$$SS_{mean} = \sum_{i=1}^{i=n}{(y_i-\bar{y})^2}$$
+The Sum of Squares ($SS_{fit}$) of the difference between the predicted ($\hat{y}$) and the observed values $y_i$ indicates how well the predicted results fit the observations:
+
+$$SS_{fit} = \sum_{i=1}^{i=n}{(y_i-\hat{y})^2}$$
+
+You can visualise this formula by drawing a horizontal line through the observations (figure \@ref(fig:ols)). To find the best fit, rotate this line around the centre of the point cloud ($\bar{x}, \bar{y}$), until you find the lowest sum of squares ($SS$). Figure \@ref(fig:ols) visualises the residuals for the average $y$ value, two rotations and the model with the lowest $SS$ value.
+
+```{r ols, fig.cap="Ordinary Minimum Least Squares method.", out.width="80%", fig.asp=1/1, echo=FALSE, warning=FALSE}
+a1 <- -a / 2
+b1 <- mean(d$y, na.rm = TRUE) - a1 * mean(d$x, na.rm = TRUE)
+
+a2 <- a / 2
+b2 <- mean(d$y, na.rm = TRUE) - a2 * mean(d$x, na.rm = TRUE)
+
+d1 <- d %>%
+    mutate(Mean = mean(y, na.rm = TRUE),
+           `Rotate 1`= a1 * x + b1,
+           `Rotate 2`= a2 * x + b2,) %>%
+    select(x, y, Mean, `Rotate 1`, `Rotate 2`, Model = yhat) %>%
+    pivot_longer(-1:-2) %>%
+    mutate(name = fct_relevel(name, c("Mean", "Rotate 1", "Rotate 2", "Model")))
+
+ss <- d1 %>%
+    group_by(name) %>%
+    summarise(meanx = mean(x),
+              meany = mean(y, na.rm = TRUE),
+              SS = sum(abs(value - y)^2, na.rm = TRUE),
+              SSt = paste("SS =", round(SS, 2))) 
+
+ggplot(d1) +
+    geom_segment(aes(x = x, xend = x, y = y, yend = value), col = "red", linetype = 2) + 
+    geom_point(aes(x, y), size = 2) +
+    geom_line(aes(x, value), col = "blue") +
+    geom_point(data = ss, aes(meanx, meany), col = "blue", size = 2) +
+    geom_text(data = ss, aes(x = mean(d1$x), y = (min(d1$value) + 5), label = SSt)) + 
+    facet_wrap(~name, ncol = 2) +
+    coord_equal() +
+    theme_minimal(base_size = 12) +
+    theme(panel.spacing = unit(2, "lines"))
+```
+
+Deriving the method to determine the line of best fit is a matter of complex algebra. Suffice to say that the slope of the line relates to the correlation and the standard deviations of the observed variables. We can determine the linear parameters $\beta_0$ and $\beta_1$ with the following formulas:
+
+$$\beta_1 = cor(y,x) \frac{sd(y)}{sd(x)}$$
+$$\beta_0 = \bar{y} - \beta_1  \bar{x}$$
+
+The data in table \@ref(tab:error) is stored in the `d` variable. We can use basic R functions to calculate the parameters for the regression line.
+
+```{r, echo=FALSE}
+d <- filter(d, !is.na(y))
+```
+```{r}
+a <- cor(d$y, d$x) * sd(d$y) / sd(d$x)
+b <- mean(d$y) - a * mean(d$x)
+paste("a = ", round(a, 3), "; b = ", round(b, 3))
+```
+
+The `paste()` function paste strings and variables, which is often useful in literate programming.
+
+The closer the residuals are to zero, the better the fit and the more reliable any prediction will be. 
+
+The R language has extensive capabilities to build and assess linear models, which are discussed in some detail below.
+
+## Basic Linear Regression in R
+
+We can put this algebra aside as the R language has a versatile linear modelling function to help you analyse observations and assess the reliability of your model. Lets use some of the data of Case Study 2.
+
+The survey contains data about two customer characteristics and how they perceive the quality of the service. 
+
+Customers were asked to indicate whether they struggle to pay their water bills when they fall due. This question used a seven-point Likert scale from "Strongly Disagree" to "Strongly Agree", which we can code 1--7. 
+
+The second question asked customers to indicate the frequency at which they contact their utility for support, also using a seven-point Likert scale: 
+
+1. Never
+2. Less than once a month
+3. Once a month
+4. 2--3 Times a month
+5. Once a week
+6. 2--3 Times a week
+7. Daily
+
+Perhaps we can use this data to predict whether a customer might experience hardship by looking at their contact frequency. The hypothesis being that customers who suffer from financial hardship will contact the utility frequently might than those who easily pat their bills.
+
+To analyse this hypothesised relationship, we use the cleaned survey data prepared in [chapter 8](#cleaning).
+
+```{r include=FALSE}
+library(tidyverse)
+customers <- read_csv("../casestudy2/customer_survey_clean.csv")
+```
+
+```{r eval=FALSE}
+library(tidyverse)
+customers <- read_csv("casestudy2/customer_survey_clean.csv")
+```
+
+>**Practice Task**: Correlation is closely associated with linear regression. What is the correlation between the level of hardship and the contact frequency in the customers data (beware of the missing values)?
+
+Answer:
+
+The `use` parameter in the `cor()` function specified that we should only use observations where a pair of numbers is available. Read the help file for the correlation function for details of other methods to work with missing data.
+
+```{r}
+cor(customers$contact, customers$hardship, use = "complete.obs")
+```
+
+First step in our workflow is to visualise the data. Because Likert-scale data only contains the integers 1--7, we have an overplotting issue. In the previous chapter we solved it with some random jitter (figure \@ref(fig:jitter)).
+
+Another method to manage overplotting is to count the frequency of each combination of `hardship` and `contact` and relate the size of the point to the frequency (figure \@ref(fig:fcmodel)). The  `scale_size()` function scales the size of the points by sizing the area of the point to the frequency.
+
+The smoothing layer draws a linear regression model. We need to tell it to use the original data and not the frequency table generated in the first line. This graph is an example of how layers in *ggplot2* can use different data sets by using `data =` and `aes()` in the geometry function.
+
+The regression line from the smoothing geometry suggests a linear relationship between the two variables. The grey band behind the regression line is the 95^th^ percentile confidence interval, which is discussed in more detail below.
+
+```{r fcmodel, fig.cap="Linear regression between financial hardship and contact frequency.", fig.asp=9/16, out.width="80%", warning=FALSE, message=FALSE}
+count(customers, hardship, contact) %>% 
+  ggplot() + 
+  geom_point(aes(contact, hardship, size = n), col = "darkgrey") + 
+  geom_smooth(data = customers, aes(contact, hardship), method = "lm") + 
+  scale_size(guide = "none", range = c(0, 20)) + 
+  labs(title = "Gormsey Customer Survey",
+       x = "Contact frequency", y = "Financial hardship") + 
+  theme_light(base_size = 10)
+```
+
+Visualising the relationships between variables is extremely important, as previously shown in figure \@ref(fig:datasaurus). The original idea of various data sets with similar summary statistics is by statistician [Francis Anscombe](https://en.wikipedia.org/wiki/Anscombe%27s_quartet "Wikipedia"). He devised four data sets, shown in figure \@ref(fig:anscombe) that have the same mean values, sample variance, correlation and regression line. Visualising these sets shows, however, how different they are.
+
+```{r anscombe, fig.cap="Anscombe's Quartet", out.width="80%", fig.asp=9/16, echo=FALSE, message=FALSE}
+op <- par(mfrow = c(2, 2), mar = 0.1+c(4,4,1,1), oma =  c(0, 0, 2, 0))
+ff <- y ~ x
+mods <- setNames(as.list(1:4), paste0("lm", 1:4))
+for(i in 1:4) {
+  ff[2:3] <- lapply(paste0(c("y","x"), i), as.name)
+  mods[[i]] <- lmi <- lm(ff, data = anscombe)
+}
+for(i in 1:4) {
+  ff[2:3] <- lapply(paste0(c("y", "x"), i),  as.name)
+  plot(ff, data = anscombe, col = "red", pch = 21, bg = "orange", cex = 1.2,
+       xlim = c(3, 19), ylim = c(3, 13))
+  abline(mods[[i]], col = "blue")
+}
+```
+
+The second set clearly should not be modelled with a liner relationship. The third and fourth set suffer from outliers in the observations that skew the results.
+
+To explore this data, use:
+
+```{r eval=FALSE}
+data(anscombe)
+anscombe
+```
+
+### The linear model function
+
+The `lm()` function performs linear regression models. The output of the function is a list, just like the clustering method in the previous chapter. The linear modelling function in the R base library provides detailed information about the analysis. 
+
+```{r}
+cont_hard <- customers %>% 
+  select(id, contact, hardship) %>% 
+  filter(!is.na(contact) | !is.na(hardship))
+
+hc_model <- lm(hardship ~ contact, data = cont_hard)
+```
+
+The `lm()` function uses the formula notation common in R data models. You need to read this as: the linear model (`lm`) of `hardship` predicted by (`~`) `contact` from the `customers` data frame. 
+
+Printing the results to the console shows the main results. The intercept value $\beta_0$ and the regression coefficient $\beta_1$ for the `contact` variable.
+
+```{r}
+hc_model
+```
+
+This formula seems to suggest that customers who contact the utility more often tend to experience a higher level of hardship. While this conclusion is intuitively correct, are we mathematically justified to accept this relationship?
+
+## Assessing Linear Relationship Models
+
+Linear model list variables in R contain a lot fo diagnostic information about the analysis. The `hc_model` is a list, just like we saw with the hierarchical clustering, with nine variables. 
+
+We can delve deeper into the analysis with the `summary()` function. 
+
+```{r}
+summary(hc_model)
+```
+
+This summary provides a wealth of information about the analysis, the function call, the residuals, the coefficients and overall significance of the model.
+
+You can access the individual parts of the list, for show the coefficients with `coef(hc_model)` or `hc_model$coefficients`.
+
+> Inspect the various variables of the `hc_model` list. Read the help file of the `lm()` function for details.
+
+### Residuals
+
+The first bit of information after the function call shows a summary of the residuals. You can calculate these residuals and compare them with the model output, as shown in \@ref(tab:error). 
+
+The `predict()` function uses the output of the `lm()` function to calculate the predicted values. The code below calculates the residuals as a demonstration, but they are also stored in the `hc_model$residuals` variable in the model. This output shows that the calculated residuals are the same as the ones in the `hc_model` list.
+
+```{r}
+tibble(contact = cont_hard$contact,
+       hardship = cont_hard$hardship,
+       prediction = predict(hc_model),
+       res_calc = hardship - prediction,
+       res_lm = hc_model$residuals)
+```
+
+One of the assumptions for hypothesis testing is that errors follow a normal distribution and so should the residuals. The residual summary statistics gives information about the symmetry of the residual distribution. 
+
+The median should be zero because the mean of the residuals is zero by definition. Also, the first and third quartile (`1Q` and `3Q`) should equal under a normal distribution. The maximum and minimum values should also have a similar magnitude. 
+
+>**Practice Task**: Visualise the residuals as a histogram with the `hist()` function. Does it look like a normal distribution?
+
+Answer:
+
+Using the built-in `hist()` function is quicker than the more formal ggplot version, whcih require sthat you first create a data frame.
+
+```{r, fig.cap="Histogram of residuals.", out.width="80%", fig.asp=9/16}
+hist(residuals(hc_model))
+```
+
+
+Violation of these symmetries either indicates that the model does not fit the observation, or that there are outliers that skew the data.
+
+Looking at numbers or a histogram is an informal method to test a distribution for normality. You can test a vector for normality with the [Shapiro-Wilk normality test](https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test "Wikipedia"). 
+
+```{r}
+shapiro.test(hc_model$residuals)
+```
+
+The results of this test indicate that we can assume the residuals to be normally distributed because the $p$-value is close to zero, which means that the likelihood that this sample of residuals was *not* derived from a normally-distributed population is close to zero.
+
+### Coefficients
+
+The next part of the summary provides information about the estimated regression coefficients, their standard errors, $t$-statistics, and $p$-values.
+
+The estimated coefficients express a formulas we saw in the previous section. The intercept is essentially the predicted value when the regressor is zero. You can also extract the coefficients with the `coef()` function, which results in a named vector with two elements:
+
+```{r}
+coef(hc_model)
+```
+
+The standard error of the coefficients is an estimate of their standard deviation. This number expresses the uncertainty in the estimated coefficient. You can use the standard error to construct confidence intervals.
+
+In linear regression, the Null-Hypothesis ($H_0$) is that the beta coefficients associated with the variables is equal to zero. The alternate hypothesis ($H_1$) is that the coefficients are not equal to zero. If the Null-Hypothesis is refuted, then there exists a relationship between the independent and the dependent variables.
+
+The starts `***` behind the probabilities indicate their significance, the more stars, the higher the significance.
+
+The $t$-value is derived from the regression coefficient divided by the standard error. Thus, the greater the standard error, the higher the $t$-value. In our example, the coefficients are at least ten standard errors away from zero.
+
+The `Pr(>|t|)` column shows the probability that the Null-Hypothesis is valid. The closer this value is to zero, the better. In social sciences, a limit of 0.05 is often accepted. The limit you are willing to accept as significant depends on the importance of the conclusion you draw from this number.
+
+### Residual Standard Error
+
+The residual standard error is a measure of how well the model fits the data. This value is the average sum of squares discussed above. The closer this value is to zero, the better the model fits the data.
+
+The degrees of freedom relates to the number of observations and the number of regressors. In a model with only two observations, there are zero degrees of freedom because there is only one line that you can draw through these lines. The degreees of freedom for a regression with one parameter, the degrees of freedom $df=n-2$. In our case study we have `r nrow(cont_hard)` rows of data and one regressor (`contact`), so $df = 433$.
+
+### R-Squared
+
+The $R^2$ value expresses the proportion of the variance in the observations that the model explains. In the case study, the model explains `r round(summary(hc_model)$r.squared * 100)`% of the variance. 
+
+This result means that the model only a small portion of the variance in the data. This low value does not mean that there is no relationship between these variables. More than likely, there are other variables, such as average debt or time to pay a bill, that need to be used to predict hardship status.
+
+You can extract the $R^2$ value from the summary list by calling the `r.squared` variable.
+
+```{r}
+summary(hc_model)$r.squared
+```
+To calculate $R^2$ you need the variance of a set of observations, which is the average of the sum of squares:
+
+$$var = \frac{1}{n} \sum_{i=1}^{n}(y - \hat{y})^2$$
+
+The proportion of variance explained by the linear model is the proportion of the difference between variance of the fitted model and the variance from the mean, divided by the variance from the mean.
+
+$$R^2 = \frac{var_{fit} - var_{mean}}{var_{mean}}$$
+
+If the residuals of the fitted valued are zero, then the value for $R^2$ is one.
+
+The adjusted $R^2$ is corrected for the degrees of freedom of the model and should be used in reporting and analysis.
+
+The $R^2$  value should be interpreted with care. It can be manipulated by reducing the degrees of freedom. As shown in the example, a low value does not necessarily mean that there is no relationship, but it could be a sign that the model needs to be enhanced with additional predictors.
+
+### F-statistic
+
+The F statistic expresses the ratio between the amount of variance from the mean and the amount of variance 
+
+$$F = \frac{var_{mean}}{var_{fit}} df$$
+```{r}
+hc_model_summary <- summary(hc_model)
+hc_model_summary$fstatistic
+
+ssfit <- sum(hc_model$residuals^2)
+ssmean <- sum((cont_hard$hardship - mean(cont_hard$hardship))^2)
+df <- nrow(cont_hard) - 2
+
+F <- (ssmean - ssfit) / (ssfit) * df
+
+F
+```
+
+TO BE COMPLETED
+
+## Graphical Assessment
+
+Plotting a linear model list results in four plots of the residuals (Figure \@ref(fig:resid)). When you plot them in the console, you need to hit enter to view the next graph. The first line splits the plot screen in 2 rows and 2 columns. Note that this does not work when you use ggplot. The `pch`, `col` and `cex` options change the shape, colour and size of the data points.
+
+```{r resid, fig.cap="Analysis of the linear model residuals.", out.width="100%", fig.asp=1}
+par(mfrow = c(2, 2))
+plot(hc_model, pch = 19, col = "grey", cex = .5)
+```
+
+
+### Residuals vs Fitted
+The first plot determines if the residuals exhibit non-linear patterns. The red line should be roughly horizontal, which indicates that a linear model is suitable.
+
+Heteroscedasticity
+
+### Normal Q-Q
+The second plot tests the residuals for normality. The dotted straight line are the theoretical quantiles of a normal distribution
+
+If the residuals would not follow a normal distribution, then you could try transforming your data. You could, for example convert one or two variables to a log or square root scale and recast the model.
+
+#### Scale-Location
+
+
+#### Residuals vs Leverage
+
+### Conclusion
+
+Although we are justified to conclude that there is a positive relationship between contact frequency and hardship, this model is obviously to crude to draw conclusions about the customers financial situation merely based on their contact frequency.
+
+## Multiple Linear Regression
+
+### Service quality
+
+Service quality is a construct that describes how customers perceive a service. Many statistically validated survey tools exist to measure service quality. The most well-known and oldest method is SERVQUAL. This is a tool that consists of over twenty items were customers provide insight into their views on a range of aspects of service quality.
+
+The questions in this customer survey were used to develop a service quality measurement tool for tap water called SERVAQUA. This tool consists of 18 questions, which were measured using a seven-point Likert scale from "Strongly Disagree" to "Strongly Agree". The items were presented in random order. 
+
+The survey looks at how customers view core and supplementary services. The core service of a water utility is obviously the water it supplies. The supplementary services relate to providing customers with assistance when they need to pay bills, have enquiries or have problems.
+
+The core services of water utilities are homogeneous because the physical quality can be controlled at a high level of reliability through technology. The supplementary services are much more subject to variability due to the higher level of interaction between employees and customers. Whereas the core service is undifferentiated with no possibility of customisation, supplementary services need to meet the individual requirements of the customer. When supplementary services are required, the otherwise anonymous customer that is served at arm's length develops a direct relationship with the service provider.
+
+The core service of water is expressed in questions about the technical quality of the water, and the supplementary services relate to the functional quality of tap water services.
+
+### Technical Quality
+
+The technical quality dimension was measured using five questions. The technical quality items are formulated in absolute terms to ensure that the highest score entails a perfect level of service. Based on these considerations, the following five-item instrument was used:
+
+- Tap water is available whenever I need it.
+- My tap water is always safe to drink.
+- My tap water is always visually appealing.
+- My tap water always has a pleasant taste.
+- My tap water always has sufficient pressure.
+
+### Functional Quality
+
+The survey includes 13 functional quality items that measure the non-physical aspects of customer service:
+
+- My water bills are always accurate.
+- The services provided by my water utility are reliable.
+- My water utility always provides good customer service.
+- I can always depend on the services of my water utility.
+- Employees of my water utility have the knowledge to answer my questions.
+- My water utility consistently provides the services they promise.
+- Employees in my water utility give me prompt service.
+- When I have problems, my water utility is sympathetic and understanding.
+- My water utility has my best interests at heart.
+- Employees of my water utility are always willing to help me.
+- My water bills are easy to understand.
+- Employees of my water utility are consistently polite.
+- My water utility provides me with sufficient information.
+
+This survey tool was validated using structural equation modelling. You can read about the detailed analysis of this data and the SERVQUAL model in [The Invisible Water Utility](http://hdl.handle.net/1959.9/561679) dissertation. The International Water Association has published a less-mathematical version of this research in the book _Customer Experience Management for Water Utilities_.
+
+
+
+## Further study
+
+More advanced analysis of these constructs would require sohpisticated confirmatory factor analysis. This methods analyses networks of causal relationships and their interactions.
+
+https://leanpub.com/regmods 

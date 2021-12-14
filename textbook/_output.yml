@@ -1,0 +1,17 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      before: |
+        <li><a href="./">Data Science for Water Professionals</a></li>
+      after: |
+        <li><a href="https://peterprevos.com/" target="blank">Dr Peter Prevos</a></li>
+    edit: https://github.com/pprevos/r4h2o/edit/master/%s
+    download: ["pdf", "epub"]
+
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: no

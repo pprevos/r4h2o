@@ -1,0 +1,289 @@
+# Appendix
+
+## Answers to Quiz 1
+{quiz1}
+Before answering any questions, you need to set the basic variables so you can reuse them for each question.
+
+```{r}
+Cd <- 0.6
+g <- 9.81
+b <- 0.5
+```
+
+### Question 1
+
+> What is the flow in the channel in m^3^/s when the height $h$ = 100mm?
+
+Make sure that you convert the height to meters. You can reuse the formula in the following questions.
+
+```{r}
+h <- 100 / 1000
+q <- (2/3) * Cd * sqrt(2 * g) * b * h^(3/2)
+q
+```
+
+### Question 2
+
+> What is the average flow for these three heights: 150mm, 136mm, 75mm, in litres per second? 
+
+Create a vector of height measurements with `c()` to use the formula only once. Don't forget to convert the units (1 m^3^/s = 1000 L/s). You can use the `mean()` function to average the results in a vector.
+
+```{r}
+h <- c(150, 136, 75) / 1000
+q <- (2/3) * Cd * sqrt(2 * g) * b * h^(3/2)
+mean(q) * 1000
+```
+
+### Question 3
+
+> Which of these expressions calculates the flow in cubic meters per second for all heights ($h$) between 50mm and 500mm? 
+
+Type the proposed solutions into the console and inspect the output. Run the parts that are different separately to diagnose any issues.
+
+Best option is to try all three solutions to see which one works:
+
+_Option 1_
+
+This method only gives you one value for $h=0.05$ because the `:` operator increases the first value by one and the range closes at 0.50. Evaluate `(0.05:0.50)` to see what happens.
+
+```{r, eval=FALSE}
+h <- (0.05:0.50)
+(2/3) * Cd * sqrt(2 * g) * b * h^(3/2)
+```
+
+_Option 2_
+
+The second method is the correct answer.
+
+```{r, eval=FALSE}
+h <- (50:500) / 1000
+(2/3) * Cd * sqrt(2 * g) * b * h^(3/2)
+```
+
+_Option 3_
+
+The last option is tedious. A general rule in writing code is that if you have to copy and paste the same lines more than twice, there is perhaps a more efficient method.
+
+One method to automated this process is a loop. This code works, but it is a lot slower than using the vector arithmetic used in option 2. This example is provided for completeness only. While most other programming languages frequently use loops, the main strength of R is its vector arithmetic.
+
+The first line defines an empty vector with the name `q`. The for-loop runs from 50 to 500 and stores the values in the vector. Note that in R, the first element of a vector has position 1, in most other program languages vectors start at index 0.
+
+```{r}
+q <- vector()
+
+for (h in 50:500) {
+  q[h - 49] <- (2/3) * Cd * sqrt(2 * g) * b * (h/1000)^(3/2)
+}
+```
+
+## Answers to Quiz 2 
+{quiz2}
+Before answering the questions, you need to load the data:
+
+```{r, message=FALSE, eval=FALSE}
+library(tidyverse)
+gormsey <- read.csv("casestudy1/gormsey.csv")
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+gormsey <- read.csv("../casestudy1/gormsey.csv")
+```
+
+### Question 1
+
+> How many results does the Gormsey data contain?
+
+You could simply peak the Environment tab in RStudio. But creating reproducible code means you need to do it programmatically.
+
+```{r}
+nrow(gormsey)
+```
+
+### Question 2
+
+> How many E. coli results were recorded in Gormsey? 
+
+You can count the number of rows of a filtered data frame by nesting the functions.
+
+```{r}
+nrow(filter(gormsey, Measure == "E. coli"))
+```
+
+### Question 3
+
+> What is the maximum turbidity measurement in Blancathey?
+
+Nesting functions works fine, but doing it in two steps creates more readable code.
+
+```{r}
+turbidity_blancathey <- filter(gormsey, Town == "Blancathey" & Measure == "Turbidity")
+max(turbidity_blancathey$Result)
+```
+
+### Question 4
+
+> What is the median THM result in Swadlincote and Wakefield?
+
+```{r}
+thm_swad_wak <- filter(gormsey, (Town == "Swadlincote" | Town == "Wakefield") & Measure == "THM")
+median(thm_swad_wak$Result)
+```
+
+### Question 5
+
+> How many E Coli results breached the regulations? The limit for E Coli is 0 org/100ml.
+
+```{r}
+nrow(filter(gormsey, Measure == "E. coli" & Result > 0))
+```
+
+## Answers to Quiz 3
+{quiz3}
+```{r echo=FALSE}
+gormsey <- read.csv("../casestudy1/gormsey.csv")
+```
+
+> What is the average number of samples taken at the sample points in Gormesey?
+
+After you read the file you can create a new data frame that counts the number of results per sample point. You get the answer by calculating the average over the new variable `n`. 
+
+```{r, message=FALSE, eval=FALSE}
+library(tidyverse)
+gormsey <- read.csv("casestudy1/gormsey.csv")
+```
+```{r}
+sample_groups <- group_by(gormsey, Sample_Point)
+sample_count <- summarise(sample_groups, 
+                          samples = n())
+mean(sample_count$samples)
+```
+
+In coding there is always more than one method to achieve the same result. Using the `count()` function reuires one less line of code and is thus the preferred method because it reduces processing time. It might not make a difference for these simple problems, but small changes like this can make a big difference when you analyse large data sets.
+
+```{r}
+sample_count <- count(gormsey, Sample_Point, name = "samples")
+mean(sample_count$samples)
+```
+
+
+> Which town has the highest level of average turbidity?
+
+To answer this question, we need to create a turbidity subset and group this by town. We can then summarise this data to calculate the mean turbidity by town. To get the town with the highest level of average turbidity, you need to filter by the maximum value.
+
+```{r}
+turbidity <- filter(gormsey, Measure == "Turbidity")
+turbidity_town <- group_by(turbidity, Town)
+turbidity_town_max <- summarise(turbidity_town, 
+                                ntu_mean = mean(Result))
+filter(turbidity_town_max, ntu_mean == max(ntu_mean))
+```
+
+> What is the highest 95^th^ percentile of the turbidity for each of the towns in Gormsey, using the Weibull method?
+
+You can resue the turbidity data you just created
+
+```{r}
+turbidity_town_p95 <- summarise(turbidity_town, 
+                                p95 = quantile(Result, .95, type = 6))
+max(turbidity_town_p95$p95)
+```
+
+## Answers to Quiz 4
+### Question 1  {-}
+
+> The first five rows of `quiz4_csv` look like the table below. How do you read this CSV file into memory?
+
+```
+This file contains lots of data.
+id  Date       Measurement Type
+a1  2020-12-02        12.3   A
+a2  2020-12-03         7.6   A
+a3  2020-12-04         2.3   B
+```
+
+This file has two header lines, with the second one containing variable names. We thus need to skip the first line when reading the file with the `skip = 1` option.
+
+```{r, eval=FALSE}
+read_csv("../casestudy2/quiz_04.csv", skip = 1)
+```
+
+```{r, echo=FALSE, message=FALSE}
+read_csv("../casestudy2/quiz_04.csv", skip = 1)
+```
+
+### Question 2  {-}
+
+> You want to write a single piece of code that reads the CSV file from the previous question and removes the second column. What is the most efficient method to achieve this?
+
+The most efficient method is to use the Tidyverse pipe from the *magritr* package (`%>%`).
+
+```{r, eval=FALSE}
+read_csv("../casestudy2/quiz_04.csv", skip = 1) %>% 
+  select(-2)
+```
+
+```{r, echo=FALSE, message=FALSE}
+read_csv("../casestudy2/quiz_04.csv", skip = 1) %>% 
+  select(-2)
+```
+
+### Question 3  {-}
+
+> How many employees did _not_ consent to the survey (analyse the `consent` variable)?
+
+Exploring the data shows that the `consent` variable has two values (`0` or `1`). We thus need to count the number of rows where this variable equals one.
+
+```{r, eval=FALSE}
+read_csv("casestudy2/employee_survey.csv", skip = 1) %>% 
+  filter(consent == 1) %>% 
+  nrow()
+```
+
+```{r, echo=FALSE, message=FALSE}
+read_csv("../casestudy2/employee_survey.csv", skip = 1) %>% 
+  filter(consent == 1) %>% 
+  nrow()
+```
+
+### Question 4  {-}
+
+> What is the average score for the `e4` variable in the employees data?
+
+```{r, eval=FALSE}
+rawdata <- read_csv("casestudy2/employee_survey.csv")
+employees <- rawdata[-1, ] %>%
+    type_convert()
+mean(employees$e4, na.rm = TRUE)
+```
+
+```{r, echo=FALSE}
+rawdata <- read_csv("../casestudy2/employee_survey.csv")
+employees <- rawdata[-1, ] %>%
+    type_convert()
+mean(employees$e4, na.rm = TRUE)
+```
+
+### Question 5  {-}
+
+We need to join the `departments` dimension table to the `employees` fact table with the `left_join()` function.
+
+```{r, fig.cap="Barchart of department names", message=FALSE, out.width="40%"}
+departments <- tibble(department = 1:3,
+                      department_name = c("Administration", "Marketing", "Engineering"))
+
+left_join(employees, departments) %>% 
+  filter(!is.na(department_name)) %>% 
+  ggplot(aes(department_name)) + 
+  geom_bar() + 
+  labs(title = "Respondent profile",
+       subtitle = "Departments",
+       x = NULL, y = NULL) + 
+  theme_light()
+```
+
+
+
+
+
+

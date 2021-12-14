@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Creating Data Products | Data Science for Water Professionals - Create Value from Data with the R Language</title>
+  <meta name="description" content="Data science course for water management professionals using the R language. This course is developed for water professionals with little to no experience in writing code to analyse data." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Creating Data Products | Data Science for Water Professionals - Create Value from Data with the R Language" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://lucidmanager.org/r4h2o" />
+  <meta property="og:image" content="https://lucidmanager.org/r4h2o/images/r4h2o-cover.jpg" />
+  <meta property="og:description" content="Data science course for water management professionals using the R language. This course is developed for water professionals with little to no experience in writing code to analyse data." />
+  <meta name="github-repo" content="pprevos/r4h2o" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Creating Data Products | Data Science for Water Professionals - Create Value from Data with the R Language" />
+  
+  <meta name="twitter:description" content="Data science course for water management professionals using the R language. This course is developed for water professionals with little to no experience in writing code to analyse data." />
+  <meta name="twitter:image" content="https://lucidmanager.org/r4h2o/images/r4h2o-cover.jpg" />
+
+<meta name="author" content="Dr Peter Prevos" />
+
+
+<meta name="date" content="2021-11-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ggplot.html"/>
+<link rel="next" href="cleaning.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Data Science for Water Professionals</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#learning-objectives"><i class="fa fa-check"></i><b>1.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#prerequisites"><i class="fa fa-check"></i><b>1.2</b> Prerequisites</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#case-study-approach"><i class="fa fa-check"></i><b>1.3</b> Case Study approach</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#case-study-1-water-quality-regulations"><i class="fa fa-check"></i><b>1.3.1</b> Case Study 1: Water Quality Regulations</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#case-study-2-customer-experience"><i class="fa fa-check"></i><b>1.3.2</b> Case Study 2: Customer Experience</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="datascience.html"><a href="datascience.html"><i class="fa fa-check"></i><b>2</b> Principles of Water Utility Data Science</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="datascience.html"><a href="datascience.html#what-is-data-science"><i class="fa fa-check"></i><b>2.1</b> What is data science?</a></li>
+<li class="chapter" data-level="2.2" data-path="datascience.html"><a href="datascience.html#the-elements-of-data-science"><i class="fa fa-check"></i><b>2.2</b> The Elements of Data Science</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="datascience.html"><a href="datascience.html#domain-knowledge"><i class="fa fa-check"></i><b>2.2.1</b> Domain Knowledge</a></li>
+<li class="chapter" data-level="2.2.2" data-path="datascience.html"><a href="datascience.html#mathematical-knowledge"><i class="fa fa-check"></i><b>2.2.2</b> Mathematical Knowledge</a></li>
+<li class="chapter" data-level="2.2.3" data-path="datascience.html"><a href="datascience.html#computer-science"><i class="fa fa-check"></i><b>2.2.3</b> Computer Science</a></li>
+<li class="chapter" data-level="2.2.4" data-path="datascience.html"><a href="datascience.html#the-unicorn-data-scientist"><i class="fa fa-check"></i><b>2.2.4</b> The Unicorn Data Scientist?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="datascience.html"><a href="datascience.html#the-water-data-value-chain-the-digital-water-utility"><i class="fa fa-check"></i><b>2.3</b> The Water-Data Value Chain: The Digital Water Utility</a></li>
+<li class="chapter" data-level="2.4" data-path="datascience.html"><a href="datascience.html#data-science-tools"><i class="fa fa-check"></i><b>2.4</b> Data Science Tools</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="datascience.html"><a href="datascience.html#spreadsheets"><i class="fa fa-check"></i><b>2.4.1</b> Spreadsheets</a></li>
+<li class="chapter" data-level="2.4.2" data-path="datascience.html"><a href="datascience.html#business-intelligence-systems"><i class="fa fa-check"></i><b>2.4.2</b> Business Intelligence Systems</a></li>
+<li class="chapter" data-level="2.4.3" data-path="datascience.html"><a href="datascience.html#data-science-code"><i class="fa fa-check"></i><b>2.4.3</b> Data science code</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="datascience.html"><a href="datascience.html#good-data-science"><i class="fa fa-check"></i><b>2.5</b> Good Data Science</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="datascience.html"><a href="datascience.html#data-science-trivium"><i class="fa fa-check"></i><b>2.5.1</b> Data Science Trivium</a></li>
+<li class="chapter" data-level="2.5.2" data-path="datascience.html"><a href="datascience.html#useful-data-science"><i class="fa fa-check"></i><b>2.5.2</b> Useful Data Science</a></li>
+<li class="chapter" data-level="2.5.3" data-path="datascience.html"><a href="datascience.html#reality"><i class="fa fa-check"></i><b>2.5.3</b> Reality</a></li>
+<li class="chapter" data-level="2.5.4" data-path="datascience.html"><a href="datascience.html#data"><i class="fa fa-check"></i><b>2.5.4</b> Data</a></li>
+<li class="chapter" data-level="2.5.5" data-path="datascience.html"><a href="datascience.html#information"><i class="fa fa-check"></i><b>2.5.5</b> Information</a></li>
+<li class="chapter" data-level="2.5.6" data-path="datascience.html"><a href="datascience.html#knowledge"><i class="fa fa-check"></i><b>2.5.6</b> Knowledge</a></li>
+<li class="chapter" data-level="2.5.7" data-path="datascience.html"><a href="datascience.html#feedback-loop"><i class="fa fa-check"></i><b>2.5.7</b> Feedback Loop</a></li>
+<li class="chapter" data-level="2.5.8" data-path="datascience.html"><a href="datascience.html#sound-data-science"><i class="fa fa-check"></i><b>2.5.8</b> Sound Data Science</a></li>
+<li class="chapter" data-level="2.5.9" data-path="datascience.html"><a href="datascience.html#aesthetic-data-science"><i class="fa fa-check"></i><b>2.5.9</b> Aesthetic Data Science</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="datascience.html"><a href="datascience.html#best-practice-data-science-with-r"><i class="fa fa-check"></i><b>2.6</b> Best-Practice Data Science with R</a></li>
+<li class="chapter" data-level="2.7" data-path="datascience.html"><a href="datascience.html#further-study"><i class="fa fa-check"></i><b>2.7</b> Further Study</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>3</b> Introduction to the R Language</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="basics.html"><a href="basics.html#the-r-language"><i class="fa fa-check"></i><b>3.1</b> The R Language</a></li>
+<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#basic-principles-of-programming"><i class="fa fa-check"></i><b>3.2</b> Basic principles of programming</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="basics.html"><a href="basics.html#understanding-computer-code"><i class="fa fa-check"></i><b>3.2.1</b> Understanding computer code</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="basics.html"><a href="basics.html#debugging-code"><i class="fa fa-check"></i><b>3.3</b> Debugging Code</a></li>
+<li class="chapter" data-level="3.4" data-path="basics.html"><a href="basics.html#using-r-and-rstudio"><i class="fa fa-check"></i><b>3.4</b> Using R and RStudio</a></li>
+<li class="chapter" data-level="3.5" data-path="basics.html"><a href="basics.html#basics-of-the-r-language"><i class="fa fa-check"></i><b>3.5</b> Basics of the R language</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="basics.html"><a href="basics.html#arithmetic"><i class="fa fa-check"></i><b>3.5.1</b> Arithmetic</a></li>
+<li class="chapter" data-level="3.5.2" data-path="basics.html"><a href="basics.html#variables"><i class="fa fa-check"></i><b>3.5.2</b> Variables</a></li>
+<li class="chapter" data-level="3.5.3" data-path="basics.html"><a href="basics.html#vectors"><i class="fa fa-check"></i><b>3.5.3</b> Vectors</a></li>
+<li class="chapter" data-level="3.5.4" data-path="basics.html"><a href="basics.html#basic-plots"><i class="fa fa-check"></i><b>3.5.4</b> Basic plots</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="basics.html"><a href="basics.html#rstudio-scripts-and-projects"><i class="fa fa-check"></i><b>3.6</b> RStudio scripts and projects</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="basics.html"><a href="basics.html#finding-help"><i class="fa fa-check"></i><b>3.6.1</b> Finding help</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="basics.html"><a href="basics.html#quiz-1-calculating-channel-flows"><i class="fa fa-check"></i><b>3.7</b> Quiz 1: Calculating channel flows</a></li>
+<li class="chapter" data-level="3.8" data-path="basics.html"><a href="basics.html#further-study-1"><i class="fa fa-check"></i><b>3.8</b> Further Study</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tidyverse.html"><a href="tidyverse.html"><i class="fa fa-check"></i><b>4</b> Exploring Data with the Tidyverse Packages</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tidyverse.html"><a href="tidyverse.html#r-libraries"><i class="fa fa-check"></i><b>4.1</b> R Libraries</a></li>
+<li class="chapter" data-level="4.2" data-path="tidyverse.html"><a href="tidyverse.html#introducing-the-tidyverse"><i class="fa fa-check"></i><b>4.2</b> Introducing the Tidyverse</a></li>
+<li class="chapter" data-level="4.3" data-path="tidyverse.html"><a href="tidyverse.html#case-study-1"><i class="fa fa-check"></i><b>4.3</b> Case Study 1</a></li>
+<li class="chapter" data-level="4.4" data-path="tidyverse.html"><a href="tidyverse.html#exploring-the-case-study-data"><i class="fa fa-check"></i><b>4.4</b> Exploring the Case Study Data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="tidyverse.html"><a href="tidyverse.html#inspect-the-data"><i class="fa fa-check"></i><b>4.4.1</b> Inspect the data</a></li>
+<li class="chapter" data-level="4.4.2" data-path="tidyverse.html"><a href="tidyverse.html#explore-the-data"><i class="fa fa-check"></i><b>4.4.2</b> Explore the data</a></li>
+<li class="chapter" data-level="4.4.3" data-path="tidyverse.html"><a href="tidyverse.html#explore-variables"><i class="fa fa-check"></i><b>4.4.3</b> Explore variables</a></li>
+<li class="chapter" data-level="4.4.4" data-path="tidyverse.html"><a href="tidyverse.html#filtering-data"><i class="fa fa-check"></i><b>4.4.4</b> Filtering data</a></li>
+<li class="chapter" data-level="4.4.5" data-path="tidyverse.html"><a href="tidyverse.html#counting-results"><i class="fa fa-check"></i><b>4.4.5</b> Counting results</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="tidyverse.html"><a href="tidyverse.html#quiz-2-exploring-water-quality-data"><i class="fa fa-check"></i><b>4.5</b> Quiz 2: Exploring Water Quality Data</a></li>
+<li class="chapter" data-level="4.6" data-path="tidyverse.html"><a href="tidyverse.html#further-study-2"><i class="fa fa-check"></i><b>4.6</b> Further Study</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="statistics.html"><a href="statistics.html"><i class="fa fa-check"></i><b>5</b> Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="statistics.html"><a href="statistics.html#problem-statement"><i class="fa fa-check"></i><b>5.1</b> Problem Statement</a></li>
+<li class="chapter" data-level="5.2" data-path="statistics.html"><a href="statistics.html#analyse-the-data"><i class="fa fa-check"></i><b>5.2</b> Analyse the Data</a></li>
+<li class="chapter" data-level="5.3" data-path="statistics.html"><a href="statistics.html#calculating-percentiles"><i class="fa fa-check"></i><b>5.3</b> Calculating Percentiles</a></li>
+<li class="chapter" data-level="5.4" data-path="statistics.html"><a href="statistics.html#analysing-grouped-data"><i class="fa fa-check"></i><b>5.4</b> Analysing Grouped Data</a></li>
+<li class="chapter" data-level="5.5" data-path="statistics.html"><a href="statistics.html#quiz-3-analysing-water-quality-data"><i class="fa fa-check"></i><b>5.5</b> Quiz 3: Analysing Water Quality Data</a></li>
+<li class="chapter" data-level="5.6" data-path="statistics.html"><a href="statistics.html#further-study-3"><i class="fa fa-check"></i><b>5.6</b> Further Study</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ggplot.html"><a href="ggplot.html"><i class="fa fa-check"></i><b>6</b> Visualising Data with ggplot2</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ggplot.html"><a href="ggplot.html#principles-of-visualisation"><i class="fa fa-check"></i><b>6.1</b> Principles of Visualisation</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="ggplot.html"><a href="ggplot.html#the-aesthetics-of-visualising-data"><i class="fa fa-check"></i><b>6.1.1</b> The aesthetics of visualising data</a></li>
+<li class="chapter" data-level="6.1.2" data-path="ggplot.html"><a href="ggplot.html#telling-stories"><i class="fa fa-check"></i><b>6.1.2</b> Telling Stories</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="ggplot.html"><a href="ggplot.html#visualising-data-with-ggplot"><i class="fa fa-check"></i><b>6.2</b> Visualising data with ggplot</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="ggplot.html"><a href="ggplot.html#aesthetics"><i class="fa fa-check"></i><b>6.2.1</b> Aesthetics</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ggplot.html"><a href="ggplot.html#geometries"><i class="fa fa-check"></i><b>6.2.2</b> Geometries</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ggplot.html"><a href="ggplot.html#facets"><i class="fa fa-check"></i><b>6.2.3</b> Facets</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ggplot.html"><a href="ggplot.html#statistics-1"><i class="fa fa-check"></i><b>6.2.4</b> Statistics</a></li>
+<li class="chapter" data-level="6.2.5" data-path="ggplot.html"><a href="ggplot.html#coordinates"><i class="fa fa-check"></i><b>6.2.5</b> Coordinates</a></li>
+<li class="chapter" data-level="6.2.6" data-path="ggplot.html"><a href="ggplot.html#themes"><i class="fa fa-check"></i><b>6.2.6</b> Themes</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ggplot.html"><a href="ggplot.html#sharing-visualisations"><i class="fa fa-check"></i><b>6.3</b> Sharing visualisations</a></li>
+<li class="chapter" data-level="6.4" data-path="ggplot.html"><a href="ggplot.html#assignment"><i class="fa fa-check"></i><b>6.4</b> Assignment</a></li>
+<li class="chapter" data-level="6.5" data-path="ggplot.html"><a href="ggplot.html#further-study-4"><i class="fa fa-check"></i><b>6.5</b> Further Study</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="dataproducts.html"><a href="dataproducts.html"><i class="fa fa-check"></i><b>7</b> Creating Data Products</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="dataproducts.html"><a href="dataproducts.html#data-science-workflow"><i class="fa fa-check"></i><b>7.1</b> Data Science Workflow</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="dataproducts.html"><a href="dataproducts.html#define"><i class="fa fa-check"></i><b>7.1.1</b> Define</a></li>
+<li class="chapter" data-level="7.1.2" data-path="dataproducts.html"><a href="dataproducts.html#prepare"><i class="fa fa-check"></i><b>7.1.2</b> Prepare</a></li>
+<li class="chapter" data-level="7.1.3" data-path="dataproducts.html"><a href="dataproducts.html#understand"><i class="fa fa-check"></i><b>7.1.3</b> Understand</a></li>
+<li class="chapter" data-level="7.1.4" data-path="dataproducts.html"><a href="dataproducts.html#communicate"><i class="fa fa-check"></i><b>7.1.4</b> Communicate</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="dataproducts.html"><a href="dataproducts.html#reproducible-research"><i class="fa fa-check"></i><b>7.2</b> Reproducible Research</a></li>
+<li class="chapter" data-level="7.3" data-path="dataproducts.html"><a href="dataproducts.html#r-markdown"><i class="fa fa-check"></i><b>7.3</b> R-Markdown</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="dataproducts.html"><a href="dataproducts.html#formatting-tables"><i class="fa fa-check"></i><b>7.3.1</b> Formatting tables</a></li>
+<li class="chapter" data-level="7.3.2" data-path="dataproducts.html"><a href="dataproducts.html#presenting-numbers"><i class="fa fa-check"></i><b>7.3.2</b> Presenting numbers</a></li>
+<li class="chapter" data-level="7.3.3" data-path="dataproducts.html"><a href="dataproducts.html#export-formats"><i class="fa fa-check"></i><b>7.3.3</b> Export formats</a></li>
+<li class="chapter" data-level="7.3.4" data-path="dataproducts.html"><a href="dataproducts.html#sharing-results-online"><i class="fa fa-check"></i><b>7.3.4</b> Sharing results online</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="dataproducts.html"><a href="dataproducts.html#mini-hackathon"><i class="fa fa-check"></i><b>7.4</b> Mini Hackathon</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="cleaning.html"><a href="cleaning.html"><i class="fa fa-check"></i><b>8</b> Cleaning Data</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="cleaning.html"><a href="cleaning.html#case-study-2"><i class="fa fa-check"></i><b>8.1</b> Case Study 2</a></li>
+<li class="chapter" data-level="8.2" data-path="cleaning.html"><a href="cleaning.html#cleaning-data"><i class="fa fa-check"></i><b>8.2</b> Cleaning data</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="cleaning.html"><a href="cleaning.html#load-and-explore-the-data"><i class="fa fa-check"></i><b>8.2.1</b> Load and explore the data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="cleaning.html"><a href="cleaning.html#remove-unwanted-responses"><i class="fa fa-check"></i><b>8.2.2</b> Remove unwanted responses</a></li>
+<li class="chapter" data-level="8.2.3" data-path="cleaning.html"><a href="cleaning.html#remove-unwanted-variables"><i class="fa fa-check"></i><b>8.2.3</b> Remove unwanted variables</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="cleaning.html"><a href="cleaning.html#joining-data-frames"><i class="fa fa-check"></i><b>8.3</b> Joining data frames</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="cleaning.html"><a href="cleaning.html#writedata"><i class="fa fa-check"></i><b>8.3.1</b> Write data to disk</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="cleaning.html"><a href="cleaning.html#simplifying-code-with-data-pipes"><i class="fa fa-check"></i><b>8.4</b> Simplifying Code with Data Pipes</a></li>
+<li class="chapter" data-level="8.5" data-path="cleaning.html"><a href="cleaning.html#quiz-4-cleaning-data"><i class="fa fa-check"></i><b>8.5</b> Quiz 4: Cleaning Data</a></li>
+<li class="chapter" data-level="8.6" data-path="cleaning.html"><a href="cleaning.html#further-study-5"><i class="fa fa-check"></i><b>8.6</b> Further Study</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="customers.html"><a href="customers.html"><i class="fa fa-check"></i><b>9</b> Exploring the Customer Experience</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="customers.html"><a href="customers.html#consumer-involvement"><i class="fa fa-check"></i><b>9.1</b> Consumer Involvement</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="customers.html"><a href="customers.html#methodology"><i class="fa fa-check"></i><b>9.1.1</b> Methodology</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="customers.html"><a href="customers.html#missing-data"><i class="fa fa-check"></i><b>9.2</b> Missing Data</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="customers.html"><a href="customers.html#imputation"><i class="fa fa-check"></i><b>9.2.1</b> Imputation</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="customers.html"><a href="customers.html#preparing-the-involvement-data"><i class="fa fa-check"></i><b>9.3</b> Preparing the Involvement Data</a></li>
+<li class="chapter" data-level="9.4" data-path="customers.html"><a href="customers.html#tidy-data"><i class="fa fa-check"></i><b>9.4</b> Tidy Data</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="customers.html"><a href="customers.html#explore-the-results"><i class="fa fa-check"></i><b>9.4.1</b> Explore the results</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="customers.html"><a href="customers.html#quiz-5-transforming-data"><i class="fa fa-check"></i><b>9.5</b> Quiz 5: Transforming data</a></li>
+<li class="chapter" data-level="9.6" data-path="customers.html"><a href="customers.html#quiz-5-transforming-data-1"><i class="fa fa-check"></i><b>9.6</b> Quiz 5: Transforming data</a></li>
+<li class="chapter" data-level="9.7" data-path="customers.html"><a href="customers.html#further-study-6"><i class="fa fa-check"></i><b>9.7</b> Further Study</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="analysing-the-customer-experience.html"><a href="analysing-the-customer-experience.html"><i class="fa fa-check"></i><b>10</b> Analysing the customer experience</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="analysing-the-customer-experience.html"><a href="analysing-the-customer-experience.html#the-reliability-and-validity-of-surveys"><i class="fa fa-check"></i><b>10.1</b> The Reliability and Validity of Surveys</a></li>
+<li class="chapter" data-level="10.2" data-path="analysing-the-customer-experience.html"><a href="analysing-the-customer-experience.html#correlations"><i class="fa fa-check"></i><b>10.2</b> Correlations</a></li>
+<li class="chapter" data-level="10.3" data-path="analysing-the-customer-experience.html"><a href="analysing-the-customer-experience.html#hierarchical-clustering-to-assess-validity"><i class="fa fa-check"></i><b>10.3</b> Hierarchical Clustering to assess validity</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="analysing-the-customer-experience.html"><a href="analysing-the-customer-experience.html#pre-processing"><i class="fa fa-check"></i><b>10.3.1</b> Pre-processing</a></li>
+<li class="chapter" data-level="10.3.2" data-path="analysing-the-customer-experience.html"><a href="analysing-the-customer-experience.html#scaling"><i class="fa fa-check"></i><b>10.3.2</b> Scaling</a></li>
+<li class="chapter" data-level="10.3.3" data-path="analysing-the-customer-experience.html"><a href="analysing-the-customer-experience.html#distances"><i class="fa fa-check"></i><b>10.3.3</b> Distances</a></li>
+<li class="chapter" data-level="10.3.4" data-path="analysing-the-customer-experience.html"><a href="analysing-the-customer-experience.html#clustering"><i class="fa fa-check"></i><b>10.3.4</b> Clustering</a></li>
+<li class="chapter" data-level="10.3.5" data-path="analysing-the-customer-experience.html"><a href="analysing-the-customer-experience.html#interpreting-the-results"><i class="fa fa-check"></i><b>10.3.5</b> Interpreting the Results</a></li>
+<li class="chapter" data-level="10.3.6" data-path="analysing-the-customer-experience.html"><a href="analysing-the-customer-experience.html#clustering-the-involvement-data"><i class="fa fa-check"></i><b>10.3.6</b> Clustering the Involvement Data</a></li>
+<li class="chapter" data-level="10.3.7" data-path="analysing-the-customer-experience.html"><a href="analysing-the-customer-experience.html#other-techniques"><i class="fa fa-check"></i><b>10.3.7</b> Other techniques</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="analysing-the-customer-experience.html"><a href="analysing-the-customer-experience.html#reviewing-the-personal-involvement-index"><i class="fa fa-check"></i><b>10.4</b> Reviewing the Personal Involvement Index</a></li>
+<li class="chapter" data-level="10.5" data-path="analysing-the-customer-experience.html"><a href="analysing-the-customer-experience.html#quiz"><i class="fa fa-check"></i><b>10.5</b> Quiz</a></li>
+<li class="chapter" data-level="10.6" data-path="analysing-the-customer-experience.html"><a href="analysing-the-customer-experience.html#further-study-7"><i class="fa fa-check"></i><b>10.6</b> Further study</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="reporting.html"><a href="reporting.html"><i class="fa fa-check"></i><b>11</b> Writing Reports</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="reporting.html"><a href="reporting.html#creating-documents-with-rmarkdown"><i class="fa fa-check"></i><b>11.1</b> Creating documents with RMarkdown</a></li>
+<li class="chapter" data-level="11.2" data-path="reporting.html"><a href="reporting.html#survey-items"><i class="fa fa-check"></i><b>11.2</b> Survey Items</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="reporting.html"><a href="reporting.html#customer-characteristics"><i class="fa fa-check"></i><b>11.2.1</b> Customer characteristics</a></li>
+<li class="chapter" data-level="11.2.2" data-path="reporting.html"><a href="reporting.html#service-quality"><i class="fa fa-check"></i><b>11.2.2</b> Service quality</a></li>
+<li class="chapter" data-level="11.2.3" data-path="reporting.html"><a href="reporting.html#technical-quality"><i class="fa fa-check"></i><b>11.2.3</b> Technical Quality</a></li>
+<li class="chapter" data-level="11.2.4" data-path="reporting.html"><a href="reporting.html#functional-quality-questions"><i class="fa fa-check"></i><b>11.2.4</b> Functional Quality Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="reporting.html"><a href="reporting.html#mini-hackathon-1"><i class="fa fa-check"></i><b>11.3</b> Mini Hackathon</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="reporting.html"><a href="reporting.html#data-cleaning"><i class="fa fa-check"></i><b>11.3.1</b> Data Cleaning</a></li>
+<li class="chapter" data-level="11.3.2" data-path="reporting.html"><a href="reporting.html#data-exploration"><i class="fa fa-check"></i><b>11.3.2</b> Data Exploration</a></li>
+<li class="chapter" data-level="11.3.3" data-path="reporting.html"><a href="reporting.html#data-analysis"><i class="fa fa-check"></i><b>11.3.3</b> Data Analysis</a></li>
+<li class="chapter" data-level="11.3.4" data-path="reporting.html"><a href="reporting.html#write-a-report"><i class="fa fa-check"></i><b>11.3.4</b> Write a report</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="close.html"><a href="close.html"><i class="fa fa-check"></i><b>12</b> In Closing</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="close.html"><a href="close.html#searching-for-answers"><i class="fa fa-check"></i><b>12.1</b> Searching for answers</a></li>
+<li class="chapter" data-level="12.2" data-path="close.html"><a href="close.html#forums"><i class="fa fa-check"></i><b>12.2</b> Forums</a></li>
+<li class="chapter" data-level="12.3" data-path="close.html"><a href="close.html#further-study-8"><i class="fa fa-check"></i><b>12.3</b> Further Study</a></li>
+<li class="chapter" data-level="12.4" data-path="close.html"><a href="close.html#thanks"><i class="fa fa-check"></i><b>12.4</b> Thanks</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i>Appendix</a>
+<ul>
+<li class="chapter" data-level="12.5" data-path="appendix.html"><a href="appendix.html#quiz1"><i class="fa fa-check"></i><b>12.5</b> Answers to Quiz 1</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="appendix.html"><a href="appendix.html#question-1"><i class="fa fa-check"></i><b>12.5.1</b> Question 1</a></li>
+<li class="chapter" data-level="12.5.2" data-path="appendix.html"><a href="appendix.html#question-2"><i class="fa fa-check"></i><b>12.5.2</b> Question 2</a></li>
+<li class="chapter" data-level="12.5.3" data-path="appendix.html"><a href="appendix.html#question-3"><i class="fa fa-check"></i><b>12.5.3</b> Question 3</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="appendix.html"><a href="appendix.html#quiz2"><i class="fa fa-check"></i><b>12.6</b> Answers to Quiz 2</a>
+<ul>
+<li class="chapter" data-level="12.6.1" data-path="appendix.html"><a href="appendix.html#question-1-1"><i class="fa fa-check"></i><b>12.6.1</b> Question 1</a></li>
+<li class="chapter" data-level="12.6.2" data-path="appendix.html"><a href="appendix.html#question-2-1"><i class="fa fa-check"></i><b>12.6.2</b> Question 2</a></li>
+<li class="chapter" data-level="12.6.3" data-path="appendix.html"><a href="appendix.html#question-3-1"><i class="fa fa-check"></i><b>12.6.3</b> Question 3</a></li>
+<li class="chapter" data-level="12.6.4" data-path="appendix.html"><a href="appendix.html#question-4"><i class="fa fa-check"></i><b>12.6.4</b> Question 4</a></li>
+<li class="chapter" data-level="12.6.5" data-path="appendix.html"><a href="appendix.html#question-5"><i class="fa fa-check"></i><b>12.6.5</b> Question 5</a></li>
+</ul></li>
+<li class="chapter" data-level="12.7" data-path="appendix.html"><a href="appendix.html#answers-to-quiz-3"><i class="fa fa-check"></i><b>12.7</b> Answers to Quiz 3</a></li>
+<li class="chapter" data-level="12.8" data-path="appendix.html"><a href="appendix.html#answers-to-quiz-4"><i class="fa fa-check"></i><b>12.8</b> Answers to Quiz 4</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://peterprevos.com/" target="blank">Dr Peter Prevos</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Science for Water Professionals - Create Value from Data with the R Language</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="dataproducts" class="section level1" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Creating Data Products</h1>
+<p>Communicating the results of your analysis are an essential part of the data science workflow. Analysing data in RStudio is fun, but hard to share with anyone who does not understand the language.</p>
+<p>The purpose of data science is to create value from data by creating useful, sound and aesthetic data products. Analysing data is a rewarding activity, but creating value requires you to communicate the results.</p>
+<p>The generic term for the result of a data science project is a ‘data product’, which can be a:</p>
+<ul>
+<li>Presentation</li>
+<li>Report</li>
+<li>Application</li>
+<li>Infographic, or;</li>
+<li>Anything else that communicates the results of analyses.</li>
+</ul>
+<p>This chapter explains how to share the fruits of your labour with colleagues and other interested parties by generating reports that combine text and analysis through <a href="https://en.wikipedia.org/wiki/Literate_programming">literate programming</a>.</p>
+<p>Before we explain how to create reproducible reports, we delve into the data science workflow.</p>
+<p>The learning objectives for this chapter are:</p>
+<ul>
+<li>Understand and implement the workflow for data science projects</li>
+<li>Understand and apply the principles of reproducible research</li>
+<li>Apply basic RMarkdown to create a presentation</li>
+</ul>
+<p>The data and code for this session are available in the <code>chapter_07.Rmd</code> file in the <code>casestudy1</code> folder of your RStudio project.</p>
+<div id="data-science-workflow" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Data Science Workflow</h2>
+<p>The workflow for analytical projects starts with defining a problem that needs solving (Figure <a href="dataproducts.html#fig:workflow">7.1</a>). The next step involves loading and transforming the data into a format that is suitable for the required analysis. The centre of the data science workflow contains a loop, the so-called data vortex. This vortex consists of three steps: exploration, modelling and reflection. The analyst repeats these steps until the problem is solved or found to be unsolvable.</p>
+<div class="figure"><span style="display:block;" id="fig:workflow"></span>
+<img src="images/workflow.png" alt="Data science workflow." width="60%" />
+<p class="caption">
+Figure 7.1: Data science workflow.
+</p>
+</div>
+<div id="define" class="section level3" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Define</h3>
+<p>The first step of a data science project is to define the problem. This step describes the problem under consideration and the desired future state. The problem definition should not make specific reference to available data or possible methods but be limited to the issue at hand.</p>
+<p>An organisation could seek to optimise production facilities, reduce energy consumption, monitor effectiveness, understand customers, and so on. A concise problem definition is necessary to ensure that a project does not deviate from its original purpose or is cancelled when it becomes apparent that the problem cannot be solved.</p>
+<p>The problem definition opens with a description of the current situation and identifies which aspect needs improvement or more profound understanding. The problem statement concludes with a summary of the data product. For example:</p>
+<blockquote>
+<p>The regulator for water quality has released a new guideline that lowers the maximum value for trihalomethanes (THMs) at the customer tap to 0.20 mg/l. This report assesses the historical performance of the Gormsey water system to evaluate the risk of non-compliance, assuming no operational changes are implemented.</p>
+</blockquote>
+</div>
+<div id="prepare" class="section level3" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Prepare</h3>
+<p>The available data needs to be loaded and wrangled into the required format before any analysis can take place. Anecdotally, this phase of the project could consume up to eighty per cent of the work effort. <a href="cleaning.html#cleaning">Chapter 8</a> discusses how to clean data.</p>
+<p>Best practice in data science is to describe every field used in the analysis to ensure the context in which the data was created is understood. Including a transparent methodology is where the science comes into data science, and this is where it distinguishes itself from traditional business analysis.</p>
+<p>For the problem statement above, we have the Gormsey data from the previous chapters. This data is already ’tidy‘ and does not need cleaning. <a href="customers.html#customers">Chapter</a> 9 further explains the concept of tidy data. We just need to filter the data to contain only the THM values.</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="dataproducts.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb79-2"><a href="dataproducts.html#cb79-2" aria-hidden="true" tabindex="-1"></a>gormsey <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;casestudy1/gormsey.csv&quot;</span>)</span>
+<span id="cb79-3"><a href="dataproducts.html#cb79-3" aria-hidden="true" tabindex="-1"></a>gormsey_thm <span class="ot">&lt;-</span> <span class="fu">filter</span>(gormsey, Measure <span class="sc">==</span> <span class="st">&quot;THM&quot;</span>)</span></code></pre></div>
+</div>
+<div id="understand" class="section level3" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Understand</h3>
+<p>Once the data is available in a tidy format, the process of understanding the data can commence. The analytical phase consists of a three-stage loop, the data vortex. These three stages are: explore, model and reflect.</p>
+<p>The techniques used in this phase depend on the type of problem that is being analysed. Also, each field of endeavour uses different methodological suppositions. Analysing subjective customer data requires a very different approach than the objective reality of a THM test in a water laboratory.</p>
+<p>For our example case study, the analysis is a straightforward description of the distribution of the results. We don’t have chlorine residuals for the Gormsey data, but if we did, we could, for example, investigate the relationship between chlorine and THM.</p>
+<div id="explore" class="section level4" number="7.1.3.1">
+<h4><span class="header-section-number">7.1.3.1</span> Explore</h4>
+<p>The first step when analysing data is to understand the relationship between the data and the reality it describes. Generating descriptive statistics such as averages, ranges, distribution curves and other summaries, provides a quick insight into the data. Relying on numerical analysis alone can, however, deceive because very different sets of data can result in the same values.</p>
+<p>Justin Matejka and George Fitzmaurice from <em>AutoDesk</em> demonstrated how very different sets of data could have almost the same <a href="https://doi.org/10.1145/3025453.3025912">summary statistics</a> (Figure <a href="dataproducts.html#fig:datasaurus">7.2</a>).</p>
+<p>Each of these six visualisations shows that these sets of data have very different patterns. When, however, analysing this data without visualising it, the mean values of <code>x</code> and <code>y</code>, and their correlations are almost precisely the same for all six subsets. In their paper, they presented an algorithm that generates several patterns with the same summary values, six of which are shown in the illustration.</p>
+<div class="figure"><span style="display:block;" id="fig:datasaurus"></span>
+<img src="images/datasaurus.png" alt="Six patterns with very similar summary statistics." width="60%" />
+<p class="caption">
+Figure 7.2: Six patterns with very similar summary statistics.
+</p>
+</div>
+<p>The data and code to create this visualisation are available in the <code>casestudy2</code> folder of your course material.</p>
+<p>Another reason visualisations are essential to explore data is to reveal anomalies, such as spikes in time series or outliers. A sudden increase and decrease in physical measurements are often caused by issues with measurement or data transmission instead of actual changes in reality. These spikes need to be removed to ensure the analysis is reliable. Anomalies in social data such as surveys could be subjects that provide the same question to all answers, discussed in the previous chapter.</p>
+<p>Detecting and removing outliers and anomalies from the data increases the reliability of the analysis. Not all oddities in a collection of data are necessarily suspicious, and care should be taken before removing data. The reasons for excluding any anomalous data should be documented so that the analysis remains reproducible.</p>
+<p>For this reason, the raw data should never be modified. Reproducible code shows the process from raw data to clean data to ensure that we clearly understand the relation between reality and the data product.</p>
+<p>After the analyst has a good grasp of the variables under consideration, the actual analysis can commence. Modelling involves transforming the problem statement into mathematics and code. Every model is bounded by the assumptions contained within it. Statistician George Box is famous for stating:</p>
+<blockquote>
+<p>“All models of reality are wrong, but some are useful”.</p>
+</blockquote>
+<p>Since data science is not a science in the sense that we are seeking some universal truth, a useful model that can positively influence reality is all we need.</p>
+<p>When modelling the data, the original research question always needs to be kept in mind. Exploring and analysing data without a specific purpose can quickly lead to wrong conclusions. Just because two variables correlate does not imply that there is a logical relationship. A clearly defined problem statement and methodology prevent data dredging.</p>
+<p>The full availability of data and the ease of extracting this information makes it easy for anyone to find relationships between different sources of information. This problem is what Drew Conway coined the danger zone in his data science Venn diagram. While it is easy to combine data, we should never do this without understanding the mathematical foundations.</p>
+<p>The <a href="http://tylervigen.com/spurious-correlations">Spurious Correlations</a> website hosts an amusing collection of strong but nonsensical correlations. Did you know that the per-capita cheese consumption in the US correlates strongly with the number of people who die by becoming tangled in their bedsheets?</p>
+<p>A good general rule when analysing data is to distrust your method when you can easily confirm your hypothesis. If this is the case, triangulate the results with another method.</p>
+</div>
+<div id="reflect" class="section level4" number="7.1.3.2">
+<h4><span class="header-section-number">7.1.3.2</span> Reflect</h4>
+<p>Before you can communicate the results of an analysis, domain experts need to review the outcomes to ensure they make sense and indeed solve the problem stated in the definition. The reflection phase should, where relevant, also include customers to ensure that the problem statement is being resolved to their satisfaction.</p>
+<p>Visualisation is a quick method to establish whether the outcomes make sense by revealing apparent patterns. Another powerful technique to reflect on the results is sensitivity analysis. This technique involves changing some of the assumptions to test the model responds as expected.
+Mathematical models are often complicated, and the relationship between variables is not clearly understood, especially in machine learning applications. Sensitivity analysis helps to understand these relationships by using extreme for specific variables and then observe the effect on the model.</p>
+</div>
+</div>
+<div id="communicate" class="section level3" number="7.1.4">
+<h3><span class="header-section-number">7.1.4</span> Communicate</h3>
+<p>The last, and arguably, the hardest phase of a data science project is to communicate the results to the users. In most cases, the users of a data product are not specialists with a deep understanding of data and mathematics. The difference in skills between the data scientist and the user of their products requires careful communication of the results.</p>
+<p>Detailed reports and visualisations need to provide an accurate description of the outcomes, and they need to convince the reader. The most critical aspect of successfully communicating the solution to a problem is to ensure that the consumers of the results understand them and are willing to use the data product to solve their problem. As much as data science is a systematic process, it is also a cultural process that involves managing the internal change in the organisation.</p>
+<p>Advertising executive Fred Barnard coined the well-worn cliche that “a picture is worth (ten) thousand words” in 1927. While this might be the case, the complexity of data science in most cases requires text to explain the analysis. Perhaps we should say: “A picture is worth a 1000 numbers”.</p>
+<p>To claim that a report needs to be written with clarity and precision in proper spelling and grammar almost seems redundant. The importance of readable reports implies that the essential language a data scientist needs to master is not Python or R but English, or whatever language you communicate in.</p>
+<p>Writing a good data report enhances the reproducibility of the process by describing all the steps in the process. A report should also help to explain any complex analysis to the user to engender trust in the results.</p>
+<p>The topic of writing useful business reports is too broad to do justice within the narrow scope of this course. For those people that need help with their writing, data science can also assist. There are many great online writing tools to support authors not only with spelling but also grammar and idiom. These advanced spelling and grammar checkers use advanced text analysis tools to detect more than spelling mistakes and can help fine-tune a text utilising data science. However, even grammar checking with machine learning is not a perfect replacement for a human being who understands the meaning of the text.</p>
+</div>
+</div>
+<div id="reproducible-research" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Reproducible Research</h2>
+<p>RStudio has several options to create shareable outputs with people who don’t necessarily understand R code. This section explains how to create reproducible research using R Markdown.</p>
+<p><a href="ggplot.html#ggplot">Chapter six</a> showed how to use the <em>ggplot2</em> package to create aesthetic visualisations and save them to disk in a high resolution with the <code>ggave()</code> function. You can then load these images in your report to communicate the results.</p>
+<p>This approach works fine until you need to change some assumptions in your graphs, a new colour scheme or any other change. Every time you change the analysis, you need to edit the report. This workflow is not only inefficient, but it can also lead to error as you might forget to transpose the new results into the report.</p>
+<p>The problem with the traditional approach is that the data, the code are separated from the final data product. Reproducible research solves this problem by combining the data and the analysis with the final result.</p>
+<p>The most effective method to achieve full reproducibility is to use literate programming. Although many systems exist that at first instance might seem more user-friendly than writing code, point-and-click systems have severe limitations, and the results are often impossible to verify. The central concept of literate programming is that the data, the code and the output are logically linked so that when either the data or the code changes, the output will change as well.</p>
+<p>Several methods are available in the R language to ensure analysis is reproducible. The most basic one is adding comments to the code. A comment is a statement that is not evaluated when running the code. In the R language, comments are indicated with one or more pound signs, also known as a number sign, hash or hashtag, at the start of a line or after a function call.</p>
+<p>Within any language, there are many ways to communicate the same message. Just like in natural language, data scientists use coding conventions to make a text readable. The developers of the Tidyverse have published a <a href="https://style.tidyverse.org/">style guide</a> to assist data scientists with writing code that is easy to read and follow. In the developer’s parlance, this is called elegant code. RStudio can help you format the code with the Reformat Code option in the Code menu.</p>
+<p>Comments in code help a human reader understand the flow of logic. There is a point, however, where your analysis is so complex that you need more comments than code. When this is the case, you need to use more advanced methods. Furthermore, most consumers of data products are not interested in the code and only want to see the results. The next section explains how to use RStudio to create data products in various formats, such as Word, Powerpoint, PDF and HTML.</p>
+</div>
+<div id="r-markdown" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> R-Markdown</h2>
+<p>R-Markdown is a method to combine a narrative with the results of the analysis. An R-Markdown file consists, as the name suggests, of R code and Markdown code. You know what R is, so now we need to explore Markdown.</p>
+<p>Word processors use the WYSIWYG approach. This acronym means that what you see on the screen is what you get when you print the document (What You See is What You Get). While this is a seductive way to produce documents, it is not the most productive method because you get distracted by formatting and other fancy options. Writing should be about composing a text, not about designing typography and layout.</p>
+<p>Many writers don’t use WYSIWYG software but produce text directly in a markup language such as LaTeX, HTML or Markdown. The advantage of this approach is that you focus on content instead of design. Anything written in a markup language can be easily exported to almost any format imaginable using templates.</p>
+<p>Markdown is, paradoxically, a markup language, known for its simplicity, which is the reason for the play of words. This course is written in Markdown, using the <a href="https://www.gnu.org/software/emacs/">Emacs</a> editor. All the text, images and other resources are available in the <code>manuscript</code> folder. The LeanPub software processes the plain text and images to produce the website and course books.</p>
+<p>Let’s put this theory into practice. Go to the <em>File</em> menu and create a new R Markdown file. You see a popup menu where you can enter the document title, author name and select the output type. Select <em>Word</em> as the output and enter a title related to the problem statement at the start of this chapter. When you click OK, RStudio creates a template document that explains the basic principles.</p>
+<p>When you click the <em>Knit</em> button, RStudio asks you to save the file and generates a document that includes the written content, some of the code, and the output of any R code embedded in the report. When you do this for the first time, you might receive a message that specific packages need to be installed. Follow the prompts to let that happen.</p>
+<p>An R-Markdown document consists of three elements. The content between the three-dash lines (lines 1–6) is the header that specifies necessary information about the title, author, date and the output format (Figure 7.4). You can manually edit these entries to change the document properties.</p>
+<div class="figure">
+<img src="images/rmarkdown-example.png" style="width:100.0%" alt="" />
+<p class="caption">Figure 7.4: Template R Markdown document.</p>
+</div>
+<p>The R code is written in ‘chunks’ (lines 19–21). The three grave accents (backticks) indicate the start and end of a code chunk. The text between curly braces indicates the language and any options.</p>
+<p>The first code chuck (lines 8–10) initiates the session. By default, the code is included in the output. When you, for example, add the <code>echo = FALSE</code> option, the code is excluded. If you like not to show any code in the final document, then change the option in the first chunk, which sets the defaults. Many other options are available to fine-tune the output.</p>
+<p>You can add additional chunks with the insert button. When you click it, you notice that RStudio can also process other data science languages such as SQL or Python.</p>
+<p>The third part of the document is the Markdown text (lines 12–16). In Markdown, headers start with one or more has symbols, lists start with asterisks, and so on. Markdown uses these non-alphanumeric symbols to instruct the computer what the output should look like.</p>
+<p>Lastly, you can embed the output of an R expression inside a line of text. For example, to write: “A total of 264 THM results appear in the data.” To achieve this, you can embed R code within a sentence:</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="dataproducts.html#cb80-1" aria-hidden="true" tabindex="-1"></a>A total of <span class="st">`</span><span class="at">r nrow(gormsey_thm)</span><span class="st">`</span> THM results appear <span class="cf">in</span> the data.</span></code></pre></div>
+<p>R evaluates the expression when you knit the document. This way, your numbers are always up to date with the latest data. Make sure you don’t forget the lower case letter <code>r</code> to indicate that it needs to be evaluated.</p>
+<p>When working on a project, it is best first to write the code in a well-commented R script and copy this into a Markdown document after you complete the analysis. You can then add explanatory text to create reproducible research.</p>
+<p>The basic principles of R Markdown are explained in detail on R Markdown <a href="https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf">cheat sheet</a>.</p>
+<blockquote>
+<p>Familiarise yourself with R Markdown using the template. For advanced use, review the cheat sheet.</p>
+</blockquote>
+<div id="formatting-tables" class="section level3" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> Formatting tables</h3>
+<p>The output of data analysis is often expressed in tables. To create neat tables in a report, you should use the <code>kable()</code> function of the <em>knitr</em> package. This example below shows how to export a table in an R-Markdown file.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="dataproducts.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb81-2"><a href="dataproducts.html#cb81-2" aria-hidden="true" tabindex="-1"></a>thm_fail <span class="ot">&lt;-</span> <span class="fu">filter</span>(gormsey, Measure <span class="sc">==</span> <span class="st">&quot;THM&quot;</span> <span class="sc">&amp;</span> Result <span class="sc">&gt;</span> .<span class="dv">25</span>)</span>
+<span id="cb81-3"><a href="dataproducts.html#cb81-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">select</span>(thm_fail, Date, Town, Result),</span>
+<span id="cb81-4"><a href="dataproducts.html#cb81-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Example outut of the `kable()` function.&quot;</span>)</span></code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-54">Table 7.1: </span>Example outut of the <code>kable()</code> function.</caption>
+<thead>
+<tr class="header">
+<th align="left">Date</th>
+<th align="left">Town</th>
+<th align="right">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2018-06-28</td>
+<td align="left">Southwold</td>
+<td align="right">0.35546</td>
+</tr>
+<tr class="even">
+<td align="left">2018-11-14</td>
+<td align="left">Merton</td>
+<td align="right">0.71450</td>
+</tr>
+<tr class="odd">
+<td align="left">2017-12-28</td>
+<td align="left">Southwold</td>
+<td align="right">0.76344</td>
+</tr>
+<tr class="even">
+<td align="left">2017-04-13</td>
+<td align="left">Southwold</td>
+<td align="right">0.26814</td>
+</tr>
+<tr class="odd">
+<td align="left">2018-05-24</td>
+<td align="left">Southwold</td>
+<td align="right">0.47533</td>
+</tr>
+</tbody>
+</table>
+<p>The knitr library provides functions to knit R and Markdown. The second line filters the Gormsey laboratory data with failed THM tests. The last line converts this data frame into a well-formatted table for Word, HTML or any other output format.</p>
+</div>
+<div id="presenting-numbers" class="section level3" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Presenting numbers</h3>
+<p>The numerical output of R functions often contains far too many decimals. Several functions are available to control the way R presents numbers. Firstly, you can set the default number of digits with the <code>options(digits = n)</code> function. Standard R is accurate up to about 15 decimals.</p>
+<p>If you need more decimals, then you need to use specialised packages, such as the <a href="https://cran.r-project.org/web/packages/Rmpfr">Rmpfr</a> package. Run the following code to see the difference:</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="dataproducts.html#cb82-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">7</span>)</span>
+<span id="cb82-2"><a href="dataproducts.html#cb82-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(a)</span></code></pre></div>
+<pre><code>## [1] 2.645751</code></pre>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="dataproducts.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">digits =</span> <span class="dv">15</span>) <span class="co"># Increase number of digits</span></span>
+<span id="cb84-2"><a href="dataproducts.html#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(a)</span></code></pre></div>
+<pre><code>## [1] 2.64575131106459</code></pre>
+<p>This method changes the output of all calculations. To only change the way a specific variable is displayed, use either of these three functions.</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="dataproducts.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(a) <span class="co"># Show as integer</span></span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="dataproducts.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(a, <span class="at">digits =</span> <span class="dv">2</span>) <span class="co"># Round to two digits</span></span></code></pre></div>
+<pre><code>## [1] 2.65</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="dataproducts.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="sc">-</span><span class="fl">123.456</span>, <span class="at">digits =</span> <span class="sc">-</span><span class="dv">2</span>) <span class="co">#Rounding to a power of ten</span></span></code></pre></div>
+<pre><code>## [1] -100</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="dataproducts.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">floor</span>(a) <span class="co"># Remove all digits</span></span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="dataproducts.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ceiling</span>(a) <span class="co"># Round up to the nearest integer</span></span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<p>The <code>round()</code> function defaults to round to an integer. When using a negative number in the <code>digits</code> option, the number is rounded to the nearest power of ten. The <code>floor()</code> and <code>ceiling()</code> functions result in an integer. If you like to constrain the number of total digits, including the integer part, use the <code>signf()</code> function.</p>
+<blockquote>
+<p>Try these different rounding and display functions with some random number to explore how they work.</p>
+</blockquote>
+<p>The <code>kable()</code> function discussed in the previous section has a built-in rounding function. The <code>digits</code> option sets the number of digits for numerical output. If you apply a vector to this option, then you can set separate digit numbers for each column.</p>
+<p>More advanced formatting of numbers is available through the <code>format()</code> function. The format function has a lot of options to change the way you display numbers. The most common option is <code>big.mark = ","</code>, which adds a comma to separate thousands. The <code>scientic</code>option toggles scientific notation on and off.</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="dataproducts.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span>(<span class="dv">2</span><span class="sc">^</span><span class="dv">32</span>, <span class="at">big.mark =</span><span class="st">&quot;,&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;4,294,967,296&quot;</code></pre>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="dataproducts.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span>(<span class="dv">2</span><span class="sc">^</span><span class="dv">128</span>, <span class="at">big.mark =</span><span class="st">&quot;,&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;3.40282366920938e+38&quot;</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="dataproducts.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span>(<span class="dv">2</span><span class="sc">^</span><span class="dv">128</span>, <span class="at">big.mark =</span><span class="st">&quot;,&quot;</span>, <span class="at">scientific =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;340,282,366,920,938,463,463,374,607,431,768,211,456&quot;</code></pre>
+<blockquote>
+<p>Read the help files for format and try some of the other options.</p>
+</blockquote>
+</div>
+<div id="export-formats" class="section level3" number="7.3.3">
+<h3><span class="header-section-number">7.3.3</span> Export formats</h3>
+<p>Rstudio can export R-Markdown to many standard formats. A standard file can be ‘knitted’ to an HTML file for websites, Word, PowerPoint or PDF. To create a PDF, you need to have the LaTeX software installed on your computer. LaTeX is a powerful markup language, often used for publications in the formal and physical sciences.</p>
+<p>The export format is listed in the first few lines, the front matter, of the markdown file. The example below shows how to define a title, author name and define the output as a Powerpoint presentation. This example also shows how to relate the output to a template (<code>template.potx</code>). This tool allows you to create data-enabled presentations or reports using your organisation’s templates.</p>
+<pre><code>---
+title: &quot;Gormsey Trihalomethane Compliance&quot;
+author: &quot;Peter Prevos&quot;
+output:
+  powerpoint_presentation:
+    reference_doc: template.potx
+---</code></pre>
+<p>Please note the indentation of 2 and 4 spaces at the start of the lines, you need to follow this exactly for RStudio to recognise the data structure.</p>
+</div>
+<div id="sharing-results-online" class="section level3" number="7.3.4">
+<h3><span class="header-section-number">7.3.4</span> Sharing results online</h3>
+<p>If you like to share the results of your analysis with the world, then you can upload the HTML output to <a href="https://rpubs.com/">RPubs</a>.</p>
+<p>You need to install various packages to enable publishing functionality in RStudio. The software automatically prompts you to install these when you first try to publish to the internet.</p>
+<ol style="list-style-type: decimal">
+<li>In RStudio, create a new R Markdown document.</li>
+<li>Click the Knit HTML button in the doc toolbar to preview your document.</li>
+<li>In the preview window, click the Publish button.</li>
+</ol>
+<p>You need to create a free account with RPubs before you can publish any documents. Please note the that documents on RPubs are publicly visible, so don’t publish any sensitive data.</p>
+</div>
+</div>
+<div id="mini-hackathon" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> Mini Hackathon</h2>
+<p>This chapter closes with an assignment using the data from the first case study.</p>
+<p>The <code>chlorine.csv</code> file contains chlorine measurements from Gormsey. Chlorine is an important chemical in water supply because it kills harmful pathogens. This means that we need a minimum concentration to ensure the water is safe to drink. Chlorine has the unpleasant side-effect that it is not pleasant to drink. There is as such a tension between providing water that is safe to drink and water that is pleasant for consumers.</p>
+<p>The drinking water quality guidelines state that the odour threshold for chlorine is generally 0.6 mg/L, but 0.2 mg/L for some people. It may be necessary to exceed the aesthetic guideline in order to maintain an effective disinfectant residual throughout the system. The table below summarises the two competing objectives.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Health</th>
+<th>Aesthetics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Minimum</td>
+<td>0.5 mg/l</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Maximum</td>
+<td>5 mg/l</td>
+<td>0.6 mg/l</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Create a short PowerPoint presentation about the Gormsey chlorine data that visualises the tension between health and aesthetic guidelines.</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>Explore and analyse the chlorine data.</li>
+<li>Determine how to best present the data.</li>
+<li>Create an RMarkdown script that results in a Powerpoint presentation.</li>
+</ol>
+<blockquote>
+<p>Use the code below to define a data frame / tibble that you can use to visualise the limits</p>
+</blockquote>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="dataproducts.html#cb103-1" aria-hidden="true" tabindex="-1"></a>limits <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">Perspective =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Health&quot;</span>, <span class="st">&quot;Aesthetics&quot;</span>), <span class="dv">2</span>),</span>
+<span id="cb103-2"><a href="dataproducts.html#cb103-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Limit =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Minimum&quot;</span>, <span class="st">&quot;Maximum&quot;</span>), <span class="at">each =</span> <span class="dv">2</span>),</span>
+<span id="cb103-3"><a href="dataproducts.html#cb103-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Value =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="cn">NA</span>, <span class="dv">5</span>, <span class="fl">0.6</span>))</span></code></pre></div>
+<blockquote>
+<p>You can set the size of visualisations with the <code>fig.width =</code> option in the chunk options.</p>
+</blockquote>
+<p>You can download the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/master/rmarkdown-2.0.pdf">R Markdown Cheat Sheet</a> for a complete overview of its functionality.</p>
+<blockquote>
+<p>The <code>casestudy1</code> folder contains an example R Markdown file that you can reverse-engineer for your project.</p>
+</blockquote>
+<p>You have now completed the first case study. The <a href="cleaning.html#cleaning">next case study</a> deals with data from a customer survey and analyses their experiences.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ggplot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cleaning.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pprevos/r4h2o/edit/master/07_data_products.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/pprevos/r4h2o/blob/master/07_data_products.Rmd",
+"text": null
+},
+"download": ["r4h2o.pdf", "r4h2o.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

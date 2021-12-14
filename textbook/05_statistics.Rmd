@@ -1,0 +1,285 @@
+# Descriptive Statistics {#statistics}
+
+This chapter shows how to analyse the water quality data using basic R functions and the Tidyverse extension. This chapter introduces functions to undertake descriptive statistical analysis through averages, medians and percentiles. The learning objectives for this chapter are:
+
+* Analyse data using descriptive statistics
+* Distinguish between different methods of percentile calculations
+* Group and summarise data
+
+The data for this session is available in the `casestudy1` folder of your [RStudio project](https://github.com/pprevos/r4h2o/).
+
+## Problem Statement
+
+The water quality regulations on the island of Gormsey look suspiciously similar to the [Australian Drinking Water Quality Guidelines](https://www.nhmrc.gov.au/about-us/publications/australian-drinking-water-guidelines). Gormsey also complies with the Victorian regulations for water quality, the [Safe Drinking Water Regulations](https://www2.health.vic.gov.au/public-health/water/drinking-water-in-victoria/drinking-water-legislation).
+
+The Gormsean *Safe Drinking Water Regulations* sets limits for each of the three parameters in our data:
+
+* *Escherichia coli*: All samples of drinking water collected are found to contain no Escherichia coli per 100 millilitres of drinking water, except false positive samples.
+* *Total trihalomethanes*: Less than or equal to 0.25 milligrams per litre of drinking water.
+* *Turbidity*: The 95^th^ percentile of results for samples in any 12 months must be less than or equal to 5.0 Nephelometric Turbidity Units.
+
+In a separate [guidance document](https://www2.health.vic.gov.au/Api/downloadmedia/%7BA1F6D255-D5C7-4B7E-AAE5-8B7451EDE81A%7D), the regulator also specifies that the percentile for turbidity should be calculated with the 'Weibull Method'.
+
+You are writing the annual report to the regulator about water quality in Gormsey. Your task is to assess the three parameters in the data for compliance with the regulations.
+
+## Analyse the Data
+
+The R language comes equipped with a varied collection of specialised functions for statistical analysis. This chapter discusses [descriptive statistics](https://en.wikipedia.org/wiki/Descriptive_statistics), which are methods that summarise data by looking at the arithmetic mean, median, mode, percentiles variance, distribution curves and so on.
+
+But before we start doing this, it is best practice to start a new script that loads the data. This way, each script can work independently, which makes your analysis reproducible. A reproducible script can be re-used on different data sets with the same structure.
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+options(digits = 6)
+library(tidyverse)
+gormsey <- read_csv("../casestudy1/gormsey.csv")
+```
+```{r, message=FALSE, eval=FALSE}
+library(tidyverse)
+gormsey <- read_csv("casestudy1/gormsey.csv")
+```
+
+The fastest way to get a quick overview of data is the `summary()` function. This function shows six basic statistics of a vector: the minimum value, the first quartile, median, mean, third quartile and the maximum. When you evaluate `summary(gormsey$Result)`, you see the following output in the console:
+
+```{r}
+summary(gormsey$Result)
+```
+
+This result might be informative, but our data contains results from three different laboratory tests over eleven different towns. You can use the filter functionality explained in the previous [chapter](#tidyverse) to focus your data to what you like to know.
+
+>**Practice Task**: What are the four quartiles of the turbidity results in Southwold?
+
+Answer: Filter all results where the `Town` variable equals Pontybridge and summarise the `Results` variable.
+
+```{r}
+turbidity_southwold <- filter(gormsey,
+                              Town == "Southwold" & Measure == "Turbidity")
+summary(turbidity_southwold$Result, digits = 2)
+```
+
+The table \@ref(tab:stats) shows some of the other descriptive statistical functions you can use in R.
+
+>**Practice Task**: Try these functions with the Gormsey results to hone your coding skills. 
+
+| Function     | Description                            |
+|--------------|----------------------------------------|
+| `min()`      | Minimum value                          |
+| `max()`      | Maximum value                          |
+| `range()`    | A vector of minimum and maximum values |
+| `mean()`     | Arithmetic mean                        |
+| `median()`   | Median                                 |
+| `sd()`       | Standard deviation                     |
+| `quantile()` | Percentiles                            |
+| `IQR()`      | Inter-Quartile Range                   |
+| `summary()`  | Summary statistics                     |
+Table: (\#tab:stats) Various descriptive statistical functions.
+
+## Calculating Percentiles
+
+The `summary()` function is useful for a quick overview of four quartiles, but not very useful in the detailed analysis because it has little flexibility.
+
+The `quantile()` function calculates defined percentiles (quantiles) of a vector of numbers. The default setting gives five values, similar to the `summary()` function. The `probs` parameter lets you define which quantiles you like to see.
+
+For example, `quantile(turbidity_southwold$Result, probs = 0.95)` provides the 95^th^ percentile of the turbidity measurements in Pontybridge. The quantile function can also take a vector of one or more probabilities to calculate different outcomes, for example `quantile(turbidity_southwold$Result, c(0.50, 0.95))` results in a vector with two variables. 
+
+Note that you can omit the `probs =` option because it is the default parameter. You can omit parameter names in an R function when you enter the value in the same order as shown in the help file.
+
+>**Practice Task**: What are the 33rd and 66th percentile for the THM data in Wakefield? 
+
+To answer this question, you first need to create a subset of the data using the `filter()` function, after which you can calculate the required percentiles.
+
+```{r}
+thm_paethsmouth <- filter(gormsey, Town == "Wakefield" & Measure == "THM")
+quantile(thm_paethsmouth$Result, c(0.33,  0.66))
+```
+
+In the [first chapter](#datascience), we saw how good data science needs to be valid and reliable. The validity and reliability of the water quality measurements relate to the design, installation and maintenance of the instruments used in the laboratory. The soundness of good data science also requires an appropriate methodology to analyse the data. This case study has some specific requirements concerning how to analyse the data. The guidance document from the regulator raises two questions: What is the Weibull method? How do you implement this method in R?
+
+The process to determine a percentile consists of three steps (McBride, [2005](http://amzn.to/2k8shr8)):
+
+1. Place the observations in ascending order: $y_1, y_2, \ldots y_n$.
+2. Calculate the rank ($r$) of the required percentile (figure \@ref(fig:perc))
+3. Interpolate between adjacent numbers: $$y_r = y_{\lfloor r \rfloor}+ (y_{r_{\lceil r \rceil}} - y_{\lfloor r \rfloor})(r - \lfloor r \rfloor)$$
+
+Where:
+
+- $y$: Observation
+- $r$: Ranking number
+- $\lfloor r \rfloor$: Floor or $r$
+- $\lceil r \rceil$: Ceiling of $r$
+
+The floor and ceiling functions in mathematics round a value to its nearest lower or higher integer.
+
+```{r perc, echo=FALSE, fig.cap="Calculating percentiles.", fig.asp=3/4, out.width="80%"}
+x <- c(1, 2, 3.5, 4, 5)
+y <- 2 * x
+
+plot(x, y, pch = 19, 
+     xlab = "Rank", 
+     ylab = "Observation", 
+     xaxt = "n",
+     yaxt = "n", 
+     frame.plot = FALSE)
+
+axis(1, at = x,
+     labels = c(1, 
+                expression(group(lfloor, r, rfloor)), 
+                "r", 
+                expression(group(lceil, r, rceil)), 
+                "n"))
+
+axis(2, at = y,
+     labels = c(expression(y[1]),
+                expression(y[group(lfloor, r, rfloor)]),
+                expression(y[r]),
+                expression(y[group(lceil, r, rceil)]),
+                expression(y[n])))
+
+lines(x[1:2], y[1:2], lty = 2)
+lines(x[2:4], y[2:4], lty = 1)
+lines(x[4:5], y[4:5], lty = 2)
+
+abline(h = y[3], col = "red", lwd = .5, lty = 2)
+abline(v = x[3], col = "red", lwd = .5, lty = 2)
+
+points(x, y)
+```
+
+With $n=52$ ranked weekly turbidity samples, the 95^th^ percentile ($p=0.95$) lies intuitively between sample 49 and 50: $r = pn = 0.95  \times 52$ = `r .95 * 52`. To determine the percentile, you linearly interpolate between the measured values. If, for example, sample 49 and 50 ($y_{\lfloor r \rfloor}$ and $y_{r_{\lceil r \rceil}}$) are 0.5 and 1.0 NTU, then the 95^th^ percentile $y_r$ is:
+
+$$y_r = y_{\lfloor r \rfloor}+ (y_{r_{\lceil r \rceil}} - y_{\lfloor r \rfloor})(r - \lfloor r \rfloor)$$
+
+$$y_r = 0.5 + (1 - 0.5) \times (49.4 - 49) = 0.7$$
+
+However, the method where $r = pn$ is only valid for normally-distributed samples. Statisticians have defined several methods to determine percentiles. The differences between these approaches are the rules to determine the rank $r$. Hyndman & Fan ([1996](https://www.researchgate.net/publication/222105754_Sample_Quantiles_in_Statistical_Packages)) give a detailed overview of nine methods of calculating percentiles or quantiles. 
+
+This paper gives the Weibull method the less poetic name $\hat{Q}_6(p)$ because it is the sixth option in their list. Waloddi Weibull, a Swedish engineer famous for his statistical distribution, was one of the first to describe this method. In his method, the rank $r$ of a percentile $p$ is given by:
+
+$$r = p(n + 1)$$
+
+For a sample of 52 turbidity tests, the 95^th^ percentile thus lies between ranked result number 50 and 51: $r=0.95(52 + 1)=$ `r 0.95*53`. 
+
+This method gives a higher result than the standard method for normal distributions. The Weibull method is more suitable for positively skewed distributions, as is often the case with water quality. Laboratory data generally has a lot of low values, with the occasional spikes at high values.
+
+Please note that there is no one correct way to calculate percentiles, as shown by Hyndman and Fan. The most suitable method depends on the distribution of the population and the purpose of the analysis. In this case study, the regulator prescribes the Weibull method which is biased towards the high end of the distribution.
+
+The `percentiles.R` script in the `casestudy1` folder compares the Weibull method with the method used in Excel (Figure \@ref(fig:percentiles)). With highly skewed data, as is often the case with turbidity measurements, the Weibull method results in a higher percentile value.
+
+
+```{r percentiles, echo=FALSE, fig.cap="Comparing the Excell and Weibull method for percentiles with highly-skewed data.", fig.asp=3/4, out.width="60%"}
+## Create data
+sample <- c(1:17, 63, 170, 300)
+
+## Set parameters
+n <- length(sample)
+p <- 0.95
+
+## Visualise
+par(mar=c(6, 5, 4, 1))
+plot(sample, type = "b",
+     xlab = "Rank", ylab = "Result",
+     cex.axis = 1,
+     cex.lab = 1,
+     cex.main = 1,
+     cex.sub = 1,
+     lwd = 1)
+
+## Calculate rank
+r_weibull <- p * (n + 1)
+r_excel <- 1 + p * (n - 1)
+
+## Interpolate percentiles
+x_weibull <- (1 - (r_weibull - floor(r_weibull))) * sample[floor(r_weibull)] + (r_weibull - floor(r_weibull)) * sample[ceiling(r_weibull)]
+x_excel <- (1 - (r_excel - floor(r_excel))) * sample[floor(r_excel)] + (r_excel - floor(r_excel)) * sample[ceiling(r_excel)]
+
+## Visualise
+abline(v = r_weibull, col = "red", lwd = 1, lty = 3)
+abline(v = r_excel, col = "blue", lwd = 1, lty = 2)
+
+## Legend
+legend("topleft", legend = c("Excel", "Weibull"), col = c("blue", "red"), lwd = 1, lty = c(2, 3))
+```
+
+Analysing the output of the `quantile()` function shows that the Excel method is number 7 and the Weibull method is number 6. The linear interpolation method in figure \@ref(fig:perc) is type 4. To calculate the Weibull 95^th^ percentile we thus need to use:
+
+```{r}
+turbidity <- filter(gormsey, Measure == "Turbidity")
+quantile(turbidity$Result, 0.95)
+quantile(turbidity$Result, 0.95,  type = 6)
+```
+
+Note that the skewness of the Gormsey turbidity data is slightly higher with the Weibull method, than with the standard approach.
+
+## Analysing Grouped Data
+
+In the previous paragraphs, we created a filtered set of data to determine statistics for a specific town and parameter. Doing this manually for each Town or parameter would be a tedious task. As a general rule, if you copy and paste code more than twice, there is a more efficient way of doing what you are trying to achieve. This next function simplifies analysing data from multiple samples by grouping a data set and analysing the data for each group.
+
+The `group_by()` function in the *dplyr* library cuts a data frame into groups. The data frame contains three variables, `Town`, `Measure` and `Result`. Let's assume we want to analyse result by `Measure`.
+
+Using `group_by()` splits the data frame into several smaller ones, filtered by the grouping variable. We can use this method to compute summary statistics for each group using the `summarise()` function. For example, to calculate the average and maximum value of the result for each measure, you first group the data and then run a summary.
+
+The first lines below create a mini data frame, as shown in figure \@ref(fig:grouping). The numbers in the results column are randomly chosen with the `runif()` function. The `rep()` function repeats a value. This technique is called synthetic data, which is a common method to test code. The data in the Gormsey case study is also synthetic data.
+
+```{r}
+df <- tibble(Town = rep(c("Bellmoral", "Blancathey", "Merton"), each = 2),
+             Measure = rep(c("THM", "Turbidity"), 3),
+             Result = runif(6))
+
+df_grouped <- group_by(df, Measure)
+
+summarise(df_grouped,
+          Average = mean(Result),
+          Maximum = max(Result))
+```
+
+```{r grouping, fig.cap='Grouping a data frame by `Measure`.', echo=FALSE, out.width="80%"}
+knitr::include_graphics("images/grouping.png")
+```
+
+The data is grouped by the measure. When you display a grouped data frame in the console, R mentions the number of groups and the variables. 
+
+The `summarise()` function uses the grouped data frame and creates two new variables that show the average and maximum values for each measure. The results will differ every time you run it due to the randomisation.
+
+You can add any R function within the summarise statement so you can easily calculate any grouped statistic. Use the `n()` function to count the number of observations (rows) in each group.
+
+You can also group a data frame or tibble by more than one variable, e.g. `group_by(gormsey, Measure, Town)` allows you to calculate statistics by town and by measure.
+
+We can now apply this abstract example to the water quality case study. This code produces a new data frame that shows the mean result for each measure and town. 
+
+```{r gstats, message=FALSE}
+gormsey_grouped <- group_by(gormsey, Measure, Town)
+summarise(gormsey_grouped,
+          samples = n(),
+          min = min(Result),
+          mean = mean(Result),
+          max = max(Result))
+```
+
+>**Practice Task**: Use the grouping and summarise functions with other parameters and inspect the results.
+
+You now have all the tools you need to analyse the Gormsey data and determine how the results compare to the regulations.
+
+## Quiz 3: Analysing Water Quality Data
+
+Answering most of these questions requires more than one step. First filter and, if needed, group the data frame, and then you can calculate the results.
+
+### Question 1
+What is the average number of samples taken at the sample points in Gormesey?
+
+### Question 2
+Which town has the highest level of average turbidity?
+
+### Question 3
+Which sample town has been sampled the least for total chlorine?
+
+### Question 4
+Which sample point has breached the maximum value of 0.25 mg/l for THM most often?
+
+### Question 5
+What is the highest 95^th^ percentile of the turbidity for each of the towns in Gormsey, using the Weibull method?
+
+That's it for this quiz. If you get stuck, you can find the answers in the [Appendix](#quiz3).
+
+## Further Study
+Graham McBride has written a comprehensive account of using statistical methods in water quality management: McBride, Graham B. *Using Statistical Methods for Water Quality Management: Issues, Problems, and Solutions*. Wiley Series in Statistics in Practice. Hoboken, NJ: Wiley-Interscience, 2005.
+
+Looking at numbers is great, but a picture often says more than a thousand numbers. The [next chapter](#ggplot) discusses how to visualise the results of your analysis.

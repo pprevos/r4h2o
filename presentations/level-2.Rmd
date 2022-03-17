@@ -5,6 +5,7 @@ author: "Peter Prevos"
 date: "`r format(Sys.Date(), '%d %B %Y')`"
 output: 
     revealjs::revealjs_presentation:
+        self_contained: no
         theme: league
         highlight: zenburn
         smart: true

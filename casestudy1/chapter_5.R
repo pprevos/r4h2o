@@ -121,3 +121,10 @@ summarise(gormsey_grouped,
           p95 = quantile(Result, 0.95, type = 6),
           max = max(Result))
 
+
+
+s <- filter(gormsey, Measure == "THM" & Result > 0.25)
+
+count(s, Sample_Point)
+
+

@@ -1,4 +1,5 @@
 .gitignore
+..gitignore.~undo-tree~
 .Rproj.user
 /.RData
 /.Rhistory

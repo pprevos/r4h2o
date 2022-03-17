@@ -2,7 +2,7 @@
 
 ![](presentations/images/r4h2o-banner.jpg)
 
-This repository contains the data sets and scripts for the []Data Science for Water Professionals course](https://peterprevos.com/r4h2o/). 
+This repository contains the data sets and scripts for the [Data Science for Water Professionals course](https://peterprevos.com/r4h2o/). 
 
 This repository contains the following folders:
 * `casestudy1`   : Case study 1 data and files.

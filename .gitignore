@@ -1,8 +1,7 @@
 /waterra/
 /crc/
-^_minted
-^_minted.*
-/_minted-09-segmentation/
+/plots/
+/_minted*
 /ltximg/
 /krantz.cls
 /packages.bib
@@ -11,5 +10,3 @@
 /.Rhistory
 /.Rproj.user/
 /*.org
-/_minted-08-customer-experience/
-/plots/*.pdf

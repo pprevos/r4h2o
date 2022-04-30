@@ -27,6 +27,8 @@ with(customers, (consumption - mean(consumption)) / sd(consumption))
 customers_scaled <- scale(customers[, -1])
 customers_scaled
 
+dist(s)
+
 # Distance matrix
 
 customers_dist <- dist(customers_scaled)
@@ -49,7 +51,7 @@ customers$segment <- cutree(customer_clusters, k = 2)
 
 ggplot(customers, aes(property_size, consumption, fill = factor(segment))) +
     geom_label(aes(label = id)) +
-    scale_fill_manual(values = c("dodgerblue", "lightgrey"), name = "Segment") +
+    scale_fill_manual(values = c("grey90", "grey60"), name = "Segment") +
     labs(title = "Simulated weekday and weekend consumption",
          subtitle = "Cluster analysis example",
          x = "Property Size", y = "Annual consumption") +

@@ -11,3 +11,5 @@
 /.Rhistory
 /.Rproj.user/
 /*.org
+/_minted-08-customer-experience/
+/plots/*.pdf

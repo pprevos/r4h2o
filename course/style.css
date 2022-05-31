@@ -5,3 +5,9 @@
   box-shadow:none;
  }
 
+.cols {
+    float:left;
+    width: 50%;
+    height: 100%;
+    vertical-align:middle;
+}

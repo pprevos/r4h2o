@@ -1,6 +1,6 @@
-#######################################
-# R4H2O: 4 - LOADING AND EXPLORING DATA
-#######################################
+######################################
+# R4H2O 3 - LOADING AND EXPLORING DATA
+######################################
 
 # Install packages (only do this once)
 install.packages("tidyverse")
@@ -42,6 +42,7 @@ labdata
 glimpse(labdata)
 
 # View the structure of a variable
+
 str(labdata)
 
 # Subsetting a data frame or tibble
@@ -78,7 +79,7 @@ a * 2
 
 turbidity <- filter(labdata, Measure == "Turbidity")
 
-filter(labdata, Suburb == "Tarnstead" & Measure == "Turbidity" & Result > 1)
+filter(labdata, Suburb == "Tarnstead" & Measure == "THM" & Result > .1)
 
 nrow(filter(labdata, Suburb != "Strathmore" &
                      Measure == "Turbidity" &
@@ -109,7 +110,3 @@ turbidity_count
 # Using Regular Expressions (wildcards) to filter text
 
 filter(labdata, str_detect(Suburb, "^M"))
-
-# Reading data from the internet
-
-read_csv("https://lucidmanager.org/r4h2o/data/labdata.csv")

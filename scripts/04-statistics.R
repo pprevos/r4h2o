@@ -9,25 +9,6 @@ library(dplyr)
 labdata <- read_csv("data/labdata.csv")
 turbidity <- filter(labdata, Measure == "Turbidity")
 
-# Basic data visualisation
-
-# Histograms
-
-par(mfcol = c(1, 2))
-hist(turbidity$Result, main = "No transformation")
-hist(log(turbidity$Result), main = "Log transformation")
-
-hist(log(turbidity$Result), breaks = 5)
-
-# Box (and whisker) plots
-
-par(mar = c(8, 4, 4, 1), mfcol = c(1, 1))
-boxplot(data = turbidity, log10(Result) ~ Suburb, las = 2,
-        xlab = NULL, main = "Gormsey Turbidity Samples")
-
-# Range parameter 10
-boxplot(data = turbidity, log10(Result) ~ Suburb, range = 10)
-
 # MEASURES OF CENTRAL TENDENCY
 
 # Arithmetic mean
@@ -52,11 +33,15 @@ median(x)
 # Mode
 
 mode <- function(x) {
-    ux <- unique(x)
-    ux[which.max(tabulate(match(x, ux)))]
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
 }
 
 mode(x)
+
+# Measures of Position
+
+summary(x)
 
 # The quantile function
 
@@ -65,31 +50,31 @@ quantile(x)
 quantile(x, probs = 0.95)
 quantile(x, c(0.33, 0.66))
 
-# Measures of Position
+# Manual quantile calculations (linear method)
 
-summary(x)
-
-fivenum(x)
-
-p <- 0.95
-n <- 52
-
-# Manual quantile calculations
+# Linear method
 
 x_ord <- x[order(x)]
 p <- 0.95
 
-# Weibull
-r <- p * (n + 1)
+r <- p * n
 (1 - (r - floor(r))) * x_ord[floor(r)] + (r - floor(r)) * x_ord[ceiling(r)]
 
-# Linear method
-r <- p * n
+# Weibull method
+
+x_ord <- x[order(x)]
+p <- 0.95
+
+r <- p * (n + 1)
 (1 - (r - floor(r))) * x_ord[floor(r)] + (r - floor(r)) * x_ord[ceiling(r)]
 
 # Types of percentiles
 
-quantile(x, 0.95,  type = 7)
+# Linear method
+
+quantile(x, 0.95,  type = 4)
+
+# Weibull method
 
 quantile(x, 0.95,  type = 6)
 
@@ -133,21 +118,20 @@ med_skew
 
 # Third central moment
 
-(sum((x - mean(x))^3)) / n / (sqrt(sum((x - mean(x))^2) / n)^3)
+(sum((x - mean(x))^3) / n) / (sqrt(sum((x - mean(x))^2) / n)^3)
 
 # Skewness with the moments package
 
 library(moments)
 skewness(x)
 
-# Kurtosis
-# Fourth central moment
+# Kurtosis: Fourth central moment
 
-(sum((x - mean(x))^4)) / n / (sqrt(sum((x - mean(x))^2) / n)^4)
+(sum((x - mean(x))^4) / n) / (sqrt(sum((x - mean(x))^2) / n)^4)
 
 # Moment package
 
-kurtosis(x)
+moments::kurtosis(x)
 
 # ANALYSING GROUPED DATA
 
@@ -167,6 +151,36 @@ summarise(labdata_grouped,
           samples = n())
 
 count(labdata, Measure, Suburb, name = "Samples")
+
+# Manual method
+
+mean(anscombe$x1)
+mean(anscombe$x2)
+# etc.
+
+# Shortcuts (read the help files to learn about these functions)
+colMeans(anscombe)  # Means of all columns
+apply(anscombe, 2, sd) # Apply the sd formula over all columns
+
+# Basic data visualisation
+
+# Histograms
+
+par(mfcol = c(1, 2))
+hist(turbidity$Result, main = "No transformation")
+hist(log(turbidity$Result), main = "Log transformation")
+
+hist(log(turbidity$Result), breaks = 5)
+
+# Box (and whisker) plots
+
+par(mar = c(8, 4, 4, 1), mfcol = c(1, 1))
+boxplot(data = turbidity, log10(Result) ~ Suburb, las = 2,
+        xlab = NULL, main = "Gormsey Turbidity Samples")
+
+# Range parameter 10
+
+boxplot(data = turbidity, log10(Result) ~ Suburb, range = 10)
 
 # Using the e1071 package for skweness and kurtosis
 # Using this library masks (overrides) the functions in the moments package

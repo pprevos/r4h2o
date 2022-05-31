@@ -6,26 +6,29 @@
 
 library(tidyverse)
 set.seed(123)
-customers <- tibble(id = LETTERS[1:10],
-                    property_size = c(rnorm(5, 500, 100), rnorm(5, 1000, 200)),
-                    consumption = c(rnorm(5, 500, 200), rnorm(5, 1000, 10)))
-ggplot(customers, aes(property_size, consumption)) +
-  geom_label(aes(label = id)) +
-  labs(title = "Simulated weekday and weekend consumption",
-       subtitle = "Cluster analysis example",
-       x = "Property Size", y = "Annual consumption") +
+
+consumption <- tibble(id = LETTERS[1:10],
+                      property_size = c(rnorm(5, 500, 100), rnorm(5, 1000, 200)),
+                      volume = c(rnorm(5, 500, 200), rnorm(5, 1000, 10)))
+
+ggplot(consumption, aes(property_size, volume, label = id)) +
+  geom_label() +
+  labs(title = "Cluster analysis example",
+       x = "Property Size", y = "Volume") +
   theme_minimal(base_size = 12)
+
+head(consumption)
 
 # Scaling the data
 
 # Manual Scaling
 
-with(customers, (consumption - mean(consumption)) / sd(consumption))
+with(consumption, (volume - mean(volume)) / sd(volume))
 
 # Scaling function
 
-customers_scaled <- scale(customers[, -1])
-customers_scaled
+consumption_scaled <- scale(consumption[, -1])
+consumption_scaled
 
 dist(s)
 

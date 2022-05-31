@@ -34,8 +34,10 @@ abline(h = q2, col = "grey")
 points(h2, q2, pch = 19, col = "blue")
 
 # Generate sequences
-seq(from = .05, to = .3, by = .001)
-seq(from = 0.05, to = 0.3, length.out = 100)
+
+h3 <- seq(from = .05, to = .3, by = .001)
+
+h3 <- seq(from = 0.05, to = 0.3, length.out = 100)
 
 # For-loop (not recommended)
 

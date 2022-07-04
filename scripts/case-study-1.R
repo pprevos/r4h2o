@@ -5,7 +5,7 @@
 # Load and view laboratory data
 
 library (tidyverse)
-labdata <- read_csv("data/labdata.csv")
+labdata <- read_csv("data/water_quality.csv")
 
 # Chapter 4: LOADING AND EXPLORING DATA
 
@@ -31,7 +31,7 @@ arrange(samples, desc(Samples))
 
 # Top n results
 
-top_n(samples, 3)
+slice_max(samples, order_by = Samples, n = 3)
 
 # Question 3
 # On how many days were samples taken?
@@ -48,9 +48,16 @@ thm_sw <- filter(labdata, (Suburb == "Southwold" | Suburb == "Merton") & Measure
 boxplot(data = thm_sw, Result ~ Suburb)
 abline(h = 0.25, col = "red")
 
-# Question 2:
+# Question 2: Which suburb recorded the highest level of chlorine?
 
+chlorine <- filter(labdata, Measure == "Chlorine Total")
 
+chlorine_sp <- group_by(chlorine, Sample_Point)
+chlorine_med <- summarise(chlorine_sp, median = median(Result))
+
+arrange(chlorine_med, desc(median))
+
+chlorine_med[which.max(chlorine_med$median), "Sample_Point"]
 
 # Question 3: Average 95th percentile of turbidity for all towns
 

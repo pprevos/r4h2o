@@ -3,7 +3,7 @@
 ######################################
 
 # Install packages (only do this once)
-install.packages("tidyverse")
+# install.packages("tidyverse")
 
 # Loading the Tidyverse packages
 
@@ -11,17 +11,17 @@ library(tidyverse)
 
 # Reading a CSV file with base R
 
-labdata <- read.csv("data/labdata.csv")
+labdata <- read.csv("data/water_quality.csv")
 
 # Using the readr package from Tidyverse
 
 library(readr)
-labdata <- read_csv("data/labdata.csv")
+labdata <- read_csv("data/water_quality.csv")
 
 # Reading Spreadsheet data
 
 library(readxl)
-labdata <- read_excel("data/labdata.xlsx", skip = 2, sheet = "data")
+labdata <- read_excel("data/water_quality.xlsx", skip = 2, sheet = "data")
 
 # Explore data frames
 
@@ -106,6 +106,13 @@ count(labdata, Suburb, Measure)
 turbidity <- filter(labdata, Measure == "Turbidity")
 turbidity_count <- count(turbidity, Suburb, name = "Samples")
 turbidity_count
+
+# Sorting data frames with dplyr
+
+sample_count <- count(labdata, Sample_Point)
+arrange(sample_count, n)
+arrange(sample_count, desc(n))
+top_n(sample_count, n = 3)
 
 # Using Regular Expressions (wildcards) to filter text
 

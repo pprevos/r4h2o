@@ -4,25 +4,23 @@
 
 # Data-Pixel Ratio
 
-library(ggplot2)
+library(tidyverse)
 library(gridExtra)
-library(ggpubr)
-library(jpeg)
+# library(devtools)
+# devtools::install_github("hilaryparker/cats")
+library(cats)
 
-graph_tit <- "Bottled Water Taste Testing Results"
-comparison <- data.frame(item = LETTERS[1:5],
-                         value = c(20, 11, 9, 13, 17))
-
-bad_taste <- readJPEG("images/bad-taste.jpg")
+comparison <- tibble(item = LETTERS[1:5],
+                     value = c(20, 11, 9, 13, 17))
 
 bad <- ggplot(comparison, aes(item, value, fill = item)) +
-  background_image(bad_taste) + 
-  geom_col(alpha = 0., col = "black") +
+  add_cat(bw = FALSE) +
+  geom_col(alpha = 0.7, col = "black") +
   scale_fill_discrete(name = "Brand") + 
   theme_gray(base_size = 12) +
   theme(legend.position="left", legend.key.size = unit(2, "line"),
         plot.title = element_text(face = "bold")) +
-  labs(title= graph_tit,
+  labs(title= "Cat food sales",
        subtitle = "Low Data-Pixel Ratio",
        x = "Brand", y = "Sales")
 
@@ -32,22 +30,19 @@ good <- ggplot(comparison, aes(item, value)) +
   geom_col(fill = "#002859", alpha = 0.7) +
   theme_minimal(base_size = 12) +
   theme(plot.title = element_text(face = "bold")) + 
-  theme(panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank()) + 
-  labs(title= graph_tit,
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + 
+  labs(title= "Cat food sales",
        subtitle = "High Data-Pixel Ratio",
        x = "Brand", y = "Sales")
 
 grid.arrange(bad, good, ncol = 2, widths = c(1.1, 0.9))
 
-# Data stories
-
 library(tidyverse)
-library(gridExtra)
-
+library(girdExtra)
+# Data stories
 theme_set(theme_minimal(base_size = 10) +
-          theme(plot.title = element_text(face="bold"),
-                plot.caption = element_text(family = "mono")))
+  theme(plot.title = element_text(face="bold"),
+        plot.caption = element_text(family = "mono")))
 
 set.seed(1969)
 
@@ -89,14 +84,3 @@ d <- ggplot(distribution, aes(value)) +
 grid.arrange(c, d, r1, r2, ncol=2)
 
 theme_set(theme_gray())
-
-# Overview of ggplot themes
-
-library(gridExtra)
-
-p <- ggplot(labdata, aes(Measure)) + geom_bar()
-a <- p + theme_classic(base_size = 11) + ggtitle("theme_clasic()")
-b <- a + theme_bw(base_size = 11) + ggtitle("theme_bw()")
-c <- a + theme_minimal(base_size = 11) + ggtitle("theme_minimal()")
-d <- a + theme_void(base_size = 11) + ggtitle("theme_void()")
-grid.arrange(a, b, c, d)

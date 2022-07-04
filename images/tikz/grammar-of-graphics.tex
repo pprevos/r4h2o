@@ -84,13 +84,21 @@
             \node[circle, fill=\k!50,fill opacity=.9, scale=.25mm] (c\j) at ([\l=-1cm]c\i) {};
         \end{scope}
         % Text
-        \node[left=3.5cm of A, yshift=1mm, anchor=east] {\huge{Theme}};
-        \node[left=3.5cm of B, yshift=1mm,anchor=east] {\huge{Coordinates}};
-        \node[left=3.5cm of C, yshift=1mm,anchor=east] {\huge{Statistics}};
+        \node[left=3.5cm of G, yshift=1mm,anchor=east] {\huge{Theme}};
+        \node[left=3.5cm of F, yshift=1mm,anchor=east] {\huge{Coordinates}};
+        \node[left=3.5cm of E, yshift=1mm,anchor=east] {\huge{Statistics}};
         \node[left=3.5cm of D, yshift=1mm,anchor=east] {\huge{Facets}};
-        \node[left=3.5cm of E, yshift=1mm,anchor=east] {\huge{Geometries}};
-        \node[left=3.5cm of F, yshift=1mm,anchor=east] {\huge{Aesthetics}};
-        \node[left=3.5cm of G, yshift=1mm,anchor=east] {\huge{Data}};
+        \node[left=3.5cm of C, yshift=1mm,anchor=east] {\huge{Geometries}};
+        \node[left=3.5cm of B, yshift=1mm,anchor=east] {\huge{Aesthetics}};
+        \node[left=3.5cm of A, yshift=1mm,anchor=east] {\huge{Data}};
+
+        \node[right=3.5cm of A, yshift=1mm,anchor=west] {\huge{\texttt{ggplot(labdata) +}}};
+        \node[right=3.5cm of B, yshift=1mm,anchor=west] {\huge{\texttt{aes(Date, Result) +}}};
+        \node[right=3.5cm of C, yshift=1mm,anchor=west] {\huge{\texttt{geom\_line() +}}};
+        \node[right=3.5cm of D, yshift=1mm,anchor=west] {\huge{\texttt{facet\_wrap($\sim$Suburb) +}}};
+        \node[right=3.5cm of E, yshift=1mm,anchor=west] {\huge{\texttt{geom\_smooth() +}}};
+        \node[right=3.5cm of F, yshift=1mm,anchor=west] {\huge{\texttt{scale\_y\_log10() +}}};
+        \node[right=3.5cm of G, yshift=1mm,anchor=west] {\huge{\texttt{theme\_bw()}}};
 
 \end{tikzpicture}
 

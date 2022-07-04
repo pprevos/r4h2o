@@ -5,11 +5,12 @@
 # Clustering Example
 
 library(tidyverse)
-set.seed(123)
 
+set.seed(314)
 consumption <- tibble(id = LETTERS[1:10],
-                      property_size = c(rnorm(5, 500, 100), rnorm(5, 1000, 200)),
-                      volume = c(rnorm(5, 500, 200), rnorm(5, 1000, 10)))
+                      property_size = c(rnorm(5, 500, 100), rnorm(5, 800, 100)),
+                      volume = c(rnorm(5, 500, 200), rnorm(5, 1000, 100)))
+
 
 ggplot(consumption, aes(property_size, volume, label = id)) +
   geom_label() +
@@ -17,7 +18,7 @@ ggplot(consumption, aes(property_size, volume, label = id)) +
        x = "Property Size", y = "Volume") +
   theme_minimal(base_size = 12)
 
-head(consumption)
+head(consumption, n = 3)
 
 # Scaling the data
 
@@ -30,16 +31,18 @@ with(consumption, (volume - mean(volume)) / sd(volume))
 consumption_scaled <- scale(consumption[, -1])
 consumption_scaled
 
-dist(s)
+# Distance matrix (Euclidean)
 
-# Distance matrix
+consumption_dist <- dist(consumption_scaled)
+round(consumption_dist, 2)
 
-customers_dist <- dist(customers_scaled)
-round(customers_dist, 2)
+# Manhatten method
+
+dist(consumption_scaled, method = "manhattan")
 
 # Hierarchical clustering
 
-customer_clusters <- hclust(customers_dist)
+customer_clusters <- hclust(consumption_dist)
 
 customer_clusters
 
@@ -50,14 +53,31 @@ plot(customer_clusters,
      sub = "Simulated data",
      labels = customers$id)
 
-customers$segment <- cutree(customer_clusters, k = 2)
+consumption$segment <- cutree(customer_clusters, k = 2)
 
-ggplot(customers, aes(property_size, consumption, fill = factor(segment))) +
-    geom_label(aes(label = id)) +
-    scale_fill_manual(values = c("grey90", "grey60"), name = "Segment") +
-    labs(title = "Simulated weekday and weekend consumption",
-         subtitle = "Cluster analysis example",
-         x = "Property Size", y = "Annual consumption") +
-    theme_bw(base_size = 10)
+ggplot(consumption, aes(property_size, volume, fill = factor(segment))) +
+  geom_label(aes(label = id)) +
+  scale_fill_manual(values = c("grey90", "grey60"), name = "Segment") +
+  labs(title = "Simulated weekday and weekend consumption",
+       subtitle = "Cluster analysis example",
+       x = "Property Size", y = "Annual volume") +
+  theme_bw(base_size = 10)
 
-plot(rev(customer_clusters$height), type = "b")
+# Scree plot
+
+plot(rev(customer_clusters$height), type = "b",
+     xlab = "Clusters", ylab = "Distance")
+abline(v = 2, lty = 2, col = "grey50")
+
+k_clust <- kmeans(consumption[, -1], centers = 2)
+k_clust
+
+withinss <- vector()
+
+for (k in 1:nrow(consumption)) {
+  cl <- kmeans(consumption[, -1], centers = k)
+  withinss[k] <- cl$tot.withinss
+}
+
+plot(withinss, type = "b",
+     xlab = "Clusters", ylab = "within-clusters sum of squares")

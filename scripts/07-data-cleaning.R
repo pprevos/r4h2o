@@ -94,17 +94,11 @@ mean(tq$t01)
 
 mean(tq$t01, na.rm = TRUE)
 
+mean(na.omit(tq$t01))
+
 # Remove missing data in tq
 
-missing_tq <- tq %>%
-  mutate_at(-1, function(t) is.na(t)) %>%
-  rowwise(customer_id) %>%
-  summarise(missing = all(c_across(t01:t05)))
-
-tq <- tq %>%
-  left_join(missing_tq) %>%
-  filter(!missing) %>%
-  select(-missing)
+tq <- tq[complete.cases(tq), ]
 
 # Convert tq to a tidy data set
 

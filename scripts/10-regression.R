@@ -2,15 +2,15 @@ d <- filter(d, !is.na(y))
 beta_1 <- cor(d$y, d$x) * sd(d$y) / sd(d$x)
 beta_1
 
-beta_0 <- mean(d$y) - a * mean(d$x)
+beta_0 <- mean(d$y) - beta_1 * mean(d$x)
 beta_0
 
-source("scripts/customer_clean.R")
+source("scripts/07-customer_clean.R")
 
-cor.test(customers$contact, customers$hardship,
-         use = "complete.obs")
+contact_hardship <- select(customers, customer_id, contact, hardship)
+contact_hardship <- contact_hardship[complete.cases(contact_hardship), ]
 
-count(customers, hardship, contact) %>% 
+count(contact_hardship, hardship, contact) %>% 
   ggplot() + 
     geom_point(aes(contact, hardship, size = n), col = "darkgrey") +
     scale_size(guide = "none", range = c(0, 20)) + 
@@ -19,24 +19,23 @@ count(customers, hardship, contact) %>%
          x = "Contact frequency", y = "Financial hardship") +
     theme_light(base_size = 10)
 
-data(anscombe)
-anscombe
-
-cch <- customers %>% 
+cch <- contact_hardship %>% 
   select(customer_id, contact, hardship) %>% 
   filter(!is.na(contact) & !is.na(hardship))
 
-hc_model <- lm(hardship ~ contact, data = cch)
+hc_model <- lm(hardship ~ contact, data = contact_hardship)
 
 hc_model
 
 summary(hc_model)
 
-cch %>%
-    mutate(prediction = predict(hc_model),
-           res_calc = hardship - prediction,
-           res_lm = hc_model$residuals) %>%
-    select(-customer_id)
+contact_hardship %>%
+  filter(!is.na(hardship) & !is.na(contact)) %>%
+  mutate(prediction = predict(hc_model),
+         residual = residuals(hc_model),
+         res_calc = hardship - prediction,
+         res_lm = hc_model$residuals) %>%
+  select(hardship, contact, prediction, residual, res_calc, res_lm)
 
 summary(hc_model$residuals)
 
@@ -46,7 +45,7 @@ shapiro.test(hc_model$residuals)
 
 coef(hc_model)
 
-n <- nrow(cch)
+n <- nrow(contact_hardship)
 k <- length(hc_model$coefficients) - 1
 ss_fit <- sum(hc_model$residuals^2)
 df <- n - (k + 1)

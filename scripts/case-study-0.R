@@ -12,13 +12,11 @@ q1 <- (2 / 3) * cd * sqrt(2 * g) * b * h1^(3 / 2)
 q1
 
 # Question 2
-# First hour: h=150mm, second hour: h = 136mm, last threehours: h = 75mm
-# Total delivered volume in m3
+# h=150mm, h = 136mm, h = 75mm
 
 h2 <- c(150, 136, 75) / 1000
 q2 <- (2 / 3) * cd * sqrt(2 * g) * b * h2^(3 / 2)
-t <- (1:3) * 3600
-sum(q2 * t)
+mean(q2)
 
 # Question 3
 # Plot the flow in m3/s for all heights between 50mm and 500mm

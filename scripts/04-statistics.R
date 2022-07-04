@@ -6,7 +6,7 @@
 
 library(readr)
 library(dplyr)
-labdata <- read_csv("data/labdata.csv")
+labdata <- read_csv("data/water_quality.csv")
 turbidity <- filter(labdata, Measure == "Turbidity")
 
 # MEASURES OF CENTRAL TENDENCY
@@ -39,7 +39,7 @@ mode <- function(x) {
 
 mode(x)
 
-# Measures of Position
+# MEASURES OF POSITION
 
 summary(x)
 
@@ -152,6 +152,11 @@ summarise(labdata_grouped,
 
 count(labdata, Measure, Suburb, name = "Samples")
 
+# Explore Anscombe's Quartet
+
+data(anscombe)
+anscombe
+
 # Manual method
 
 mean(anscombe$x1)
@@ -159,6 +164,7 @@ mean(anscombe$x2)
 # etc.
 
 # Shortcuts (read the help files to learn about these functions)
+
 colMeans(anscombe)  # Means of all columns
 apply(anscombe, 2, sd) # Apply the sd formula over all columns
 
@@ -166,9 +172,11 @@ apply(anscombe, 2, sd) # Apply the sd formula over all columns
 
 # Histograms
 
-par(mfcol = c(1, 2))
+par(mfcol = c(1, 2), mar = c(4, 2, 1, 0))
 hist(turbidity$Result, main = "No transformation")
 hist(log(turbidity$Result), main = "Log transformation")
+
+# Changinbg the breaks parameter
 
 hist(log(turbidity$Result), breaks = 5)
 

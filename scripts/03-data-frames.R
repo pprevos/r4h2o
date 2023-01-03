@@ -1,5 +1,7 @@
 ######################################
+#
 # R4H2O 3 - LOADING AND EXPLORING DATA
+#
 ######################################
 
 # Install packages (only do this once)
@@ -51,11 +53,6 @@ labdata$Result
 labdata$Result[1:10]
 labdata$Result[c(1, 3, 5)]
 labdata[, "Date"]
-
-labdata[1:2, 1:2]
-labdata[1:2, ]
-labdata[, 1:2]
-
 labdata[1:10, c("Suburb", "Result")]
 n <- 10
 labdata[n * 2, ]
@@ -112,7 +109,7 @@ turbidity_count
 sample_count <- count(labdata, Sample_Point)
 arrange(sample_count, n)
 arrange(sample_count, desc(n))
-top_n(sample_count, n = 3)
+slice_max(sample_count, n = 3, order_by = n)
 
 # Using Regular Expressions (wildcards) to filter text
 

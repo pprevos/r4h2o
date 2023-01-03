@@ -4,45 +4,59 @@
 
 # Data-Pixel Ratio
 
-library(tidyverse)
+library(ggplot2)
+library(dplyr)
 library(gridExtra)
-# library(devtools)
-# devtools::install_github("hilaryparker/cats")
-library(cats)
+library(ggpubr)
+library(jpeg)
 
-comparison <- tibble(item = LETTERS[1:5],
-                     value = c(20, 11, 9, 13, 17))
+suburbs <- read.csv("data/water_quality.csv") %>%
+  distinct(Suburb) %>%
+  pull(Suburb)
+
+graph_tit <- "Water Taste Testing Results"
+
+comparison <- data.frame(item = suburbs[1:5],
+                         value = c(7, 3, 9, 5, 6))
+
+bad_taste <- readJPEG("figures/05-taste-water.jpg")
 
 bad <- ggplot(comparison, aes(item, value, fill = item)) +
-  add_cat(bw = FALSE) +
-  geom_col(alpha = 0.7, col = "black") +
-  scale_fill_discrete(name = "Brand") + 
+  background_image(bad_taste) + 
+  geom_col(alpha = 0.5, col = "black") +
+  scale_fill_discrete(name = "Suburb") + 
   theme_gray(base_size = 12) +
   theme(legend.position="left", legend.key.size = unit(2, "line"),
-        plot.title = element_text(face = "bold")) +
-  labs(title= "Cat food sales",
+        plot.title = element_text(face = "bold"),
+        axis.text.x = element_text(angle = 90)) + 
+  labs(title= graph_tit,
        subtitle = "Low Data-Pixel Ratio",
-       x = "Brand", y = "Sales")
+       x = "Suburb", y = "Taste Score")
 
-comparison$item <- factor(comparison$item, level = comparison$item[order(comparison$value)])
+comparison$item <- factor(comparison$item,
+                          level = comparison$item[order(comparison$value)])
 
 good <- ggplot(comparison, aes(item, value)) +
   geom_col(fill = "#002859", alpha = 0.7) +
   theme_minimal(base_size = 12) +
   theme(plot.title = element_text(face = "bold")) + 
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + 
-  labs(title= "Cat food sales",
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.text.x = element_text(angle = 90)) + 
+  labs(title = "",
        subtitle = "High Data-Pixel Ratio",
-       x = "Brand", y = "Sales")
+       x = NULL, y = "Taste Score")
 
 grid.arrange(bad, good, ncol = 2, widths = c(1.1, 0.9))
 
-library(tidyverse)
-library(girdExtra)
 # Data stories
+
+library(tidyverse)
+library(gridExtra)
+
 theme_set(theme_minimal(base_size = 10) +
-  theme(plot.title = element_text(face="bold"),
-        plot.caption = element_text(family = "mono")))
+          theme(plot.title = element_text(face="bold"),
+                plot.caption = element_text(family = "mono")))
 
 set.seed(1969)
 
@@ -84,3 +98,14 @@ d <- ggplot(distribution, aes(value)) +
 grid.arrange(c, d, r1, r2, ncol=2)
 
 theme_set(theme_gray())
+
+# Overview of ggplot themes
+
+library(gridExtra)
+
+p <- ggplot(labdata, aes(Measure)) + geom_bar()
+a <- p + theme_classic(base_size = 11) + ggtitle("theme_clasic()")
+b <- a + theme_bw(base_size = 11) + ggtitle("theme_bw()")
+c <- a + theme_minimal(base_size = 11) + ggtitle("theme_minimal()")
+d <- a + theme_void(base_size = 11) + ggtitle("theme_void()")
+grid.arrange(a, b, c, d)

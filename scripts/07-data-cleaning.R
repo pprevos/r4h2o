@@ -1,6 +1,8 @@
-#########################
-# R4H2O: 7: Cleaning data
-#########################
+##########################################
+#
+# R4H2O: 7: Cleaning customer survey data
+#
+##########################################
 
 # Load and explore the data
 
@@ -13,8 +15,6 @@ glimpse(rawdata)
 
 customers <- rawdata[-1, ]
 customers <- type_convert(customers)
-
-glimpse(customers)
 
 # Select relevant variables
 
@@ -32,10 +32,6 @@ suburbs_dim <- tibble(suburb = 1:3,
 
 customers <- left_join(customers, suburbs_dim)
 customers <- select(customers, -"suburb")
-
-# Using right-join gives same result when folling variable names
-
-right_join(suburbs_dim, customers)
 
 # Remove invalid data
 

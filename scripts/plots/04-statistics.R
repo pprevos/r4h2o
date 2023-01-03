@@ -103,10 +103,11 @@ d$y2[d$name != "Symmetric"] <- d$y2[d$name != "Symmetric"] * 6.1
 
 ggplot(d, aes(x, y)) + 
   geom_line(lty = 2) +
+  geom_area(aes(x, y2), alpha = 0.2) +
   facet_wrap(~name, scales = "free_y", strip.position = "bottom") + 
   theme_void() +
-  theme(strip.text.x = element_text(size = 12)) + 
-  geom_area(aes(x, y2), alpha = 0.2)
+  theme(strip.text.x = element_text(margin = margin(0, 0, 2 ,0, "mm"),
+                                    size = 12))
 
 # Kurtosis
 # Based on https://twitter.com/bolkerb/status/1518312191711223810
@@ -131,12 +132,7 @@ ggplot(d, aes(x, y)) +
   theme(strip.text.x = element_text(size = 12)) + 
   geom_area(aes(x, y2), alpha = 0.2)
 
-# Explore Anscombe's Quartet
-
-data(anscombe)
-anscombe
-
-# Visualise Anscombe's Quartet
+# Visualise Anscombe's quartet
 
 p <- anscombe %>%
         select(1:4) %>%
@@ -154,5 +150,10 @@ p <- anscombe %>%
         geom_smooth(method = "lm", se = FALSE, col = "gray") +
         geom_point(size = 2.5, colour = "black", fill = "gray", shape = 21) +
         facet_wrap(~set) + 
-        theme_bw(base_size = 12) +
+        theme_minimal(base_size = 12) +
         labs(x = NULL, y = NULL)
+
+# Explore Anscombe's Quartet
+
+data(anscombe)
+anscombe

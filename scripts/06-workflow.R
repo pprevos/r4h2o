@@ -1,17 +1,10 @@
-##################################
-# R4H2O: 7 - Data Science Workflow
-##################################
-
-# Prepare: Load and Tidy data
-
 library(tidyverse)
-labdata <- read_csv("data/labdata.csv")
+labdata <- read_csv("data/water_quality.csv")
 chlorine <- filter(labdata, Measure == "Chlorine Total")
 
-# Understand: Explore
-
 par(mar = c(8, 4, 4, 1))
-boxplot(Result ~ Suburb, data = chlorine, pch = 19, cex = .5, las = 2)
+boxplot(Result ~ Suburb, data = chlorine, pch = 19, cex = .5,
+        las = 2, xlab = NULL, ylab = "Chlorine level [mg/l]")
 abline(h = c(0.25, 0.6), col = "red", lty = 2)
 
 ggplot(chlorine, aes(Date, Result)) + 
@@ -20,11 +13,7 @@ ggplot(chlorine, aes(Date, Result)) +
   scale_x_date(date_breaks = "year", date_labels = "%Y") + 
   facet_wrap(~Suburb) + 
   theme_minimal() + 
-  labs(title = "Gormsey chlorine levels",
-       caption = "Source: Laboratory data",
-       x = NULL)
-
-# Understand: Model
+  labs(title = "Gormsey chlorine levels", x = NULL)
 
 chlorine_suburb <- group_by(chlorine, Suburb)
 
@@ -36,14 +25,13 @@ chlorine_results <- summarise(chlorine_suburb,
 
 arrange(chlorine_results, Taste)
 
-knitr::kable(arrange(chlorine_results, Taste), digits = 2,
-             col.names = c("Suburb", "Minimum Cl", "Mean Cl", 
-                           "Maximum Cl", "Negative taste %"))
+arrange(chlorine_results, desc(Taste)) %>%
+  top_n(3) %>%
+  mutate(across(c(Minimum, Mean, Max), round, 2)) %>% 
+  select(Suburb, `Minimum Cl` = Minimum, 'Mean Cl' = Mean,
+         `Maximum Cl` = Max, `Negative taste %` = Taste)
 
-# Presenting numbers
-
-a <- sqrt(777)
-print(a)
+(a <- sqrt(777))
 
 round(a) # Show as integer
 

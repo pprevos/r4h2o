@@ -1,6 +1,10 @@
-###################################
-# R4H2O: 5 - DESCRIPTIVE STATISTICS
-###################################
+####################################
+#
+# R4H2O: 4 - Descriptive Statistics
+#
+#    Assessing Water Quality Data
+#
+####################################
 
 # Load data
 
@@ -81,11 +85,8 @@ quantile(x, 0.95,  type = 6)
 # MEASURES OF DISPERSION
 
 min(x)
-
 max(x)
-
 range(x)
-
 diff(range(x))
 
 # Inter Quartile Range (IQR)
@@ -106,24 +107,13 @@ sd(x)
 
 sqrt(sum((x - mean(x))^2) / (n - 1))
 
-# MEASURES OF SHAPE
-
-# Pearson measures for skewness
-
-mode_skew <- (mean(x) - mode(x)) / sd(x)
-mode_skew
-
-med_skew <- 3 * (mean(x) - median(x)) / sd(x)
-med_skew
-
 # Third central moment
 
 (sum((x - mean(x))^3) / n) / (sqrt(sum((x - mean(x))^2) / n)^3)
 
 # Skewness with the moments package
 
-library(moments)
-skewness(x)
+moments::skewness(x)
 
 # Kurtosis: Fourth central moment
 
@@ -152,22 +142,6 @@ summarise(labdata_grouped,
 
 count(labdata, Measure, Suburb, name = "Samples")
 
-# Explore Anscombe's Quartet
-
-data(anscombe)
-anscombe
-
-# Manual method
-
-mean(anscombe$x1)
-mean(anscombe$x2)
-# etc.
-
-# Shortcuts (read the help files to learn about these functions)
-
-colMeans(anscombe)  # Means of all columns
-apply(anscombe, 2, sd) # Apply the sd formula over all columns
-
 # Basic data visualisation
 
 # Histograms
@@ -176,7 +150,7 @@ par(mfcol = c(1, 2), mar = c(4, 2, 1, 0))
 hist(turbidity$Result, main = "No transformation")
 hist(log(turbidity$Result), main = "Log transformation")
 
-# Changinbg the breaks parameter
+# Changing the breaks parameter
 
 hist(log(turbidity$Result), breaks = 5)
 

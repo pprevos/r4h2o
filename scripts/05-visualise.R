@@ -1,11 +1,13 @@
-########################################
-# R4H2O: 6: Visualising data with ggplot2
-#########################################
+########################################################
+#
+# R4H2O: 5: Visualising water quality data with ggplot2
+#
+########################################################
 
 # Load data
 
 library(readr)
-labdata <- read_csv("data/labdata.csv")
+labdata <- read_csv("data/water_quality.csv")
 
 # Data layer
 
@@ -18,7 +20,7 @@ ggplot(labdata, aes(Measure))
 
 # Other aesthetics
 
-ggplot(labdata, aex(Date, Result))
+ggplot(labdata, aes(Date, Result))
 
 # Geometries layer
 

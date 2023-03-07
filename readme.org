@@ -9,5 +9,5 @@ This repository contains the following folders:
 
 Data Science for Water Utilities: Data as a Source of Value is an applied, practical guide that shows water professionals how to use data science to solve urban water management problems. Content develops through three case studies. The first looks at analysing water quality to ensure public health. The second considers customer feedback. The final case study introduces smart meter data. The guide flows easily from basic principles through code that, with each case study, increases in complexity. 
 
-[[file:course/images/9781032354545.jpg]]
+[[file:course/images/data-science-for-water-utilities-3d.png]]
 

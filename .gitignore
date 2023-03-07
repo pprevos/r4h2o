@@ -4,4 +4,8 @@
 /.Rhistory
 /.Rproj.user/
 /ltximg/
-/*.org
+/[0-9]*.org
+*.bib
+/krantz.cls
+/course/waterra/
+/github/

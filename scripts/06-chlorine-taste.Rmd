@@ -70,6 +70,6 @@ knitr::kable(top_n(arrange(chlorine_results, desc(Taste)), 3), digits = 2,
 
 # Conclusion and Recommendation
 - Chlorine levels in some Gormsey suburbs are high
-- High levels lead to negative a customer experience
+- High levels lead to a negative customer experience
 - Highest level in `r chlorine_results$Suburb[which.max(chlorine_results$Taste)]`.
-- Further research required to correlate taste complains with chlorine levels
+- Further research required to correlate taste complaints with chlorine levels

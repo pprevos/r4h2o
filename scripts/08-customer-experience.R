@@ -71,7 +71,7 @@ ggcorrplot(c_matrix, type = "lower", lab = TRUE)
 
 # Significance Testing for Correlations
 
-(cor.test(pii$p01, pii$p02))
+(c_test <- cor.test(pii$p01, pii$p02))
 
 str(c_test)
 

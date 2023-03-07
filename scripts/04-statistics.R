@@ -134,7 +134,7 @@ summarise(labdata_grouped,
           Median = median(Result),
           p95 = quantile(Result, 0.95, type = 6),
           Maximum = max(Result),
-          Kurtosis = kurtosis(Result))
+          Kurtosis = moments::kurtosis(Result))
 
 labdata_grouped <- group_by(labdata, Measure, Suburb)
 summarise(labdata_grouped,

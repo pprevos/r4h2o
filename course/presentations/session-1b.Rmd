@@ -1,0 +1,88 @@
+---
+title: "R4H2O: Level 1b"
+subtitle: "Level One"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output: 
+    revealjs::revealjs_presentation:
+        self_contained: false
+        theme: league
+        highlight: zenburn
+        smart: true
+        css: style.css
+        reveal_options:
+            previewLinks: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, dpi=300)
+```
+
+# {data-background="../images/r4h2o-banner.jpg"}
+
+# Program Session 2
+1. Session 1 recapitulation
+2. Principles of visualising data 
+3. Visualising data with _ggplot2_
+4. Data Science Workflow
+5. RMarkdown
+6. Learning R
+
+# Session 1 recapitulation
+![](../images/r4h2o-cheat-sheet.png){height=500}
+
+# Coding Challenge
+<div class="cols">
+- Go to the Bureau of Meteorology website
+- Download daily rainfall data for your favourite weather station
+- Determine the top five years with the highest total rainfall
+</div>
+<div class="cols">
+![](../images/DALL·E 2023-03-06 10.18.16 - A photo of a dog eating a 3.5 inch floppy disk.png)
+<small>DALL·E: A photo of a dog eating a 3.5 inch floppy disk.</small>
+</div>
+
+## Solution
+```{r, echo=TRUE}
+library(tidyverse)
+# Bendigo weather station
+bom <- read_csv("data/IDCJAC0009_081123_1800_Data.csv")
+bom_grouped <- group_by(bom, Year)
+bom_annual <- summarise(bom_grouped, 
+                        Rainfall = sum(`Rainfall amount (millimetres)`, 
+                                       na.rm = TRUE))
+slice_max(bom_annual, order_by = Rainfall, n = 5)
+```
+
+# Data Story-Telling
+![](../images/lego-visualisation.jpg)
+
+## Ugly Data
+Source: [reddit.com/r/dataisugly/](https://www.reddit.com/r/dataisugly/)
+<div class="cols">
+![](../images/data-is-ugly.jpg){height=400}
+<small>Confusing graphics.</small>
+</div>
+<div class="cols">
+![](../images/water-course-pie-chart.png){height=400}
+<small>How to lie with statistics.</small>
+</div>
+
+## Data-Pixel Ratio
+![](../images/data-pixel-ratio.png)
+
+## Grammar-of-Graphics
+![](../images/grammar-of-graphics.png)
+
+
+
+
+
+
+
+
+
+
+
+

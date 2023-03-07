@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2023-03-07" />
+  <title>R4H2O: Level 1a</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="session-1a_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  { color: #cccccc; background-color: #303030; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffcfaf; } /* Alert */
+code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #dca3a3; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #f0dfaf; } /* ControlFlow */
+code span.ch { color: #dca3a3; } /* Char */
+code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+code span.co { color: #7f9f7f; } /* Comment */
+code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+code span.do { color: #7f9f7f; } /* Documentation */
+code span.dt { color: #dfdfbf; } /* DataType */
+code span.dv { color: #dcdccc; } /* DecVal */
+code span.er { color: #c3bf9f; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #c0bed1; } /* Float */
+code span.fu { color: #efef8f; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+code span.kw { color: #f0dfaf; } /* Keyword */
+code span.op { color: #f0efd0; } /* Operator */
+code span.ot { color: #efef8f; } /* Other */
+code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+code span.sc { color: #dca3a3; } /* SpecialChar */
+code span.ss { color: #cc9393; } /* SpecialString */
+code span.st { color: #cc9393; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #cc9393; } /* VerbatimString */
+code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="session-1a_files/reveal.js-3.3.0.1/css/theme/league.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="style.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <script src="session-1a_files/header-attrs-2.20/header-attrs.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">R4H2O: Level 1a</h1>
+  <h1 class="subtitle">Level One</h1>
+    <h3 class="date">07 March 2023</h3>
+</section>
+
+<section id="section" class="title-slide slide level1"
+data-background="../images/r4h2o-banner.jpg">
+<h1 data-background="../images/r4h2o-banner.jpg"></h1>
+
+</section>
+
+<section>
+<section id="introductions" class="title-slide slide level1">
+<h1>Introductions</h1>
+<p><img data-src="../images/data-science-evolution.png" /></p>
+</section>
+<section id="learning-objectives-level-1" class="slide level2">
+<h2>Learning Objectives Level 1</h2>
+<div class="cols">
+<ul>
+<li>Apply the principles of strategic data science to solve water
+problems</li>
+<li>Write R code to load, analyse, and visualise data</li>
+<li>Diagnose water quality data with descriptive statistics</li>
+<li>Develop presentations, reports, and applications to share
+results</li>
+</ul>
+</div>
+<div class="cols">
+<p><img data-src="../images/r4h2o-logo.png" height="400" /></p>
+</div>
+</section>
+<section id="course-structure" class="slide level2">
+<h2>Course Structure</h2>
+<div class="cols">
+<ul>
+<li>Case study approach using realistic synthetic data</li>
+<li>Hands-on sessions</li>
+<li>Based on generic principles</li>
+</ul>
+</div>
+<div class="cols">
+<p><img data-src="../images/data-science-for-water-utilities-3d.png"
+height="500" /></p>
+</div>
+</section>
+<section id="program-level-1" class="slide level2">
+<h2>Program Level 1</h2>
+<div class="cols">
+<ol type="1">
+<li>Principles of Data Science</li>
+<li>Basics of the R Language</li>
+<li>Case Study: Channel flows</li>
+<li>Case Study: Water quality
+<ul>
+<li>Reading CSV and Spreadsheet data</li>
+<li>Descriptive Statistics</li>
+</ul></li>
+<li>Visualise data with <em>ggplot2</em></li>
+<li>Data science workflow</li>
+<li>Creating data products</li>
+</ol>
+</div>
+<div class="cols">
+<p><img data-src="../images/2019-workshop-melbourne.jpg" /></p>
+</div>
+</section>
+<section id="data-science-learning-curve" class="slide level2">
+<h2>Data Science Learning Curve</h2>
+<p><img data-src="../images/r-learning-curve.jpg" height="500" /></p>
+</section></section>
+<section>
+<section id="what-is-data-science" class="title-slide slide level1">
+<h1>What is Data Science?</h1>
+<div class="cols">
+<p><img data-src="../images/conway.png" height="400" /></p>
+<p><small>Conway Venn Diagram (<a
+href="http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram">drewconway.com</a>).</small></p>
+</div>
+<div class="cols">
+<p>Many data scientists have published modifications of this model. Can
+you think of some other competencies essential for data scientists?</p>
+</div>
+</section>
+<section id="what-is-useful-data-science" class="slide level2">
+<h2>What is Useful Data Science?</h2>
+<p><img data-src="../images/feedback-loop.png" /></p>
+</section>
+<section id="smart-water-networks-and-data-science"
+class="slide level2">
+<h2>Smart Water Networks and Data Science</h2>
+<p><img data-src="../images/swan-layers.jpg" /> <small>Source: Smart
+Water Networks Forum.</small></p>
+</section>
+<section id="spreadsheets-are-chaos" class="slide level2">
+<h2>Spreadsheets are Chaos</h2>
+<p><img data-src="../images/reverse-engineer-spreadsheet.jpg" /></p>
+</section>
+<section id="code-is-poetry-r" class="slide level2">
+<h2>Code is Poetry: R</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>labdata <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;data/water_quality.csv&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(labdata, Measure) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(Result),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">mean =</span> <span class="fu">mean</span>(Result),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">sd =</span> <span class="fu">sd</span>(Result))</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 4
+##   Measure           min    mean     sd
+##   &lt;chr&gt;           &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Chlorine Total 0.025  0.499   0.499 
+## 2 E. coli        0      0.00789 0.136 
+## 3 THM            0.0005 0.0366  0.0978
+## 4 Turbidity      0.05   0.360   1.03</code></pre>
+</section>
+<section id="code-is-poetry-python" class="slide level2">
+<h2>Code is Poetry: Python</h2>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>labdata <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/water_quality.csv&quot;</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>labdata.groupby(<span class="st">&quot;Measure&quot;</span>)[<span class="st">&quot;Result&quot;</span>].agg([np.<span class="bu">min</span>, np.mean, np.std])</span></code></pre></div>
+<pre><code>##                   amin      mean       std
+## Measure                                   
+## Chlorine Total  0.0250  0.498967  0.498730
+## E. coli         0.0000  0.007895  0.135584
+## THM             0.0005  0.036565  0.097821
+## Turbidity       0.0500  0.360327  1.025126</code></pre>
+</section>
+<section id="code-is-poetry-julia" class="slide level2">
+<h2>Code is Poetry: Julia</h2>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span>, <span class="bu">CSV</span>, <span class="bu">StatsBase</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>labdata <span class="op">=</span> <span class="fu">DataFrame</span>(CSV.<span class="fu">File</span>(<span class="st">&quot;data/water_quality.csv&quot;</span>));</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">combine</span>(<span class="fu">groupby</span>(labdata, <span class="op">:</span>Measure),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">:</span>Result <span class="op">=&gt;</span> minimum,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="op">:</span>Result <span class="op">=&gt;</span> mean,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="op">:</span>Result <span class="op">=&gt;</span> std)</span></code></pre></div>
+<pre><code>## 4×4 DataFrame
+##  Row │ Measure         Result_minimum  Result_mean  Result_std
+##      │ String15        Float64         Float64      Float64
+## ─────┼─────────────────────────────────────────────────────────
+##    1 │ Chlorine Total          0.025    0.498967     0.49873
+##    2 │ E. coli                 0.0      0.00789474   0.135584
+##    3 │ Turbidity               0.05     0.360327     1.02513
+##    4 │ THM                     0.0005   0.0365647    0.0978211</code></pre>
+</section></section>
+<section>
+<section id="basics-of-the-r-language" class="title-slide slide level1">
+<h1>Basics of the R Language</h1>
+<div class="cols">
+<p><img data-src="../images/rstudio.png" /> <small>R Studio
+screenshot</small></p>
+</div>
+<div class="cols">
+<ol type="1">
+<li>Register at <a href="https://posit.cloud/">posit.cloud</a></li>
+<li><em>New Project From Github Repo</em></li>
+<li>Enter:
+<small><code>https://github.com/pprevos/r4h2o/</code></small></li>
+<li>RStudio will download the project files</li>
+</ol>
+</div>
+</section>
+<section id="arithmetic" class="slide level2">
+<h2>Arithmetic</h2>
+<div class="cols">
+<ul>
+<li>Console (REPL: Read-Eval-Print Loop)</li>
+<li>Enter lines below</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>diameter <span class="ot">&lt;-</span> <span class="dv">150</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>pipe_area <span class="ot">&lt;-</span> (pi <span class="sc">/</span> <span class="dv">4</span>) <span class="sc">*</span> (diameter <span class="sc">/</span> <span class="dv">1000</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>pipe_area</span></code></pre></div>
+<pre><code>## [1] 0.01767146</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(pipe_area <span class="sc">/</span> (pi <span class="sc">/</span> <span class="dv">4</span>)) <span class="sc">*</span> <span class="dv">1000</span></span></code></pre></div>
+<pre><code>## [1] 150</code></pre>
+</div>
+<div class="cols">
+<p><img data-src="../images/memes.jpg" width="300" /></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">-</span> <span class="dv">3</span> <span class="sc">*</span> <span class="dv">6</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] -13</code></pre>
+</div>
+</section>
+<section id="vectors" class="slide level2">
+<h2>Vectors</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>complaints <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">23</span>, <span class="dv">45</span>, <span class="dv">22</span>, <span class="dv">99</span>, <span class="dv">31</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(complaints)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">prod</span>(complaints)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abs</span>(complaints)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(complaints)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">factorial</span>(complaints)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(complaints, <span class="at">base =</span> <span class="dv">3</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">log10</span>(complaints)</span></code></pre></div>
+</section>
+<section id="basic-plotting-1" class="slide level2">
+<h2>Basic Plotting 1</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>diameter <span class="ot">&lt;-</span> <span class="dv">50</span><span class="sc">:</span><span class="dv">350</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>pipe_area <span class="ot">&lt;-</span> (pi <span class="sc">/</span> <span class="dv">4</span>) <span class="sc">*</span> (diameter <span class="sc">/</span> <span class="dv">1000</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(diameter, pipe_area, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">150</span>, <span class="at">col =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> (pi <span class="sc">/</span> <span class="dv">4</span>) <span class="sc">*</span> (<span class="dv">150</span> <span class="sc">/</span> <span class="dv">1000</span>)<span class="sc">^</span><span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">150</span>, (pi <span class="sc">/</span> <span class="dv">4</span>) <span class="sc">*</span> (<span class="dv">150</span> <span class="sc">/</span> <span class="dv">1000</span>)<span class="sc">^</span><span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="session-1a_files/figure-revealjs/unnamed-chunk-8-1.png" width="1800" /></p>
+</section>
+<section id="coding-principles" class="slide level2">
+<h2>Coding Principles</h2>
+<p><img data-src="../images/computer-bug.png" style="width:100.0%" />
+<small>First computer bug (1947)</small></p>
+<p>Open: <code>scripts/02-basics.R</code></p>
+</section>
+<section id="variable-names" class="slide level2">
+<h2>Variable Names</h2>
+<p>Use meaningful variable names and use a consistent naming
+convention</p>
+<ul>
+<li><code>flowdaily</code>: All lowercase</li>
+<li><code>flow.daily</code>: Period-separated</li>
+<li><code>flow_daily</code>: Snake case</li>
+<li><code>flowDaily</code>: Camel case</li>
+<li><code>FlowDaily</code>: Upper camel case</li>
+</ul>
+</section>
+<section id="bugs" class="slide level2">
+<h2>Bugs</h2>
+<ul>
+<li>Debugging (step through code)</li>
+<li>Typos (lintr)</li>
+<li>Look at indentation</li>
+<li>Error messages (copy and paste into search engine)</li>
+<li>Help files</li>
+</ul>
+</section>
+<section id="scripts-and-projects" class="slide level2">
+<h2>Scripts and Projects</h2>
+<ul>
+<li>Working Directory</li>
+<li>Open Script</li>
+<li>Commenting</li>
+<li>Indentation</li>
+<li>Follow a <a href="https://style.tidyverse.org/">style guide</a></li>
+</ul>
+</section>
+<section id="improve-this-piece-of-code" class="slide level2">
+<h2>Improve this piece of code</h2>
+<div class="cols">
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sedimentation Tank</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>D<span class="ot">&lt;-</span><span class="dv">8</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>d1<span class="ot">&lt;-</span><span class="dv">3</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>d2<span class="ot">&lt;-</span><span class="dv">1</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>v<span class="ot">=</span>((pi<span class="sc">/</span><span class="dv">4</span>)<span class="sc">*</span>d<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>(d1<span class="sc">+</span>(d2<span class="sc">/</span><span class="dv">3</span>))</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>q<span class="ot">&lt;-</span><span class="dv">4</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>(t<span class="ot">&lt;-</span>v<span class="sc">/</span>q)</span></code></pre></div>
+</div>
+<div class="cols">
+<p><img
+data-src="https://theconstructor.org/wp-content/uploads/2016/12/types-of-sedimentation-tank.jpg" /></p>
+</div>
+</section>
+<section id="improved-version" class="slide level2">
+<h2>Improved version</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sedimentation Tank</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>diameter <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>depth_1 <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>depth_2 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>volume <span class="ot">&lt;-</span> ((pi <span class="sc">/</span> <span class="dv">4</span>) <span class="sc">*</span> diameter<span class="sc">^</span><span class="dv">2</span>) <span class="sc">*</span> (depth_1 <span class="sc">+</span> (depth_2 <span class="sc">/</span> <span class="dv">3</span>))</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>flow_rate <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>(detention_time <span class="ot">&lt;-</span> volume <span class="sc">/</span> flow_rate)</span></code></pre></div>
+<pre><code>## [1] 41.8879</code></pre>
+</section>
+<section id="r4h2o-cheat-sheet" class="slide level2">
+<h2>R4H2O Cheat Sheet</h2>
+<p><img data-src="../images/r4h2o-cheat-sheet.png" height="500" /></p>
+</section></section>
+<section>
+<section id="case-study-0-channel-flow" class="title-slide slide level1"
+data-background="../images/open-channel.jpg">
+<h1 data-background="../images/open-channel.jpg">Case Study 0: Channel
+Flow</h1>
+
+</section>
+<section id="discharge-formula" class="slide level2">
+<h2>Discharge formula</h2>
+<div class="cols">
+<p><span class="math display">\[Q = \frac{2}{3} C_d \sqrt{2g} \;
+lh^\frac{3}{2}\]</span></p>
+<ul>
+<li><span class="math inline">\(Q\)</span>: Discharge in
+m<sup>3</sup>/s</li>
+<li><span class="math inline">\(C_d\)</span>: Discharge coefficient</li>
+<li><span class="math inline">\(g\)</span>: Acceleration of gravity</li>
+<li><span class="math inline">\(l\)</span>: Crest length [m]</li>
+<li>h: Head above crest [m]</li>
+</ul>
+</div>
+<div class="cols">
+<p><img data-src="../images/rectangular-weir.png" /></p>
+</div>
+</section>
+<section id="coding-practice" class="slide level2">
+<h2>Coding Practice</h2>
+<div class="column" style="float:left; width: 50%">
+<p>Create an R script and answer:</p>
+<ol type="1">
+<li>What is the flow (<span class="math inline">\(Q\)</span>) in the
+channel in m<sup>3</sup>/s when the height <span class="math inline">\(h
+= 100\)</span> mm?</li>
+<li>What is the average flow for these three heights: 150mm, 136mm,
+75mm, in litres per second?</li>
+<li>Plot the flow in m<sup>3</sup>/s for all heights between 50mm and
+500mm.</li>
+</ol>
+</div>
+<div class="column" style="float:right; width: 50%">
+<p><span class="math inline">\(Q = \frac{2}{3} C_d \sqrt{2g} \;
+lh^\frac{3}{2}\)</span></p>
+<ul>
+<li><span class="math inline">\(C_d C_d=0.62\)</span></li>
+<li><span class="math inline">\(g = 9.81 m/s^2\)</span></li>
+<li><span class="math inline">\(l = 0.5 m\)</span></li>
+</ul>
+<p><small><code>scripts/02-irrigation.R</code></small></p>
+</div>
+</section></section>
+<section id="section-1" class="title-slide slide level1">
+<h1></h1>
+<p><img data-src="../images/break.jpg" /></p>
+</section>
+
+<section>
+<section id="case-study-1-water-quality"
+class="title-slide slide level1">
+<h1>Case Study 1: Water Quality</h1>
+<p><img src="session-1a_files/figure-revealjs/unnamed-chunk-11-1.png" width="2400" /></p>
+</section>
+<section id="base-r-functions" class="slide level2">
+<h2>Base R functions</h2>
+<ul>
+<li>Basic programming functions</li>
+<li>Arithmetic</li>
+<li>Statistics</li>
+<li>Plotting</li>
+<li>Extensible with functions (packages)</li>
+</ul>
+</section>
+<section id="r-packages" class="slide level2">
+<h2>R Packages</h2>
+<ul>
+<li>Packages to extend base functionality
+<ul>
+<li>Distributed mainly through <a
+href="https://cran.r-project.org/">CRAN</a></li>
+<li>Comprehensive R Archive Network</li>
+</ul></li>
+<li>Install with <code>install.packages("dplyr")</code></li>
+<li>Call new functions with package prefix:
+<code>dplyr::filter()</code></li>
+<li>Call library to access functions directly:
+<code>library(dplyr)</code></li>
+</ul>
+</section>
+<section id="tidyverse" class="slide level2">
+<h2>Tidyverse</h2>
+<div class="cols">
+<ul>
+<li>Collection of R packages</li>
+<li>Easy data manipulation</li>
+<li>‘syntactic sugar’</li>
+<li>Activate with <code>library(tidyverse)</code> or individual
+packages</li>
+</ul>
+<p><em>Install the Tidyverse packages on your (cloud) computer</em></p>
+</div>
+<div class="cols">
+<p><img data-src="../images/tidyverse.png" /></p>
+</div>
+</section></section>
+<section>
+<section id="obtaining-data" class="title-slide slide level1">
+<h1>Obtaining Data</h1>
+<div class="cols">
+<ul>
+<li>Database (SQL, Oracle)</li>
+<li>Desktop files (spreadsheets, CSV)</li>
+<li>Web (HTML, XML, JSON)
+<ul>
+<li>API</li>
+<li>Scraping</li>
+</ul></li>
+</ul>
+</div>
+<div class="cols">
+<p><img
+data-src="https://thumbs.dreamstime.com/z/loading-data-digital-computer-loading-data-digital-computer-vector-illustration-114549068.jpg" /></p>
+</div>
+</section>
+<section id="reading-csv-files" class="slide level2">
+<h2>Reading CSV files</h2>
+<ul>
+<li><code>readr</code> package for CSV files (part of Tidyverse)
+<ul>
+<li><code>read_csv()</code> faster alternative for
+<code>read.csv()</code></li>
+<li>Look at help text</li>
+</ul></li>
+<li>File names in R:
+<ul>
+<li>Unix-based (slash instead of backslash)</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># CSV Files</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>labdata <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/water_quality.csv&quot;</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading Excel spreadsheets</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>labdata <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">&quot;data/water_quality.xlsx&quot;</span>, </span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                              <span class="at">skip =</span> <span class="dv">2</span>, <span class="at">sheet =</span> <span class="st">&quot;data&quot;</span>)</span></code></pre></div>
+<p>Open <code>scripts/03-data-frames.R</code></p>
+</section>
+<section id="variable-classes" class="slide level2">
+<h2>Variable Classes</h2>
+<ul>
+<li>Numeric (Real numbers) (<span
+class="math inline">\(\mathbb{R}\)</span>)</li>
+<li>Text (<code>"abcd"</code>)</li>
+<li>Dates (<code>"2023-03-07"</code>)</li>
+<li>Factors (classifications):
+(<code>"Male", "Female", "Other"</code>)</li>
+<li>Boolean (<code>TRUE</code>, <code>FALSE</code>)</li>
+<li>Integer (<span class="math inline">\({\ldots -3, -2, -1, 0, 1, 2, 3,
+\ldots}\)</span>)</li>
+<li>Complex numbers (<span class="math inline">\(a + bi\)</span>)</li>
+</ul>
+<p>Conversion: <code>as.numeric()</code>, <code>as.character</code>,
+<code>as.Date()</code>.</p>
+</section>
+<section id="variable-types" class="slide level2">
+<h2>Variable Types</h2>
+<p><img data-src="../images/variable-types.png" /></p>
+<p>Scalar, vector and data frame / tibble (matrix)</p>
+</section>
+<section id="filtering" class="slide level2">
+<h2>Filtering</h2>
+<p><img data-src="../images/filter.png" /></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Three methods</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>labdata[labdata<span class="sc">$</span>Measure <span class="sc">==</span> <span class="st">&quot;Turbidity&quot;</span>, ]</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(labdata, Measure <span class="sc">==</span> <span class="st">&quot;Turbidity&quot;</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(labdata, Measure <span class="sc">==</span> <span class="st">&quot;Turbidity&quot;</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>turbidity <span class="ot">&lt;-</span> <span class="fu">filter</span>(labdata, Measure <span class="sc">==</span> <span class="st">&quot;Turbidity&quot;</span> <span class="sc">&amp;</span> Result <span class="sc">&gt;</span> <span class="dv">5</span>)</span></code></pre></div>
+</section></section>
+<section>
+<section id="descriptive-statistics" class="title-slide slide level1">
+<h1>Descriptive Statistics</h1>
+<div class="cols">
+<p>Measures of:</p>
+<ol type="1">
+<li>Frequency (counting)</li>
+<li>Central tendency (mean, median, mode)</li>
+<li>Dispersion (range, variance)</li>
+<li>Position (percentiles)</li>
+<li>Shape (skew and kurtosis)</li>
+</ol>
+</div>
+<div class="cols">
+<p><img data-src="../images/descriptive-statistics.png" /></p>
+</div>
+<p>Open <code>scripts/04-statistics.R</code></p>
+</section>
+<section id="measures-of-dispersion-standard-deviation"
+class="slide level2">
+<h2>Measures of Dispersion (Standard Deviation)</h2>
+<p><span class="math display">\[s=\sqrt{\frac{\sum_{i=1}^n
+(x_i-\bar{x})^2}{n-1}}\]</span></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">sum</span>((turbidity<span class="sc">$</span>Result <span class="sc">-</span> <span class="fu">mean</span>(turbidity<span class="sc">$</span>Result))<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>       (<span class="fu">length</span>(turbidity<span class="sc">$</span>Result) <span class="sc">-</span> <span class="dv">1</span>))</span></code></pre></div>
+<pre><code>## [1] 1.186115</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(turbidity<span class="sc">$</span>Result)</span></code></pre></div>
+<pre><code>## [1] 1.186115</code></pre>
+</section>
+<section id="measure-of-position-quantiles-and-percentiles"
+class="slide level2">
+<h2>Measure of Position (Quantiles and Percentiles)</h2>
+<div class="cols">
+<p><small></p>
+<ol type="1">
+<li>Place the observations in ascending order: <span
+class="math inline">\(y_1, y_2, \ldots y_n\)</span>.</li>
+<li>Calculate the rank (<span class="math inline">\(r\)</span>) of the
+required percentile</li>
+<li>Interpolate between adjacent numbers: <span
+class="math display">\[y_r = y_{\lfloor r \rfloor}+ (y_{r_{\lceil r
+\rceil}} - y_{\lfloor r \rfloor})(r - \lfloor r \rfloor)\]</span>
+<ul>
+<li><span class="math inline">\(y\)</span>: Observation</li>
+<li><span class="math inline">\(r\)</span>: Ranking number</li>
+<li><span class="math inline">\(\lfloor r \rfloor\)</span>: Floor or
+<span class="math inline">\(r\)</span></li>
+<li><span class="math inline">\(\lceil r \rceil\)</span>: Ceiling of
+<span class="math inline">\(r\)</span></li>
+</ul></li>
+</ol>
+</small>
+</div>
+<div class="cols">
+<p><img src="session-1a_files/figure-revealjs/unnamed-chunk-15-1.png" width="2400" /></p>
+<p><small>Hyndman and Fan (1996) Sample Quantiles in Statistical
+Packages, <em>The American Statistician</em>.</small></p>
+</div>
+</section>
+<section id="measures-of-position-continued" class="slide level2">
+<h2>Measures of Position (continued)</h2>
+<p><img src="session-1a_files/figure-revealjs/unnamed-chunk-16-1.png" width="2400" /></p>
+</section>
+<section id="grouped-analysis" class="slide level2">
+<h2>Grouped Analysis</h2>
+<p><img data-src="../images/grouping.png" /> ## Coding Challenge - Go to
+the Bureau of Meteorology website - <a
+href="http://www.bom.gov.au/climate/data/">bom.gov.au/climate/data</a> -
+Download daily rainfall data for your favourite weather station -
+Determine the top five years with the highest total rainfall - Tips: -
+Variable names with spaces need to be between back ticks:
+`<code>variable name</code>` - The data has missing values. Use the
+<code>na.rm = TRUE</code> option in the <code>sum()</code> function -
+Use the <code>slice_max()</code> function to list the top five years</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="session-1a_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="session-1a_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
+        // Vertical centering of slides
+        center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+        // Opens links in an iframe preview overlay
+        previewLinks: true,
+        // Transition style
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+
+
+        // Optional reveal.js plugins
+        dependencies: [
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>

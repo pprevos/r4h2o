@@ -4,7 +4,8 @@
 
 # Central Tendency
 
-library(tidyverse)
+library(ggplot2)
+library(dplyr)
 library(gridExtra)
 
 titles <- c("Mean", "Median", "Mode")
@@ -30,7 +31,7 @@ g3 <- g +
   geom_vline(xintercept = d$x[which.max(d$y)], linetype = 5) + 
   geom_hline(yintercept = max(d$y), linetype = 2, col = "grey")
 
-plots = mapply(arrangeGrob, list(g1, g2, g3), 
+plots <- mapply(arrangeGrob, list(g1, g2, g3), 
                bottom = titles, SIMPLIFY = FALSE)
 
 grid.arrange(grobs = plots, ncol = 3)
@@ -90,6 +91,8 @@ abline(v = r_lin, col = "blue", lwd = 1, lty = 2)
 # Legend
 legend("topleft", legend = c("Linear", "Weibull"), col = c("blue", "red"), lwd = 1, lty = c(2, 3))
 
+library(tidyr)
+library(forcats)
 # Skewness
 d <- tibble(x = 1:101,
             `Negative skew` = dbeta(seq(0, 1, .01, ), shape1 = 5, shape2 = 1.5),

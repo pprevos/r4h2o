@@ -163,6 +163,9 @@ filter(meter_flow, device_id == 1404857 | device_id == 1515776)
 library(xts)
 library(forecast)
 
+library(xts)
+library(forecast)
+
 hourly_vol <- meter_flow %>%
   mutate(weeknum = week(timestamp)) %>%
   filter(between(timestamp, as.POSIXct("2050-04-01"), as.POSIXct("2050-04-05"))) %>%

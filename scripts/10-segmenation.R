@@ -87,7 +87,7 @@ for(k in 1:(nrow(consumption) - 1)) {
 
 par(mar = c(4, 4, 2, 1))
 plot(within_ss, type = "b",
-     xlab = "Clusters", ylab = "within-clusters sum of squares")
+     xlab = "Clusters", ylab = "within-Cluster Sum of Squares")
 abline(v = 2, lty = 2)
 
 # Catgeorical Data

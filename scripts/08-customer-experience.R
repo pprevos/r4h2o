@@ -39,6 +39,8 @@ pii %>%
   geom_boxplot() +
   theme_minimal()
 
+# RELIABILITY
+
 # Correlations
 
 cor(pii$p01, pii$p02)
@@ -134,6 +136,7 @@ abline(v = 0, col = "grey")
 
 text(fa.oblimin$loadings[,1] + 0.04, fa.oblimin$loadings[,2] + 0.04,
      colnames(pii[, -1]), cex = 0.7)
+par(mfcol = c(1, 1))
 
 library(psych)
 pii_fa <- fa(pii[, -1], nfactors = 2, rotate = "oblimin", fm = "ml")
@@ -152,3 +155,4 @@ pivot_longer(pii_scores, cols = -customer_id) %>%
   theme_minimal(base_size = 12) +
   labs(title = "Consumer Involvement with Tap Water",
        subtitle = "Personal Involvement Index")
+

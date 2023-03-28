@@ -21,18 +21,21 @@ outliers <- which(abs(cl_merton$Result - mean(cl_merton$Result)) /
 
 cl_merton[outliers, c("Sample_No", "Sample_Point", "Result", "Units")]
 
+# Means and medians
+
 x <- sample(1:100, 10) # Ten random integers between 1 and 100
 mean(x)
 mean(c(x, Inf))
 median(x)
 median(c(x, Inf))
 
+# Median Absolute Deviation from the Median (MAD)
 1.4826 * median(abs(cl_merton$Result - median(cl_merton$Result)))
+
 mad(cl_merton$Result)
 
-cl_p75 <- quantile(cl_merton$Result, 0.75, names= FALSE)
-cl_mad <- mad(cl_merton$Result, constant = 1 / cl_p75)
-cl_mad
+(cl_p75 <- quantile(cl_merton$Result, 0.75, names = FALSE))
+(cl_mad <- mad(cl_merton$Result, constant = 1 / cl_p75))
 
 median(cl_merton$Result) + 3 * cl_mad
 
@@ -43,8 +46,10 @@ cl_merton$outlier[outliers] <- TRUE
 par(mar = c(4, 4, 1, 1))
 plot(Result ~ Date, data = cl_merton, pch = (!outlier) + 20, type = "b")
 
+# Grub's Test
 outliers::grubbs.test(cl_merton$Result)
 
+# Spike Detection
 runlength <- rle(cl_merton$Result > 1)
 runlength
 
@@ -128,6 +133,8 @@ set.seed(12345)
 x <- c(rnorm(100, 10, 3), rnorm(100, 20, 1))
 y <- c(rnorm(100, 10, 3), rnorm(100, 20, 1))
 xy <- data.frame(x, y)
+
+# Multivariate anomaly detection
 
 library(FNN)
 xy_knn <- get.knn(xy, k = 5)

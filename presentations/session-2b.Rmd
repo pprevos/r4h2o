@@ -9,8 +9,6 @@ output:
         highlight: zenburn
         smart: true
         css: style.css
-        reveal_options:
-            previewLinks: true
 editor_options: 
   chunk_output_type: console
 ---
@@ -21,140 +19,248 @@ knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, dpi=300)
 
 # {data-background="images/r4h2o-banner.jpg"}
 
-# Customer Segmentation
-![](images/segmentation.png)
+# Analysinging Time Series
+```{r, fig.height=5}
+set.seed(123)
+seq <- seq(from = 1, to = 100, by = 1) + 10
+ts1 <- seq + rnorm(100, sd = 5)
+ts2 <- seq + rnorm(100, sd = 12)
+ts3 <- seq^2 + rnorm(100, sd = 300)
+tsm <- cbind(ts1, ts2, ts3)
+tsm <- ts(tsm, start=c(2000, 1), frequency = 4)
+plot(tsm, main = NA)
+```
 
-## Types of Segmentation
-<div class="column" style="float:left; width: 50%">
-- Geographic
-- Demographic
-- Psychographic
-- Behavioural
-</div>
-<div class="column" style="float:left; width: 50%">
-![](images/vic_segments.png)
-<small>What type of segmentation would this be? 
+## Dates and Times
+- System time
+    - `Sys.time()`
+    - Unix Epoch:
+    - Seconds since 00:00:00 UTC 1 January 1970
+- Dates
+    - `Sys.Date()`
+- ISO 8601-1:2019. _Data and Time --- Representations for information interchange_
+    - `as.Date("2023-03-23")`
+    - `as.POSIXct("2023-03-23 09:09:43")` 
 
-Source: Burns, Vardy & Rowe et al. (2011) _Victorian Water Customer: Water Services Needs & Values Summary Report_.</small>
+## Converting Variable Classes
+Functions starting with `as.`
+
+```{r, echo=TRUE, eval=FALSE}
+a <- "12"
+
+12 * a
+
+12 * as.numeric(a)
+
+as.character(12 * as.numeric(a))
+
+# Multiplying character value
+rep(a, 12)
+```
+
+
+## Formatting Dates
+- `format(Sys.Date(), "%m/%d/%Y")`
+- `as.Date("1 July 2022", format = "%d %b %Y")`
+- To see date parts: `help(strptime)`
+    - `%Y-%m-%d %H:%M:%S`
+- Task 
+    - Format the current date as `Year: 2023, Month: March, Date: 23`
+    - `format(sys.Date(), "...")`
+- Open `11-date-time.R`
+
+```{r, eval=FALSE}
+format(Sys.Date(), "Year: %Y, Month: %B, Day: %e.")
+```
+
+## Time Zones
+<div class="cols">
+- The time zone is an attribute of the date/time variable
+- Difference between attribute and display variable
+- Converting a time to a date converts it to UTC!
+</div>
+<div class="cols">
+![](https://24timezones.com/cms-static/images/uploads/time-zone2-min.jpg)
 </div>
 
-## Hierarchical Cluster Analysis
-<div class="column" style="float:left; width: 50%">
-1. Pre-process the data
-2. Scale the data
-3. Calculate the distances
-4. Cluster the data
-5. Review the outcome
+## Lubridate (a Tidyverse Package)
+<div class="cols">
+- Lubricating working with dates and times
+- Syntactic sugar
+- Task
+    - Install lubridate package
+    - Go to the Lubridate website and view the cheat sheet
+    - Use a function to determine the current week of the year
+    - Answer: `r lubridate::week(Sys.Date())`
+
 </div>
-<div class="column" style="float:left; width: 50%">
+<div class="cols">
+![](https://lubridate.tidyverse.org/logo.png)
+
+<small>`lubridate.tidyverse.org`</small>
+
+</div>
+
+# Digital Metering
+![](images/digital-meter.jpg){height=500}
+
+## dplyr: The Grammar of Data Manipulation
+<div class="cols">
+- `vignette("dplyr")`
+- dplyr Cheat Sheet
+- `dplyr.tidyverse.org`
+</div>
+<div class="cols">
+![](images/dplyr-summary.jpg)
+</div>
+
+## Digital Metering Data
+<div class="cols">
+- Load Data (`data/meter_reads.csv`)
+- Explore variables
+    - `device_id`: Unique logger id
+    - `date_time`: Timestamp (UTC)
+    - `count`: Impeller revolutions (5l each). 
+</div>
+<div class="cols">
 ```{r}
 library(tidyverse)
-
-set.seed(314)
-consumption <- tibble(id = LETTERS[1:10],
-                      property_size = c(rnorm(5, 500, 100),
-                                        rnorm(5, 800, 100)),
-                      volume = c(rnorm(5, 500, 200),
-                                 rnorm(5, 1000, 100)))
-
-consumption_scaled <- scale(consumption[, -1])
-consumption_dist <- dist(consumption_scaled)
-customer_clusters <- hclust(consumption_dist)
-consumption$segment <- cutree(customer_clusters, k = 2)
-
-ggplot(consumption, aes(property_size, volume, fill = factor(segment))) +
-  geom_label(aes(label = id), size = 4 ) +
-  scale_fill_manual(values = c("darkgreen", "dodgerblue"), name = "Segment") +
-  labs(title = "Customer Segmentation Example",
-       subtitle = "Hierarchical Cluster Analysis",
-       x = "Property Size", y = "Annual volume") +
-  theme_bw(base_size = 14)
+meter_reads <- read_csv("data/meter_reads.csv")
+library(lubridate)
+filter(meter_reads, 
+       device_id == sample(unique(meter_reads$device_id), 1) &
+         as.Date(timestamp) == as.Date(sample(meter_reads$timestamp, 1))) %>% 
+  ggplot(aes(timestamp, count)) + 
+  geom_line() + 
+  labs(title = "Random day for random device") +
+  theme_linedraw(base_size = 12)
 ```
+
+- Why is there a flat line in the graph?
+- How can you detect a potential leak from this graph?
 </div>
 
-## Scaling
-<div class="column" style="float:left; width: 50%">
-- Wide data frame
-- Columns: Features
-- Rows: Cluster variable
+## Coding practice
+<div class="cols">
+- Summarise the data
+- Determine the total consumption for each device
+</div>
+<div class="cols">
+- Arrange from high to low (`arrange()` function)
 
-<small>
 ```{r}
-knitr::kable(consumption[,1:3], digits = 0)
-```
-</small>
-</div>
-<div class="column" style="float:left; width: 50%">
-$$x_s = \frac{x_i - \bar{x}}{s_x}$$
-</div>
-
-<small>
-```{r, echo=TRUE}
-scale(consumption[, 2:3])
-```
-
-</small>
-
-## Distance calculations
-<div class="column" style="float:left; width: 50%">
-1. Euclidean distance
-2. Manhattan (taxi cab) distance
-3. Maximum (max $\Delta x, \Delta y \ldots$)
-4. ...
-
-<small>
-```{r, echo=TRUE}
-round(dist(consumption_scaled), 1)
-```
-</small>
-
-</div>
-<div class="column" style="float:left; width: 50%">
-```{r dis, fig.cap="Euclidean and Taxi Cab distance", fig.asp=9/16, out.width="80%"}
-par(mar = rep(0, 4))
-plot(c(3, 7), c(3, 7), pch = 19, axes = FALSE, cex = 2)
-lines(c(3, 7, 7), c(3, 3, 7), lty = 3, col = "red", lwd = 2)
-lines(c(3, 7), c(3, 7), lty = 2, col = "blue", lwd = 2)
-legend("topleft", legend = c("Euclidean", "Taxi cab"), col = c("blue", "red"), 
-       lwd = 2, lty = c(2, 3), cex = 2, box.col = NA)
+library(tidyverse)
+meter_reads <- read_csv("data/meter_reads.csv")
+group_by(meter_reads, device_id) %>% 
+  summarise(volume = 5 * (max(count) - min(count))) %>% 
+  arrange(desc(volume))
 ```
 </div>
 
-## Agglomerative Clustering
-<div class="column" style="float:left; width: 50%">
-1. Find two closest points
-2. Cluster the two points
-3. Find next two closets points / clusters
-    - Minimum distance (single)
-    - Maximum distance (complete): default
-    - Average distance (centroid)
-4. Repeat 2 and 3 until all points are in one cluster
-</div>
-<div class="column" style="float:left; width: 50%">
-![](images/linkages.jpg)
-</div>
+## Analysing Water Consumption
+- Lag and lead functions
+    - `diff(1:4)`
+    - `r diff(1:4)`
+- Dplyr functions
+    - `lag(1:4, 1)`: `r lag(1:4, 1)`
+    - `lead(1:4, 2)`: `r lead(1:4, 2)`
+    - `lead(1:4, 2, default = 0)`: `r lead(1:4, 2, default = 0)`
+- Review `11-date-time.R`
 
-## Clustering Example
-
-Open: `scripts/10-segmentation.R`
+## Linear Interpolation
 
 ```{r, fig.height=4.5}
-ggplot(consumption, aes(property_size, volume, fill = factor(segment))) +
-  geom_label(aes(label = id), size = 4 ) +
-  scale_fill_manual(values = c("darkgreen", "dodgerblue"), name = "Segment") +
-  labs(title = "Customer Segmentation Example",
-       subtitle = "Hierarchical Cluster Analysis",
-       x = "Property Size", y = "Annual volume") +
-  theme_bw(base_size = 14)
+x <- today() + c(0, 7, 10, 15)
+y <- c(0, 30, 135, 200)
+linear <- approx(x, y)
+constant <- approx(x, y, method = "constant", n = 9)
+point <- approx(x, y, xout = today() + 8.5)
+plot(as.Date(linear$x, origin = "1970-01-01"),
+     linear$y, col = "gray", cex = .5,
+     xlab = NA, ylab = NA, main = "approx function example")
+points(constant$x, constant$y, col = "gray", pch = 20, type = "b")
+points(x, y, col = "red", pch = 16)
+legend("topleft", legend = c("Linear", "Constant"), fill = c("red", "grey"))
 ```
 
-## Clustering Example
-```{r, fig.height=4.5}
-plot(customer_clusters)
+# Detecting Outliers and Anomalies
+
+![](https://i0.wp.com/www.equest.com/wp-content/uploads/2013/08/dashboard-snockered-624x418.png){height=500}
+
+## Anomaly-Detection
+- Visual
+- Decision rules (regulation, rules-of-thumb)
+- Standard deviation (z-score)
+- Median Absolute Deviation from the Median (MAD)
+- Grubb's Test
+- Time Series Anomalies
+- Multivariate anomalies
+
+## Visual Anomaly Detection
+- Boxplot whiskers: $Q_{1/3} \pm 1.5 \times IQR$
+- $IQR$: Inter-Quartile Range ($Q_3 - Q_1$)
+
+```{r}
+library(tidyverse)
+read_csv("data/water_quality.csv") %>% 
+  filter(Measure == "Chlorine Total") %>% 
+  ggplot(aes(Suburb, Result)) + 
+  geom_boxplot(fill = "#EAAA00") + 
+  labs(title = "Gormsey Total Chlorine") + 
+  theme_linedraw()
 ```
 
-## Interpreting Cluster Analysis
 
+## Decision Rules
+- Regulator (Chapter 3)
+    - Maximum value
+    - Percentiles
+    - Descriptive statistics
+- Operational
+    - Individual filter turbidity ≤ 0.3 NTU for 95% of month and not > 0.5 NTU for ≥ 15 consecutive minutes (WSAA, [Health-Based Targets Manual](https://www.wsaa.asn.au/publication/health-based-targets-manual)).
+    - Run-length
+    
+## Statistics
+<div class="cols">
+Z-Score
+
+- $z = \frac{x - \bar{x}}{\sigma^2}$
+- Only works for normally-distributed data
+</div>
+<div class="cols">
+MAD
+
+- ${{MAD} = 1.4826 \times {med} (|x_{i}-{\tilde{x}}|)}$
+- 1.4826 = one divided by the third quartile of the distribution
+- `mad()` function
+</div>
+
+## Multivariate anomalies
+```{r}
+set.seed(12345)
+x <- c(rnorm(100, 10, 3), rnorm(100, 20, 1))
+y <- c(rnorm(100, 10, 3), rnorm(100, 20, 1))
+xy <- data.frame(x, y)
+
+library(FNN)
+xy_knn <- get.knn(xy, k = 5)
+xy$`k-Nearest Neighbours` <- rowMeans(xy_knn$nn.dist)
+
+library(dbscan)
+xy$`Local Outlier Factor` <- lof(xy, minPts = 5)
+
+library(tidyverse)
+tibble(xy) %>%
+  pivot_longer(-1:-2, names_to = "Method") %>%
+  ggplot(aes(x, y, size = value, col = value > 2.5)) +
+  geom_point() +
+  scale_color_manual(values = c("black", "red")) +
+  facet_wrap(~Method, strip.position = "bottom") +
+  theme_void() +
+  theme(legend.position = "none",
+        strip.text.x = element_text(margin = margin(10, 0, 2 ,0, "mm"),
+                                    size = 11))
+```
 
 # Linear Regression
 <div class="column" style="float:left; width: 60%">
@@ -228,9 +334,88 @@ par(mfrow = c(1, 1))
 ```
 
 ## Datasaurus
-![](images/datasaurus.png){height=400}
+```{r, fig.height=3}
+library(datasauRus)
+
+filter(datasaurus_dozen,
+       dataset %in% c("dino", "x_shape", "star", "bullseye")) %>%
+    ggplot(aes(x = x, y = y)) +
+    geom_point() +
+    theme_void(base_size = 20) +
+    theme(legend.position = "none") +
+    facet_wrap(~dataset, ncol = 6)
+
+```
 
 <small>[dl.acm.org/doi/10.1145/3025453.3025912](https://dl.acm.org/doi/10.1145/3025453.3025912)</small>
 
 ## Case Study
 Open `chapter-11.R` script
+
+# What's Next?
+<div class="cols">
+1. Understand the basics
+2. Create simple programs
+3. Practice
+4. Ask for help (StackExchange, Reddit, #Rstats)
+    - Minimal Working Example
+5. Build projects
+6. Help others
+7. Write a book ...
+</div>
+<div class="cols">
+![](images/r-learning-curve.jpg)
+</div>
+
+## Spatial Analysis and Visualisation
+<div class="cols">
+- Claudia Angel, [Using Spatial Data with R](https://cengel.github.io/R-spatial/intro.html)
+- `ggmap`: Adding maps as backgrounds to ggplot
+    - Geocoding: Transforming text searches to coordinates
+- `leaflet`: Interactive HTML maps
+    - [R Graph Gallery](https://r-graph-gallery.com/19-map-leafletr.html)
+
+</div>
+<div class="cols">
+![](images/heatmap.png)
+<small>Heatmap of Bendigo chlorine residuals.</small>
+</div>
+
+## Leaflet Example
+```{r, fig.height=2, fig.width=3}
+#Leaflet example
+
+library(readr)
+library(leaflet)
+
+castlemaine <- read_csv("data/castlemaine.csv")
+
+mean_lon <- mean(castlemaine$Longitude, na.rm = TRUE)
+mean_lat <- mean(castlemaine$Latitude, na.rm = TRUE)
+castlemaine$log_consumption <- log(castlemaine$`Sum of Consumption (kL)`)
+
+leaflet(castlemaine) %>%
+    addTiles() %>%
+    setView(lng = mean_lon, lat = mean_lat, zoom = 12) %>% 
+    addCircleMarkers(~Longitude, ~Latitude, radius = ~log_consumption,
+                     fillColor = ~CurrentLocationType, 
+                     fillOpacity = 0.7, fill="dodgerblue")
+    
+
+```
+
+
+## Time Series Forecasting
+<div class="cols">
+- Built-in time series analysis
+- `forecast` package
+    - Rob J Hyndman and George Athanasopoulos, _Forecasting: Principles and Practice_: [otexts.com/fpp2](https://otexts.com/fpp2/)
+</div>
+<div class="cols">
+</div>
+
+
+
+
+
+

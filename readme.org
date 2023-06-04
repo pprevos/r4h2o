@@ -1,13 +1,12 @@
 #+title: Data Science for Water Utilities
 
-This repository contains the data and code associated with the book /Data Science for Water Utilities. Data as a Source of Value/, by [[https://www.routledge.com/Data-Science-for-Water-Utilities-Data-as-a-Source-of-Value/Prevos/p/book/9781032354545][Chapman & Hall]]. The contents of this book is also available as a two-day course by the author.
+This repository contains the data and code associated with the book /Data Science for Water Utilities. Data as a Source of Value/, by [[https://www.routledge.com/9781032354545][Routledge]]. The contents of this book is also available as a two-day course by the author.
+
+Data Science for Water Utilities: Data as a Source of Value is an applied, practical guide that shows water professionals how to use data science to solve urban water management problems. Content develops through three case studies. The first looks at analysing water quality to ensure public health. The second considers customer feedback. The final case study introduces smart meter data. The guide flows easily from basic principles through code that, with each case study, increases in complexity.
+
+The [[https://lucidmanager.org/tags/r4h2o/][accompanying website]] contains additional information, addenda and a screencast for each of the chapters.
 
 This repository contains the following folders:
-- =presentations=: Files related to the R4H2O course slides
 - =data=: Case study data files
 - =scripts=: R scripts for book chapters
-
-Data Science for Water Utilities: Data as a Source of Value is an applied, practical guide that shows water professionals how to use data science to solve urban water management problems. Content develops through three case studies. The first looks at analysing water quality to ensure public health. The second considers customer feedback. The final case study introduces smart meter data. The guide flows easily from basic principles through code that, with each case study, increases in complexity. 
-
-[[file:presentations/images/data-science-for-water-utilities-3d.png]]
 

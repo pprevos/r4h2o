@@ -1,6 +1,6 @@
 ############################
 #
-# R4H2O 9: Linear Regression
+# R4H2O 9: LINEAR REGRESSION
 #
 ############################
 

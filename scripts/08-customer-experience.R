@@ -1,6 +1,6 @@
 ##############################
 #
-# R4H2O 8: Customer Experience
+# R4H2O 8: CUSTOMER EXPERIENCE
 #
 ##############################
 

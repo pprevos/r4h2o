@@ -1,8 +1,6 @@
 ####################################
 #
-# R4H2O: 4 - Descriptive Statistics
-#
-#    Assessing Water Quality Data
+# R4H2O: 4 - DESCRIPTIVE STATISTICS
 #
 ####################################
 

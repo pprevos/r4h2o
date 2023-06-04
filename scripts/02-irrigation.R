@@ -1,8 +1,8 @@
-################################################
+########################################
 #
-# R4H2O Chapter 2: Irrigation Channel Case Study
+# R4H2O 2: IRRIGATION CHANNEL CASE STUDY
 #
-################################################
+########################################
 
 # Define constants
 
@@ -11,7 +11,7 @@ g <- 9.81
 b <- 0.5
 
 # Question 1
-# Flow in m3/2 when h = 100 mm
+# Flow in m3/s when h = 100 mm
 
 h1 <- 100 / 1000
 q1 <- (2 / 3) * cd * sqrt(2 * g) * b * h1^(3 / 2)

@@ -1,6 +1,6 @@
 ########################################################
 #
-# R4H2O: 5: Visualising water quality data with ggplot2
+# R4H2O: 5: VISUALISING WATER QUALITY DATA WITH GGPLOT2
 #
 ########################################################
 

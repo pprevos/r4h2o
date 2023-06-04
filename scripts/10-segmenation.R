@@ -1,5 +1,7 @@
 ############################
-# R4H2O 10: Cluster Analysis
+#
+# R4H2O 10: CLUSTER ANALYSIS
+#
 ############################
 
 # Clustering Example

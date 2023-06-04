@@ -1,6 +1,6 @@
 ##########################################
 #
-# R4H2O: 7: Cleaning customer survey data
+# R4H2O: 7: CLEANING CUSTOMER SURVEY DATA
 #
 ##########################################
 

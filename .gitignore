@@ -1,16 +1,4 @@
-/crc/
-/figures/
-/plots/
 /.Rhistory
 /.Rproj.user/
-/ltximg/
-/[0-9]*.org
-*.bib
-/krantz.cls
-/course/waterra/
-/github/
 /.RData
-/_minted-.*
-/r4h2o-water-ra-level-1.pdf
-/r4h2o-water-ra-level-2.pdf
-/waterra/
+r4h2o-cheat-sheet.odp

@@ -1,0 +1,79 @@
+---
+title: '“We Care About Water, Even If you Don’t”: Water As a Low Involvement Service'
+author: "Peter Prevos"
+date: "20 September 2014"
+output:
+  word_document: default
+  pdf_document: default
+  html_document:
+    df_print: paged
+subtitle: IWA Conference, Brisbane
+bibliography: involvement.bib
+---
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE, error=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+pii <- read_csv("../data/customer_survey.csv")[-1, ] %>%
+    type_convert() %>%
+    filter(is.na(term)) %>%
+    rename(customer_id = V1) %>% 
+    select(customer_id, p01:p10) %>% 
+    mutate_at(c("p01", "p02", "p07", "p08", "p09", "p10"),
+                  function(p) 8 - p)
+```
+
+# Abstract
+
+Customer engagement and involving customers with the provision of water services has become a commonly heard phrase around the industry. Research was undertaken to determine the level of involvement customers have with tap water. Data was collected from customers of Australian Water utilities and Twitter users in the US. Data shows that water consumers have a high cognitive involvement, but low affective involvement, while water professionals have a much higher level of affective involvement with tap water. These findings and their implications on marketing and customer engagement activities related to the provision of water services are discussed.
+
+_Keywords_: customer engagement, marketing
+
+# Introduction
+
+Water is one of the essential ingredients of life. This fact is often used to assume that therefore all users of tap water have a high level of interest in the service. The level of interest in a product or service is in the field of marketing determined using the ‘consumer involvement’ construct. Consumer involvement is defined in consumer behavior studies to indicate “a person’s perceived relevance of the object based on inherent needs, values, and interests” [@zaichkowsky_1985]. Several instruments have been published to measure the level of involvement with products and services with The Personal Involvement Inventory (PII) as a common indicator [@zaichkowsky_1985;@zaichkowsky_1994].
+
+The literature on the provision of tap water services has generally assumed that tap water is a low involvement service [@babakus_1993;@vloerbergh_2007]. Similar patterns can be seen in the energy industry, where the low level of involvement has been linked to the [@walsch_2005;@watson_2002]. The level of involvement is considered inversely related to the security of supply [@vloerbergh_2007]. In countries where the supply of water is threatened due to drought, service providers have employed strategies to increase the level of involvement of customers in order to moderate behavior and reduce water consumption [@cooper_2012]. The level of involvement with tap water services has, however, not been empirically established to assess these assumptions in the water industry.
+
+This paper presents empirical research conducted to determine the level of involvement consumers in urban environments have with tap water as a service using the PII construct. This research showed that although water users agree on the high level of need for tap water, consumers were significantly less interested in the affective aspects of tap water. The data also showed a significant difference between the level of involvement with water consumers and water professionals.
+
+# Material and Methods
+
+Customers of water utilities in Australia and Twitter users in the USA completed a survey to ascertain their level of involvement with tap water as a service (Figure 1). The online survey instrument consisted of ten semantic-differential items related to the level of involvement of customers, the Personal Involvement Inventory (PII). Twitter users were also asked to indicate whether they were water professionals.
+
+![PII measurement model.](pii.png){width=50%}
+
+# Results
+
+The results of the survey shows that tap water consumers have a medium level of involvement with the services provided by their utilities. Responses to individual PII items are displayed in Figure 2. 
+
+```{r, fig.cap="Personal Involvement Index scores for tap water.", fig.height=2, warning=FALSE}
+pii %>% 
+    pivot_longer(-customer_id, names_to = "Item", values_to = "Response") %>% 
+    ggplot(aes(Item, Response)) + 
+    geom_boxplot() + 
+    theme_minimal()
+```
+
+Factor analysis revealed that the ten-item scale consists of two dimensions. Items 1 to 5 related to affective aspects of the service, with items related to the importance, relevance, meaning, value and need of tap water. This dimension is the cognitive component of the PII construct. Respondents showed an extremely high level of involvement in this dimension, with the majority of respondents providing the maximum score. The second dimension related to the interest, excitement, appeal, fascination and involvement with the service, which is the affective component of the PII. Subsequent analysis showed that consumers have a significantly higher level of cognitive involvement with tap water services than the level of affective involvement. Opinions were much less unanimous about the emotional relationship they have with tap water. When comparing the scores of water consumers and water professionals, the level of cognitive involvement is not significantly different, while the level of affective involvement was much lower, as shown in figure 3.
+
+```{r, fig.cap="Distribution of involvement scores.", warning=FALSE, message=FALSE, fig.height=2}
+pii %>% 
+    group_by(customer_id) %>% 
+    summarise(Cognitive = p01 + p02 + p03 + p04 + p05,
+              Affective = p06 + p07 + p08 + p09 + p10,
+              Involvement = Affective + Cognitive) %>% 
+    pivot_longer(-customer_id, names_to = "Dimension", values_to = "Score") %>% 
+    ggplot(aes(Score)) + 
+    geom_histogram(binwidth = 1) + 
+    facet_wrap(~Dimension, scales = "free_x") + 
+    theme_minimal() + 
+    labs(y = NULL)
+```
+
+# Conclusions
+
+These findings have implications for the manner in which tap water services are provided, specifically the manner in which customers are engaged by utilities. Involvement has been linked to willingness to pay [@cohen_2000]. The low level of affective involvement could as such indicate a low willingness to pay for water services. This willingness to pay is not only related to financial cost, but also to the time used on water services [@prevos_2013]. From this it can be concluded that an ideal water service is invisible to the customer, with limited involvement from the utility.
+
+
+# References

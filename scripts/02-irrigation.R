@@ -32,7 +32,7 @@ q3 <- (2 / 3) * cd * sqrt(2 * g) * b * h3^(3 / 2)
 
 plot(h3, q3, type = "l",
      xlab = "Height [m]", ylab = "Flow [m3/s]",
-     main = "Open Channel Flow, Cd = 0.62")
+     main = paste("Open Channel Flow, Cd =", cd))
 abline(v = h2, col = "grey")
 abline(h = q2, col = "grey")
 points(h2, q2, pch = 19, col = "blue")
@@ -52,3 +52,4 @@ for (h3 in 50:500) {
   q3[i] <- (2 / 3) * cd * sqrt(2 * g) * b * (h3 / 1000)^(3 / 2)
   i <- i + 1
 }
+

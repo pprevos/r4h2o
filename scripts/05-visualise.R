@@ -4,10 +4,41 @@
 #
 ########################################################
 
+# Libraries
+library(readr)
+library(dplyr)
+
 # Load data
 
-library(readr)
 labdata <- read_csv("data/water_quality.csv")
+
+turbidity <- filter(labdata, Measure == "Turbidity")
+
+## BASE R
+
+# Time series
+plot(turbidity$Date, turbidity$Result, type = "l")
+
+# Histograms
+
+hist(turbidity$Result, main = "No transformation")
+hist(log(turbidity$Result), main = "Log transformation")
+
+# Changing the breaks parameter
+
+hist(log(turbidity$Result), breaks = 5)
+
+# Box (and whisker) plots
+
+par(mar = c(8, 4, 4, 1))
+boxplot(data = turbidity, log10(Result) ~ Suburb, las = 2,
+        xlab = NULL, main = "Gormsey Turbidity Samples")
+
+# Range parameter 10
+
+boxplot(data = turbidity, log10(Result) ~ Suburb, range = 10)
+
+## GGPLOT 2
 
 # Data layer
 
@@ -35,8 +66,6 @@ ggplot(labdata, aes(Measure)) +
   geom_bar(fill = "#78417A")
 
 # Line chart geometry, coloured by suburb
-
-turbidity <- dplyr::filter(labdata, Measure == "Turbidity")
 
 ggplot(turbidity, aes(Date, Result, col = Suburb)) + 
   geom_line()

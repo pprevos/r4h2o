@@ -7,25 +7,24 @@
 # Install packages (only do this once)
 # install.packages("tidyverse")
 
-# Loading the Tidyverse packages
-
-library(tidyverse)
-
 # Reading a CSV file with base R
 
 labdata <- read.csv("data/water_quality.csv")
 
 # Using the readr package from Tidyverse
+library(tidyverse)
 
-library(readr)
 labdata <- read_csv("data/water_quality.csv")
 
 # Reading Spreadsheet data
+# Use ?readxl to learn about options
 
 library(readxl)
-labdata <- read_excel("data/water_quality.xlsx", skip = 2, sheet = "data")
+labdata <- read_excel("data/water_quality.xlsx",
+                      skip = 2, sheet = "data")
 
-# Explore data frames
+# Explore data frames / tibbles
+labdata
 
 names(labdata)
 
@@ -34,27 +33,28 @@ dim(labdata)
 nrow(labdata)
 ncol(labdata)
 
-head(labdata)
-tail(labdata)
-
-labdata
-
 # Glimpse the content of a data frame
 
 glimpse(labdata)
 
-# View the structure of a variable
+# Subsetting a vector
 
-str(labdata)
+labdata$Result
+
+labdata$Result[1:10]
+
+labdata$Result[c(1, 3, 5)]
 
 # Subsetting a data frame or tibble
 
-labdata$Result
-labdata$Result[1:10]
-labdata$Result[c(1, 3, 5)]
+labdata[12, 3]
+
 labdata[, "Date"]
+
 labdata[1:10, c("Suburb", "Result")]
+
 n <- 10
+
 labdata[n * 2, ]
 
 # Filtering data frames
@@ -64,13 +64,9 @@ labdata[labdata$Measure == "Turbidity", ]
 # Conditionals
 
 a <- 1:2
+
 a == 1
-
-a <- c(TRUE, FALSE)
-a * 2
-
-"small" > "large"
-"small" > "large" & 1 > 2
+a != 1
 
 # Filtering in tidyverse
 
@@ -94,7 +90,7 @@ table(labdata$Measure)
 
 table(labdata$Suburb, labdata$Measure)
 
-# The dplyr count function
+# The dplyr count function (result is another data frame)
 
 count(labdata, Suburb, Measure)
 
@@ -111,6 +107,6 @@ arrange(sample_count, n)
 arrange(sample_count, desc(n))
 slice_max(sample_count, n = 3, order_by = n)
 
-# Using Regular Expressions (wildcards) to filter text
-
+# Using Regular Expressions (regex) to filter text
+# Use vignette("regular-expressions") to learn more about regex
 filter(labdata, str_detect(Suburb, "^M"))

@@ -11,12 +11,13 @@ library(dplyr)
 labdata <- read_csv("data/water_quality.csv")
 turbidity <- filter(labdata, Measure == "Turbidity")
 
+x <- turbidity$Result
+
+n <- length(x)
+
 # MEASURES OF CENTRAL TENDENCY
 
 # Arithmetic mean
-
-x <- turbidity$Result
-n <- length(x)
 
 sum(x) / n
 
@@ -44,6 +45,7 @@ mode(x)
 # MEASURES OF POSITION
 
 summary(x)
+fivenum(x)
 
 # The quantile function
 
@@ -64,7 +66,6 @@ r <- p * n
 
 # Weibull method
 
-x_ord <- x[order(x)]
 p <- 0.95
 
 r <- p * (n + 1)
@@ -84,7 +85,13 @@ quantile(x, 0.95,  type = 6)
 
 min(x)
 max(x)
+
 range(x)
+
+max(x) - min(x)
+
+range(x)[2] - range(x)[1]
+
 diff(range(x))
 
 # Inter Quartile Range (IQR)
@@ -105,7 +112,9 @@ sd(x)
 
 sqrt(sum((x - mean(x))^2) / (n - 1))
 
-# Third central moment
+# MEASURES OF SHAPE
+
+# Skewness: Third central moment
 
 (sum((x - mean(x))^3) / n) / (sqrt(sum((x - mean(x))^2) / n)^3)
 
@@ -121,9 +130,17 @@ moments::skewness(x)
 
 moments::kurtosis(x)
 
+# Using the e1071 package for skweness and kurtosis
+
+# This library masks (overrides) the functions in the moments package
+library(e1071)
+
+skewness(x)
+kurtosis(x)
+
+
 # ANALYSING GROUPED DATA
 
-library(dplyr)
 labdata_grouped <- group_by(labdata, Measure)
 labdata_grouped
 
@@ -140,31 +157,3 @@ summarise(labdata_grouped,
 
 count(labdata, Measure, Suburb, name = "Samples")
 
-# Basic data visualisation
-
-# Histograms
-
-par(mfcol = c(1, 2), mar = c(4, 2, 1, 0))
-hist(turbidity$Result, main = "No transformation")
-hist(log(turbidity$Result), main = "Log transformation")
-
-# Changing the breaks parameter
-
-hist(log(turbidity$Result), breaks = 5)
-
-# Box (and whisker) plots
-
-par(mar = c(8, 4, 4, 1), mfcol = c(1, 1))
-boxplot(data = turbidity, log10(Result) ~ Suburb, las = 2,
-        xlab = NULL, main = "Gormsey Turbidity Samples")
-
-# Range parameter 10
-
-boxplot(data = turbidity, log10(Result) ~ Suburb, range = 10)
-
-# Using the e1071 package for skweness and kurtosis
-# Using this library masks (overrides) the functions in the moments package
-library(e1071)
-
-skewness(x)
-kurtosis(x)

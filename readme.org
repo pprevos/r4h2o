@@ -7,6 +7,8 @@ Data Science for Water Utilities: Data as a Source of Value is an applied, pract
 The [[https://lucidmanager.org/tags/r4h2o/][accompanying website]] contains additional information, addenda and a screencast for each of the chapters.
 
 This repository contains the following folders:
+- =case-studies=: Additional water data science case studies
 - =data=: Case study data files
+- =python=: Python version of the code in the book
 - =scripts=: R scripts for book chapters
 

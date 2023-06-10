@@ -4,6 +4,7 @@ RestoreWorkspace: Default
 SaveWorkspace: Default
 AlwaysSaveHistory: Default
 
+
 EnableCodeIndexing: Yes
 UseSpacesForTab: Yes
 NumSpacesForTab: 4

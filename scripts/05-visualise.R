@@ -132,7 +132,7 @@ ggplot(filter(labdata, Measure != "E. coli" &
        aes(Date, Result)) +
   geom_hline(data = limits, aes(yintercept = Limit),
              col = "red", linetype = 2) + 
-  geom_line(size = .5) +
+  geom_line(linewidth = .5) +
   facet_grid(Measure ~ Suburb, scales = "free_y") +
   scale_x_date(date_labels = "%Y", date_breaks = "2 years") +
   theme_minimal(base_size = 11) + 
@@ -141,3 +141,4 @@ ggplot(filter(labdata, Measure != "E. coli" &
        caption = "Source: Gormsey Laboratory")
 
 ggsave("gormsey_labdata.pdf", width = 297, height = 210, units = "mm")
+

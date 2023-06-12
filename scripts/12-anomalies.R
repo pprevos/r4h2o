@@ -16,6 +16,8 @@ ggplot(chlorine, aes(Suburb, Result)) +
 
 cl_merton <- filter(chlorine, Suburb == "Merton")
 
+# Z-scores
+
 outliers <- which(abs(cl_merton$Result - mean(cl_merton$Result)) /
                   sd(cl_merton$Result) >= 3)
 

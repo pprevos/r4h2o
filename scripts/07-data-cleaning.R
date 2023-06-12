@@ -8,12 +8,15 @@
 
 library(readr)
 library(dplyr)
+
 rawdata  <- read_csv("data/customer_survey.csv")
+
 glimpse(rawdata)
 
 # Convert data types
 
 customers <- rawdata[-1, ]
+
 customers <- type_convert(customers)
 
 # Select relevant variables
@@ -31,6 +34,7 @@ suburbs_dim <- tibble(suburb = 1:3,
                       suburb_name = c("Merton", "Tarnstead", "Wakefield"))
 
 customers <- left_join(customers, suburbs_dim)
+customers <- left_join(customers, suburbs_dim, join_by(suburb == suburb))
 customers <- select(customers, -"suburb")
 
 # Remove invalid data
@@ -72,6 +76,8 @@ customers <- rawdata[-1, ] %>%
 
 write_csv(customers, "data/customer_survey_clean.csv")
 
+# Create data cleaning script: 07-customer-clean.R
+
 # Dealing with missing data
 
 # Technical Service Quality
@@ -110,3 +116,4 @@ ggplot(tq_long, aes(Item, Response)) +
   scale_y_continuous(breaks = 1:7) + 
   labs(title = "Technical Service Quality",
        subtitle = "Tap water in Gormsey")
+

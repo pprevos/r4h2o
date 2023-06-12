@@ -76,3 +76,4 @@ a = (m.pi / 4) * 0.15**2
 plt.axhline(y = a, color='grey', linestyle='-')
 plt.scatter(150, a, color='red')
 plt.show()    
+plt.savefig('test.png', bbox_inches='tight')

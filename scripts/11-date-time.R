@@ -7,17 +7,28 @@
 # Date Variables
 
 Sys.Date()
+class(Sys.Date())
+
+# Unix epoch
 as.numeric(Sys.Date())
 
 as.Date("2022-07-01")
+
+as.Date(20000, origin = "1970-01-01") # Unix
+as.Date(20000, origin = "1899-12-31") # Spreadsheets
+
+# Date formats
 as.Date("1 July 2022", format = "%d %B %Y")
-as.Date(20000, origin = "1970-01-01")
+as.Date("Day: 12, Month: 06, Year: 2023", format = "Day: %d, Month: %m, Year: %Y")
+format(Sys.Date(), "%A week %V, %Y")
+
+?strptime
+
+# Convert dates to numbers (time differences)
 
 d <- Sys.Date() - as.Date("1969-09-12")
 d
 as.numeric(d)
-
-format(Sys.time(), "%I %p")
 
 # Time variables
 
@@ -26,8 +37,10 @@ as.POSIXct("21 December 2020 12:23", format = "%d %B %Y %H:%M")
 
 # Time zones
 
-Sys.timezone()
 Sys.time()
+
+Sys.timezone()
+
 format(Sys.time(), tz = "UTC")
 format(Sys.time(), tz = "NZ")
 
@@ -36,6 +49,7 @@ ams
 
 attr(ams, "tzone") <- "Europe/Amsterdam"
 ams
+class(ams)
 
 as.POSIXct("21 December 2020 12:23",
            format = "%d %B %Y %H:%M",
@@ -45,6 +59,8 @@ as.POSIXct("21 December 2020 12:23",
 d <- as.POSIXct("2022-02-22 10:00:00", tz = "Australia/Melbourne")
 d
 as.Date(d)
+
+as.Date(d, tz = "Australia/Melbourne")
 
 # Lubridate package
 
@@ -80,7 +96,7 @@ library(dplyr)
 meter_reads <- read_csv("data/meter_reads.csv")
 
 group_by(meter_reads, device_id) %>% 
-  summarise(volume = 5 * (max(count) - min(count))) %>% 
+  summarise(volume = (5 / 1000) * (max(count) - min(count))) %>% 
   arrange(desc(volume))
 
 # Filtering and Grouping by Date and Time
@@ -108,6 +124,8 @@ filter(transmissions, floor_date(date, "month") == "2050-03-01")
 filter(meter_reads, round_date(timestamp, "hour") ==
                     as.POSIXct("2050-03-01 10:00:00", tz = "UTC"))
 
+filter(meter_reads, round_date(timestamp, "hour") == "2050-03-01 10:00:00")
+
 filter(meter_reads, format(timestamp, "%b %Y") == "Mar 2050")
 
 # Monthly data
@@ -120,6 +138,9 @@ transmissions %>%
 
 # Calculating flows
 
+lag(1:10)
+lead(1:10)
+
 meter_flow <- meter_reads %>%
   group_by(device_id) %>%
   mutate(volume = (count - lag(count, default = 0)) * 5,
@@ -131,9 +152,12 @@ meter_flow <- meter_reads %>%
 # Linear Interpolation
 x <- today() + c(0, 7, 10, 15)
 y <- c(0, 30, 135, 200)
-linear <- approx(x, y)
+
+linear <- approx(x, y) # Default: 50 interpolations
 constant <- approx(x, y, method = "constant", n = 9)
+
 point <- approx(x, y, xout = today() + 8.5)
+
 plot(as.Date(linear$x, origin = "1970-01-01"),
      linear$y, col = "gray", cex = .5,
      xlab = "x", ylab = "y")
@@ -147,23 +171,21 @@ points(point$x, point$y, col = "blue", pch = 12, cex = 2)
 daily_dates <- unique(floor_date(meter_reads$timestamp, "day"))
 
 daily_flow <- meter_reads %>%
-  group_by(device_id) %>%
-  summarise(date = daily_dates,
+    group_by(device_id) %>%
+    reframe(date = daily_dates,
+            # Book uses summarise, which was deprecated
+            # reframe can return an arbitrary number of rows per group
+            # summarise reduces each group down to a single row
             count = approx(x = timestamp,
                            y = count,
                            xout = daily_dates)$y) %>%
   mutate(volume = 5 * (count - lag(count))) %>%
-  filter(!is.na(volume)) %>%
-  ungroup()
+  filter(!is.na(volume))
 
 library(ggplot2)
 ggplot(daily_flow, aes(volume)) +
   geom_histogram(binwidth = 100) +
   theme_minimal()
-
-# Generating date and time sequences
-seq.Date(from = Sys.Date(), length.out = 10, by = 1)
-seq.POSIXt(from = Sys.time(), length.out = 4, by = 30)
 
 # Diurnal curves
 diurnal <- meter_flow %>%
@@ -176,32 +198,7 @@ diurnal <- meter_flow %>%
 
 ggplot(diurnal, aes(x = hour, ymin = min_flow, ymax = max_flow)) +
   geom_ribbon(fill = "gray", alpha = 0.5) +
-  geom_line(aes(x = hour, y = mean_flow), col = "black", size = 1) +
+  geom_line(aes(x = hour, y = mean_flow), col = "black", linewidth = 1) +
   ggtitle("Connections Diurnal flow") +
   ylab(expression(Flow~m^3/h)) + 
   theme_bw(base_size = 10)
-
-filter(meter_flow, device_id %in% c(1404857, 1515776))
-
-filter(meter_flow, device_id == 1404857 | device_id == 1515776)
-
-# Advanced Time Series Analysis
-
-library(xts)
-library(forecast)
-
-hourly_vol <- meter_flow %>%
-  mutate(weeknum = week(timestamp)) %>%
-  filter(between(timestamp, as.POSIXct("2050-04-01"), as.POSIXct("2050-04-05"))) %>%
-  mutate(timestamp_au = with_tz(timestamp, tzone = "Australia/Melbourne"),
-         hour = round_date(timestamp_au, "hour")) %>% 
-  group_by(hour) %>%
-  summarise(volume = sum(flow))
-
-hourly_vol_ts <- xts(hourly_vol$volume,
-                     order.by = hourly_vol$hour,
-                     format = "%Y%m%d")  
-
-fit <- auto.arima(hourly_vol_ts, trace = TRUE)
-fcast <- forecast(fit, h = 12)
-plot(fcast)

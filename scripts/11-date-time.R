@@ -12,12 +12,11 @@ class(Sys.Date())
 # Unix epoch
 as.numeric(Sys.Date())
 
-as.Date("2022-07-01")
-
 as.Date(20000, origin = "1970-01-01") # Unix
 as.Date(20000, origin = "1899-12-31") # Spreadsheets
 
 # Date formats
+as.Date("2022-07-01") # ISO 8601
 as.Date("1 July 2022", format = "%d %B %Y")
 as.Date("Day: 12, Month: 06, Year: 2023", format = "Day: %d, Month: %m, Year: %Y")
 format(Sys.Date(), "%A week %V, %Y")
@@ -41,8 +40,10 @@ Sys.time()
 
 Sys.timezone()
 
-format(Sys.time(), tz = "UTC")
+format(Sys.time(), tz = "Asia/Macao")
 format(Sys.time(), tz = "NZ")
+
+OlsonNames()
 
 ams <- Sys.time()
 ams
@@ -153,16 +154,19 @@ meter_flow <- meter_reads %>%
 x <- today() + c(0, 7, 10, 15)
 y <- c(0, 30, 135, 200)
 
+plot(x, y, col = "red", pch = 16)
+
 linear <- approx(x, y) # Default: 50 interpolations
+
+points(linear$x, linear$y, col = "gray", cex = .5,
+     xlab = "x", ylab = "y")
+
 constant <- approx(x, y, method = "constant", n = 9)
+
+points(constant$x, constant$y, col = "gray", pch = 20, type = "b")
 
 point <- approx(x, y, xout = today() + 8.5)
 
-plot(as.Date(linear$x, origin = "1970-01-01"),
-     linear$y, col = "gray", cex = .5,
-     xlab = "x", ylab = "y")
-points(constant$x, constant$y, col = "gray", pch = 20, type = "b")
-points(x, y, col = "red", pch = 16)
 points(point$x, point$y, col = "blue", pch = 12, cex = 2)
 
 

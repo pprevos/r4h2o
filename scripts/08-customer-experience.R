@@ -6,7 +6,7 @@
 
 # Load the data
 
-source("scripts/customer_clean.R")
+source("scripts/07-customer-clean.R")
 
 # Correct polarity
 
@@ -18,14 +18,8 @@ pii <- select(customers, customer_id, starts_with("p")) %>%
          p09 = 8 - p09,
          p10 = 8 - p10)
 
-# Reverse polarity of PII variables
-
-pii <- select(customers, customer_id, p01:p10) %>% 
-  mutate_at(c("p01", "p02", "p07", "p08", "p09", "p10"),
-            function(p) 8 - p)
-
-# Remove missing values
-
+# Remove missing values (use complete cases)
+visdat::vis_miss(pii)
 pii <- pii[complete.cases(pii), ]
 
 # Visualise PII
@@ -36,8 +30,10 @@ library(tidyr) # For the pivoting function
 pii %>%
   pivot_longer(-customer_id, names_to = "Item", values_to = "Response") %>%
   ggplot(aes(Item, Response)) +
-  geom_boxplot() +
+  geom_boxplot(fill = "cadetblue3") +
   theme_minimal()
+
+colors()
 
 # RELIABILITY
 
@@ -50,16 +46,6 @@ cor(pii$p01, pii$p02)
 c_matrix <- cor(pii[, -1])
 round(c_matrix, 2)
 
-# Scatterplot p01 and p02
-
-library(ggplot2)
-ggplot(pii, aes(p01, p02)) + 
-  geom_jitter(width = .5, height = .5, alpha = .5, size = 2) + 
-  labs(title = "Scatterplot of items p01 and p02",
-       subtitle = paste("Correlation:",
-                        round(cor(pii$p01, pii$p02), 2))) + 
-  theme_bw(base_size = 10)
-
 # Visualise correlation matrix
 
 library(ggcorrplot)
@@ -67,19 +53,12 @@ ggcorrplot(c_matrix, outline.col = "white") +
   labs(title = "Personal Inventory Index",
        subtitle = "Correlation Matrix")
 
-# Some ggcorplot examples
-ggcorrplot(c_matrix, method = "circle")
-ggcorrplot(c_matrix, type = "lower", lab = TRUE)
-
 # Significance Testing for Correlations
 
 (c_test <- cor.test(pii$p01, pii$p02))
 
-str(c_test)
-
-c_test$p.value
-
 # Only plot significant correlations
+# c_matrix[5, ] <- 0
 
 ggcorrplot(c_matrix, insig = "blank", show.diag = FALSE)
 
@@ -103,12 +82,13 @@ alpha <- (k * c) / (v + (k - 1) * c)
 alpha
 
 alpha <- psych::alpha(pii[, -1])
-alpha$total$raw_alpha
+alpha$total
 
 # Factor Analysis
 
 library(psych, quietly = TRUE)
 library(GPArotation)
+
 pii_fa <- fa(pii[, -1], nfactors = 2, rotate = "oblimin")
 pii_fa$loadings
 

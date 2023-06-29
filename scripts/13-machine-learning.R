@@ -6,20 +6,23 @@
 
 # Download data
 
-url <- "http://archive.ics.uci.edu/ml/machine-learning-databases/concrete/
-        compressive/Concrete_Data.xls"
+url <- "http://archive.ics.uci.edu/ml/machine-learning-databases/concrete/compressive/Concrete_Data.xls"
 download.file(url, destfile = "data/concrete-data.xls")
 
 library(readxl)
 library(tidyverse)
 
 concrete <- read_excel("data/concrete-data.xls")
+
+glimpse(concrete)
+
 names(concrete) <- tolower(names(concrete))
 names(concrete) <- str_remove_all(names(concrete), "[[:punct:]]")
 names(concrete) <- str_remove(names(concrete), "component.*")
 names(concrete) <- str_trim(names(concrete))
 names(concrete) <- str_replace_all(names(concrete), " ", "_")
 names(concrete)[9] <- "compressive_strength"
+
 glimpse(concrete)
 
 ## MULTIPLE LINEAR REEGRESSION
@@ -55,8 +58,8 @@ pivot_longer(concrete_train, -compressive_strength,
 ## Linear model with a simple mixture
 
 (lm_min <- lm(compressive_strength ~ I(water / cement) +
-                   coarse_aggregate + fine_aggregate + age_day - 1
-               , data = concrete_train))
+                   coarse_aggregate + fine_aggregate + age_day - 1, 
+              data = concrete_train))
 
 ## Linear model with all variables
 
@@ -87,6 +90,7 @@ plot(predict ~ compressive_strength, data = concrete_test2,
      main = "All variables", pch = 20,
      sub = paste("RMSE =", round(rmse_all)))
 abline(a = 0, b = 1, col = "red")
+par(mfcol = c(1, 1))
 
 ## DECISION TREES
 
@@ -127,9 +131,12 @@ tree_all <- rpart(class ~ ., data = concrete_class_train,
 ## Visualise trees
 
 library(rpart.plot)
+rpart.plot(tree_min)
+rpart.plot(tree_min)
+
 tree_vis <- rpart(class ~ ., data = concrete_class_train,
                   method = "class", maxdepth = 3)
-rpart.plot(tree_vis, extra = 2)
+rpart.plot(tree_vis)
 
 ## Cross-Validation
 
@@ -139,22 +146,24 @@ predict_tree_min <- predict(tree_min,
 predict_tree_all <- predict(tree_all,
                             newdata = concrete_class_test2, type = "class")
 
+# Confusion matrix
 confusion_matrix_min <- table(predict_tree_min, concrete_class_test1$class)
 confusion_matrix_all <- table(predict_tree_all, concrete_class_test2$class)
 
-confusion_matrix_all
-
-cm <- confusion_matrix_all
+(cm <- confusion_matrix_all)
 
 (tp <- diag(cm))
 (fn <- colSums(cm) - diag(cm))
 (fp <- rowSums(cm) - diag(cm))
 (tn <- sum(cm) - (colSums(cm) + rowSums(cm) - diag(cm)))
 
+# Accuracy: True positives divided by the total number of predictions
 sum(diag(confusion_matrix_min) / sum(confusion_matrix_min))
 sum(diag(confusion_matrix_all) / sum(confusion_matrix_all))
 
+# Sensitivity and specificity
 (sensitivity <- tp / (tp + fn))
 (specificity <- tn / (tn + fp))
 
+# With the caret package
 caret::confusionMatrix(predict_tree_all, concrete_class_test2$class)

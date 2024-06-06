@@ -47,6 +47,9 @@ c_matrix <- cor(pii[, -1])
 round(c_matrix, 2)
 
 # Visualise correlation matrix
+# Install
+# if(!require(devtools)) install.packages("devtools")
+# devtools::install_github("kassambara/ggcorrplot")
 
 library(ggcorrplot)
 ggcorrplot(c_matrix, outline.col = "white") +

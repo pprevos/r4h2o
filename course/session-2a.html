@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="dcterms.date" content="2024-06-06" />
+  <title>R^4H_2O</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="session-2a_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  { color: #cccccc; background-color: #303030; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffcfaf; } /* Alert */
+code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #dca3a3; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #f0dfaf; } /* ControlFlow */
+code span.ch { color: #dca3a3; } /* Char */
+code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+code span.co { color: #7f9f7f; } /* Comment */
+code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+code span.do { color: #7f9f7f; } /* Documentation */
+code span.dt { color: #dfdfbf; } /* DataType */
+code span.dv { color: #dcdccc; } /* DecVal */
+code span.er { color: #c3bf9f; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #c0bed1; } /* Float */
+code span.fu { color: #efef8f; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+code span.kw { color: #f0dfaf; } /* Keyword */
+code span.op { color: #f0efd0; } /* Operator */
+code span.ot { color: #efef8f; } /* Other */
+code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+code span.sc { color: #dca3a3; } /* SpecialChar */
+code span.ss { color: #cc9393; } /* SpecialString */
+code span.st { color: #cc9393; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #cc9393; } /* VerbatimString */
+code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="session-2a_files/reveal.js-3.3.0.1/css/theme/league.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="style.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <script src="session-2a_files/header-attrs-2.26/header-attrs.js"></script>
+    <link href="session-2a_files/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title"><span class="math inline">\(R^4H_2O\)</span></h1>
+  <h1 class="subtitle">Session 2a</h1>
+    <h3 class="date">06 June 2024</h3>
+</section>
+
+<section id="section" class="title-slide slide level1"
+data-background="images/r4h2o-banner.jpg">
+<h1 data-background="images/r4h2o-banner.jpg"></h1>
+
+</section>
+
+<section>
+<section id="introductions" class="title-slide slide level1">
+<h1>Introductions</h1>
+<p><img data-src="images/data-science-evolution.png" /></p>
+</section>
+<section id="r4h2o-cheat-sheet" class="slide level2">
+<h2>R4H2O Cheat Sheet</h2>
+<p><img data-src="images/r4h2o-cheat-sheet.png" height="500" /></p>
+<p><a
+href="https://github.com/pprevos/r4h2o/blob/master/r4h2o-cheat-sheet.pdf">PDF
+version</a></p>
+</section>
+<section id="program" class="slide level2">
+<h2>Program</h2>
+<div class="column" style="float:left; width: 50%">
+<p>Day 1:</p>
+<ol type="1">
+<li>Data cleaning</li>
+<li>Case Study 2: Customer Experience</li>
+<li>Survey reliability</li>
+<li>Survey validity</li>
+</ol>
+</div>
+<div class="column" style="float:left; width: 50%">
+<p>Day 2:</p>
+<ol type="1">
+<li>Customer segmentation</li>
+<li>Cluster analysis</li>
+<li>Linear regression</li>
+</ol>
+</div>
+</section>
+<section id="course-book" class="slide level2">
+<h2>Course book</h2>
+<p><a
+href="https://www.routledge.com/Data-Science-for-Water-Utilities-Data-as-a-Source-of-Value/Prevos/p/book/9781032354545"><img
+data-src="images/data-science-for-water-utilities-3d.png"
+height="500" /></a></p>
+</section>
+<section id="course-project" class="slide level2">
+<h2>Course Project</h2>
+<p><a
+href="https://github.com/pprevos/r4h2o">github.com/pprevos/r4h2o</a></p>
+<ul>
+<li><em>RStudio Cloud</em>: New project from GitHub repository</li>
+<li><em>RStudio Desktop</em>: Download or clone project files</li>
+</ul>
+<p><img data-src="images/rstudio.png" height="400" /></p>
+</section></section>
+<section>
+<section id="case-study-2-cleaning-data"
+class="title-slide slide level1">
+<h1>Case Study 2: Cleaning Data</h1>
+<p><img data-src="images/gigo.png" height="400" /></p>
+<p><small>Garbage in is … (Generated by DALL-E).</small></p>
+</section>
+<section id="cleaning-case-study-2" class="slide level2">
+<h2>Cleaning Case Study 2</h2>
+<ol type="1">
+<li>Open Rstudio in the <code>R4H2O</code> project</li>
+<li>Load and explore the data:
+<ul>
+<li><code>data/customer_survey.csv</code></li>
+</ul></li>
+<li>What is wrong with this data?</li>
+</ol>
+</section>
+<section id="case-study-2" class="slide level2">
+<h2>Case Study 2</h2>
+<p>Open: <code>scripts/07-data-cleaning.R</code></p>
+</section>
+<section id="data-structures-star-schema" class="slide level2">
+<h2>Data Structures: Star-Schema</h2>
+<p><img data-src="images/star-schema.png" height="500" /></p>
+</section>
+<section id="joining-tables" class="slide level2">
+<h2>Joining Tables</h2>
+<p><img data-src="images/dplyr-join.png" /></p>
+</section>
+<section id="coding-challenge" class="slide level2">
+<h2>Coding challenge</h2>
+<ul>
+<li>Load the laboratory data from the first case study:
+<code>data/water_quality.csv</code></li>
+<li>Join the data with the sample point register:
+<code>data/sample_points.csv</code></li>
+<li>Visualise the maximum turbidity spatially: use
+<code>scale_color_gradient()</code></li>
+</ul>
+<p><img data-src="images/sample_points.png" /></p>
+</section>
+<section id="coding-challenge-solution" class="slide level2">
+<h2>Coding challenge solution</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>lab_results <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/water_quality.csv&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>sample_points <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/sample_points.csv&quot;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>turbidity_p95 <span class="ot">&lt;-</span> lab_results <span class="sc">%&gt;%</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Measure <span class="sc">==</span> <span class="st">&quot;Turbidity&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(sample_points) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Sample_Point, x, y) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">max =</span> <span class="fu">max</span>(Result))</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(turbidity_p95, <span class="fu">aes</span>(x, y, <span class="at">col =</span> max), <span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span> </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">high =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_light</span>()</span></code></pre></div>
+</section>
+<section id="refactoring-code" class="slide level2">
+<h2>Refactoring Code</h2>
+<p>Sequential code</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>labdata <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/water_quality.csv&quot;</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>measures <span class="ot">&lt;-</span> <span class="fu">count</span>(labdata, Measure)</span></code></pre></div>
+<p>Nested Code</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>measures <span class="ot">&lt;-</span> <span class="fu">count</span>(<span class="fu">read_csv</span>(<span class="st">&quot;data/water_quality.csv&quot;</span>), Measure)</span></code></pre></div>
+<p>Piped Code (tidyverse version)</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>measures <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/water_quality.csv&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Measure)</span></code></pre></div>
+</section>
+<section id="r-analysis-automation" class="slide level2">
+<h2>R Analysis Automation</h2>
+<ol type="1">
+<li>Console</li>
+<li>Scripting: <code>source(scripts/07-customer-clean.R)</code></li>
+<li>Function: <code>function()</code></li>
+<li>Package (Local or CRAN)</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>channel_flow <span class="ot">&lt;-</span> <span class="cf">function</span>(h, b, <span class="at">cd =</span> <span class="fl">0.62</span>, <span class="at">g =</span> <span class="fl">9.81</span>) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    q <span class="ot">&lt;-</span> (<span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>) <span class="sc">*</span> cd <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="dv">2</span> <span class="sc">*</span> g) <span class="sc">*</span> b <span class="sc">*</span> h<span class="sc">^</span>(<span class="dv">3</span><span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(q)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">channel_flow</span>(.<span class="dv">1</span>, .<span class="dv">5</span>, .<span class="dv">7</span>)</span></code></pre></div>
+<pre><code>## [1] 0.03268333</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">channel_flow</span>(<span class="at">b =</span> <span class="fl">0.5</span>, <span class="at">cd =</span> <span class="fl">0.7</span>, <span class="at">h =</span> .<span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 0.03268333</code></pre>
+<p>Task: Write a function that adds two numbers.</p>
+</section>
+<section id="function-example" class="slide level2">
+<h2>Function example</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>add_two_numbers <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(a <span class="sc">+</span> b)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">add_two_numbers</span>(<span class="dv">10</span>, <span class="dv">23</span>)</span></code></pre></div>
+<pre><code>## [1] 33</code></pre>
+</section></section>
+<section>
+<section id="case-study-2-customer-experience"
+class="title-slide slide level1">
+<h1>Case Study 2: Customer Experience</h1>
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/Cg9YH4bm2Sk" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+<p><em>Gruen Transfer</em> (2009), Season 2, Episode 3.</p>
+</section>
+<section id="from-stem-to-steam" class="slide level2">
+<h2>From STEM to STEAM</h2>
+<div class="column" style="float:left; width: 50%">
+<p><img data-src="images/wtp.jpg" /></p>
+<p>Water management applies the physical sciences.</p>
+</div>
+<div class="column" style="float:left; width: 50%">
+<p><img data-src="images/taste-test.jpg" height="266" /></p>
+<p>Marketing applies the social sciences.</p>
+</div>
+</section>
+<section id="customer-surveys" class="slide level2">
+<h2>Customer Surveys</h2>
+<ul>
+<li>Psychometrics
+<ul>
+<li>Measuring mental states</li>
+<li>Latent variable / constructs</li>
+<li>Retro-causality from survey to mental state</li>
+</ul></li>
+</ul>
+<p><img data-src="images/mental-state.jpg" /></p>
+</section>
+<section id="case-study-2-survey" class="slide level2">
+<h2>Case Study 2 survey</h2>
+<ol type="1">
+<li>Consent and screening</li>
+<li>Consumer Involvement (Ten-item semantic differential scale):
+<code>p01-p10</code></li>
+<li>Contact frequency (1-item Likert scale)</li>
+<li>Perceived hardship (1-item Likert scale)</li>
+<li>Service Quality (18-item Likert Scale)
+<ul>
+<li>Technical quality: <code>t01-t05</code></li>
+<li>Functional quality: <code>f01-f13</code></li>
+</ul></li>
+<li>Trap question (1-item Likert scale)</li>
+</ol>
+<p><img data-src="images/taste-testing.png" /> <small>Likert scale for
+taste testing.</small></p>
+</section>
+<section id="technical-quality" class="slide level2">
+<h2>Technical Quality</h2>
+<p><img data-src="images/technical-quality.png" /></p>
+</section>
+<section id="missing-data" class="slide level2">
+<h2>Missing Data</h2>
+<div class="cols">
+<ul>
+<li>Missing (completely) at Random (MCAR)
+<ul>
+<li>Unrelated to variables of interest (telemetry)</li>
+<li>Related to variables of interest (willingness to answer
+questions)</li>
+</ul></li>
+<li>Missing Not at Random (MNAR)
+<ul>
+<li>Relationship between missing data and variables of interest</li>
+</ul></li>
+</ul>
+</div>
+<div class="cols">
+<p><img
+data-src="https://www.eweek.com/wp-content/uploads/2020/10/1088_MissingData.jpg" /></p>
+</div>
+</section>
+<section id="treatment-of-missing-data" class="slide level2">
+<h2>Treatment of missing data</h2>
+<ul>
+<li>Ignore (can cause errors)</li>
+<li>Remove observations
+<ul>
+<li>In calculation: <code>na.rm = TRUE</code></li>
+<li>Case-wise: <code>complete.cases()</code></li>
+</ul></li>
+<li>Impute (fill with statistical guess)
+<ul>
+<li>Statistical issues</li>
+<li>Ethical issue (putting words in the mouths of the respondents)</li>
+</ul></li>
+</ul>
+</section>
+<section id="tidy-data" class="slide level2">
+<h2>Tidy Data</h2>
+<div class="cols">
+<ol type="1">
+<li>Each variable forms a column.</li>
+<li>Each observation forms a row.</li>
+<li>Each type of observational unit forms a table.</li>
+</ol>
+</div>
+<div class="cols">
+<p><img data-src="images/tidy-data-stepford.jpg" /> <small>Wickham
+(2013). <a href="file:///home/peter/Downloads/v59i10.pdf">Tidy Data</a>.
+<em>Journal of Statistical Software</em>.</small></p>
+</div>
+</section>
+<section id="pivoting-data" class="slide level2">
+<h2>Pivoting Data</h2>
+<p><img data-src="images/pivot-data.png" /></p>
+<p>Read: <code>vignette("pivot")</code></p>
+</section>
+<section id="excercice" class="slide level2">
+<h2>Excercice</h2>
+<ul>
+<li>Open <code>data/labdata_wide.csv</code></li>
+<li>Is this data Tidy?
+<ol type="1">
+<li>Each variable forms a column.</li>
+<li>Each observation forms a row.</li>
+<li>Each type of observational unit forms a table.</li>
+</ol></li>
+</ul>
+<pre><code>## # A tibble: 768 × 7
+##    Date       Sample_Point Suburb     `Chlorine Total` `E. coli` Turbidity   THM
+##    &lt;date&gt;     &lt;chr&gt;        &lt;chr&gt;                 &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;
+##  1 2069-01-01 ME_15385     Merton                0.18          0     NA       NA
+##  2 2069-01-01 ME_12236     Merton                0.59          0     NA       NA
+##  3 2069-01-03 SN_11009     Hallburgh             0.08          0      0.2     NA
+##  4 2069-01-03 ME_15385     Merton                0.025         0      0.2     NA
+##  5 2069-01-03 SO_13252     Southwold             0.025         0      0.1     NA
+##  6 2069-01-03 TA_18683     Tarnstead             0.025         0      0.2     NA
+##  7 2069-01-03 SW_14121     Swadlinco…            0.38          0      0.2     NA
+##  8 2069-01-03 WA_10539     Wakefield             0.025         0      0.1     NA
+##  9 2069-01-05 BL_15407     Blancathey            0.5           0      2.24    NA
+## 10 2069-01-09 ME_12236     Merton                0.05          0      0.2     NA
+## # ℹ 758 more rows</code></pre>
+<ul>
+<li>Convert this to a tidy dataset using <code>pivot-longer</code></li>
+</ul>
+</section>
+<section id="cleaning-lab-data" class="slide level2">
+<h2>Cleaning Lab Data</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;data/laboratory_form.csv&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">7</span>, <span class="at">names_to =</span> <span class="st">&quot;Measure&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;Result&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 3,072 × 5
+##    Date       Sample_Point Suburb    Measure        Result
+##    &lt;date&gt;     &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt;           &lt;dbl&gt;
+##  1 2069-01-01 ME_15385     Merton    Chlorine Total   0.18
+##  2 2069-01-01 ME_15385     Merton    E. coli          0   
+##  3 2069-01-01 ME_15385     Merton    Turbidity       NA   
+##  4 2069-01-01 ME_15385     Merton    THM             NA   
+##  5 2069-01-01 ME_12236     Merton    Chlorine Total   0.59
+##  6 2069-01-01 ME_12236     Merton    E. coli          0   
+##  7 2069-01-01 ME_12236     Merton    Turbidity       NA   
+##  8 2069-01-01 ME_12236     Merton    THM             NA   
+##  9 2069-01-03 SN_11009     Hallburgh Chlorine Total   0.08
+## 10 2069-01-03 SN_11009     Hallburgh E. coli          0   
+## # ℹ 3,062 more rows</code></pre>
+</section></section>
+<section>
+<section id="reliability-and-validity" class="title-slide slide level1">
+<h1>Reliability and Validity</h1>
+<p><img data-src="images/soundness.png" /> Load:
+<code>scripts/08-customer-experience.R</code></p>
+</section>
+<section id="consumer-involvement" class="slide level2">
+<h2>Consumer Involvement</h2>
+<div class="column" style="float:left; width: 50%">
+<ul>
+<li>Importance of the product to a consumer
+<ul>
+<li>Cognitive (rational)</li>
+<li>Affective (emotional)</li>
+<li>Can you identify which is which?</li>
+<li>What do you notice about the order of the words?</li>
+</ul></li>
+</ul>
+</div>
+<div class="column" style="float:left; width: 50%">
+<p><img data-src="images/semantic-differential.png" />
+<small>Zaichkowsky, J. L. (1994). The personal involvement inventory:
+revision, and application to advertising. <em>Journal of
+Advertising</em>, 23(4), 59.</small></p>
+</div>
+</section>
+<section id="consumer-involvement-measurement-model"
+class="slide level2">
+<h2>Consumer Involvement Measurement Model</h2>
+<p><img data-src="images/pii-model.png" height="500" /></p>
+</section>
+<section id="reliability-testing" class="slide level2">
+<h2>Reliability Testing</h2>
+<div class="column" style="float:left; width: 50%">
+<ul>
+<li>Correlation</li>
+<li>Cronbach’s Alpha</li>
+</ul>
+</div>
+<div class="column" style="float:left; width: 50%">
+<p><span class="math display">\[cov(x, y) = \frac{\sum(x_i -
+\bar{x})(y_i - \bar{y})}{n-1}\]</span></p>
+<p><span class="math display">\[cor(x, y) = \frac{cov(x, y)}{s_x
+s_y}\]</span> <span class="math display">\[\alpha = \frac{k
+\bar{c}}{\bar{v} + (k-1) \bar{c}}\]</span></p>
+<ul>
+<li><span class="math inline">\(k\)</span>: Number of survey items
+(columns)</li>
+<li><span class="math inline">\(\bar{c}\)</span>: Average
+covariance</li>
+<li><span class="math inline">\(\bar{v}\)</span>: Average variance</li>
+</ul>
+</div>
+</section>
+<section id="survey-validity" class="slide level2">
+<h2>Survey Validity</h2>
+<ul>
+<li><em>Face validity</em>: Do the survey questions at face-value relate
+to the mental state?</li>
+<li><em>Content validity</em>: Does the survey instrument capture all
+relevant components of the latent variable?</li>
+<li><em>Construct validity</em>: How much variance does the model
+describe?</li>
+<li><em>Discriminant validity</em>: How different is the scale from
+other scales?</li>
+</ul>
+</section>
+<section id="example-trust-scale" class="slide level2">
+<h2>Example: Trust Scale</h2>
+<div class="column" style="float:left; width: 50%">
+<p><em>Questions</em></p>
+<ul>
+<li>How much can you count on … ?</li>
+<li>How much do you trust … ?</li>
+<li>How dependable is … ?</li>
+</ul>
+<p><em>Answer Model</em></p>
+<p>7-point Likert scale</p>
+</div>
+<div class="column" style="float:left; width: 50%">
+<p><em>Source</em></p>
+<p><small>Bruner, G. (2012). <em>Marketing Scales Handbook. A
+Compilation of Multi-item Measures for Consumer Behavior &amp;
+Advertising Research</em>. GCBII Productions.</small></p>
+<p><em>Reliability</em></p>
+<ul>
+<li>Alpha = 0.92</li>
+</ul>
+<p><em>Validity</em></p>
+<p>Factor analysis supports single-dimensionality and discriminant
+validity.</p>
+</div>
+</section>
+<section id="factor-analysis" class="slide level2">
+<h2>Factor Analysis</h2>
+<ul>
+<li><span class="math inline">\(F_i = b_1 x_{1i} + b_2 x_{2i} +…+ b_n
+x_{ni} + \varepsilon_i\)</span></li>
+<li><span class="math inline">\(b_s\)</span> is factor loading</li>
+<li>Variance
+<ul>
+<li>Communality: Shared with other variables</li>
+<li>Uniqueness: 1 - communality</li>
+<li>Error</li>
+</ul></li>
+<li>Uniqueness (0–1)
+<ul>
+<li>Proportion of variability, which can not be explained by a linear
+combination of the factors (noise)</li>
+</ul></li>
+<li>Loadings
+<ul>
+<li>Contribution of each original variable to the factor (0–1)</li>
+<li>Sum of squared loadings = 1 - uniqueness</li>
+</ul></li>
+</ul>
+</section>
+<section id="exploratory-factor-analysis-example" class="slide level2">
+<h2>Exploratory Factor Analysis Example</h2>
+<p><img src="session-2a_files/figure-revealjs/unnamed-chunk-10-1.png" width="2400" /></p>
+</section></section>
+<section id="next-week" class="title-slide slide level1">
+<h1>Next week</h1>
+<ul>
+<li>Cluster Analysis</li>
+<li>Regression</li>
+<li>Intro to machine learning</li>
+<li>Next steps?</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="session-2a_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="session-2a_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
+        // Vertical centering of slides
+        center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+        // Transition style
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+
+
+        // Optional reveal.js plugins
+        dependencies: [
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>

@@ -17,16 +17,21 @@ glimpse(rawdata)
 
 customers <- rawdata[-1, ]
 
+glimpse(customers)
+
 customers <- type_convert(customers)
 
 # Select relevant variables
 
 names(customers)
+
 customers <- select(customers, c(1, 15, 19, 21:51, -33))
 
 # Rename first variable
 
 customers <- rename(customers, customer_id = V1)
+
+glimpse(customers)
 
 # Join dimension table with suburb names
 
@@ -34,21 +39,32 @@ suburbs_dim <- tibble(suburb = 1:3,
                       suburb_name = c("Merton", "Tarnstead", "Wakefield"))
 
 customers <- left_join(customers, suburbs_dim)
+
 customers <- left_join(customers, suburbs_dim, join_by(suburb == suburb))
+
 customers <- select(customers, -"suburb")
 
 # Remove invalid data
 
-table(customers$term)
-
-table(customers$term, useNA = "ifany")
+count(customers, term)
 
 customers <- filter(customers, is.na(term))
 customers <- select(customers, -"term")
 
 # Refactoring code
 
-# Refactoring using nested functions
+# Inefficient Method
+rawdata  <- read_csv("data/customer_survey.csv")
+customers <- rawdata[-1, ]
+customers <- type_convert(customers)
+customers <- select(customers, c(1, 15, 19, 21:51, -33))
+customers <- rename(customers, customer_id = V1)
+customers <- left_join(customers, suburbs_dim)
+customers <- select(customers, -"suburb")
+customers <- filter(customers, is.na(term))
+customers <- select(customers, -"term")
+
+# Refactoring using nested functions (Excel method)
 
 customers <- rename(
   select(

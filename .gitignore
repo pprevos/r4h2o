@@ -1,12 +1,5 @@
-/.Rhistory
-/.Rproj.user/
-/.RData
-r4h2o-cheat-sheet.odp
-/case-studies/consumer-involvement.docx
-/routledge/
-/youtube/
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
 /case-studies/google-maps.api
-.httr-oauth
-/case-studies/twitter-api.R
-/data/PrettyBoy1998.dat
-.gitignore

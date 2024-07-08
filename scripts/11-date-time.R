@@ -18,7 +18,8 @@ as.Date(20000, origin = "1899-12-31") # Spreadsheets
 # Date formats
 as.Date("2022-07-01") # ISO 8601
 as.Date("1 July 2022", format = "%d %B %Y")
-as.Date("Day: 12, Month: 06, Year: 2023", format = "Day: %d, Month: %m, Year: %Y")
+as.Date("Day: 12, Month: 06, Year: 2023", 
+        format = "Day: %d, Month: %m, Year: %Y")
 format(Sys.Date(), "%A week %V, %Y")
 
 ?strptime
@@ -95,6 +96,10 @@ library(readr)
 library(dplyr)
 
 meter_reads <- read_csv("data/meter_reads.csv")
+
+# Question: 
+# 1. How many meter reads are there for each device?
+# 2. Visualise this in a barplot
 
 group_by(meter_reads, device_id) %>% 
   summarise(volume = (5 / 1000) * (max(count) - min(count))) %>% 

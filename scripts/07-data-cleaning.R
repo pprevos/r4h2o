@@ -98,30 +98,30 @@ write_csv(customers, "data/customer_survey_clean.csv")
 
 # Technical Service Quality
 
-tq <- select(customers, customer_id, t01:t05)
-summary(tq[, -1])
+technical_quality <- select(customers, customer_id, t01:t05)
+summary(technical_quality[, -1])
 
 # Visualise missing data
 
 library(visdat)
-vis_miss(tq)
+vis_miss(technical_quality)
 
 # Calculate with missing data
 
-mean(tq$t01)
+mean(technical_quality$t01)
 
-mean(tq$t01, na.rm = TRUE)
+mean(technical_quality$t01, na.rm = TRUE)
 
-mean(na.omit(tq$t01))
+mean(na.omit(technical_quality$t01))
 
-# Remove missing data in tq
+# Remove missing data in technical_quality
 
-tq <- tq[complete.cases(tq), ]
+technical_quality <- technical_quality[complete.cases(technical_quality), ]
 
-# Convert tq to a tidy data set
+# Convert technical_quality to a tidy data set
 
 library(tidyr)
-tq_long <- pivot_longer(tq, cols = -1, 
+tq_long <- pivot_longer(technical_quality, cols = -1, 
                         names_to = "Item", 
                         values_to = "Response")
 

@@ -8,7 +8,7 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
-chlorine <- read_csv("data/water_quality.csv") %>%
+cl_merton <- read_csv("data/water_quality.csv") %>%
   filter(Measure == "Chlorine Total")
 
 ggplot(chlorine, aes(Suburb, Result)) +
@@ -33,9 +33,6 @@ median(c(x, Inf))
 1.4826 * median(abs(cl_merton$Result - median(cl_merton$Result)))
 
 mad(cl_merton$Result)
-
-(cl_p75 <- quantile(cl_merton$Result, 0.75, names = FALSE))
-(cl_mad <- mad(cl_merton$Result, constant = 1 / cl_p75))
 
 median(cl_merton$Result) + 3 * cl_mad
 
@@ -64,6 +61,7 @@ ggplot(cl_merton, aes(Date, Result, col = outlier)) +
   theme_bw() +
   theme(legend.position = "bottom")
 
+# Functions
 # Function for Kindsvater-Carter formula
 
 channel_flow <- function(h, b, cd = 0.62, g = 9.81) {

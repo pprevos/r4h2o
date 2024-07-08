@@ -47,7 +47,6 @@ sqrt(abs(non_revenue_water))
 sqrt(as.complex(-non_revenue_water))
 
 # Basic visualisation
-
 diameters <- 50:351
 pipe_areas <- (pi / 4) * (diameters / 1000)^2
 

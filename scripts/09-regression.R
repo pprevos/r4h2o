@@ -6,8 +6,10 @@
 
 # Linear Regression Principles
 
+
+
 set.seed(10)
-d <- data.frame(x = sample(22:38, 8),
+d <- tibble(x = sample(22:38, 8),
                 y = runif(1) * x + rnorm(8))
 
 plot(d$x, d$y, pch = 19, cex = 2, col = "blue", xlab = NA, ylab = NA)

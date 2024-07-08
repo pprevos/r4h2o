@@ -140,7 +140,6 @@ kurtosis(x)
 
 
 # ANALYSING GROUPED DATA
-
 labdata_grouped <- group_by(labdata, Measure)
 labdata_grouped
 

@@ -52,7 +52,7 @@ knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, dpi=300)
 ```{r, echo=TRUE}
 library(tidyverse)
 # Bendigo weather station
-bom <- read_csv("../data/IDCJAC0009_081123_1800_Data.csv")
+bom <- read_csv("data/IDCJAC0009_081123_1800_Data.csv")
 bom_grouped <- group_by(bom, Year)
 bom_annual <- summarise(bom_grouped, 
                         Rainfall = sum(`Rainfall amount (millimetres)`, 
@@ -108,15 +108,13 @@ Open the `05-visualise.R` script
 
 ## Using Colours in Graphics
 <div class="cols">
-Two reasons to use colour:
+- Two reasons to use colour:
+  - Corporate or publisher house style
+  - Communicate a value
 
-- Corporate or publisher house style
-- Communicate a value
-
-Reasons not to use colour:
-
-- Aesthetics
-- Prettyfication
+- Reasons not to use colour:
+  - Aesthetics
+  - Prettyfication
 
 </div>
 <div class="cols">
@@ -134,7 +132,7 @@ Reasons not to use colour:
 ## Coding Practice
 ```{r, echo=TRUE, fig.height=2.5}
 library(tidyverse)
-labdata <- read_csv("../data/water_quality.csv") 
+labdata <- read_csv("data/water_quality.csv") 
 thm_merton_southwold <- filter(labdata, Measure == "THM" & 
                                  (Suburb == "Merton" | 
                                     Suburb == "Southwold"))

@@ -382,7 +382,7 @@ Open `chapter-11.R` script
 </div>
 
 ## Leaflet Example
-```{r, fig.height=2, fig.width=3}
+```{r, fig.height=2, fig.width=3, eval=FALSE}
 #Leaflet example
 
 library(readr)

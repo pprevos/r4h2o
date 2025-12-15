@@ -21,7 +21,7 @@ library(JuliaCall)
 # {data-background="images/r4h2o-banner.jpg"}
 
 # Introductions
-![](images/data-science-evolution.png)
+![](images/data-science-evolution.png){height=500}
 
 ## Learning Objectives Level 1
 <div class="cols">
@@ -71,7 +71,7 @@ The steeper the learning curve, the bigger the reward.
 
 # What is Data Science?
 <div class="cols">
-![](images/conway.png){height=400}
+![](images/autodesk-water-unicorns.jpg){height=400}
 
 <small>Conway Venn Diagram ([drewconway.com](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram)).</small>
 </div>
@@ -80,14 +80,18 @@ Many data scientists have published modifications of this model. Can you think o
 </div>
 
 ## What is Useful Data Science?
-![](images/feedback-loop.png)
+![](images/feedback-loop.png){height=400}
 
 ## What is Good Data Science?
-![](images/vitruvius.png)
+![](images/vitruvius.png){height=400}
 
 ## Spreadsheets are Chaos
-![](images/reverse-engineer-spreadsheet.jpg)
+![](images/reverse-engineer-spreadsheet.jpg){height=400}
+
 Source: [lucidmanager.org](https://lucidmanager.org/data-science/spreadsheets-for-data-science/)
+
+## Code is Poetry
+![](images/data-science-languages.jpg){height=400}
 
 ## Code is Poetry: R
 ```{r echo=TRUE}

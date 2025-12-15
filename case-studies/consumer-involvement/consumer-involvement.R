@@ -25,13 +25,15 @@ pii <- pii[complete.cases(pii), ]
 
 # Visualise PII
 
-pii %>%
-  pivot_longer(-customer_id, names_to = "Item", values_to = "Response") %>%
-  ggplot(aes(Item, Response)) +
+pii_long <- pii %>%
+  pivot_longer(-customer_id, names_to = "Item", values_to = "Response")
+
+ggplot(pii_long) +
+  aes(Item, Response) +
   geom_boxplot(fill = "#f7941d") +
   theme_bw(base_size = 12) + 
-  labs(title = "personal Involvement Index",
-       subtitle = paste("Tap Water Consumers USA and Australia (n =",
+  labs(title = "Personal Involvement Index",
+       subtitle = paste0("Tap Water Consumers USA and Australia (n = ",
                         nrow(pii), ")"))
 
 # Visualise correlation matrix
@@ -45,19 +47,21 @@ ggcorrplot(c_matrix, outline.col = "white") +
 
 library(psych)
 pii_fa <- fa(pii[, -1], nfactors = 2, rotate = "oblimin", fm = "ml")
-fa.diagram(pii_fa, main = NULL)
+fa.diagram(pii_fa, main = NULL, marg = c(0, 8, 0, 0))
 
 # Calculating the PII
 
 pii_scores <- pii %>%
   mutate(cognitive = p01 + p02 + p03 + p04 + p05,
          affective = p06 + p07 + p08 + p09 + p10) %>%
-  select(customer_id, cognitive, affective)
+  select(customer_id, cognitive, affective) %>%
+  pivot_longer(cols = -customer_id)
 
-pivot_longer(pii_scores, cols = -customer_id) %>%
-  ggplot(aes(value)) +
+ggplot(pii_scores) +
+  aes(value) +
   geom_histogram(fill = "dodgerblue 4", binwidth = 1) +
   facet_wrap(~name) +
   theme_minimal(base_size = 12) +
   labs(title = "Consumer Involvement with Tap Water",
-       subtitle = "Personal Involvement Index")
+       subtitle = "Personal Involvement Index",
+       x = "Score", y = NULL)

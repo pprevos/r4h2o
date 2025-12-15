@@ -14,7 +14,7 @@ bibliography: consumer-involvement.bib
 ```{r setup, include=FALSE, warning=FALSE, message=FALSE, error=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
-pii <- read_csv("../data/customer_survey.csv")[-1, ] %>%
+pii <- read_csv("../../data/customer_survey.csv")[-1, ] %>%
     type_convert() %>%
     filter(is.na(term)) %>%
     rename(customer_id = V1) %>% 

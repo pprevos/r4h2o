@@ -4,12 +4,15 @@ library(ggmap)
 library(RColorBrewer)
 
 ## Register Google Maps API
-api <- readLines("case-studies/google-maps.api")
+api <- readLines("data/google-maps.api")
 register_google(key = api)
 
 ## Create mock performance data
 ## Towns with water treatment plants
-towns <- c("Bendigo", "Boort", "Bridgewater", "Castlemaine", "Cohuna", "Echuca", "Elmore", "Goornong", "Gunower", "Heathcote", "Korong Vale", "Kyneton", "Laanecoorie", "Leitchville", "Lockington", "Pyramid Hill", "Rochester", "Serpentine", "Trentham")
+towns <- c("Bendigo", "Boort", "Bridgewater", "Castlemaine", "Cohuna", "Echuca", 
+           "Elmore", "Goornong", "Gunower", "Heathcote", "Korong Vale", "Kyneton", 
+           "Laanecoorie", "Leitchville", "Lockington", "Pyramid Hill", "Rochester", 
+           "Serpentine", "Trentham")
 t <- length(towns)
 
 ## Volume produced
@@ -27,15 +30,15 @@ performance <- tibble(Town = towns) %>%
            Performance = round((Treatment + Network + Regulation + Perception) / 4))
 
 ## Get map
-bbox <- make_bbox(range(performance$lon), range(performance$lat), f = .1)
-map <- get_stamenmap(bbox, maptype = "toner-hybrid")
+map <- get_map(location = c(lon = mean(performance$lon), lat = mean(performance$lat)), 
+               color = "bw", zoom = 8)
 
 ## Single variable
 ggmap(map, extent = "device") + 
     geom_point(data = performance,
                aes(lon, lat, size = sqrt(Consumption), col = Performance),
                alpha = 0.9) +
-    scale_size_area(max_size = 24, guide = "none") +
+    scale_size_area(max_size = 18, guide = "none") +
     scale_color_gradientn(colors = brewer.pal(7, "RdYlBu")) +
     labs(title = "System Performance",
          subtitle = "Simulated data") +
@@ -62,7 +65,7 @@ cheesecake_legend <- tibble(x0 = c(.1, .1, -.1, -.1),
 
 l <- ggplot(cheesecake_legend) +
   aes(x0 = x0, y0 = y0, r0 = 0, r = 1, start = start, end = end) +
-  geom_arc_bar(col = NA, fill = "lightgrey") +
+  geom_arc_bar(col = NA, fill = "chocolate") +
   geom_text(aes(x0 * 6, y0 * 6,
                 label = unique(cheesecake$Aspect)), size = 2) + 
   theme_void() +
@@ -74,7 +77,7 @@ m <- ggmap(map, extent = "device",
                                aes(x0 = lon,
                                    y0 = lat,
                                    r0 = 0,
-                                   r = .05,
+                                   r = .1,
                                    start = start,
                                    end = end,
                                    fill = Performance))) +
@@ -85,7 +88,11 @@ m <- ggmap(map, extent = "device",
        subtitle = "Simulated data")  +
   theme_void(base_size = 4)
 
-m + coord_cartesian() + coord_equal() +
+bbox <- make_bbox(range(performance$lon), range(performance$lat), f = .1)
+
+m + coord_cartesian() + 
+  coord_equal() +
   annotation_custom(grob = ggplotGrob(l),
                     xmin = bbox[3] - .3, xmax = bbox[3],
                     ymin = bbox[4] - .3, ymax = bbox[4])
+

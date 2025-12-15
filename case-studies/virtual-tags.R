@@ -1,6 +1,6 @@
 # Virtual tag simulation
 
-# Generate turbdity measurements
+# Generate turbidity measurements
 set.seed(1234)
 n <- 300
 wtp <- data.frame(timestamp = seq.POSIXt(ISOdate(1910, 1, 1), length.out = n, by = 60),
@@ -8,7 +8,8 @@ wtp <- data.frame(timestamp = seq.POSIXt(ISOdate(1910, 1, 1), length.out = n, by
 
 library(ggplot2)
 
-p1 <- ggplot(wtp, aes(x = timestamp, y = turbidity)) +
+p1 <- ggplot(wtp) +
+  aes(x = timestamp, y = turbidity) +
   geom_line(colour = "grey") +
   ylim(0.09, 0.11) + 
   theme_bw(base_size = 10) + 
@@ -16,7 +17,7 @@ p1 <- ggplot(wtp, aes(x = timestamp, y = turbidity)) +
 
 p1
 
-# Historise using deadbanding
+# Historise using dead banding
 threshold <- 0.03
 h <- 1 # First historised point
 
@@ -31,8 +32,10 @@ for (i in 2:nrow(wtp)) {
   }
 }
 
+historian <- subset(wtp, historised)
+
 p2 <- p1 + 
-  geom_point(data = subset(wtp, historised), 
+  geom_point(data = historian, 
              aes(x = timestamp, y = turbidity), 
              size = 3, alpha = .5, color = "blue") +
   labs(title = "Historised data")
@@ -49,6 +52,8 @@ turbidity <- lapply(as.data.frame(wtp$timestamp), vt)
 
 wtp$virtual_tag <- turbidity[[1]]$y
 
-p3 <- p2 + geom_line(data = wtp, aes(x = timestamp, y = virtual_tag), colour = "red") +
+p3 <- p2 +
+  geom_line(data = wtp,
+            aes(x = timestamp, y = virtual_tag), colour = "red") +
   ggtitle("Virtual Tags")
 p3

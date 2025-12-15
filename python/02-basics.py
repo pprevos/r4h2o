@@ -8,34 +8,29 @@
 import math as m
 
 # Assigning variables
-
 diameter = 150
-diameter
+print(diameter)
 
-(m.pi / 4) * (diameter / 1000)**2
+area = (m.pi / 4) * (diameter / 1000)**2
+print(area)
 
 # BODMAS
-
 3 - 3 * 6 + 2
 
 7 + 7 / 7 + 7 * 7 - 7
 
 # Array Variables
-
 complaints = [12, 7, 23, 45, 9, 33, 12]
 day = list(range(1, 100))
 
 # Arithmetic functions
-
 non_revenue_water = [13, -9, 45, 0]
 
 sum(non_revenue_water)
-
 m.prod(non_revenue_water)
 
 # Most arithmetic functions only work with one value
 factorials = []
-
 for x in non_revenue_water:
     if x >= 0:
         factorial = m.factorial(x)

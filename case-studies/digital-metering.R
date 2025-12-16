@@ -4,7 +4,7 @@ library(lubridate)
 library(magrittr)
 
 # Load data
-meter_reads <- read_csv("data/meter_reads.csv")
+meter_reads <- read_csv("~/r4h2o-gh/data/meter_reads.csv")
 rtu <- unique(meter_reads$device_id)
 
 # Slicing meter reads
@@ -26,7 +26,7 @@ interpolate_count <- function(rtus, timestamps) {
     for (r in seq_along(rtus)) {
         interp <- slice_reads(rtus[r]) %$%
             approx(timestamp, count, timestamps)
-        results[[r]] <- data_frame(device_id = rep(rtus[r], 
+        results[[r]] <- tibble(device_id = rep(rtus[r], 
                                                    length(timestamps)),
                                    timestamp = timestamps, count = interp$y)
     }

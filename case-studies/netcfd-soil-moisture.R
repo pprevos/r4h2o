@@ -15,8 +15,10 @@ dimnames(moisture) <- list(longitude, latitude, month)
 
 ## Visualising the data with ggplot
 library(ggplot2)
-library(ozmaps)
+library(dplyr)
 library(reshape2)
+library(ozmaps)
+
 
 plot_date <- "2025-05-31"
 
@@ -26,7 +28,7 @@ soil_moisture <- moisture[, , which(month == plot_date)] %>%
   subset(!is.na(value))
 
 ## State boundaries
-sf_aus <- ozmap("states", add = TRUE)
+sf_aus <- ozmap("states")
 
 ggplot(soil_moisture) + 
   geom_tile(aes(x = longitude, y = latitude, fill = value)) +
@@ -64,5 +66,6 @@ ggplot(soil_moisture_time) +
   geom_line(aes(x = month, y = moisture)) +
   labs(title = "Relative Total rootzone soil moisture (0-100 cm)",
        subtitle = paste(as.character(location), collapse = ", "),
-       caption = "Source: Australian Landscape Water Balance AWRA-L Model") + 
+       caption = "Source: Australian Landscape Water Balance AWRA-L Model",
+       x = NULL, y = "Relative Soil Moisture") + 
   theme_minimal(base_size = 16)

@@ -4,7 +4,7 @@ library(lubridate)
 library(magrittr)
 
 # Load data
-meter_reads <- read_csv("~/r4h2o-gh/data/meter_reads.csv")
+meter_reads <- read_csv("data/meter_reads.csv")
 rtu <- unique(meter_reads$device_id)
 
 # Slicing meter reads

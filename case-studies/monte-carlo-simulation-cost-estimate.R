@@ -16,6 +16,7 @@ mc_sims <- matrix(ncol = n,
                   nrow = j)
 
 ## Simulation
+set.seed(1234)
 for (i in 1:j){
   mc_sims[i,] <- rtriangle(n = n,
                            a = estimate$Low[i],

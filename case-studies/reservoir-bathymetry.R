@@ -143,9 +143,7 @@ sections <- ggplot(prettyboy_sections) +
     labs(x = "Easting [m]", y = "Elevation [m]")
 
 library(gridExtra)
-png(filename = "prettyboy-sections.png", width = 1920, height = 940, units = "px")
 grid.arrange(map, sections, ncol = 2)
-dev.off()
 
 # Triangulated Irregular Network
 library(geometry) 
@@ -198,12 +196,13 @@ cubic <- lm(volume_m3 ~ poly(level, 3, raw = TRUE), data = grid_capacity)
 grid_capacity$cubic = predict(cubic)
   
 ggplot(grid_capacity) + 
-  aes(level, volume_m3 / 1E3) + 
-  geom_point(col = "grey") + 
-  geom_line(aes(level, cubic / 1E3)) + 
-  geom_hline(yintercept = grid_volume_m3 / 1E3, linetype = 6, col = "red") + 
-  scale_y_continuous(labels = scales::label_comma()) + 
-  theme_minimal() + 
-  labs(title = "Prettyboy Reservoir Capacity Curve",
-       x = "Water level", y = expression(Volume~km^3))
+    aes(level, volume_m3 / 1E6) + 
+    geom_point(col = "grey") + 
+    geom_line(aes(level, cubic / 1E6)) + 
+    geom_hline(yintercept = grid_volume_m3 / 1E6,
+               linetype = 6, col = "red") + 
+    scale_y_continuous(labels = scales::label_comma()) + 
+    theme_minimal() + 
+    labs(title = "Prettyboy Reservoir Capacity Curve",
+         x = "Water level", y = expression(Volume~10^6 * m^3))
 
